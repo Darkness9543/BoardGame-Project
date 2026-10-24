@@ -55,6 +55,20 @@ Both players need a secure page: **https://** or **http://localhost**. WebRTC's 
 `http://<LAN-IP>`, so the game says so instead of connecting. To play across the internet, deploy the build to
 an https host.
 
+### Getting it online (pick one)
+
+- **GitHub Pages (recommended, permanent).** Push this repository to GitHub, then in the repository's
+  *Settings → Pages* set *Source* to **GitHub Actions**. `.github/workflows/deploy.yml` builds and publishes on
+  every push to `main`; the game lives at `https://<user>.github.io/<repo>/`. Open it there, press **Play**, and
+  send the invite link. Both of you use that address.
+- **A tunnel for one evening.** Run `npm run build && npm run preview`, then expose port 4173 over https with a
+  tunnel such as `npx localtunnel --port 4173` or `cloudflared tunnel --url http://127.0.0.1:4173`. Open the
+  https URL the tunnel prints (not localhost), press **Play**, and send the invite link.
+- **Both run it locally.** If your friend can run `npm install && npm run build && npm run preview` too, each of
+  you plays on your own `http://localhost:4173`. The invite link's address won't work for them, so send the room
+  code shown in the lobby (or the whole link): the **Join** box on the main menu accepts a pasted link, its
+  `#/join/...` part, or the `ROOM/SECRET` code. The browsers meet through the public relays regardless of origin.
+
 The browsers find each other through public Nostr relays (Trystero, the SDP encrypted with the invite secret) and
 then talk directly over an encrypted WebRTC data channel; game data never touches the relays. About one pair in
 six needs a TURN relay (a phone on mobile data, strict corporate networks). TURN is optional: put a free

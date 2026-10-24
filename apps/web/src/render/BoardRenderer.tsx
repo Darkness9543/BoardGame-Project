@@ -1,8 +1,13 @@
 // The 3D board renderer (contracts.ts BoardRendererProps, plus the optional BoardRendererExtras). It draws only what
 // the PlayerView holds and reports pointer input; it never decides what a click means. See README.md.
 
-import { useImperativeHandle, useRef, type CSSProperties } from 'react'
+import { useEffect, useImperativeHandle, useRef, type CSSProperties } from 'react'
 import { Canvas } from '@react-three/fiber'
+import { toast } from '../store/toasts'
+import { probeGpu } from './gpuProbe'
+
+/** The software-rendering warning is shown once per page load. */
+let warnedSoftware = false
 import { FONTS, OVERLAY_LOOK, OWNER_CUES, rgba } from '../theme'
 import { boardYaw, localToWorld, squareCentre } from './coords'
 import type { RigApi } from './scene/CameraRig'
@@ -40,6 +45,17 @@ export function BoardRenderer(props: BoardViewProps) {
   const reducedMotion = useReducedMotion(props.reducedMotion)
   const quality = useSettings((s) => s.settings.renderQuality)
   const preset = QUALITY[quality]
+  useEffect(() => {
+    if (warnedSoftware) return
+    const gpu = probeGpu()
+    if (!gpu.software) return
+    warnedSoftware = true
+    toast(
+      'Your browser is drawing the board without the graphics card (software rendering), so it will be slow. Enable hardware acceleration in the browser settings and relaunch it, or switch to the 2D board in Options.',
+      'warn',
+    )
+    console.warn('[board] software WebGL renderer:', gpu.renderer)
+  }, [])
 
   useImperativeHandle(
     ref,

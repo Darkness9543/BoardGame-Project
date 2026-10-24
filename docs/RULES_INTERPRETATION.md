@@ -21,21 +21,40 @@
 - Analyst IDs (for example RL D-C5, AB ROG-5, BA S17, PX BT-29, NC Q12) point to the detailed reasoning in the source files.
 - Section 13 covers the spec's screens, presentation and delivery notes, which sit outside the rules engine. Appendix C maps every spec line to the section that covers it.
 
+## OWNER RULINGS (2026-10-24) — these supersede every default below that they touch
+
+The owner answered the first batch of questions in chat. The original spec is a two-column table (`GameSpec.pdf` in the repo root); the Markdown copy had lost the columns. **Implement these rulings; where a later section or Appendix A still shows the old default, the ruling wins.**
+
+| # | Topic | Ruling | Supersedes |
+|---|---|---|---|
+| R1 | **AP per turn** | **Base 10 AP. Each round every player gets 1 more AP, up to a maximum of 20**: round 1 = 10, round 2 = 11, ..., round 11 onward = 20. Both players receive the same AP in a given round. No first-turn reduction for the first player (the owner did not ask for one). Unspent AP is still lost at end of turn (A2-03 stands). Constants: `AP_BASE = 10`, `AP_PER_ROUND_INCREMENT = 1`, `AP_MAX = 20`, `FIRST_TURN_AP = none`. | At a glance #4, C2, 2.3, Q15, Q16, Q17, A2-01, A2-02, `AP_PER_TURN`, `FIRST_TURN_AP` |
+| R2 | **Army size cap** | **At most 50 units may be deployed** (the commander is not counted; units created in play, such as No-ACB dummies, are not counted). Deployability still applies on top. Constant: `ARMY_UNIT_CAP = 50`. | Q21, A5-03, S03, `ARMY_UNIT_CAP` |
+| R3 | **Movement** | Orthogonal only, confirmed (Q8 = yes). | — |
+| R4 | **Factions and rosters** | The spec lists **one unit per tier per faction**; "each unit has 2 variations" (L5) means one variation per faction. **The Empire:** Footman (1), Soldier (2), Berserker (5), Priestess (10), Paladin (20), Royal wizard (50), Celestial Emissary (100). **Lojrar Clan:** Mercenary (1), Ranger (2), Rogue (5), Juliomancer (10), Artificer (20), Beast of Knorund (50), Scourge of the Gods (100). Both rosters are complete; **there is no missing roster and no proxy**. An army is built from its own faction's 7 units only. Constants: `LOJRAR_PROXY_ROSTER = false`; the content tables carry `faction` per unit. | At a glance #11, C26, 7.2, Q3, Q5, A7-05, `LOJRAR_PROXY_ROSTER` |
+| R5 | **Balance stance** | The swarm dominance found by the model is noted; the owner expects human players not to use swarms that effectively and wants to iterate after playtests. R2 answers S03. | S03 |
+| R6 | **Baba Yaga** | The owner asked for a buff proposal. See S14 (three options) in section 12. Until ruled, implement the spec text with "units of white" = **tier-1 units** (with the recommended grade palette, tier 1 is Argent/white). Constant: `BABA_WHITE_GRADES = [1]`. | C9, Q53, A7-12, `BABA_WHITE_GRADES` |
+
+**Still open after these rulings (defaults until answered):**
+
+- **Commander–faction lock (Q4).** The PDF lists the commanders as two groups of three with no faction headers, and Sabrina's text refers to Artificers, a Lojrar unit. Default now: `COMMANDER_FACTION_LOCK = false` (any commander may lead either faction); the data keeps the two groups as a hint (group A: Trill, Kulega, Sabrina; group B: Baba Yaga, Ratasius I, Queso).
+- **Does the 50-unit cap count created units?** Default: no (deployment count only), per the owner's wording "at deployment".
+- Everything else in section 11 stands as asked.
+
 ## At a glance: the decisions that shape the engine
 
 | # | Topic | Default | Conf. |
 |---|---|---|---|
-| 1 | Movement | Orthogonal steps only. L15's "including diagonals" is superseded by L34 (1.5). | High |
+| 1 | Movement | Orthogonal steps only. L15's "including diagonals" is superseded by L34 (1.5). Confirmed by the owner (R3). | High |
 | 2 | Distances | Manhattan distance for range, LOV, adjacency and melee reach. Chebyshev only for "(including corners)" and for shapes the text draws ("3x3", Slam's splash). | Med |
 | 3 | Board | 25x25 minus 8 squares per corner (rounded-corner rule A): 593 squares. | Low |
-| 4 | AP | 12 per player turn, fixed (round(0.06 x budget)). The first player's first turn has 6. Unspent AP is lost. | Med |
+| 4 | AP | **Owner ruling R1:** 10 base, +1 per round, max 20; same for both players; no first-turn reduction; unspent AP is lost. (Previous default: 12 fixed, 6 on the first player's first turn.) | Ruled |
 | 5 | Actions | One action per unit per turn: Move, Attack, Defend or an active ability. Never more than one Move, even with extra actions. AP is paid per action; an ability's cost replaces the unit's AP. | High / Med |
 | 6 | Damage | Base -> attacker additions -> attacker subtractions (floor 0) -> target flat reductions (floor 1) -> Defend halves, rounding up. | Med |
 | 7 | Vision | Manhattan diamonds; nothing blocks sight. Fog hides enemy units, mines, effects, AP and cooldowns. | Med |
 | 8 | Size 2 | A 2x2 block with no facing. | Med |
 | 9 | Deployment | Simultaneous and hidden. Rogue and Ranger may also use the 2 extended rows. | Med / Low |
 | 10 | Buildings | 12-square ring; checked at the end of every turn; only the controller benefits. | Med |
-| 11 | Factions | The 14 listed units are The Empire's. Trill, Kulega, Sabrina = Empire; Baba Yaga, Ratasius I, Queso = Lojrar Clan. **The Lojrar Clan roster is missing**; until it exists, Lojrar armies field the Empire units as a proxy. Alternative reading: the 14 units are both factions' rosters, one unit per tier each (L5; 7.2, Q3). | Low |
+| 11 | Factions | **Owner ruling R4:** one unit per tier per faction. Empire = Footman, Soldier, Berserker, Priestess, Paladin, Royal wizard, Celestial Emissary. Lojrar Clan = Mercenary, Ranger, Rogue, Juliomancer, Artificer, Beast of Knorund, Scourge of the Gods. No roster is missing; no proxy. Commander–faction lock still open (default: unlocked). (Previous default: all 14 units Empire, Lojrar proxy.) | Ruled |
 | 12 | Take-back | One action per request (repeatable back to the start of your turn, and End Turn until the opponent acts). The opponent sees what the action revealed, then accepts or declines. | Med |
 
 ---
@@ -1763,7 +1782,7 @@ These are design changes for the owner to consider. **No rule in this document a
 | # | Suggestion | Why | Priority | Source |
 |---|---|---|---|---|
 | S13 | **Trill:** +1 toughness for types 1, 2 and 5 (or +2 for types 1-2 only); commander toughness 6. | By far the strongest commander (Mixed-30 rose from 62% to 88% in the model); Footmen and Berserkers rise above the 3-damage area attacks. | High | BA S12, D4 |
-| S14 | **Baba Yaga:** regenerate 3 toughness for 1 AP, up to 3 times per turn, no cooldown; or define "white" as one grade and give it a bigger bonus. | The weakest commander by a wide margin. | Medium | BA S13 |
+| S14 | **Baba Yaga buff (owner asked for a proposal, R6).** Why the text fails: "units of white" are the tier-1 units (Footman 1/2, Mercenary 2/1). A Mercenary can never regenerate (any hit kills it); a Footman can only after a hit reduced to exactly 1 by Line Formation. 2 AP for at most 2 toughness is the worst rate in the game (Holy blessing heals every ally in range 2 by 5 for 3 AP). **Three options, one to pick:** **S14a "Mend the swarm"** (smallest change): units of white regenerate to full toughness for 1 AP, up to 3 units per turn, no cooldown. Cheap to build, still minor. **S14b "Hex Ward"**: units of white within range 3 of Baba Yaga take 1 less damage (not below 1) and gain +1 toughness; Baba Yaga has toughness 5. A local version of Trill that makes Footman walls and Mercenary packs survive area damage. **S14c "Cauldron" (recommended)**: when one of your units of white dies, you may pay 1 AP to return it at full toughness to a free square adjacent to Baba Yaga; at most 2 returns per turn, and a given unit may return at most twice per game; Baba Yaga has toughness 5. It keeps the owner's own limits ("up to 2 units per turn", "twice to the same unit", a regeneration flavour) and the witch theme, rewards the cheap-unit identity the commander already has, and has clear counterplay (kill or isolate Baba Yaga). Bounded: 2 AP per turn buys back at most 2 one-coin units next to the commander; no sacrifice loop, because the Lojrar white unit (Mercenary) has 1 toughness, so Julio Vernification or Feast on it gain 1. | The weakest commander by a wide margin, and the only one whose text does nothing for one of its two possible units. | High (owner request) | BA S13, R6 |
 | S15 | **Ratasius I:** commander toughness 4-5, or weakness at range 2. (Letting weakness reach 0 is already our default.) | His defensive aura can't save a 1/1 commander. | Medium | BA S14 |
 | S16 | **Base commander toughness 5** (Queso 6, Trill 10-12). | Ends one-shot snipes by Rangers and weak units, while real threats (Smite, Rogue, Berserker, Paladin) still kill in one action; fewer abrupt endings and less incentive to bury the commander. | High | BA S15, D6 |
 | S17 | **Queso:** regenerate 3 instead of 5, or 5 for only the 4 most damaged units. | Up to 60 free healing per turn feeds a regeneration turtle. | Low-medium | BA S16, D12 |
@@ -1876,8 +1895,8 @@ Every default that a playtest or an owner answer may change. Build each as a nam
 | `ADJACENCY` (also sets melee reach) | `ORTHO_4` (Manhattan 1) | 1.4 | `KING_8` |
 | `MOVE_DIRECTIONS` | `ORTHO_4` | 1.5 | `KING_8` |
 | `VISION_OCCLUSION` | none | 1.7, 4.1 | `floodfill` (blockers and buildings stop sight) |
-| `AP_PER_TURN` | round(0.06 x budget) = 12 | 2.3 | 8, 10; growing; value-scaled |
-| `FIRST_TURN_AP` | 6 | 2.3 | 12 (no compensation), 8 |
+| `AP_BASE` / `AP_PER_ROUND_INCREMENT` / `AP_MAX` | **10 / 1 / 20 (owner ruling R1)**: AP(round) = min(AP_BASE + (round - 1) x AP_PER_ROUND_INCREMENT, AP_MAX) | R1, 2.3 | the old fixed 12 (`AP_PER_TURN`) is withdrawn |
+| `FIRST_TURN_AP` | **none (owner ruling R1)** | R1, 2.3 | 6 (the old default) |
 | `AP_CARRYOVER` | 0 | 2.3 | up to 4 |
 | `AP_PAYMENT` | per action | 2.4 | once per unit per turn |
 | `ABILITY_COST_MODE` | replaces the unit's AP | 2.4 | adds to it |
@@ -1901,7 +1920,7 @@ Every default that a playtest or an owner answer may change. Build each as a nam
 | `BUDGET` | 200 (dev flag in v1; one lobby value, stored per player) | 5.1, 13.4 | lobby setting; per-player budgets (Q93) |
 | `MUST_SPEND_FULL_BUDGET` | false | 5.1 | true (Q85) |
 | `MIN_ARMY_UNITS` | 0 (a commander-only army is allowed, with a warning) | 5.1 | 1 (Q86) |
-| `ARMY_UNIT_CAP` | none (deployability only) | 5.1 | 30, 40 |
+| `ARMY_UNIT_CAP` | **50 at deployment (owner ruling R2)**; commander and created units not counted; deployability still applies | R2, 5.1 | 30, 40 |
 | `VANGUARD_UNITS` | Rogue, Ranger | 5.3 | types 1-2; none |
 | `COMMANDER_REVEAL` | start of deployment | 5.5 | start of battle; never |
 | `ARMY_LISTS_PUBLIC` | false | 5.5 | true (S23) |
@@ -1909,10 +1928,10 @@ Every default that a playtest or an owner answer may change. Build each as a nam
 | `STEALTH_CAPTURES` / `DUMMIES_CAPTURE` | true / true | 6.4 | false |
 | `KEEP_ENABLED` / `MARKET_ENABLED` | true / true | 6.4 | false |
 | `SIMULTANEOUS_COMMANDER_DEATH` | draw | 6.2 | - |
-| `LOJRAR_PROXY_ROSTER` | true | 7.2 | false (once the roster exists) |
-| `COMMANDER_FACTION_LOCK` | true | 7.2 | false |
+| `LOJRAR_PROXY_ROSTER` | **false (owner ruling R4: both rosters exist, 7 units each)** | R4, 7.2 | - |
+| `COMMANDER_FACTION_LOCK` | **false (open question; see the rulings section)** | R4, 7.2 | true, with group A = Empire and group B = Lojrar |
 | `SABRINA_ARTIFICER_COST` / `SABRINA_SURCHARGE` | 10 / x1.2, rounded up | 7.6 | 20 / - |
-| `BABA_WHITE_GRADES` | every grade | 7.7 | [1]; [100]; per the colour table |
+| `BABA_WHITE_GRADES` | **[1] (owner ruling R6: tier 1 is Argent/white in the recommended palette)** | R6, 7.7 | every grade (old default); per the final colour table |
 | `BABA_USES_PER_TURN` / `BABA_CD_SCOPE` | 2 in total / per unit | 7.7 | 2 units x 2 / the whole ability |
 | `KULEGA_ENEMY_DEATHS` / `KULEGA_HEAL_CAP` | true / 4 | 7.5 | false / - |
 | `RATASIUS_WEAKNESS` | -4, range 1, aura, every target, instant damage only | 7.8 | a lingering status |

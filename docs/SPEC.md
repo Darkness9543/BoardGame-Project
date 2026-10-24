@@ -1,4 +1,6 @@
-# Game Spec (verbatim from the project owner, 2026-10-24)
+# Game Spec (from the project owner, 2026-10-24)
+
+> Source of truth: `GameSpec.pdf` in the repository root. The owner's first paste lost the two-column unit table (it was exported from a spreadsheet); this Markdown copy restores that layout from the PDF. All other text is verbatim.
 
 This is the spec for a strategy 1v1 board game. The game is based on a duel between two players, which start with a limited amount of money, and must spend that money to acquire any combination of units that can fit the budget. Moreover, each player can choose a commander, which will give bonuses to units or strategies.
 
@@ -56,70 +58,88 @@ The view can switch from top to isometric. Top by default.
 
 Units here will be described as Name, Power/Toughness, Size, LOV, Movement, AP, Ability:AbilityCost:Description
 
-### The Empire
-### Lojrar Clan
+The PDF lays the units out as a two-column table: the left column is **The Empire**, the right column is **Lojrar Clan**. Each tier (coin value) has exactly one unit per faction.
 
-#### 1
-Footman, 1/2, 1, 1, 1, 1
+| Tier | The Empire | Lojrar Clan |
+|---|---|---|
+| 1 | Footman | Mercenary |
+| 2 | Soldier | Ranger |
+| 5 | Berserker | Rogue |
+| 10 | Priestess | Juliomancer |
+| 20 | Paladin | Artificer |
+| 50 | Royal wizard | Beast of Knorund |
+| 100 | Celestial Emissary | Scourge of the Gods |
+
+### Tier 1
+
+**The Empire — Footman, 1/2, 1, 1, 1, 1**
 Line Formation:P:If there's another 2 adjacent Footmen, reduce the incoming damage by 2 (not below 1).
 
-Mercenary, 2/1, 1, 1, 1, 1
+**Lojrar Clan — Mercenary, 2/1, 1, 1, 1, 1**
 Fierce attacker:P:Deal 1 extra damage for each Mercenary that is adjacent to the attacked unit
 
-#### 2
-Soldier, 2/7, 1, 2, 1, 1
+### Tier 2
+
+**The Empire — Soldier, 2/7, 1, 2, 1, 1**
 Perseverance:P: Regenerate 1 toughness at the end of the turn (Your turn)
 
-Ranger, 3/1, 1, 3, 1, 1
+**Lojrar Clan — Ranger, 3/1, 1, 3, 1, 1**
 Ranged attack:P: This unit's attack has a range of 2.
 
-#### 5
-Berserker, 12/2, 1, 2, 1, 1
+### Tier 5
+
+**The Empire — Berserker, 12/2, 1, 2, 1, 1**
 Savagery:P: After attacking with the berserker, you can spend 2 AP to attack an additional time. Only once per turn.
 
-Rogue, 7/4, 1, 3, 2, 2
+**Lojrar Clan — Rogue, 7/4, 1, 3, 2, 2**
 Stealth:1:Only activate this ability if not inside the LOV of another enemy creature. This unit becomes invisible. It will be revealed when it's 1 square away from an enemy unit, or when receiving damage inside enemy LOV.
 Assault: When an enemy unit comes into the melee range of this unit, if this unit is in stealth, perform an automatic attack without spending AP to the entering unit. (This can also occur in opponents turn)
 
-#### 10
-Priestess, 3/15, 1, 2, 2, 2
+### Tier 10
+
+**The Empire — Priestess, 3/15, 1, 2, 2, 2**
 Strong aura:P: units adjacent to priestess, gain additional 1 power and 1 toughness
 Shared wounds: Sacrifice half of adjacent unit's (or itself) hp. Heal other unit (including itself) hp by that number, but no more than units base hp.
 
-Juliomancer, 3/15, 1, 3, 1, 2
+**Lojrar Clan — Juliomancer, 3/15, 1, 3, 1, 2**
 Mind's Eye:P: This unit reveals invisible units in its LOV
 Julio Vernification:2: Sacrifice an adjacent unit. Deal damage equal to its current toughness to a unit in range 2.
 
-#### 20
-Paladin: 12/20, 1, 2, 3, 2
+### Tier 20
+
+**The Empire — Paladin: 12/20, 1, 2, 3, 2**
 Reinforced Armor:P: Reduce all damage dealt to this unit by 3 (can't be less than 1)
 
-Artificer, 1/15, 1, 3, 2, 1
+**Lojrar Clan — Artificer, 1/15, 1, 3, 2, 1**
 Mind's Eye:P: This unit reveals invisible units in its LOV.
 Prototype No-ACB:2: Create a dummy unit in a free adjacent square. It's a 0/7 unit, it cannot move and has a LOV of 1 and AP 1. A maximum of 3 dummies can be active at the same time. (All artificers; Every two artificers beyond the first one increase this limit by 1)
 Mad inventor: Prototypes NO-ACB can move when adjacent to any allied artificer and gain 1 power. (This effect disappears when the artificer steps out of range).
 Trip Mine B20:2: Deploy an invisible mine in a free adjacent square. It explodes when any unit steps on it. Deals 5 damage + 5 if the unit has a size of 2 or greater. A maximum of 5 mines can be active at the same time (All artificers; Each artificer beyond the first one increases this limit by 1), Mines can be triggered from distance by attacking the square with a ranged attack.
 (NOTE about pathing (dont include this into the description), when pathfinding, ally units will not go though mines automatically. Ask the player if he wants a unit to go to a mined square. The player can deactivate this warning from options)
 
-#### 50
-Royal wizard, 10/20, 1, 3, 1, 3
+### Tier 50
+
+**The Empire — Royal wizard, 10/20, 1, 3, 1, 3**
 Forcefield:2: Choose 4 adjacent squares in wizards LOV. Damage received to friendly units inside the forcefield reduced by 8. CD 1 turn
 Pajazon:3: Create an area of 3x3, with center at range 3, for 2 turns. At the end of your turn, allied units in the area regenerate 3 toughness; At the end of the opponent's turn, enemy units take 3 damage. CD 1 turn
 
-Beast of Knorund, 20/40, 2, 2, 2, 3
+**Lojrar Clan — Beast of Knorund, 20/40, 2, 2, 2, 3**
 Forceful slam:4: Deal 10 damage to an adjacent square, and 3 damage to the 5 opposite adjacent squares of the target. CD 1 turn
 Feast:2: Sacrifice an adjacent unit: Gain life equal to its toughness
 
-#### 100
-Celestial Emissary, 15/50, 1, 4, 2, 4
+### Tier 100
+
+**The Empire — Celestial Emissary, 15/50, 1, 4, 2, 4**
 Holy blessing:3: Heal ally units in a range of 2 by 5
 Smite:3: Deal 8 damage to a unit, at a range of 3.
 Holy Fervor: This unit can take 2 actions per turn. The second action costs 1 extra AP
 
-Scourge of the Gods, 15/33, 1, 3, 2, 3
+**Lojrar Clan — Scourge of the Gods, 15/33, 1, 3, 2, 3**
 Command Aura:P: Units within range 2 of this unit can take an additional action each turn. Doesn't include this unit.
 
 ## Commanders
+
+The PDF lists the commanders as two groups of three, separated by blank lines, without faction headers.
 
 Trill "The Hydrocephalic": All units of type 1, 2, 5 gain 2 toughness. The commander has toughness 10.
 Kulega "The Fine Printer": All units gain 1 LOV. All units of type-20 gain the following ability: When a unit of type 1 or 2 dies adjacent to this unit, regenerate toughness equal to that creature toughness, maximum of 4 per instance.
@@ -128,6 +148,15 @@ Sabrina "The Reelfinisher": Artificers and No-ACBs get 2 additional power. Artif
 Baba Yaga "The Bwitch": Units of white gain the ability to regenerate 2 toughness for 2 AP (each instance). Only up to 2 units can regenerate toughness this way per turn. Can be applied twice to the same unit. CD 1
 Ratasius I "The Great": This commander has LOV of 6. Reveals all invisible enemies in range of 3. Enemies in range of 1 gain weakness and deal 4 less damage
 Queso "The Beacon of hope": This commander's AP is 3, and 3 toughness. Nearby units in range of 2 regenerate 5 health each player turn (not the opponent's turn). When a unit in that area dies you can choose to sacrifice 1 max toughness to revive that unit with half of its base toughness rounded up
+
+## Owner rulings given in chat (2026-10-24)
+
+- AP: base 10 per turn; each round every player gets 1 extra AP, up to a maximum of 20.
+- A cap of 50 units at deployment.
+- Movement is orthogonal.
+- Factions are the two columns above (Empire left, Lojrar Clan right).
+- Swarms may be the strongest in the model, but real players don't use them that effectively; iterate on balance later.
+- A buff for Baba Yaga may be suggested.
 
 ## Delivery notes from the owner
 

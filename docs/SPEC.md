@@ -165,6 +165,7 @@ Queso "The Beacon of hope": This commander's AP is 3, and 3 toughness. Nearby un
 - The UI should be exquisite to use, with as many quality-of-life features (the ones that make sense) of good quality as possible.
 - Sound effects are in scope. Visual effects and animations should have "a grit and viscerality to it, while staying readable and not too exaggerated."
 - "Each player can choose units from both factions without any restriction." (Armies may mix the two factions' units.)
+- "Baba Yaga's units of white refer now to the Clan faction." (White is the Lojrar Clan's colour; her variants apply to every Lojrar unit.)
 
 ## Delivery notes from the owner
 

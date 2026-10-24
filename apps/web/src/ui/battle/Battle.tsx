@@ -14,7 +14,7 @@ import { ArmiesPanel } from '../components/ArmiesPanel'
 import { BoardStage } from '../board/BoardStage'
 import { useMatch } from '../hooks/useMatch'
 import { useNow } from '../hooks/useNow'
-import { ActionBar, ApWidget, EndTurnButton, TakebackButton } from './ActionBar'
+import { ActionBar, ActionCard, ApWidget, EndTurnButton, TakebackButton } from './ActionBar'
 import { hoveredButton, hoverHintOf } from './actionButtons'
 import { boardModel } from './boardModel'
 import { EventLog } from './EventLog'
@@ -131,6 +131,7 @@ function BattleView({ controller, snap }: { readonly controller: MatchController
       <TopBar controller={controller} snap={snap} onMenu={() => setMenuOpen(true)} />
       <div className="battle-body">
         <aside className="battle-left" aria-label="Unit">
+          <ActionCard snap={snap} state={state} />
           <HazardPrompt snap={snap} state={state} />
           <ForecastPanel snap={snap} state={state} forecast={model.forecast} />
           <UnitPanel snap={snap} unitId={panelUnit} inspect={state.t === 'inspect' ? state.target : null} />

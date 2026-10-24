@@ -601,30 +601,34 @@
   border: 1px solid var(--ui-border);
 }
 
+/* The command dock (docs/ui-direction/action-bar.html, option A): a tile per action with icon, name, cost and key;
+   basic actions and abilities in separate groups; disabled tiles say why in place; wraps before it ever scrolls. */
 .action-bar {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 8px 14px;
   flex: 1;
   min-width: 0;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  padding-top: 2px;
-}
-
-.action-bar > * {
-  flex: none;
 }
 
 .action-bar-empty {
+  flex-wrap: nowrap;
   justify-content: space-between;
 }
 
-.action-unit {
+.dock-unit {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  min-width: 0;
+}
+
+.dock-unit-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
 }
 
 .action-unit-name {
@@ -633,46 +637,124 @@
   white-space: nowrap;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 6px;
+.dock-unit-stats {
+  font-family: var(--font-numbers);
+  font-weight: 700;
+  font-size: 0.82rem;
+  opacity: 0.72;
+  white-space: nowrap;
 }
 
-.action-btn {
+.dock-groups {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 8px;
+  min-width: 0;
+}
+
+.dock-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dock-sep {
+  width: 1px;
+  align-self: stretch;
+  margin: 4px 4px;
+  background: var(--ui-border-strong);
+}
+
+.dock-tile {
   position: relative;
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 5px;
-  padding: 6px 9px;
+  justify-content: center;
+  gap: 3px;
+  width: 98px;
+  min-height: 84px;
+  padding: 22px 6px 7px;
   font: inherit;
-  font-size: 0.86rem;
-  font-weight: 600;
   color: var(--ui-ink);
   background: var(--ui-panel-high);
   border: 1px solid var(--ui-border-strong);
   border-radius: var(--radius-small);
   cursor: pointer;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
 }
 
-.action-btn:hover {
+.dock-tile:hover,
+.dock-tile:focus-visible {
   border-color: var(--ui-accent);
+  transform: translateY(-1px);
 }
 
-.action-on {
+.dock-ability {
+  width: 124px;
+  border-style: dashed;
+}
+
+.dock-label {
+  font-weight: 700;
+  font-size: 0.86rem;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.dock-key {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+}
+
+.dock-cost {
+  position: absolute;
+  top: 5px;
+  right: 6px;
+  font-family: var(--font-numbers);
+  font-weight: 800;
+  font-size: 0.78rem;
+  color: var(--ui-accent);
+}
+
+.dock-why {
+  display: -webkit-box;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: 0.68rem;
+  line-height: 1.15;
+  text-align: center;
+  overflow-wrap: anywhere;
+  opacity: 0.75;
+}
+
+.dock-on {
   border-color: var(--ui-accent);
   background: #4a3a1c;
-  box-shadow: inset 0 -2px 0 var(--ui-accent);
+  box-shadow:
+    0 0 0 1px var(--ui-accent),
+    0 4px 14px rgba(212, 169, 58, 0.25);
 }
 
-.action-next {
+.dock-next {
   animation: glow 1.6s ease-in-out infinite;
   border-color: var(--ui-accent);
 }
 
-.action-off {
-  opacity: 0.5;
+.dock-off {
+  opacity: 0.55;
   cursor: help;
+}
+
+.dock-off:hover {
+  transform: none;
 }
 
 .action-cost {
@@ -682,6 +764,33 @@
 }
 
 .surcharge {
+  color: var(--ui-warn);
+}
+
+/* The side panel's action card: what the hovered or armed action does, so the dock never needs tooltips. */
+.action-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--ui-accent);
+  border-radius: var(--radius-small);
+  background: #221a0f;
+}
+
+.action-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-card-name {
+  flex: 1;
+  min-width: 0;
+  font-weight: 700;
+}
+
+.action-card-why {
   color: var(--ui-warn);
 }
 

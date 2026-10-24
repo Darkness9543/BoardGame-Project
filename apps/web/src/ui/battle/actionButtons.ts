@@ -5,6 +5,7 @@ import { abilityData, hasAbilityData, type PlayerView, type UnitId, type UnitVie
 import { abilityFollowUps, type ActionRef } from '../../store/command'
 import { actionsFor, marchOption, ownUnit } from '../../store/rules'
 import type { HoveredAction } from '../../store/uiState'
+import { abilityStatus } from './describe'
 
 export interface ActionButton {
   readonly action: ActionRef
@@ -19,6 +20,26 @@ export interface ActionButton {
   readonly reason: string | null
   /** Usable after the unit's action (Savagery, Mend): the "Next" glow (UX 10.4). */
   readonly followUp: boolean
+  /** Basic actions fill the dock's first group, abilities the second (docs/ui-direction/action-bar.html, option A). */
+  readonly group: 'basic' | 'ability'
+  /** What the action does, with this unit's numbers, for the action card in the side panel (never a tooltip). */
+  readonly description: string
+  /** Ability readiness ("Ready", "On cooldown: ...", "Used 1/1 this turn"); null for basic actions. */
+  readonly status: string | null
+}
+
+function basicDescription(kind: 'move' | 'attack' | 'defend' | 'charge', unit: UnitView, base: number): string {
+  const plural = (n: number) => `${n} square${n === 1 ? '' : 's'}`
+  switch (kind) {
+    case 'move':
+      return `Up to ${plural(unit.movement)} in orthogonal steps, through your own units but never through enemies.`
+    case 'attack':
+      return `${unit.power} Power against a unit within range ${unit.attackRange}. Defend halves it; armour and wards reduce it.`
+    case 'defend':
+      return 'Halve all damage taken (rounded up, never below 1) until your next turn starts. Acting again cancels it.'
+    case 'charge':
+      return `Move up to ${plural(Math.max(0, unit.movement - 1))} and attack from where you stop, as one action for ${base} AP +1. Needs Movement 2.`
+  }
 }
 
 const BASIC: readonly { readonly kind: 'move' | 'attack' | 'defend' | 'charge'; readonly label: string; readonly key: string; readonly icon: string }[] = [
@@ -36,10 +57,36 @@ export function actionButtons(view: PlayerView, unit: UnitView): ActionButton[] 
   for (const b of BASIC) {
     const o = options.find((x) => x.kind === b.kind)
     if (o === undefined) continue
-    out.push({ action: { kind: b.kind }, label: b.label, key: b.key, icon: b.icon, cost: o.cost, surcharge: Math.max(0, o.cost - base), enabled: o.enabled, reason: o.reason, followUp: false })
+    out.push({
+      action: { kind: b.kind },
+      label: b.label,
+      key: b.key,
+      icon: b.icon,
+      cost: o.cost,
+      surcharge: Math.max(0, o.cost - base),
+      enabled: o.enabled,
+      reason: o.reason,
+      followUp: false,
+      group: 'basic',
+      description: basicDescription(b.kind, unit, base),
+      status: null,
+    })
   }
   const march = marchOption(view, unit)
-  out.push({ action: { kind: 'march' }, label: 'March', key: 'G', icon: 'knight-banner', cost: march.cost, surcharge: 0, enabled: march.enabled, reason: march.reason, followUp: false })
+  out.push({
+    action: { kind: 'march' },
+    label: 'March',
+    key: 'G',
+    icon: 'knight-banner',
+    cost: march.cost,
+    surcharge: 0,
+    enabled: march.enabled,
+    reason: march.reason,
+    followUp: false,
+    group: 'basic',
+    description: 'Up to 6 of your connected units that have not acted each step 1 square in the same direction, for 2 AP. Each uses its action and its move.',
+    status: null,
+  })
   let n = 1
   for (const o of options) {
     if (o.kind !== 'ability' || o.abilityId === null) continue
@@ -55,6 +102,9 @@ export function actionButtons(view: PlayerView, unit: UnitView): ActionButton[] 
       enabled: o.enabled,
       reason: o.reason,
       followUp: followUps.includes(id),
+      group: 'ability',
+      description: hasAbilityData(id) ? abilityData(id).text : '',
+      status: abilityStatus(view, unit, id),
     })
   }
   return out

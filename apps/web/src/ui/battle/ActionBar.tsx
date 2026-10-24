@@ -14,7 +14,7 @@ import { useUiState } from '../../store/uiState'
 import { Coin } from '../components/Coin'
 import { Kbd } from '../components/common'
 import { Icon } from '../components/Icon'
-import { actionButtons, costParts, hoveredButton, sameAction } from './actionButtons'
+import { actionButtons, costParts, hoveredButton, sameAction, type ActionButton } from './actionButtons'
 
 /** The AP of the action being aimed or confirmed, so the pool shows what it would leave (S-11). */
 function pendingCost(view: PlayerView, state: CommandState): number | null {
@@ -178,43 +178,89 @@ export function ActionBar({ snap, state, gate }: { readonly snap: MatchSnapshot;
     )
   }
   const buttons = actionButtons(view, unit)
+  const basic = buttons.filter((b) => b.group === 'basic')
+  const abilities = buttons.filter((b) => b.group === 'ability')
+  const own = unit.own
+  const actionsLeft = own === null ? 0 : Math.max(0, own.actionAllowance - own.turn.actionsUsed)
+  // The command dock (docs/ui-direction/action-bar.html, option A): a tile per action with its icon, name, cost and
+  // key; a disabled tile stays in place and says why; the armed action is framed; the side panel's ActionCard shows
+  // the full text of whatever is hovered or armed, so nothing here needs a tooltip.
+  const tile = (b: ActionButton) => {
+    const note = !b.enabled && b.reason !== null ? b.reason : b.status !== null && b.status !== 'Ready' ? b.status : null
+    return (
+      <button
+        key={b.action.kind === 'ability' ? b.action.abilityId : b.action.kind}
+        type="button"
+        data-action-button
+        className={`dock-tile${sameAction(current, b.action) ? ' dock-on' : ''}${b.followUp ? ' dock-next' : ''}${b.enabled ? '' : ' dock-off'}${b.group === 'ability' ? ' dock-ability' : ''}`}
+        aria-disabled={!b.enabled}
+        aria-label={`${b.label}, ${b.cost} AP, key ${b.key}${b.enabled ? '' : `, ${b.reason ?? 'not available'}`}`}
+        onClick={(e) => {
+          e.currentTarget.blur() // Enter and Space then confirm the preview instead of clicking this again
+          send({ t: 'action', action: b.action })
+        }}
+        onPointerEnter={() => setHoveredAction({ unitId: unit.id, action: b.action })}
+        onPointerLeave={() => setHoveredAction(null)}
+        onFocus={() => setHoveredAction({ unitId: unit.id, action: b.action })}
+        onBlur={() => setHoveredAction(null)}
+      >
+        <span className="dock-key">
+          <Kbd>{b.key}</Kbd>
+        </span>
+        <span className="dock-cost">
+          {costParts(b).base} AP{b.surcharge > 0 && <span className="surcharge"> +{b.surcharge}</span>}
+        </span>
+        <Icon name={b.icon} size={26} />
+        <span className="dock-label">{b.label}</span>
+        {note !== null && <span className="dock-why">{note}</span>}
+      </button>
+    )
+  }
   return (
     <div className="action-bar">
-      <div className="action-unit">
-        <Coin look={{ type: unit.type, tier: unit.tier, mine: true, commander: view.commanders[view.seat], clarity, power: unit.power, toughness: unit.toughness, maxToughness: unit.maxToughness }} size={40} />
-        <span className="action-unit-name">{unitLabel(snap.registry, view, unit.id)}</span>
+      <div className="dock-unit">
+        <Coin look={{ type: unit.type, tier: unit.tier, mine: true, commander: view.commanders[view.seat], clarity, power: unit.power, toughness: unit.toughness, maxToughness: unit.maxToughness }} size={44} />
+        <div className="dock-unit-text">
+          <span className="action-unit-name">{unitLabel(snap.registry, view, unit.id)}</span>
+          <span className="dock-unit-stats">
+            {unit.power} power · {unit.toughness}/{unit.maxToughness} toughness · {actionsLeft} of {own?.actionAllowance ?? 0} actions left
+          </span>
+        </div>
       </div>
-      <div className="actions" role="toolbar" aria-label="Actions">
-        {buttons.map((b) => (
-          <button
-            key={b.action.kind === 'ability' ? b.action.abilityId : b.action.kind}
-            type="button"
-            data-action-button
-            className={`action-btn${sameAction(current, b.action) ? ' action-on' : ''}${b.followUp ? ' action-next' : ''}${b.enabled ? '' : ' action-off'}`}
-            aria-disabled={!b.enabled}
-            title={b.enabled ? `${b.label} · ${b.cost} AP (${b.key})` : (b.reason ?? 'Not available')}
-            onClick={(e) => {
-              e.currentTarget.blur() // Enter and Space then confirm the preview instead of clicking this again
-              send({ t: 'action', action: b.action })
-            }}
-            onPointerEnter={() => setHoveredAction({ unitId: unit.id, action: b.action })}
-            onPointerLeave={() => setHoveredAction(null)}
-            onFocus={() => setHoveredAction({ unitId: unit.id, action: b.action })}
-            onBlur={() => setHoveredAction(null)}
-          >
-            <Icon name={b.icon} size={18} />
-            <span className="action-label">{b.label}</span>
-            <span className="action-cost">
-              {costParts(b).base} AP{b.surcharge > 0 && <span className="surcharge"> +{b.surcharge}</span>}
-            </span>
-            <Kbd>{b.key}</Kbd>
-            {!b.enabled && b.reason !== null && <span className="sr-only">: {b.reason}</span>}
-          </button>
-        ))}
+      <div className="dock-groups" role="toolbar" aria-label="Actions">
+        <div className="dock-group">{basic.map(tile)}</div>
+        {abilities.length > 0 && <div className="dock-sep" aria-hidden="true" />}
+        {abilities.length > 0 && <div className="dock-group">{abilities.map(tile)}</div>}
       </div>
       <button type="button" className="btn btn-small" onClick={() => send({ t: 'cycleUnit', delta: 1 })} title="Next unit that can still act (Tab)">
         Next <Kbd>Tab</Kbd> <span className="tag">{ready.length}</span>
       </button>
     </div>
+  )
+}
+
+/** The side panel's card for the action hovered on the dock or armed on the board: name, cost, status and what it does. */
+export function ActionCard({ snap, state }: { readonly snap: MatchSnapshot; readonly state: CommandState }) {
+  const hovered = useUiState((s) => s.hoveredAction)
+  const view = snap.view
+  const unit = ownUnit(view, commandUnitId(state))
+  if (unit === undefined) return null
+  const armed = activeAction(state)
+  const button = hoveredButton(view, unit.id, hovered) ?? (armed === null ? null : (actionButtons(view, unit).find((b) => sameAction(armed, b.action)) ?? null))
+  if (button === null) return null
+  return (
+    <section className="action-card" aria-live="polite" aria-label={`${button.label} action`}>
+      <header className="action-card-head">
+        <Icon name={button.icon} size={22} />
+        <span className="action-card-name">{button.label}</span>
+        <span className="action-cost">
+          {costParts(button).base} AP{button.surcharge > 0 && <span className="surcharge"> +{button.surcharge}</span>}
+        </span>
+        <Kbd>{button.key}</Kbd>
+      </header>
+      <p className="small">{button.description}</p>
+      {!button.enabled && button.reason !== null && <p className="small action-card-why">Not available: {button.reason}</p>}
+      {button.enabled && button.status !== null && <p className="small muted">{button.status}</p>}
+    </section>
   )
 }

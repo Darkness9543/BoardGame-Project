@@ -37,6 +37,10 @@ export interface Settings {
   readonly animationSpeed: AnimationSpeed
   readonly endTurnConfirm: EndTurnConfirm
   readonly autoSelectNext: boolean
+  /** Clicking an enemy out of reach but within a Charge arms the Charge instead of needing the Charge button. */
+  readonly autoCharge: boolean
+  /** Clicking an own unit that could march with the selected one starts a Group march with both. */
+  readonly autoMarch: boolean
   readonly highlightReady: boolean
   readonly coordinates: boolean
   /** Tab title is always updated; this adds a system notification while the tab is hidden. */
@@ -59,6 +63,8 @@ export const DEFAULT_SETTINGS_UI: Settings = {
   animationSpeed: 'normal',
   endTurnConfirm: 'whenCanAct',
   autoSelectNext: false,
+  autoCharge: true,
+  autoMarch: true,
   highlightReady: true,
   coordinates: true,
   notifyTurn: false,
@@ -85,6 +91,8 @@ export function parseSettings(raw: unknown): Settings {
     animationSpeed: oneOf(raw['animationSpeed'], ['normal', 'fast', 'instant'], d.animationSpeed),
     endTurnConfirm: oneOf(raw['endTurnConfirm'], ['whenCanAct', 'always', 'never'], d.endTurnConfirm),
     autoSelectNext: boolOr(raw['autoSelectNext'], d.autoSelectNext),
+    autoCharge: boolOr(raw['autoCharge'], d.autoCharge),
+    autoMarch: boolOr(raw['autoMarch'], d.autoMarch),
     highlightReady: boolOr(raw['highlightReady'], d.highlightReady),
     coordinates: boolOr(raw['coordinates'], d.coordinates),
     notifyTurn: boolOr(raw['notifyTurn'], d.notifyTurn),

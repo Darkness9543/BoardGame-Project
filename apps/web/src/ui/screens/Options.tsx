@@ -83,6 +83,12 @@ export function Options() {
             onChange={(takebackAnswer) => update({ takebackAnswer })}
           />
         </Row>
+        <Row label="Charge by clicking the target" hint="With a unit selected, clicking an enemy it cannot hit but can reach with a Charge arms the Charge; the preview and confirm still follow.">
+          <Toggle label={settings.autoCharge ? 'On' : 'Off'} checked={settings.autoCharge} onChange={(autoCharge) => update({ autoCharge })} />
+        </Row>
+        <Row label="March by clicking a neighbour" hint="With a unit selected, clicking one of your units that could march with it starts a Group march with both. Click that unit again to select it instead.">
+          <Toggle label={settings.autoMarch ? 'On' : 'Off'} checked={settings.autoMarch} onChange={(autoMarch) => update({ autoMarch })} />
+        </Row>
         <Row label="After a unit is done, select the next one">
           <Toggle label={settings.autoSelectNext ? 'On' : 'Off'} checked={settings.autoSelectNext} onChange={(autoSelectNext) => update({ autoSelectNext })} />
         </Row>

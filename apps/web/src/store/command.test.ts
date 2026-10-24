@@ -16,7 +16,7 @@ const sq = parseSquare
 
 function ctxFor(state: GameState, seat: Seat, prefs: Partial<CommandPrefs> = {}, now = 1000): CommandContext {
   const view = projectView(state, seat)
-  return { view, prefs: { confirmMode: 'always', mineWarning: true, autoSelectNext: false, ...prefs }, gate: commandGate(view, true), now }
+  return { view, prefs: { confirmMode: 'always', mineWarning: true, autoSelectNext: false, autoCharge: false, autoMarch: false, ...prefs }, gate: commandGate(view, true), now }
 }
 
 function run(state: CommandState, ctx: CommandContext, ...events: CommandEvent[]): CommandResult {
@@ -341,5 +341,50 @@ describe('clicking a token while a square pick is locked (S-12.3)', () => {
     expect(again.effects).toEqual([{ t: 'send', intent: { kind: 'useAbility', unitId: b.id('B'), abilityId: 'beast.forcefulSlam', targets: [{ kind: 'square', square: sq('M12') }] } }])
     const other = run(locked.state, { ...later(ctx), hover: sq('L11') }, { t: 'clickUnit', unitId: b.id('T'), button: 'primary' })
     expect(other.state.t === 'confirming' && other.state.intent.kind === 'useAbility' && other.state.intent.targets).toEqual([{ kind: 'square', square: sq('L11') }])
+  })
+})
+
+describe('auto-charge and auto-march (owner options)', () => {
+  function pair() {
+    return buildBattle({
+      south: ['rogue@E5:R', 'footman@F5:F', 'footman@G5:F2'],
+      north: ['footman@E7:N'],
+    })
+  }
+
+  it('clicking an enemy out of reach but within a charge arms the charge (autoCharge on)', () => {
+    const b = pair()
+    const ctx = ctxFor(b.state, b.seat('south'), { autoCharge: true })
+    const r = run(IDLE, ctx, { t: 'clickUnit', unitId: b.id('R'), button: 'primary' }, { t: 'clickUnit', unitId: b.id('N'), button: 'primary' })
+    expect(r.state.t).toBe('confirming')
+    if (r.state.t !== 'confirming') return
+    expect(r.state.action.kind).toBe('charge')
+    expect(r.state.intent.kind).toBe('charge')
+  })
+
+  it('without the option the same click leaves the unit selected and reports it out of reach', () => {
+    const b = pair()
+    const ctx = ctxFor(b.state, b.seat('south'), { autoCharge: false })
+    const r = run(IDLE, ctx, { t: 'clickUnit', unitId: b.id('R'), button: 'primary' }, { t: 'clickUnit', unitId: b.id('N'), button: 'primary' })
+    expect(r.state).toEqual({ t: 'selected', unitId: b.id('R'), trail: [] })
+  })
+
+  it('clicking a neighbour that could march starts a two-unit march; clicking it again selects it (autoMarch on)', () => {
+    const b = pair()
+    const ctx = ctxFor(b.state, b.seat('south'), { autoMarch: true })
+    const first = run(IDLE, ctx, { t: 'clickUnit', unitId: b.id('F'), button: 'primary' }, { t: 'clickUnit', unitId: b.id('F2'), button: 'primary' })
+    expect(first.state.t).toBe('targeting')
+    if (first.state.t !== 'targeting') return
+    expect(first.state.action.kind).toBe('march')
+    expect(first.state.group).toEqual([b.id('F'), b.id('F2')])
+    const again = run(first.state, ctx, { t: 'clickUnit', unitId: b.id('F2'), button: 'primary' })
+    expect(again.state).toEqual({ t: 'selected', unitId: b.id('F2'), trail: [] })
+  })
+
+  it('without the option a click on a neighbour selects it', () => {
+    const b = pair()
+    const ctx = ctxFor(b.state, b.seat('south'), { autoMarch: false })
+    const r = run(IDLE, ctx, { t: 'clickUnit', unitId: b.id('F'), button: 'primary' }, { t: 'clickUnit', unitId: b.id('F2'), button: 'primary' })
+    expect(r.state).toEqual({ t: 'selected', unitId: b.id('F2'), trail: [] })
   })
 })

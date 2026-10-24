@@ -9,7 +9,7 @@ const sq = parseSquare
 
 function ctxFor(state: GameState, seat: Seat, now = 1000): CommandContext {
   const view = projectView(state, seat)
-  return { view, prefs: { confirmMode: 'always', mineWarning: true, autoSelectNext: false }, gate: commandGate(view, true), now }
+  return { view, prefs: { confirmMode: 'always', mineWarning: true, autoSelectNext: false, autoCharge: false, autoMarch: false }, gate: commandGate(view, true), now }
 }
 
 function run(ctx: CommandContext, events: readonly CommandEvent[]): CommandResult {
@@ -125,7 +125,7 @@ describe('targeting checks before anything is sent', () => {
 
   it('Smite on an own unit (R14) is offered but always asks first', () => {
     const b = buildBattle({ south: ['emissary@M10:E', 'soldier@M12:S'], north: ['paladin@M13:P'] })
-    const ctx = { ...ctxFor(b.state, b.south), prefs: { confirmMode: 'never' as const, mineWarning: true, autoSelectNext: false } }
+    const ctx = { ...ctxFor(b.state, b.south), prefs: { confirmMode: 'never' as const, mineWarning: true, autoSelectNext: false, autoCharge: false, autoMarch: false } }
     const r = run(ctx, [
       { t: 'clickUnit', unitId: b.id('E'), button: 'primary' },
       { t: 'action', action: { kind: 'ability', abilityId: 'emissary.smite' } },

@@ -75,6 +75,8 @@ export interface Working {
   readonly trail: readonly Square[]
   /** Group march members (R27), the selected unit first. */
   readonly group: readonly UnitId[]
+  /** Started by a plain click under the auto-march option: clicking the added unit again selects it instead. */
+  readonly auto?: boolean
 }
 
 export interface Locked extends Working {
@@ -124,6 +126,10 @@ export interface CommandPrefs {
   readonly confirmMode: ConfirmMode
   readonly mineWarning: boolean
   readonly autoSelectNext: boolean
+  /** Clicking an enemy the selected unit cannot hit but can reach with a Charge arms the Charge (owner request). */
+  readonly autoCharge: boolean
+  /** Clicking an own unit that could march with the selected one starts a Group march (owner request). */
+  readonly autoMarch: boolean
 }
 
 /** canCommand (23.1): my turn, connected, no take-back or reaction pending, game not over. */
@@ -179,7 +185,7 @@ function fresh(unitId: UnitId, action: ActionRef, patch: Partial<Working> = {}):
 }
 
 function fields(state: Working): Working {
-  return { unitId: state.unitId, action: state.action, picks: state.picks, partial: state.partial, trail: state.trail, group: state.group }
+  return { unitId: state.unitId, action: state.action, picks: state.picks, partial: state.partial, trail: state.trail, group: state.group, ...(state.auto === true ? { auto: true } : {}) }
 }
 
 function selectedUnitId(state: CommandState): UnitId | null {
@@ -565,11 +571,25 @@ function onClickUnit(state: CommandState, unitId: UnitId, ctx: CommandContext): 
     case 'inspect':
       return done(mine ? selected(unitId) : { t: 'inspect', target: { kind: 'unit', unitId } })
     case 'selected': {
-      if (mine) return done(unitId === state.unitId ? state : selected(unitId))
+      if (mine) {
+        if (unitId === state.unitId) return done(state)
+        // Auto-march (owner request): a click on a unit that could march with the selected one starts the group.
+        if (ctx.prefs.autoMarch && ctx.gate.open && marchPairPossible(view, state.unitId, unitId)) {
+          return done(
+            { t: 'targeting', ...fresh(state.unitId, { kind: 'march' }, { group: [state.unitId, unitId], auto: true }) },
+            hint('Group march: click more units or pick a direction · click that unit again to select it instead · Esc to go back'),
+          )
+        }
+        return done(selected(unitId))
+      }
       if (!ctx.gate.open) return done({ t: 'inspect', target: { kind: 'unit', unitId } })
       const target: AbilityTarget = { kind: 'unit', unitId }
       if (actionOption(view, state.unitId, 'attack')?.enabled === true && attackCandidates(view, state.unitId).some((t) => sameTarget(t, target))) {
         return commit(fresh(state.unitId, { kind: 'attack' }, { picks: [target] }), ctx, state)
+      }
+      // Auto-charge (owner request): out of reach for a basic attack, but a Charge gets there.
+      if (ctx.prefs.autoCharge && actionOption(view, state.unitId, 'charge')?.enabled === true && chargeOptions(view, state.unitId).some((o) => o.target.kind === 'unit' && o.target.unitId === unitId)) {
+        return chargeAtUnit({ t: 'targeting', ...fresh(state.unitId, { kind: 'charge' }, { trail: state.trail }) }, clicked, ctx)
       }
       return done(state, hint(outOfReachText(view, state.unitId, clicked)))
     }
@@ -648,10 +668,20 @@ function groupConnected(view: PlayerView, group: readonly UnitId[]): boolean {
   return reached.size === units.length
 }
 
+/** Both units could march together right now: each may march and they touch (auto-march, CommandPrefs.autoMarch). */
+function marchPairPossible(view: PlayerView, a: UnitId, b: UnitId): boolean {
+  const ua = ownUnit(view, a)
+  const ub = ownUnit(view, b)
+  if (ua === undefined || ub === undefined) return false
+  return marchOption(view, ua).enabled && marchOption(view, ub).enabled && groupConnected(view, [a, b])
+}
+
 function toggleMarcher(state: Targeting, clicked: UnitView, ctx: CommandContext): CommandResult {
   const { view } = ctx
   if (clicked.owner !== view.seat) return done(state, hint('Only your own units can march'))
   if (state.group.includes(clicked.id)) {
+    // An auto-started pair: the second click on the added unit means "select it", not "remove it".
+    if (state.auto === true && state.group.length === 2 && state.group[1] === clicked.id) return done(selected(clicked.id))
     const group = state.group.filter((id) => id !== clicked.id)
     const first = group[0]
     return done(first === undefined ? selected(state.unitId) : { ...state, group, unitId: first })

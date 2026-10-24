@@ -34,7 +34,7 @@ export function contextFor(controller: MatchController, hover: Square | null = n
   const connected = snap.connection === 'connected' || snap.connection === 'unstable'
   return {
     view: snap.view,
-    prefs: { confirmMode: settings.confirmMode, mineWarning: settings.mineWarning, autoSelectNext: settings.autoSelectNext },
+    prefs: { confirmMode: settings.confirmMode, mineWarning: settings.mineWarning, autoSelectNext: settings.autoSelectNext, autoCharge: settings.autoCharge, autoMarch: settings.autoMarch },
     gate: commandGate(snap.view, connected),
     now,
     ghostAt: (square) => (settings.lastSeenMarkers ? (ghostAt(snap.ghosts, square)?.unitId ?? null) : null),

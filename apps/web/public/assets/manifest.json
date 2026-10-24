@@ -656,6 +656,46 @@
   "intendedUse": "status overlay glyph: Forcefield (research-art.md 6.4; not in icons.json) [cleaned: background removed, fill=currentColor]"
  },
  {
+  "path": "assets/icons/clean/fleur-de-lys.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/fleur-de-lys.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "faction emblem: Empire E2 contender (research-art.md 8; not in icons.json) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/raven.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/raven.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "faction emblem: Lojrar L3 contender (research-art.md 8; not in icons.json) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/heavy-thorny-triskelion.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/heavy-thorny-triskelion.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "faction emblem: Lojrar L3 contender, alternative to raven (research-art.md 8; not in icons.json) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/knot.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/knot.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "faction motif: Lojrar L1 knot band (research-art.md 8; not in icons.json) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/rune-stone.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/rune-stone.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "faction motif: Lojrar L1 rune stone (research-art.md 8; not in icons.json) [cleaned: background removed, fill=currentColor]"
+ },
+ {
   "path": "assets/icons/game-icons/lorc/spears.svg",
   "source": "game-icons.net",
   "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/spears.svg",
@@ -1310,6 +1350,46 @@
   "license": "CC-BY-3.0",
   "author": "Lorc",
   "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/energy-shield.svg; use: status overlay glyph: Forcefield (research-art.md 6.4; not in icons.json)"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/fleur-de-lys.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/fleur-de-lys.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/fleur-de-lys.svg; use: faction emblem: Empire E2 contender (research-art.md 8; not in icons.json)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/raven.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/raven.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/raven.svg; use: faction emblem: Lojrar L3 contender (research-art.md 8; not in icons.json)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/heavy-thorny-triskelion.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/heavy-thorny-triskelion.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/heavy-thorny-triskelion.svg; use: faction emblem: Lojrar L3 contender, alternative to raven (research-art.md 8; not in icons.json)"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/knot.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/knot.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/knot.svg; use: faction motif: Lojrar L1 knot band (research-art.md 8; not in icons.json)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/rune-stone.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/rune-stone.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/rune-stone.svg; use: faction motif: Lojrar L1 rune stone (research-art.md 8; not in icons.json)"
  },
  {
   "path": "assets/models/kaykit-medieval-hexagon/building_castle_blue.gltf",

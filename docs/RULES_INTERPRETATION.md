@@ -34,10 +34,15 @@ The owner answered the first batch of questions in chat. The original spec is a 
 | R5 | **Balance stance** | The swarm dominance found by the model is noted; the owner expects human players not to use swarms that effectively and wants to iterate after playtests. R2 answers S03. | S03 |
 | R6 | **Baba Yaga** | The owner asked for a buff proposal. See S14 (three options) in section 12. Until ruled, implement the spec text with "units of white" = **tier-1 units** (with the recommended grade palette, tier 1 is Argent/white). Constant: `BABA_WHITE_GRADES = [1]`. | C9, Q53, A7-12, `BABA_WHITE_GRADES` |
 
+| R7 | **Commanders and factions** | **Commanders are not tied to a faction** (on first instance; may change later). Any of the six may lead either faction. Constant: `COMMANDER_FACTION_LOCK = false`. The data keeps the PDF's two groups only as presentation order (group A: Trill, Kulega, Sabrina; group B: Baba Yaga, Ratasius I, Queso). | Q4, A7-06, `COMMANDER_FACTION_LOCK` |
+| R8 | **Commander base stats** | The owner adopted S16 and S21: **base commander toughness 5** (Power stays 1) and **commander Movement 2**. AP stays 1, LOV 3. Per-commander overrides: **Trill 10** (spec), **Queso 6** (S16's figure, read as the spec's +2 over the old base of 1 becoming +1 over the new base; see the open note below), the others 5. Constants: `COMMANDER_BASE_TOUGHNESS = 5`, `COMMANDER_MOVEMENT = 2`, `TRILL_COMMANDER_TOUGHNESS = 10`, `QUESO_COMMANDER_TOUGHNESS = 6`. The last-row win is unchanged. | 7.1, 7.3, 7.9, A7-02, S16, S21, Q51 |
+| R9 | **First-turn AP** | **Same curve for both players** (10, 11, 12, ... 20). No first-turn reduction. Q95 closed. | R1, Q17 |
+| R10 | **Unit cap and created units** | **Created units (No-ACB dummies, revived units) do not count** toward the 50 cap; it is a deployment-time count. Q96 closed. | R2 |
+
 **Still open after these rulings (defaults until answered):**
 
-- **Commander–faction lock (Q4).** The PDF lists the commanders as two groups of three with no faction headers, and Sabrina's text refers to Artificers, a Lojrar unit. Default now: `COMMANDER_FACTION_LOCK = false` (any commander may lead either faction); the data keeps the two groups as a hint (group A: Trill, Kulega, Sabrina; group B: Baba Yaga, Ratasius I, Queso).
-- **Does the 50-unit cap count created units?** Default: no (deployment count only), per the owner's wording "at deployment".
+- **Queso's toughness under the new base.** The spec gives Queso "3 toughness" when the base was 1. With base 5 the owner-adopted S16 figure is 6. If the owner prefers the literal 3 (a weaker commander than the base) or 7 (keeping the +2), it is one constant.
+- **Baba Yaga buff (S14a/b/c).** Not yet chosen; the spec text is implemented with white = tier 1 until then.
 - Everything else in section 11 stands as asked.
 
 ## At a glance: the decisions that shape the engine
@@ -1929,7 +1934,9 @@ Every default that a playtest or an owner answer may change. Build each as a nam
 | `KEEP_ENABLED` / `MARKET_ENABLED` | true / true | 6.4 | false |
 | `SIMULTANEOUS_COMMANDER_DEATH` | draw | 6.2 | - |
 | `LOJRAR_PROXY_ROSTER` | **false (owner ruling R4: both rosters exist, 7 units each)** | R4, 7.2 | - |
-| `COMMANDER_FACTION_LOCK` | **false (open question; see the rulings section)** | R4, 7.2 | true, with group A = Empire and group B = Lojrar |
+| `COMMANDER_FACTION_LOCK` | **false (owner ruling R7)** | R7, 7.2 | true, with group A = Empire and group B = Lojrar |
+| `COMMANDER_BASE_TOUGHNESS` / `COMMANDER_MOVEMENT` | **5 / 2 (owner ruling R8; S16 and S21 adopted)**; Power 1, AP 1, LOV 3 unchanged | R8, 7.1 | 1 / 1 (the spec's literal values) |
+| `TRILL_COMMANDER_TOUGHNESS` / `QUESO_COMMANDER_TOUGHNESS` | **10 / 6 (R8)** | R8, 7.3, 7.9 | Queso 3 (literal) or 7 (+2 over base) |
 | `SABRINA_ARTIFICER_COST` / `SABRINA_SURCHARGE` | 10 / x1.2, rounded up | 7.6 | 20 / - |
 | `BABA_WHITE_GRADES` | **[1] (owner ruling R6: tier 1 is Argent/white in the recommended palette)** | R6, 7.7 | every grade (old default); per the final colour table |
 | `BABA_USES_PER_TURN` / `BABA_CD_SCOPE` | 2 in total / per unit | 7.7 | 2 units x 2 / the whole ability |

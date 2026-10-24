@@ -157,6 +157,10 @@ Queso "The Beacon of hope": This commander's AP is 3, and 3 toughness. Nearby un
 - Factions are the two columns above (Empire left, Lojrar Clan right).
 - Swarms may be the strongest in the model, but real players don't use them that effectively; iterate on balance later.
 - A buff for Baba Yaga may be suggested.
+- Commanders are not tied to a faction (on first instance).
+- Commander base toughness 5 and movement 2 (the proposed values were accepted).
+- The AP curve is the same for both players; no first-turn reduction.
+- The 50-unit cap does not count units created during play.
 
 ## Delivery notes from the owner
 

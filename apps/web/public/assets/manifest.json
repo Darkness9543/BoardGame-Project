@@ -1,0 +1,2034 @@
+[
+ {
+  "path": "assets/icons/clean/spears.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/spears.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Footman (grade 1) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/round-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/willdabeast/round-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Willdabeast",
+  "intendedUse": "unit symbol: Footman (grade 1) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/spartan-helmet.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/spartan-helmet.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Footman (grade 1) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/crossed-swords.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/crossed-swords.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Mercenary (grade 1) - primary (recommended default); also the contested-objective glyph [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/daggers.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/daggers.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Mercenary (grade 1) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/take-my-money.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/take-my-money.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Mercenary (grade 1) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/visored-helm.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/visored-helm.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Soldier (grade 2) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/centurion-helmet.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/centurion-helmet.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Soldier (grade 2) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/heavy-helm.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/heavy-helm.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Soldier (grade 2) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/bowman.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/bowman.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Ranger (grade 2) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/bow-arrow.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/bow-arrow.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Ranger (grade 2) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/robin-hood-hat.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/robin-hood-hat.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Ranger (grade 2) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/battle-axe.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/battle-axe.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Berserker (grade 5) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/viking-head.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/viking-head.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Berserker (grade 5) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/enrage.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/enrage.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Berserker (grade 5) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/hood.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/hood.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Rogue (grade 5) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/cloak-dagger.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/cloak-dagger.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Rogue (grade 5) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/hooded-assassin.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/darkzaitzev/hooded-assassin.svg",
+  "license": "CC-BY-3.0",
+  "author": "DarkZaitzev",
+  "intendedUse": "unit symbol: Rogue (grade 5) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/holy-grail.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/holy-grail.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Priestess (grade 10) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/prayer.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/prayer.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Priestess (grade 10) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/healing.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/healing.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Priestess (grade 10) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/third-eye.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/third-eye.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Juliomancer (grade 10) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/sacrificial-dagger.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/sacrificial-dagger.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Juliomancer (grade 10) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/crystal-ball.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/crystal-ball.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Juliomancer (grade 10) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/templar-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/templar-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Paladin (grade 20) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/knight-banner.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/knight-banner.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Paladin (grade 20) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/cross-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/cross-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Paladin (grade 20) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/gear-hammer.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/gear-hammer.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Artificer (grade 20) - primary (recommended default); also the 'Mad inventor' badge on the Prototype [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/tinker.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/tinker.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Artificer (grade 20) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/spanner.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/spanner.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Artificer (grade 20) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/pointy-hat.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/pointy-hat.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Royal Wizard (grade 50) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/wizard-face.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/wizard-face.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Royal Wizard (grade 50) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/magic-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/magic-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Royal Wizard (grade 50) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/minotaur.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/minotaur.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Beast of Knorund (grade 50) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/mammoth.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/mammoth.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Beast of Knorund (grade 50) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/ogre.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/ogre.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Beast of Knorund (grade 50) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/angel-wings.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/angel-wings.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Celestial Emissary (grade 100) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/angel-outfit.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/angel-outfit.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Celestial Emissary (grade 100) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/heraldic-sun.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/caro-asercion/heraldic-sun.svg",
+  "license": "CC-BY-3.0",
+  "author": "Caro Asercion",
+  "intendedUse": "unit symbol: Celestial Emissary (grade 100) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/crowned-skull.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/crowned-skull.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Scourge of the Gods (grade 100) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/flail.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/flail.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unit symbol: Scourge of the Gods (grade 100) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/tattered-banner.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/tattered-banner.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unit symbol: Scourge of the Gods (grade 100) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/chess-king.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/skoll/chess-king.svg",
+  "license": "CC-BY-3.0",
+  "author": "Skoll",
+  "intendedUse": "commander badge - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/laurel-crown.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/laurel-crown.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "commander badge - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/meeple-king.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/meeple-king.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "commander badge - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/vintage-robot.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/vintage-robot.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "token symbol: Prototype No-ACB (dummy) - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/target-dummy.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/target-dummy.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "token symbol: Prototype No-ACB (dummy) - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/robot-golem.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/robot-golem.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "token symbol: Prototype No-ACB (dummy) - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/teller-mine.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/skoll/teller-mine.svg",
+  "license": "CC-BY-3.0",
+  "author": "Skoll",
+  "intendedUse": "token symbol: Trip Mine - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/land-mine.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/land-mine.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "token symbol: Trip Mine - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/tripwire.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/tripwire.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "token symbol: Trip Mine - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/white-tower.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/white-tower.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "objective emblem: Keep - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/castle.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/castle.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "objective emblem: Keep - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/tower-flag.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/tower-flag.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "objective emblem: Keep - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/shop.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/shop.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "objective emblem: Market - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/scales.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/scales.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "objective emblem: Market - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/medieval-pavilion.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/medieval-pavilion.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "objective emblem: Market - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/eagle-emblem.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/eagle-emblem.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "faction emblem: Empire - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/laurels.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/laurels.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "faction emblem: Empire - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/griffin-symbol.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/griffin-symbol.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "faction emblem: Empire - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/wolf-head.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/wolf-head.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "faction emblem: Lojrar - primary (recommended default) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/stag-head.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/stag-head.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "faction emblem: Lojrar - alternate 1 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/boar-ensign.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/cathelineau/boar-ensign.svg",
+  "license": "CC-BY-3.0",
+  "author": "Cathelineau",
+  "intendedUse": "faction emblem: Lojrar - alternate 2 [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/brain.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/brain.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "commander portrait: Trill \"The Hydrocephalic\" [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/magnifying-glass.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/magnifying-glass.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "commander portrait: Kulega \"The Fine Printer\" [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/film-spool.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/film-spool.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "commander portrait: Sabrina \"The Reelfinisher\" [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/witch-flight.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/witch-flight.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "commander portrait: Baba Yaga \"The Bwitch\" [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/rat.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/rat.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "commander portrait: Ratasius I \"The Great\" [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/cheese-wedge.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/cheese-wedge.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "commander portrait: Queso \"The Beacon of hope\" [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/pointy-sword.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/pointy-sword.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "UI stat icon: Power [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/heart-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/heart-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "UI stat icon: Toughness [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/semi-closed-eye.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/semi-closed-eye.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "UI stat icon: LOV; also the stealth-revealed badge [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/walking-boot.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/walking-boot.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "UI stat icon: Movement [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/lightning-helix.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/lightning-helix.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "UI stat icon: AP [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/hourglass.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/hourglass.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "UI icon: Cooldown; also the acted/no-actions-left badge [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/checked-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/checked-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "status badge: Defending [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/invisible.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/invisible.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "status badge: Stealthed (owner view) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/regeneration.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/sbed/regeneration.svg",
+  "license": "CC-BY-3.0",
+  "author": "Sbed",
+  "intendedUse": "status badge: Regeneration [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/anticlockwise-rotation.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/anticlockwise-rotation.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "UI icon: Take-back (research-art.md 4.3 primary; not in icons.json) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/laurels-trophy.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/laurels-trophy.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "UI icon: Achievements (research-art.md 4.3 primary; not in icons.json) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/crown-coin.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/crown-coin.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "UI icon: Budget (research-art.md 4.3 primary; not in icons.json) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/clean/energy-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/energy-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "status overlay glyph: Forcefield (research-art.md 6.4; not in icons.json) [cleaned: background removed, fill=currentColor]"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/spears.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/spears.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/spears.svg; use: unit symbol: Footman (grade 1) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/willdabeast/round-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/willdabeast/round-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Willdabeast",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/round-shield.svg; use: unit symbol: Footman (grade 1) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/spartan-helmet.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/spartan-helmet.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/spartan-helmet.svg; use: unit symbol: Footman (grade 1) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/crossed-swords.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/crossed-swords.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/crossed-swords.svg; use: unit symbol: Mercenary (grade 1) - primary (recommended default); also the contested-objective glyph"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/daggers.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/daggers.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/daggers.svg; use: unit symbol: Mercenary (grade 1) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/take-my-money.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/take-my-money.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/take-my-money.svg; use: unit symbol: Mercenary (grade 1) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/visored-helm.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/visored-helm.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/visored-helm.svg; use: unit symbol: Soldier (grade 2) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/centurion-helmet.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/centurion-helmet.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/centurion-helmet.svg; use: unit symbol: Soldier (grade 2) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/heavy-helm.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/heavy-helm.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/heavy-helm.svg; use: unit symbol: Soldier (grade 2) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/bowman.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/bowman.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/bowman.svg; use: unit symbol: Ranger (grade 2) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/bow-arrow.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/bow-arrow.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/bow-arrow.svg; use: unit symbol: Ranger (grade 2) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/robin-hood-hat.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/robin-hood-hat.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/robin-hood-hat.svg; use: unit symbol: Ranger (grade 2) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/battle-axe.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/battle-axe.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/battle-axe.svg; use: unit symbol: Berserker (grade 5) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/viking-head.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/viking-head.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/viking-head.svg; use: unit symbol: Berserker (grade 5) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/enrage.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/enrage.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/enrage.svg; use: unit symbol: Berserker (grade 5) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/hood.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/hood.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/hood.svg; use: unit symbol: Rogue (grade 5) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/cloak-dagger.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/cloak-dagger.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/cloak-dagger.svg; use: unit symbol: Rogue (grade 5) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/darkzaitzev/hooded-assassin.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/darkzaitzev/hooded-assassin.svg",
+  "license": "CC-BY-3.0",
+  "author": "DarkZaitzev",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/hooded-assassin.svg; use: unit symbol: Rogue (grade 5) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/holy-grail.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/holy-grail.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/holy-grail.svg; use: unit symbol: Priestess (grade 10) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/prayer.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/prayer.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/prayer.svg; use: unit symbol: Priestess (grade 10) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/healing.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/healing.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/healing.svg; use: unit symbol: Priestess (grade 10) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/third-eye.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/third-eye.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/third-eye.svg; use: unit symbol: Juliomancer (grade 10) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/sacrificial-dagger.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/sacrificial-dagger.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/sacrificial-dagger.svg; use: unit symbol: Juliomancer (grade 10) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/crystal-ball.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/crystal-ball.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/crystal-ball.svg; use: unit symbol: Juliomancer (grade 10) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/templar-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/templar-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/templar-shield.svg; use: unit symbol: Paladin (grade 20) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/knight-banner.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/knight-banner.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/knight-banner.svg; use: unit symbol: Paladin (grade 20) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/cross-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/cross-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/cross-shield.svg; use: unit symbol: Paladin (grade 20) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/gear-hammer.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/gear-hammer.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/gear-hammer.svg; use: unit symbol: Artificer (grade 20) - primary (recommended default); also the 'Mad inventor' badge on the Prototype"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/tinker.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/tinker.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/tinker.svg; use: unit symbol: Artificer (grade 20) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/spanner.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/spanner.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/spanner.svg; use: unit symbol: Artificer (grade 20) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/pointy-hat.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/pointy-hat.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/pointy-hat.svg; use: unit symbol: Royal Wizard (grade 50) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/wizard-face.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/wizard-face.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/wizard-face.svg; use: unit symbol: Royal Wizard (grade 50) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/magic-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/magic-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/magic-shield.svg; use: unit symbol: Royal Wizard (grade 50) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/minotaur.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/minotaur.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/minotaur.svg; use: unit symbol: Beast of Knorund (grade 50) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/mammoth.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/mammoth.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/mammoth.svg; use: unit symbol: Beast of Knorund (grade 50) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/ogre.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/ogre.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/ogre.svg; use: unit symbol: Beast of Knorund (grade 50) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/angel-wings.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/angel-wings.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/angel-wings.svg; use: unit symbol: Celestial Emissary (grade 100) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/angel-outfit.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/angel-outfit.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/angel-outfit.svg; use: unit symbol: Celestial Emissary (grade 100) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/caro-asercion/heraldic-sun.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/caro-asercion/heraldic-sun.svg",
+  "license": "CC-BY-3.0",
+  "author": "Caro Asercion",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/heraldic-sun.svg; use: unit symbol: Celestial Emissary (grade 100) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/crowned-skull.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/crowned-skull.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/crowned-skull.svg; use: unit symbol: Scourge of the Gods (grade 100) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/flail.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/flail.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/flail.svg; use: unit symbol: Scourge of the Gods (grade 100) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/tattered-banner.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/tattered-banner.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/tattered-banner.svg; use: unit symbol: Scourge of the Gods (grade 100) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/skoll/chess-king.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/skoll/chess-king.svg",
+  "license": "CC-BY-3.0",
+  "author": "Skoll",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/chess-king.svg; use: commander badge - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/laurel-crown.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/laurel-crown.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/laurel-crown.svg; use: commander badge - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/meeple-king.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/meeple-king.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/meeple-king.svg; use: commander badge - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/vintage-robot.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/vintage-robot.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/vintage-robot.svg; use: token symbol: Prototype No-ACB (dummy) - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/target-dummy.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/target-dummy.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/target-dummy.svg; use: token symbol: Prototype No-ACB (dummy) - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/robot-golem.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/robot-golem.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/robot-golem.svg; use: token symbol: Prototype No-ACB (dummy) - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/skoll/teller-mine.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/skoll/teller-mine.svg",
+  "license": "CC-BY-3.0",
+  "author": "Skoll",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/teller-mine.svg; use: token symbol: Trip Mine - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/land-mine.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/land-mine.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/land-mine.svg; use: token symbol: Trip Mine - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/tripwire.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/tripwire.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/tripwire.svg; use: token symbol: Trip Mine - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/white-tower.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/white-tower.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/white-tower.svg; use: objective emblem: Keep - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/castle.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/castle.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/castle.svg; use: objective emblem: Keep - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/tower-flag.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/tower-flag.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/tower-flag.svg; use: objective emblem: Keep - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/shop.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/shop.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/shop.svg; use: objective emblem: Market - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/scales.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/scales.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/scales.svg; use: objective emblem: Market - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/medieval-pavilion.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/medieval-pavilion.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/medieval-pavilion.svg; use: objective emblem: Market - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/eagle-emblem.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/eagle-emblem.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/eagle-emblem.svg; use: faction emblem: Empire - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/laurels.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/laurels.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/laurels.svg; use: faction emblem: Empire - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/griffin-symbol.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/griffin-symbol.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/griffin-symbol.svg; use: faction emblem: Empire - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/wolf-head.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/wolf-head.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/wolf-head.svg; use: faction emblem: Lojrar - primary (recommended default)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/stag-head.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/stag-head.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/stag-head.svg; use: faction emblem: Lojrar - alternate 1"
+ },
+ {
+  "path": "assets/icons/game-icons/cathelineau/boar-ensign.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/cathelineau/boar-ensign.svg",
+  "license": "CC-BY-3.0",
+  "author": "Cathelineau",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/boar-ensign.svg; use: faction emblem: Lojrar - alternate 2"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/brain.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/brain.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/brain.svg; use: commander portrait: Trill \"The Hydrocephalic\""
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/magnifying-glass.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/magnifying-glass.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/magnifying-glass.svg; use: commander portrait: Kulega \"The Fine Printer\""
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/film-spool.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/film-spool.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/film-spool.svg; use: commander portrait: Sabrina \"The Reelfinisher\""
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/witch-flight.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/witch-flight.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/witch-flight.svg; use: commander portrait: Baba Yaga \"The Bwitch\""
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/rat.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/rat.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/rat.svg; use: commander portrait: Ratasius I \"The Great\""
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/cheese-wedge.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/cheese-wedge.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/cheese-wedge.svg; use: commander portrait: Queso \"The Beacon of hope\""
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/pointy-sword.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/pointy-sword.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/pointy-sword.svg; use: UI stat icon: Power"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/heart-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/heart-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/heart-shield.svg; use: UI stat icon: Toughness"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/semi-closed-eye.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/semi-closed-eye.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/semi-closed-eye.svg; use: UI stat icon: LOV; also the stealth-revealed badge"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/walking-boot.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/walking-boot.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/walking-boot.svg; use: UI stat icon: Movement"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/lightning-helix.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/lightning-helix.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/lightning-helix.svg; use: UI stat icon: AP"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/hourglass.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/hourglass.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/hourglass.svg; use: UI icon: Cooldown; also the acted/no-actions-left badge"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/checked-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/checked-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/checked-shield.svg; use: status badge: Defending"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/invisible.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/invisible.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/invisible.svg; use: status badge: Stealthed (owner view)"
+ },
+ {
+  "path": "assets/icons/game-icons/sbed/regeneration.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/sbed/regeneration.svg",
+  "license": "CC-BY-3.0",
+  "author": "Sbed",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/regeneration.svg; use: status badge: Regeneration"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/anticlockwise-rotation.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/anticlockwise-rotation.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/anticlockwise-rotation.svg; use: UI icon: Take-back (research-art.md 4.3 primary; not in icons.json)"
+ },
+ {
+  "path": "assets/icons/game-icons/delapouite/laurels-trophy.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/laurels-trophy.svg",
+  "license": "CC-BY-3.0",
+  "author": "Delapouite",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/laurels-trophy.svg; use: UI icon: Achievements (research-art.md 4.3 primary; not in icons.json)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/crown-coin.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/crown-coin.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/crown-coin.svg; use: UI icon: Budget (research-art.md 4.3 primary; not in icons.json)"
+ },
+ {
+  "path": "assets/icons/game-icons/lorc/energy-shield.svg",
+  "source": "game-icons.net",
+  "url": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/energy-shield.svg",
+  "license": "CC-BY-3.0",
+  "author": "Lorc",
+  "intendedUse": "unmodified original (black 512x512 background + white glyph), source of icons/clean/energy-shield.svg; use: status overlay glyph: Forcefield (research-art.md 6.4; not in icons.json)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_castle_blue.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_castle_blue.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "Keep model K1/K1b (team colour blue)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_castle_blue.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_castle_blue.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_castle_blue.gltf (Keep model K1/K1b (team colour blue))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_market_blue.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_market_blue.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "Market model M1 (team colour blue)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_market_blue.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_market_blue.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_market_blue.gltf (Market model M1 (team colour blue))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_A_blue.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_tower_A_blue.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker / keep alt (tower A, blue)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_A_blue.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_tower_A_blue.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_A_blue.gltf (candidate blocker / keep alt (tower A, blue))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_B_blue.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_tower_B_blue.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker / keep alt (tower B, blue)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_B_blue.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_tower_B_blue.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_B_blue.gltf (candidate blocker / keep alt (tower B, blue))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_base_blue.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_tower_base_blue.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (tower base, blue)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_base_blue.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_tower_base_blue.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_base_blue.gltf (candidate blocker (tower base, blue))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_catapult_blue.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_tower_catapult_blue.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (catapult tower, blue)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_catapult_blue.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/blue/building_tower_catapult_blue.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_catapult_blue.gltf (candidate blocker (catapult tower, blue))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_castle_green.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_castle_green.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "Keep model K1/K1b (team colour green)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_castle_green.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_castle_green.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_castle_green.gltf (Keep model K1/K1b (team colour green))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_market_green.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_market_green.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "Market model M1 (team colour green)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_market_green.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_market_green.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_market_green.gltf (Market model M1 (team colour green))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_A_green.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_tower_A_green.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker / keep alt (tower A, green)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_A_green.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_tower_A_green.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_A_green.gltf (candidate blocker / keep alt (tower A, green))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_B_green.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_tower_B_green.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker / keep alt (tower B, green)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_B_green.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_tower_B_green.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_B_green.gltf (candidate blocker / keep alt (tower B, green))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_base_green.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_tower_base_green.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (tower base, green)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_base_green.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_tower_base_green.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_base_green.gltf (candidate blocker (tower base, green))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_catapult_green.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_tower_catapult_green.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (catapult tower, green)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_catapult_green.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/green/building_tower_catapult_green.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_catapult_green.gltf (candidate blocker (catapult tower, green))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_castle_red.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_castle_red.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "Keep model K1/K1b (team colour red)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_castle_red.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_castle_red.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_castle_red.gltf (Keep model K1/K1b (team colour red))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_market_red.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_market_red.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "Market model M1 (team colour red)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_market_red.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_market_red.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_market_red.gltf (Market model M1 (team colour red))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_A_red.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_tower_A_red.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker / keep alt (tower A, red)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_A_red.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_tower_A_red.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_A_red.gltf (candidate blocker / keep alt (tower A, red))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_B_red.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_tower_B_red.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker / keep alt (tower B, red)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_B_red.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_tower_B_red.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_B_red.gltf (candidate blocker / keep alt (tower B, red))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_base_red.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_tower_base_red.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (tower base, red)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_base_red.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_tower_base_red.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_base_red.gltf (candidate blocker (tower base, red))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_catapult_red.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_tower_catapult_red.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (catapult tower, red)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_catapult_red.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/red/building_tower_catapult_red.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_catapult_red.gltf (candidate blocker (catapult tower, red))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_castle_yellow.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_castle_yellow.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "Keep model K1/K1b (team colour yellow)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_castle_yellow.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_castle_yellow.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_castle_yellow.gltf (Keep model K1/K1b (team colour yellow))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_market_yellow.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_market_yellow.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "Market model M1 (team colour yellow)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_market_yellow.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_market_yellow.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_market_yellow.gltf (Market model M1 (team colour yellow))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_A_yellow.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_tower_A_yellow.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker / keep alt (tower A, yellow)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_A_yellow.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_tower_A_yellow.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_A_yellow.gltf (candidate blocker / keep alt (tower A, yellow))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_B_yellow.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_tower_B_yellow.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker / keep alt (tower B, yellow)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_B_yellow.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_tower_B_yellow.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_B_yellow.gltf (candidate blocker / keep alt (tower B, yellow))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_base_yellow.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_tower_base_yellow.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (tower base, yellow)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_base_yellow.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_tower_base_yellow.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_base_yellow.gltf (candidate blocker (tower base, yellow))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_catapult_yellow.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_tower_catapult_yellow.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (catapult tower, yellow)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/building_tower_catapult_yellow.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/yellow/building_tower_catapult_yellow.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of building_tower_catapult_yellow.gltf (candidate blocker (catapult tower, yellow))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_straight.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_straight.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (neutral wall piece)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_straight.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_straight.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of wall_straight.gltf (candidate blocker (neutral wall piece))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_straight_gate.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_straight_gate.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (neutral wall piece)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_straight_gate.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_straight_gate.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of wall_straight_gate.gltf (candidate blocker (neutral wall piece))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_corner_A_gate.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_corner_A_gate.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (neutral wall piece)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_corner_A_gate.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_corner_A_gate.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of wall_corner_A_gate.gltf (candidate blocker (neutral wall piece))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_corner_A_inside.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_corner_A_inside.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (neutral wall piece)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_corner_A_inside.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_corner_A_inside.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of wall_corner_A_inside.gltf (candidate blocker (neutral wall piece))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_corner_A_outside.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_corner_A_outside.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (neutral wall piece)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_corner_A_outside.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_corner_A_outside.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of wall_corner_A_outside.gltf (candidate blocker (neutral wall piece))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_corner_B_inside.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_corner_B_inside.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (neutral wall piece)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_corner_B_inside.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_corner_B_inside.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of wall_corner_B_inside.gltf (candidate blocker (neutral wall piece))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_corner_B_outside.gltf",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_corner_B_outside.gltf",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "candidate blocker (neutral wall piece)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/wall_corner_B_outside.bin",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Assets/gltf/buildings/neutral/wall_corner_B_outside.bin",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "geometry/UV buffer of wall_corner_B_outside.gltf (candidate blocker (neutral wall piece))"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/hexagons_medieval.png",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/addons/kaykit_medieval_hexagon_pack/Textures/hexagons_medieval.png",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "shared gradient atlas texture for all KayKit models"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/LICENSE.txt",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/LICENSE.txt",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "pack licence (CC0)"
+ },
+ {
+  "path": "assets/models/kaykit-medieval-hexagon/README.md",
+  "source": "KayKit - Medieval Hexagon Pack 1.0",
+  "url": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Medieval-Hexagon-Pack-1.0/84fa4e91af6a88989be7c99e0891cede11f2ca38/README.md",
+  "license": "CC0-1.0",
+  "author": "Kay Lousberg (KayKit, www.kaylousberg.com)",
+  "intendedUse": "pack readme"
+ },
+ {
+  "path": "assets/models/kenney-castle-kit/tower-square.glb",
+  "source": "Kenney - Castle Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/castle-kit/a395102d20-1711543616/kenney_castle-kit.zip#Models/GLB%20format/tower-square.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "Keep option K2 (4x tower-square in a 2x2 block)"
+ },
+ {
+  "path": "assets/models/kenney-castle-kit/flag-banner-long.glb",
+  "source": "Kenney - Castle Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/castle-kit/a395102d20-1711543616/kenney_castle-kit.zip#Models/GLB%20format/flag-banner-long.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "Keep option K2 banner"
+ },
+ {
+  "path": "assets/models/kenney-castle-kit/flag.glb",
+  "source": "Kenney - Castle Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/castle-kit/a395102d20-1711543616/kenney_castle-kit.zip#Models/GLB%20format/flag.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "ownership banner on captured objectives (recolour via colormap)"
+ },
+ {
+  "path": "assets/models/kenney-castle-kit/wall.glb",
+  "source": "Kenney - Castle Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/castle-kit/a395102d20-1711543616/kenney_castle-kit.zip#Models/GLB%20format/wall.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "candidate blocker (wall segment)"
+ },
+ {
+  "path": "assets/models/kenney-castle-kit/rocks-large.glb",
+  "source": "Kenney - Castle Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/castle-kit/a395102d20-1711543616/kenney_castle-kit.zip#Models/GLB%20format/rocks-large.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "board B3 blocker (rocks)"
+ },
+ {
+  "path": "assets/models/kenney-castle-kit/tree-large.glb",
+  "source": "Kenney - Castle Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/castle-kit/a395102d20-1711543616/kenney_castle-kit.zip#Models/GLB%20format/tree-large.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "board B3 blocker (tree)"
+ },
+ {
+  "path": "assets/models/kenney-castle-kit/Textures/colormap.png",
+  "source": "Kenney - Castle Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/castle-kit/a395102d20-1711543616/kenney_castle-kit.zip#Models/GLB%20format/Textures/colormap.png",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "shared colormap texture referenced by every Castle Kit GLB (Textures/colormap.png)"
+ },
+ {
+  "path": "assets/models/kenney-castle-kit/License.txt",
+  "source": "Kenney - Castle Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/castle-kit/a395102d20-1711543616/kenney_castle-kit.zip#License.txt",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "kit licence (CC0)"
+ },
+ {
+  "path": "assets/models/kenney-fantasy-town-kit/stall-red.glb",
+  "source": "Kenney - Fantasy Town Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip#Models/GLB%20format/stall-red.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "Market option M2 (market stall, red)"
+ },
+ {
+  "path": "assets/models/kenney-fantasy-town-kit/stall-green.glb",
+  "source": "Kenney - Fantasy Town Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip#Models/GLB%20format/stall-green.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "Market option M2 (market stall, green)"
+ },
+ {
+  "path": "assets/models/kenney-fantasy-town-kit/stall.glb",
+  "source": "Kenney - Fantasy Town Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip#Models/GLB%20format/stall.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "Market option M2 (market stall, plain)"
+ },
+ {
+  "path": "assets/models/kenney-fantasy-town-kit/cart.glb",
+  "source": "Kenney - Fantasy Town Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip#Models/GLB%20format/cart.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "Market option M2 (cart)"
+ },
+ {
+  "path": "assets/models/kenney-fantasy-town-kit/fountain-round.glb",
+  "source": "Kenney - Fantasy Town Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip#Models/GLB%20format/fountain-round.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "Market option M2 centrepiece (2x2 fountain)"
+ },
+ {
+  "path": "assets/models/kenney-fantasy-town-kit/Textures/colormap.png",
+  "source": "Kenney - Fantasy Town Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip#Models/GLB%20format/Textures/colormap.png",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "shared colormap texture referenced by every Fantasy Town Kit GLB (Textures/colormap.png)"
+ },
+ {
+  "path": "assets/models/kenney-fantasy-town-kit/License.txt",
+  "source": "Kenney - Fantasy Town Kit 2.0",
+  "url": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip#License.txt",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "kit licence (CC0)"
+ },
+ {
+  "path": "assets/models/kenney-tower-defense-kit/tile.glb",
+  "source": "Kenney - Tower Defense Kit 2.1",
+  "url": "https://kenney.nl/media/pages/assets/tower-defense-kit/a402493eaa-1726471567/kenney_tower-defense-kit.zip#Models/GLB%20format/tile.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "board option B2 square 1x1 tile"
+ },
+ {
+  "path": "assets/models/kenney-tower-defense-kit/tile-rock.glb",
+  "source": "Kenney - Tower Defense Kit 2.1",
+  "url": "https://kenney.nl/media/pages/assets/tower-defense-kit/a402493eaa-1726471567/kenney_tower-defense-kit.zip#Models/GLB%20format/tile-rock.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "board option B2 blocker tile (rock)"
+ },
+ {
+  "path": "assets/models/kenney-tower-defense-kit/tile-tree.glb",
+  "source": "Kenney - Tower Defense Kit 2.1",
+  "url": "https://kenney.nl/media/pages/assets/tower-defense-kit/a402493eaa-1726471567/kenney_tower-defense-kit.zip#Models/GLB%20format/tile-tree.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "board option B2 blocker tile (tree)"
+ },
+ {
+  "path": "assets/models/kenney-tower-defense-kit/Textures/colormap.png",
+  "source": "Kenney - Tower Defense Kit 2.1",
+  "url": "https://kenney.nl/media/pages/assets/tower-defense-kit/a402493eaa-1726471567/kenney_tower-defense-kit.zip#Models/GLB%20format/Textures/colormap.png",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "shared colormap texture referenced by every Tower Defense Kit GLB (Textures/colormap.png)"
+ },
+ {
+  "path": "assets/models/kenney-tower-defense-kit/License.txt",
+  "source": "Kenney - Tower Defense Kit 2.1",
+  "url": "https://kenney.nl/media/pages/assets/tower-defense-kit/a402493eaa-1726471567/kenney_tower-defense-kit.zip#License.txt",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "kit licence (CC0)"
+ },
+ {
+  "path": "assets/models/kenney-nature-kit/rock_largeA.glb",
+  "source": "Kenney - Nature Kit 2.1",
+  "url": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip#Models/GLTF%20format/rock_largeA.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "blocker (large rock)"
+ },
+ {
+  "path": "assets/models/kenney-nature-kit/rock_tallA.glb",
+  "source": "Kenney - Nature Kit 2.1",
+  "url": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip#Models/GLTF%20format/rock_tallA.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "blocker (tall rock)"
+ },
+ {
+  "path": "assets/models/kenney-nature-kit/tree_pineRoundA.glb",
+  "source": "Kenney - Nature Kit 2.1",
+  "url": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip#Models/GLTF%20format/tree_pineRoundA.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "blocker (pine tree)"
+ },
+ {
+  "path": "assets/models/kenney-nature-kit/tree_oak.glb",
+  "source": "Kenney - Nature Kit 2.1",
+  "url": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip#Models/GLTF%20format/tree_oak.glb",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "blocker (oak tree)"
+ },
+ {
+  "path": "assets/models/kenney-nature-kit/License.txt",
+  "source": "Kenney - Nature Kit 2.1",
+  "url": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip#License.txt",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "kit licence (CC0)"
+ }
+]

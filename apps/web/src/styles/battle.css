@@ -605,11 +605,13 @@
    basic actions and abilities in separate groups; disabled tiles say why in place; wraps before it ever scrolls. */
 .action-bar {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 8px 14px;
   flex: 1;
   min-width: 0;
+  /* Exactly the tile height, in every state, selection or not, so the board never shifts when a unit is picked. */
+  min-height: 96px;
 }
 
 .action-bar-empty {
@@ -645,18 +647,23 @@
   white-space: nowrap;
 }
 
+/* Never wraps (a second row would change the bar's height); tiles shrink first, then the groups scroll sideways. */
 .dock-groups {
   display: flex;
-  flex-wrap: wrap;
+  flex: 1;
+  flex-wrap: nowrap;
   align-items: stretch;
   gap: 8px;
   min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
 }
 
 .dock-group {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 8px;
+  min-width: 0;
 }
 
 .dock-sep {
@@ -672,10 +679,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3px;
-  width: 98px;
-  min-height: 84px;
-  padding: 22px 6px 7px;
+  gap: 2px;
+  flex: 0 1 98px;
+  min-width: 72px;
+  /* Fixed, not min: a tile with a two-line reason must be exactly as tall as one without, or the bar jumps. */
+  height: 96px;
+  overflow: hidden;
+  padding: 20px 6px 6px;
   font: inherit;
   color: var(--ui-ink);
   background: var(--ui-panel-high);
@@ -695,7 +705,7 @@
 }
 
 .dock-ability {
-  width: 124px;
+  flex-basis: 124px;
   border-style: dashed;
 }
 
@@ -727,7 +737,7 @@
   max-width: 100%;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2; /* the full reason is in the side panel's action card on hover */
   font-size: 0.68rem;
   line-height: 1.15;
   text-align: center;

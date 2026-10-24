@@ -38,11 +38,12 @@ The owner answered the first batch of questions in chat. The original spec is a 
 | R8 | **Commander base stats** | The owner adopted S16 and S21: **base commander toughness 5** (Power stays 1) and **commander Movement 2**. AP stays 1, LOV 3. Per-commander overrides: **Trill 10** (spec), **Queso 6** (S16's figure, read as the spec's +2 over the old base of 1 becoming +1 over the new base; see the open note below), the others 5. Constants: `COMMANDER_BASE_TOUGHNESS = 5`, `COMMANDER_MOVEMENT = 2`, `TRILL_COMMANDER_TOUGHNESS = 10`, `QUESO_COMMANDER_TOUGHNESS = 6`. The last-row win is unchanged. | 7.1, 7.3, 7.9, A7-02, S16, S21, Q51 |
 | R9 | **First-turn AP** | **Same curve for both players** (10, 11, 12, ... 20). No first-turn reduction. Q95 closed. | R1, Q17 |
 | R10 | **Unit cap and created units** | **Created units (No-ACB dummies, revived units) do not count** toward the 50 cap; it is a deployment-time count. Q96 closed. | R2 |
+| R11 | **Baba Yaga: three selectable variants** | The spec's regeneration text is **replaced**. When a player picks Baba Yaga they also pick **one of three variants** (stored in the army composition, revealed with the commander at the start of deployment, fixed for the match). Base stats per R8: 1/5, Mv 2, AP 1, LOV 3. "Units of white" = the player's **tier-1 units** (Footman for the Empire, Mercenary for Lojrar). **Variant A, "Mend the swarm"**: each own white unit gains *Regenerate*: 1 AP, restore the unit to its max toughness; not an action; own turn only; no cooldown; at most **3 uses per turn** army-wide. **Variant B, "Hex Ward"**: own white units within **range 3** (Manhattan) of Baba Yaga have **+1 max and current toughness** (an aura: max and current move together; losing it never kills, 3.7) and **take 1 less damage** from every source (a target-side flat reduction added to any others; the usual floor of 1 for a hit of 1 or more). No AP, no action. **Variant C, "Cauldron"**: when an own white unit dies (any cause, sacrifice included), its owner may **return it immediately to a free square adjacent (Manhattan 1) to Baba Yaga**, at full base toughness, statuses cleared, as the same unit, with its action for the current turn already used. Cost **1 AP**; when the death happens during the opponent's turn, the AP is **owed and deducted at the start of the owner's next turn** (AP debt, shown in the HUD). At most **2 returns per turn** (each turn, either player's, has its own counter) and **a given unit at most twice per game**. Decided through the reaction-prompt mechanism used for Queso (15 s then "no"; Ask/Always/Never preference). Returned units are not "created" for the 50 cap (R10) but the death still fires death triggers (Kulega). If no free adjacent square exists, no return. Constants: `BABA_VARIANT` per army ('mend' \| 'hex-ward' \| 'cauldron'), `BABA_MEND_COST = 1`, `BABA_MEND_USES_PER_TURN = 3`, `BABA_HEX_RANGE = 3`, `BABA_HEX_REDUCTION = 1`, `BABA_HEX_TOUGHNESS = 1`, `BABA_CAULDRON_COST = 1`, `BABA_CAULDRON_PER_TURN = 2`, `BABA_CAULDRON_PER_UNIT = 2`, `BABA_CAULDRON_AP_DEBT = true`. | 7.7, C9, C10, Q53, Q54, Q55, A7-12, A7-13, S14, `BABA_*` |
 
 **Still open after these rulings (defaults until answered):**
 
 - **Queso's toughness under the new base.** The spec gives Queso "3 toughness" when the base was 1. With base 5 the owner-adopted S16 figure is 6. If the owner prefers the literal 3 (a weaker commander than the base) or 7 (keeping the +2), it is one constant.
-- **Baba Yaga buff (S14a/b/c).** Not yet chosen; the spec text is implemented with white = tier 1 until then.
+- **Cauldron's cost on the opponent's turn (Q98).** Default: 1 AP owed against the next turn. Alternatives: free (only the two caps limit it), or 1 toughness of Baba Yaga per return. One constant either way.
 - Everything else in section 11 stands as asked.
 
 ## At a glance: the decisions that shape the engine
@@ -901,7 +902,9 @@ While a player controls the Market, **each of that player's type-1 units (Footma
 - With 200 budget: up to 20 Artificers, which allows 3 + floor(19/2) = 12 dummies.
 - Presentation (art's call): the Artificer token shows tier 10 with a commander badge (PX AB-05).
 
-### 7.7 Baba Yaga "The Bwitch" (Lojrar)  [A7-12, A7-13 - Low]
+### 7.7 Baba Yaga "The Bwitch"  [superseded by owner ruling R11]
+
+> **Owner ruling R11 replaces this section.** Baba Yaga now has three player-selected variants (Mend the swarm, Hex Ward, Cauldron), defined in full in the OWNER RULINGS table at the top of this document. The text below records the original reading of the spec for reference only; the spec's regeneration ability is no longer implemented.
 
 > "Baba Yaga "The Bwitch": Units of white gain the ability to regenerate 2 toughness for 2 AP (each instance). Only up to 2 units can regenerate toughness this way per turn. Can be applied twice to the same unit. CD 1" (L128)
 > "The color of the token will represent the grade of the unit." (L44)
@@ -1939,7 +1942,8 @@ Every default that a playtest or an owner answer may change. Build each as a nam
 | `TRILL_COMMANDER_TOUGHNESS` / `QUESO_COMMANDER_TOUGHNESS` | **10 / 6 (R8)** | R8, 7.3, 7.9 | Queso 3 (literal) or 7 (+2 over base) |
 | `SABRINA_ARTIFICER_COST` / `SABRINA_SURCHARGE` | 10 / x1.2, rounded up | 7.6 | 20 / - |
 | `BABA_WHITE_GRADES` | **[1] (owner ruling R6: tier 1 is Argent/white in the recommended palette)** | R6, 7.7 | every grade (old default); per the final colour table |
-| `BABA_USES_PER_TURN` / `BABA_CD_SCOPE` | 2 in total / per unit | 7.7 | 2 units x 2 / the whole ability |
+| `BABA_VARIANT` (per army) and the `BABA_MEND_*`, `BABA_HEX_*`, `BABA_CAULDRON_*` constants | **owner ruling R11**: 'mend' (1 AP, full heal, 3 uses per turn) / 'hex-ward' (range 3, +1 toughness, -1 damage) / 'cauldron' (1 AP, return adjacent to Baba Yaga, 2 per turn, twice per unit, AP debt on the opponent's turn) | R11 | Cauldron cost: free, or 1 Baba Yaga toughness (Q98) |
+| `BABA_USES_PER_TURN` / `BABA_CD_SCOPE` | withdrawn (the spec's regeneration text is replaced by R11) | 7.7 | - |
 | `KULEGA_ENEMY_DEATHS` / `KULEGA_HEAL_CAP` | true / 4 | 7.5 | false / - |
 | `RATASIUS_WEAKNESS` | -4, range 1, aura, every target, instant damage only | 7.8 | a lingering status |
 | `QUESO_SELF_HEAL` / `QUESO_MIN_MAX_TOUGHNESS` | true / 1 | 7.9 | false / 0 |

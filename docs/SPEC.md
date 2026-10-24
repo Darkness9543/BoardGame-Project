@@ -161,6 +161,8 @@ Queso "The Beacon of hope": This commander's AP is 3, and 3 toughness. Nearby un
 - Commander base toughness 5 and movement 2 (the proposed values were accepted).
 - The AP curve is the same for both players; no first-turn reduction.
 - The 50-unit cap does not count units created during play.
+- Baba Yaga: the player chooses one of the three proposed variants (Mend the swarm, Hex Ward, Cauldron) when picking her; the original regeneration text is replaced.
+- The UI should be exquisite to use, with as many quality-of-life features (the ones that make sense) of good quality as possible.
 
 ## Delivery notes from the owner
 

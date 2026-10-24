@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { App } from './App'
 import { netProvider } from './net'
@@ -19,8 +18,7 @@ applyTheme(document.documentElement, { clarity: useSettings.getState().settings.
 const root = document.getElementById('root')
 if (root === null) throw new Error('Missing #root')
 
-createRoot(root).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+// No <StrictMode>: its development-only effect replay detaches and re-attaches every drei <Html> overlay (stat
+// plates, forecast chips) right after they mount and recreates their inner React root, which blanks each box for a
+// few frames on every hover. Production builds never replay effects, so this only changes the dev server's feel.
+createRoot(root).render(<App />)

@@ -10,6 +10,7 @@ import type { BlockerKind, Square } from '@coinduel/engine'
 import { adjustHex, BOARD_LOOK, FOG_LOOK } from '../../theme'
 import { BLOCKER_MODEL_PATHS, useAssetManifest } from '../assets'
 import { squareCentre } from '../coords'
+import { markShadowsDirty } from './shadowDirty'
 import { useScene } from './context'
 import { fitModel, tintModel, useModel, WithModel } from './models'
 
@@ -100,6 +101,7 @@ function Stones({ kind, items }: { readonly kind: BlockerKind; readonly items: r
       if (mesh.instanceColor !== null) mesh.instanceColor.needsUpdate = true
       mesh.computeBoundingSphere()
     }
+    markShadowsDirty()
     invalidate()
   }, [items, kind, shape, fogActive, isVisible, invalidate])
 
@@ -134,6 +136,7 @@ function ModelBlocker({ source, blocker }: { readonly source: Object3D; readonly
   const fogged = fogActive && !isVisible(blocker.square)
   useLayoutEffect(() => {
     tintModel(model, fogged ? FOG_LOOK.objectBrightness : 1, 1)
+    markShadowsDirty()
     invalidate()
   }, [model, fogged, invalidate])
   const c = squareCentre(blocker.square)

@@ -10,6 +10,7 @@ import type { Mesh, MeshBasicMaterial } from 'three'
 import { buildingDef } from '@coinduel/engine'
 import { FONTS, OVERLAY_LOOK, TOKEN_STATE_LOOK } from '../../theme'
 import { footprintCentre, squareCentre, type Point2 } from '../coords'
+import { markShadowsDirty } from './shadowDirty'
 import type { PlayedCue } from '../director'
 import type { CueTarget, FloatTone } from '../timeline'
 import type { BoardChip, BoardFloater, ChipTone } from '../types'
@@ -41,7 +42,10 @@ export function DirectorTicker({ version }: { readonly version: number }) {
   const invalidate = useThree((s) => s.invalidate)
   useEffect(() => invalidate(), [version, invalidate])
   useFrame(() => {
-    if (performance.now() < director.busyUntil) invalidate()
+    if (performance.now() < director.busyUntil) {
+      markShadowsDirty() // tokens are sliding, lunging, appearing or dying, so their shadows move this frame
+      invalidate()
+    }
   })
   return null
 }

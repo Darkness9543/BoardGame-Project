@@ -1,7 +1,7 @@
 // S07 battle (UX 5.1 layout): top bar; inspector; the board with its banners, preview and prompts; the log and
 // armies; the action bar with AP and End Turn. State machine A drives every input.
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { BoardRendererProps } from '../../contracts'
 import { commandGate, commandUnitId, hintLine } from '../../store/command'
 import { useCommandStore } from '../../store/commandStore'
@@ -76,14 +76,20 @@ function BattleView({ controller, snap }: { readonly controller: MatchController
   const hoveredAction = useUiState((s) => s.hoveredAction)
   const [menuOpen, setMenuOpen] = useState(false)
   const [resultOpen, setResultOpen] = useState(true)
-  const now = useNow(500)
+  // Tick only while a notice is fading out: an idle battle must not re-render (and redraw the board) on a timer.
+  const now = useNow(notice !== null && Date.now() - notice.at < NOTICE_MS + 600 ? 500 : 0)
   const view = snap.view
   const other = view.seat === 'host' ? 'guest' : 'host'
   const ended = view.phase === 'ended'
   const connected = snap.connection === 'connected' || snap.connection === 'unstable'
   const gate = commandGate(view, connected)
   const reducedMotion = prefersReducedMotion(settings.motion)
-  const model = boardModel(snap, state, hover, hoverUnit, settings, { threat, highlight, focus }, reducedMotion)
+  // Memoised: a hover change rebuilds it, but a notice tick or unrelated store change must not, because its overlay
+  // and selection objects reach the renderer by identity and each new identity costs a frame.
+  const model = useMemo(
+    () => boardModel(snap, state, hover, hoverUnit, settings, { threat, highlight, focus }, reducedMotion),
+    [snap, state, hover, hoverUnit, settings, threat, highlight, focus, reducedMotion],
+  )
 
   useBattleKeys(controller, state, menuOpen || shortcutsOpen || (ended && resultOpen))
   useTurnNotice(snap.banner, snap.names[other])

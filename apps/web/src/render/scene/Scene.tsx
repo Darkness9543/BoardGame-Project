@@ -20,6 +20,7 @@ import { BOARD_LOOK, BUILDING_LOOK } from '../../theme'
 import { poseFor, type CameraPose, type Vec3 } from '../cameraMath'
 import { BOARD_HALF, boardYaw, footprintCentre, localToWorld, squareCentre, squareKey, type Point2 } from '../coords'
 import { AnimationDirector } from '../director'
+import { markShadowsDirty } from './shadowDirty'
 import { onTexturesChanged } from '../textures/canvas'
 import { firstActionTarget } from '../timeline'
 import type { BoardViewProps, DamageForecast } from '../types'
@@ -121,6 +122,7 @@ export function Scene(props: SceneProps) {
     const seatChanged = lastSeat.current !== mySeat
     lastSeat.current = mySeat
     if (seatChanged) director.reset()
+    markShadowsDirty()
     const prev = seatChanged ? new Map<UnitId, UnitView>() : prevUnits.current
     director.ingest({ prev, next, events: fresh && !seatChanged ? events : null, options: { speed, reducedMotion }, now: performance.now() })
     prevUnits.current = next

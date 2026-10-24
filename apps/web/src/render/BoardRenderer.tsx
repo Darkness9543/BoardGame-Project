@@ -48,8 +48,11 @@ export function BoardRenderer(props: BoardViewProps) {
         flat
         frameloop="demand"
         shadows="percentage"
-        dpr={[1, 2]}
-        gl={{ antialias: true, powerPreference: 'high-performance' }}
+        // Up to 1.5x device pixels: a 2x display would otherwise push 4x the pixels through MSAA and the shadow pass
+        // for coins that already read crisply at 1.5x. 'default' power lets a dual-GPU laptop keep the integrated GPU
+        // (and its fans quiet); the board needs no discrete GPU.
+        dpr={[1, 1.5]}
+        gl={{ antialias: true, powerPreference: 'default' }}
         camera={{ position: [0, 80, 0], zoom: 30, near: 1, far: 220 }}
       >
         <Scene {...rest} reducedMotion={reducedMotion} rigApi={rigApi} faceYaw={faceYaw} />

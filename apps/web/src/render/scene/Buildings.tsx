@@ -12,6 +12,7 @@ import { adjustHex, BOARD_LOOK, BUILDING_LOOK, FOG_LOOK, SIDE_TINT } from '../..
 import { buildingModelPath, useAssetManifest } from '../assets'
 import { occludes } from '../cameraMath'
 import { footprintCentre, type Point2 } from '../coords'
+import { markShadowsDirty } from './shadowDirty'
 import { regionOutline, segmentPoints } from '../outline'
 import { emblemTexture, type ControllerRole } from '../textures/emblems'
 import { LAYER_ORDER, LAYER_Y, useScene } from './context'
@@ -104,6 +105,7 @@ function BuildingModel(props: { readonly path: string; readonly span: number; re
   )
   useLayoutEffect(() => {
     tintModel(model, brightness, opacity)
+    markShadowsDirty() // a loaded or retinted model casts a new shadow
     invalidate()
   }, [model, brightness, opacity, invalidate])
   return <primitive object={model} />

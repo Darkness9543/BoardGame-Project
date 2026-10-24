@@ -69,6 +69,8 @@ const POSE_MS = 350
 const FOCUS_MS = 320
 const PAN_LIMIT = BOARD_HALF + 1.5
 const WHEEL_SPEED = 0.0016
+/** Camera tweens are capped at this frame interval (60 fps). */
+const TWEEN_FRAME_MS = 1000 / 60
 const MIN_ZOOM_OF_FIT = 0.7
 const MAX_ZOOM_SQUARES = 5
 
@@ -112,6 +114,7 @@ export function CameraRig(props: CameraRigProps) {
   const pointerInside = useRef(false)
   const applied = useRef('')
   const rig = useRef<RigState>({ pose: anim(poseFor(mode, isoStyle)), target: anim({ x: 0, z: 0 }), zoom: anim(30), fitted: true, rotation: 0 })
+  const lastTweenFrame = useRef(0)
   // Handlers and the imperative API read props through this ref, so the effects below only re-run when what they
   // subscribe to changes (the canvas element, the mode, the viewport).
   const latest = useRef({ fitPoints, size, reducedMotion, mode, isoStyle, onGoalPose: props.onGoalPose })
@@ -322,7 +325,14 @@ export function CameraRig(props: CameraRigProps) {
       if (pointerInside.current) events.update?.()
     }
     faceYaw.current = pose.azimuth - boardYaw
-    if (running(s.pose, t) || running(s.target, t) || running(s.zoom, t)) invalidate()
+    if (running(s.pose, t) || running(s.target, t) || running(s.zoom, t)) {
+      // Tweens render at most 60 times a second: on 120 Hz displays the demand loop would otherwise draw every
+      // refresh, doubling GPU work for a camera glide nobody can tell apart.
+      const wait = TWEEN_FRAME_MS - (performance.now() - lastTweenFrame.current)
+      lastTweenFrame.current = performance.now()
+      if (wait <= 1) invalidate()
+      else window.setTimeout(invalidate, wait)
+    }
   })
 
   return null

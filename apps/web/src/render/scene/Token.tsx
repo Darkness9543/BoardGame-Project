@@ -10,6 +10,7 @@ import { unitDef, type Square, type UnitView } from '@coinduel/engine'
 import { COMMANDER_LOOK, OVERLAY_LOOK, OWNER_CUES, STAT_SYMBOLS, TOKEN_STATE_LOOK, type OwnerRole } from '../../theme'
 import { assetUrl, commanderIcon, iconPath, unitGlyph, unitIcon } from '../assets'
 import { footprintCentre, localToSquare, worldToLocal } from '../coords'
+import { markShadowsDirty } from './shadowDirty'
 import { badgeTexture, type BadgeKind } from '../textures/badges'
 import { milledSideTexture } from '../textures/emblems'
 import { faceTexture, type FaceVariant } from '../textures/faces'
@@ -136,7 +137,10 @@ export const Token = memo(function Token(props: TokenProps) {
     if (spin.current !== null) spin.current.rotation.y = faceYaw.current
     if (lift.current !== null) fade(lift.current, baseOpacity * s.opacity)
     faceMat.current?.color.copy(WHITE).lerp(FLASH, s.flash * 0.75)
-    if (Math.abs(goalLift - liftNow.current) > 0.0005 || (mode === 'ghost' && s.opacity < 1)) invalidate()
+    if (Math.abs(goalLift - liftNow.current) > 0.0005 || (mode === 'ghost' && s.opacity < 1)) {
+      markShadowsDirty() // the coin is still rising, sinking or fading, so its shadow changes this frame
+      invalidate()
+    }
   })
 
   const live = mode === 'live'

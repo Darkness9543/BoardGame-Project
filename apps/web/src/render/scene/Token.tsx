@@ -77,6 +77,7 @@ export const Token = memo(function Token(props: TokenProps) {
   const faceMat = useRef<MeshBasicMaterial>(null)
   const liftNow = useRef(0)
   const lastFrame = useRef(0)
+  const lastFade = useRef(-1)
 
   const role: OwnerRole = unit.owner === mySeat ? 'me' : 'opponent'
   const cue = OWNER_CUES[role]
@@ -135,7 +136,11 @@ export const Token = memo(function Token(props: TokenProps) {
       lift.current.scale.setScalar(s.scale)
     }
     if (spin.current !== null) spin.current.rotation.y = faceYaw.current
-    if (lift.current !== null) fade(lift.current, baseOpacity * s.opacity)
+    const opacity = baseOpacity * s.opacity
+    if (lift.current !== null && opacity !== lastFade.current) {
+      lastFade.current = opacity // traversing every mesh of every token each frame was pure waste while nothing faded
+      fade(lift.current, opacity)
+    }
     faceMat.current?.color.copy(WHITE).lerp(FLASH, s.flash * 0.75)
     if (Math.abs(goalLift - liftNow.current) > 0.0005 || (mode === 'ghost' && s.opacity < 1)) {
       markShadowsDirty() // the coin is still rising, sinking or fading, so its shadow changes this frame

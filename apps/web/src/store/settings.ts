@@ -15,6 +15,11 @@ export type ViewMode = 'top' | 'iso'
 export type LogFilter = 'all' | 'combat' | 'movement' | 'objectives' | 'system'
 /** Which board renderer draws the match: the 3D board, or the light 2D one for slow devices. */
 export type BoardChoice = '3d' | 'svg'
+/**
+ * 3D board cost. 'performance': 1x device pixels, no multisampling, no shadow map (integrated GPUs, 144 Hz).
+ * 'balanced': up to 1.5x pixels, multisampling, on-demand shadows. 'quality': up to 2x pixels, soft shadows.
+ */
+export type RenderQuality = 'performance' | 'balanced' | 'quality'
 
 export interface Settings {
   readonly confirmMode: ConfirmMode
@@ -40,6 +45,7 @@ export interface Settings {
   readonly logFilter: LogFilter
   readonly followEnemyActions: boolean
   readonly board: BoardChoice
+  readonly renderQuality: RenderQuality
 }
 
 export const DEFAULT_SETTINGS_UI: Settings = {
@@ -60,6 +66,7 @@ export const DEFAULT_SETTINGS_UI: Settings = {
   logFilter: 'all',
   followEnemyActions: true,
   board: '3d',
+  renderQuality: 'balanced',
 }
 
 const KEY = 'settings.v1'
@@ -85,6 +92,7 @@ export function parseSettings(raw: unknown): Settings {
     logFilter: oneOf(raw['logFilter'], ['all', 'combat', 'movement', 'objectives', 'system'], d.logFilter),
     followEnemyActions: boolOr(raw['followEnemyActions'], d.followEnemyActions),
     board: oneOf(raw['board'], ['3d', 'svg'], d.board),
+    renderQuality: oneOf(raw['renderQuality'], ['performance', 'balanced', 'quality'], d.renderQuality),
   }
 }
 

@@ -3,7 +3,7 @@
 import type { ReactNode } from 'react'
 import { REACTION_PROMPT_TIMEOUT_S, TIERS, type PreferenceValue } from '@coinduel/engine'
 import { useAchievements } from '../../store/achievements'
-import { useSettings, type AnimationSpeed, type BoardChoice, type ConfirmMode, type EndTurnConfirm, type MotionPreference, type TakebackAnswer, type ViewMode } from '../../store/settings'
+import { useSettings, type AnimationSpeed, type BoardChoice, type ConfirmMode, type EndTurnConfirm, type MotionPreference, type RenderQuality, type TakebackAnswer, type ViewMode } from '../../store/settings'
 import { toast } from '../../store/toasts'
 import { SHORTCUTS } from '../battle/shortcuts'
 import { BOARD_RENDERERS } from '../board/registry'
@@ -97,6 +97,18 @@ export function Options() {
         <h2 className="section-title">Display</h2>
         <Row label="Board" hint="The 3D board, or a light 2D board for slow devices. Both show exactly the same game.">
           <Segmented<BoardChoice> label="Board" value={settings.board} options={BOARD_RENDERERS.map((r) => ({ value: r.id, label: r.label }))} onChange={(board) => update({ board })} />
+        </Row>
+        <Row label="3D quality" hint="Performance: 1x pixels, no multisampling, no shadows (integrated GPUs, 144 Hz). Balanced: 1.5x pixels and on-demand shadows. Quality: 2x pixels and soft shadows.">
+          <Segmented<RenderQuality>
+            label="3D quality"
+            value={settings.renderQuality}
+            options={[
+              { value: 'performance', label: 'Performance' },
+              { value: 'balanced', label: 'Balanced' },
+              { value: 'quality', label: 'Quality' },
+            ]}
+            onChange={(renderQuality) => update({ renderQuality })}
+          />
         </Row>
         <Row label="Default view">
           <Segmented<ViewMode> label="Default view" value={settings.defaultView} options={[{ value: 'top', label: 'Top' }, { value: 'iso', label: 'Isometric' }]} onChange={(defaultView) => update({ defaultView })} />

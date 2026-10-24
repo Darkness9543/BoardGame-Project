@@ -6,7 +6,7 @@
 |---|---|
 | Status | The authoritative interpretation the rules engine is built from. Where this document differs from an analyst file, this document wins. |
 | Date | 2026-10-24 |
-| Spec | `docs/SPEC.md` (the owner's text, verbatim). `L15` means line 15 of that file. |
+| Spec | `GameSpec.pdf` (the owner's original, two-column layout) and `docs/SPEC.md` (Markdown with the roster table restored and the owner's chat rulings appended). **Line references `Lnn` in this document point into `docs/SPEC_ORIGINAL.md`**, the 136-line first paste that the analysts worked from; `docs/SPEC.md` has since been re-laid out, so its line numbers differ. |
 | Synthesised from | `docs/analysis/rules-lawyer.md` (**RL**), `docs/analysis/abilities.md` (**AB**), `docs/analysis/balance.md` (**BA**), `docs/analysis/product-ux.md` (**PX**; the brief called it `product.md`, the file on disk is `product-ux.md`). `docs/analysis/research-netcode.md` (**NC**) was consulted for authority, take-back and prompts. |
 | Precedence | The owner's answers > `SPEC.md` > this document > the analyst files. |
 | Verification | The board shape, zone sizes, LOV counts, Size-2 neighbourhoods, the Forceful slam template and the default map (symmetry, connectivity, path lengths) were re-computed with a script for this document. All figures quoted below match. A completeness review then checked every spec line, and every unit stat digit by digit, against this document; Appendix C maps each spec line to where it is covered. |
@@ -1715,7 +1715,7 @@ Deduplicated across all four analysts (plus the netcode research where it touche
 | Q55 | Does Baba Yaga's "CD 1" apply to each unit separately? | Yes [A7-13] | Low | AB BAB-4, BA 6 |
 | Q56 | Under Sabrina, does an Artificer "considered type 10" also cost 10? | Yes [A7-11] | Med | RL Q19, BA Q22, PX AB-05 |
 | Q57 | Is Queso's "AP is 3" the commander's AP cost per action? | Yes [A7-03] | Med | RL D-K3, AB Q-17, BA Q25, PX AB-13 |
-| Q58 | Does Queso's revive spend Queso's own max toughness, never below 1, so at most two revives per game? | Yes [A7-16] | Low | RL 2.14, AB QUE-5, BA Q25 |
+| Q58 | Does Queso's revive spend Queso's own max toughness, never below 1? With Queso at 6 toughness (R8) that allows up to five revives per game (it was two under the spec's 3). Is five acceptable, or should revives be capped separately? | Yes, max toughness, floor 1; no separate cap [A7-16] | Low | RL 2.14, AB QUE-5, BA Q25, R8 |
 | Q59 | Does Queso's beacon heal Queso himself? | Yes [A7-15] | Low | AB QUE-3, BA Q25 |
 | Q60 | Does a revived unit return on the square where it died? | Yes, as the same unit with its statuses cleared [A7-16] | Med | RL 2.14, AB QUE-6 and QUE-7 |
 | Q61 | Does Kulega's type-20 heal also trigger when an enemy type-1 or type-2 unit dies next to it? | Yes [A7-10] | Low | AB Q-19, BA Q21 |
@@ -1761,7 +1761,7 @@ Deduplicated across all four analysts (plus the netcode research where it touche
 
 These are design changes for the owner to consider. **No rule in this document assumes any of them**, and none of them is a question about what the spec means (those are in section 11). Most come from the balance analysis (BA section 8), whose numbers came from a simple attrition model; treat them as direction, not exact values.
 
-**A note on our own defaults.** BA measured its figures with 8-square adjacency and halve-then-subtract damage. Two of our decisions soften the advantages it flagged: orthogonal adjacency allows only 4 melee attackers on a 1x1 target (8 on the Beast) and caps the Mercenary bonus at +3 against a 1x1 target, and subtract-then-halve weakens Defend + armour stacking. Re-run BA's model under these defaults (S05) before changing unit stats.
+**A note on our own defaults.** BA measured its figures with 8-square adjacency (its damage order, subtract-then-halve, matches C3). One of our decisions softens the advantages it flagged: orthogonal adjacency allows only 4 melee attackers on a 1x1 target (8 on the Beast) and caps the Mercenary bonus at +3 against a 1x1 target. The owner's rulings R1 (AP curve), R2 (50-unit cap), R4 (single-faction armies) and R8 (commander 1/5, Movement 2) also invalidate several of BA's model armies (100 Soldiers, 108 Footmen, the mixed-faction lists). Re-run BA's model under the current rules (S05) before changing unit stats.
 
 ### Economy and pace
 

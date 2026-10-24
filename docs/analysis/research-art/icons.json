@@ -1,0 +1,759 @@
+{
+ "_note": "game-icons.net, CC BY 3.0 - credit each author: \"Icons made by {author}\". Page URL: https://game-icons.net/1x1/{author}/{name}.html ; raw SVG: https://raw.githubusercontent.com/game-icons/icons/master/{author}/{name}.svg (black 512x512 square path + white icon path: drop the first path, recolour the second).",
+ "entries": [
+  {
+   "for": "Footman (1)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/spears",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/spears.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/spears.svg",
+     "iconify": "game-icons:spears"
+    },
+    {
+     "rank": "alt1",
+     "id": "willdabeast/round-shield",
+     "author": "willdabeast",
+     "page": "https://game-icons.net/1x1/willdabeast/round-shield.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/willdabeast/round-shield.svg",
+     "iconify": "game-icons:round-shield"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/spartan-helmet",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/spartan-helmet.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/spartan-helmet.svg",
+     "iconify": "game-icons:spartan-helmet"
+    }
+   ]
+  },
+  {
+   "for": "Mercenary (1)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/crossed-swords",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/crossed-swords.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/crossed-swords.svg",
+     "iconify": "game-icons:crossed-swords"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/daggers",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/daggers.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/daggers.svg",
+     "iconify": "game-icons:daggers"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/take-my-money",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/take-my-money.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/take-my-money.svg",
+     "iconify": "game-icons:take-my-money"
+    }
+   ]
+  },
+  {
+   "for": "Soldier (2)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/visored-helm",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/visored-helm.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/visored-helm.svg",
+     "iconify": "game-icons:visored-helm"
+    },
+    {
+     "rank": "alt1",
+     "id": "delapouite/centurion-helmet",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/centurion-helmet.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/centurion-helmet.svg",
+     "iconify": "game-icons:centurion-helmet"
+    },
+    {
+     "rank": "alt2",
+     "id": "lorc/heavy-helm",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/heavy-helm.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/heavy-helm.svg",
+     "iconify": "game-icons:heavy-helm"
+    }
+   ]
+  },
+  {
+   "for": "Ranger (2)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/bowman",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/bowman.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/bowman.svg",
+     "iconify": "game-icons:bowman"
+    },
+    {
+     "rank": "alt1",
+     "id": "delapouite/bow-arrow",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/bow-arrow.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/bow-arrow.svg",
+     "iconify": "game-icons:bow-arrow"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/robin-hood-hat",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/robin-hood-hat.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/robin-hood-hat.svg",
+     "iconify": "game-icons:robin-hood-hat"
+    }
+   ]
+  },
+  {
+   "for": "Berserker (5)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/battle-axe",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/battle-axe.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/battle-axe.svg",
+     "iconify": "game-icons:battle-axe"
+    },
+    {
+     "rank": "alt1",
+     "id": "delapouite/viking-head",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/viking-head.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/viking-head.svg",
+     "iconify": "game-icons:viking-head"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/enrage",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/enrage.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/enrage.svg",
+     "iconify": "game-icons:enrage"
+    }
+   ]
+  },
+  {
+   "for": "Rogue (5)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/hood",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/hood.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/hood.svg",
+     "iconify": "game-icons:hood"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/cloak-dagger",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/cloak-dagger.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/cloak-dagger.svg",
+     "iconify": "game-icons:cloak-dagger"
+    },
+    {
+     "rank": "alt2",
+     "id": "darkzaitzev/hooded-assassin",
+     "author": "darkzaitzev",
+     "page": "https://game-icons.net/1x1/darkzaitzev/hooded-assassin.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/darkzaitzev/hooded-assassin.svg",
+     "iconify": "game-icons:hooded-assassin"
+    }
+   ]
+  },
+  {
+   "for": "Priestess (10)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/holy-grail",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/holy-grail.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/holy-grail.svg",
+     "iconify": "game-icons:holy-grail"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/prayer",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/prayer.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/prayer.svg",
+     "iconify": "game-icons:prayer"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/healing",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/healing.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/healing.svg",
+     "iconify": "game-icons:healing"
+    }
+   ]
+  },
+  {
+   "for": "Juliomancer (10)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/third-eye",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/third-eye.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/third-eye.svg",
+     "iconify": "game-icons:third-eye"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/sacrificial-dagger",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/sacrificial-dagger.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/sacrificial-dagger.svg",
+     "iconify": "game-icons:sacrificial-dagger"
+    },
+    {
+     "rank": "alt2",
+     "id": "lorc/crystal-ball",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/crystal-ball.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/crystal-ball.svg",
+     "iconify": "game-icons:crystal-ball"
+    }
+   ]
+  },
+  {
+   "for": "Paladin (20)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "delapouite/templar-shield",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/templar-shield.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/templar-shield.svg",
+     "iconify": "game-icons:templar-shield"
+    },
+    {
+     "rank": "alt1",
+     "id": "delapouite/knight-banner",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/knight-banner.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/knight-banner.svg",
+     "iconify": "game-icons:knight-banner"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/cross-shield",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/cross-shield.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/cross-shield.svg",
+     "iconify": "game-icons:cross-shield"
+    }
+   ]
+  },
+  {
+   "for": "Artificer (20)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/gear-hammer",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/gear-hammer.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/gear-hammer.svg",
+     "iconify": "game-icons:gear-hammer"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/tinker",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/tinker.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/tinker.svg",
+     "iconify": "game-icons:tinker"
+    },
+    {
+     "rank": "alt2",
+     "id": "lorc/spanner",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/spanner.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/spanner.svg",
+     "iconify": "game-icons:spanner"
+    }
+   ]
+  },
+  {
+   "for": "Royal Wizard (50)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/pointy-hat",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/pointy-hat.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/pointy-hat.svg",
+     "iconify": "game-icons:pointy-hat"
+    },
+    {
+     "rank": "alt1",
+     "id": "delapouite/wizard-face",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/wizard-face.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/wizard-face.svg",
+     "iconify": "game-icons:wizard-face"
+    },
+    {
+     "rank": "alt2",
+     "id": "lorc/magic-shield",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/magic-shield.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/magic-shield.svg",
+     "iconify": "game-icons:magic-shield"
+    }
+   ]
+  },
+  {
+   "for": "Beast of Knorund (50)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/minotaur",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/minotaur.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/minotaur.svg",
+     "iconify": "game-icons:minotaur"
+    },
+    {
+     "rank": "alt1",
+     "id": "delapouite/mammoth",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/mammoth.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/mammoth.svg",
+     "iconify": "game-icons:mammoth"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/ogre",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/ogre.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/ogre.svg",
+     "iconify": "game-icons:ogre"
+    }
+   ]
+  },
+  {
+   "for": "Celestial Emissary (100)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/angel-wings",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/angel-wings.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/angel-wings.svg",
+     "iconify": "game-icons:angel-wings"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/angel-outfit",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/angel-outfit.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/angel-outfit.svg",
+     "iconify": "game-icons:angel-outfit"
+    },
+    {
+     "rank": "alt2",
+     "id": "caro-asercion/heraldic-sun",
+     "author": "caro-asercion",
+     "page": "https://game-icons.net/1x1/caro-asercion/heraldic-sun.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/caro-asercion/heraldic-sun.svg",
+     "iconify": "game-icons:heraldic-sun"
+    }
+   ]
+  },
+  {
+   "for": "Scourge of the Gods (100)",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/crowned-skull",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/crowned-skull.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/crowned-skull.svg",
+     "iconify": "game-icons:crowned-skull"
+    },
+    {
+     "rank": "alt1",
+     "id": "delapouite/flail",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/flail.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/flail.svg",
+     "iconify": "game-icons:flail"
+    },
+    {
+     "rank": "alt2",
+     "id": "lorc/tattered-banner",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/tattered-banner.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/tattered-banner.svg",
+     "iconify": "game-icons:tattered-banner"
+    }
+   ]
+  },
+  {
+   "for": "Commander",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "skoll/chess-king",
+     "author": "skoll",
+     "page": "https://game-icons.net/1x1/skoll/chess-king.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/skoll/chess-king.svg",
+     "iconify": "game-icons:chess-king"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/laurel-crown",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/laurel-crown.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/laurel-crown.svg",
+     "iconify": "game-icons:laurel-crown"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/meeple-king",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/meeple-king.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/meeple-king.svg",
+     "iconify": "game-icons:meeple-king"
+    }
+   ]
+  },
+  {
+   "for": "Prototype No-ACB",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/vintage-robot",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/vintage-robot.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/vintage-robot.svg",
+     "iconify": "game-icons:vintage-robot"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/target-dummy",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/target-dummy.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/target-dummy.svg",
+     "iconify": "game-icons:target-dummy"
+    },
+    {
+     "rank": "alt2",
+     "id": "lorc/robot-golem",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/robot-golem.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/robot-golem.svg",
+     "iconify": "game-icons:robot-golem"
+    }
+   ]
+  },
+  {
+   "for": "Trip Mine",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "skoll/teller-mine",
+     "author": "skoll",
+     "page": "https://game-icons.net/1x1/skoll/teller-mine.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/skoll/teller-mine.svg",
+     "iconify": "game-icons:teller-mine"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/land-mine",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/land-mine.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/land-mine.svg",
+     "iconify": "game-icons:land-mine"
+    },
+    {
+     "rank": "alt2",
+     "id": "lorc/tripwire",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/tripwire.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/tripwire.svg",
+     "iconify": "game-icons:tripwire"
+    }
+   ]
+  },
+  {
+   "for": "Keep",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/white-tower",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/white-tower.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/white-tower.svg",
+     "iconify": "game-icons:white-tower"
+    },
+    {
+     "rank": "alt1",
+     "id": "delapouite/castle",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/castle.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/castle.svg",
+     "iconify": "game-icons:castle"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/tower-flag",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/tower-flag.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/tower-flag.svg",
+     "iconify": "game-icons:tower-flag"
+    }
+   ]
+  },
+  {
+   "for": "Market",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "delapouite/shop",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/shop.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/shop.svg",
+     "iconify": "game-icons:shop"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/scales",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/scales.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/scales.svg",
+     "iconify": "game-icons:scales"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/medieval-pavilion",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/medieval-pavilion.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/medieval-pavilion.svg",
+     "iconify": "game-icons:medieval-pavilion"
+    }
+   ]
+  },
+  {
+   "for": "Empire emblem",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/eagle-emblem",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/eagle-emblem.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/eagle-emblem.svg",
+     "iconify": "game-icons:eagle-emblem"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/laurels",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/laurels.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/laurels.svg",
+     "iconify": "game-icons:laurels"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/griffin-symbol",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/griffin-symbol.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/griffin-symbol.svg",
+     "iconify": "game-icons:griffin-symbol"
+    }
+   ]
+  },
+  {
+   "for": "Lojrar emblem",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/wolf-head",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/wolf-head.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/wolf-head.svg",
+     "iconify": "game-icons:wolf-head"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/stag-head",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/stag-head.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/stag-head.svg",
+     "iconify": "game-icons:stag-head"
+    },
+    {
+     "rank": "alt2",
+     "id": "cathelineau/boar-ensign",
+     "author": "cathelineau",
+     "page": "https://game-icons.net/1x1/cathelineau/boar-ensign.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/cathelineau/boar-ensign.svg",
+     "iconify": "game-icons:boar-ensign"
+    }
+   ]
+  },
+  {
+   "for": "Cmdr portraits A",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/brain",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/brain.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/brain.svg",
+     "iconify": "game-icons:brain"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/magnifying-glass",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/magnifying-glass.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/magnifying-glass.svg",
+     "iconify": "game-icons:magnifying-glass"
+    },
+    {
+     "rank": "alt2",
+     "id": "delapouite/film-spool",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/film-spool.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/film-spool.svg",
+     "iconify": "game-icons:film-spool"
+    }
+   ]
+  },
+  {
+   "for": "Cmdr portraits B",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/witch-flight",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/witch-flight.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/witch-flight.svg",
+     "iconify": "game-icons:witch-flight"
+    },
+    {
+     "rank": "alt1",
+     "id": "delapouite/rat",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/rat.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/rat.svg",
+     "iconify": "game-icons:rat"
+    },
+    {
+     "rank": "alt2",
+     "id": "lorc/cheese-wedge",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/cheese-wedge.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/cheese-wedge.svg",
+     "iconify": "game-icons:cheese-wedge"
+    }
+   ]
+  },
+  {
+   "for": "UI stats A",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/pointy-sword",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/pointy-sword.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/pointy-sword.svg",
+     "iconify": "game-icons:pointy-sword"
+    },
+    {
+     "rank": "alt1",
+     "id": "delapouite/heart-shield",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/heart-shield.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/heart-shield.svg",
+     "iconify": "game-icons:heart-shield"
+    },
+    {
+     "rank": "alt2",
+     "id": "lorc/semi-closed-eye",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/semi-closed-eye.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/semi-closed-eye.svg",
+     "iconify": "game-icons:semi-closed-eye"
+    }
+   ]
+  },
+  {
+   "for": "UI stats B",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/walking-boot",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/walking-boot.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/walking-boot.svg",
+     "iconify": "game-icons:walking-boot"
+    },
+    {
+     "rank": "alt1",
+     "id": "lorc/lightning-helix",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/lightning-helix.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/lightning-helix.svg",
+     "iconify": "game-icons:lightning-helix"
+    },
+    {
+     "rank": "alt2",
+     "id": "lorc/hourglass",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/hourglass.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/hourglass.svg",
+     "iconify": "game-icons:hourglass"
+    }
+   ]
+  },
+  {
+   "for": "UI status",
+   "icons": [
+    {
+     "rank": "primary",
+     "id": "lorc/checked-shield",
+     "author": "lorc",
+     "page": "https://game-icons.net/1x1/lorc/checked-shield.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/lorc/checked-shield.svg",
+     "iconify": "game-icons:checked-shield"
+    },
+    {
+     "rank": "alt1",
+     "id": "delapouite/invisible",
+     "author": "delapouite",
+     "page": "https://game-icons.net/1x1/delapouite/invisible.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/delapouite/invisible.svg",
+     "iconify": "game-icons:invisible"
+    },
+    {
+     "rank": "alt2",
+     "id": "sbed/regeneration",
+     "author": "sbed",
+     "page": "https://game-icons.net/1x1/sbed/regeneration.html",
+     "svg": "https://raw.githubusercontent.com/game-icons/icons/master/sbed/regeneration.svg",
+     "iconify": "game-icons:regeneration"
+    }
+   ]
+  }
+ ]
+}

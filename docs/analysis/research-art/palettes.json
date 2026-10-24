@@ -1,0 +1,1349 @@
+{
+ "_note": "Generated 2026-10-24 for docs/analysis/research-art.md. CVD simulation: Machado, Oliveira & Fernandes (2009), severity 1.0, linear-RGB; distances: CIEDE2000 on CIELAB (D65). ink = icon colour with higher WCAG contrast of #1B1410 / #FFF8E7.",
+ "palettes": [
+  {
+   "id": "A1",
+   "key": "A1_euro_cents_literal",
+   "title": "Euro cents, literal metals (1c-50c, 100 = EUR 1)",
+   "grades": {
+    "1": {
+     "hex": "#B5693E",
+     "highlight": "#DDA080",
+     "shadow": "#733100",
+     "Lstar": 52.1,
+     "ink": "#1B1410",
+     "inkContrast": 4.38,
+     "deutan": "#90833D",
+     "protan": "#7E723A",
+     "tritan": "#C55A5F",
+     "grey": "#7C7C7C",
+     "material": "copper-plated steel"
+    },
+    "2": {
+     "hex": "#B5693E",
+     "highlight": "#DDA080",
+     "shadow": "#733100",
+     "Lstar": 52.1,
+     "ink": "#1B1410",
+     "inkContrast": 4.38,
+     "deutan": "#90833D",
+     "protan": "#7E723A",
+     "tritan": "#C55A5F",
+     "grey": "#7C7C7C",
+     "material": "copper-plated steel"
+    },
+    "5": {
+     "hex": "#B5693E",
+     "highlight": "#DDA080",
+     "shadow": "#733100",
+     "Lstar": 52.1,
+     "ink": "#1B1410",
+     "inkContrast": 4.38,
+     "deutan": "#90833D",
+     "protan": "#7E723A",
+     "tritan": "#C55A5F",
+     "grey": "#7C7C7C",
+     "material": "copper-plated steel"
+    },
+    "10": {
+     "hex": "#C9A548",
+     "highlight": "#F6DA98",
+     "shadow": "#896900",
+     "Lstar": 69.3,
+     "ink": "#1B1410",
+     "inkContrast": 7.76,
+     "deutan": "#BFAD4C",
+     "protan": "#B7A43E",
+     "tritan": "#D99891",
+     "grey": "#A9A9A9",
+     "material": "Nordic gold"
+    },
+    "20": {
+     "hex": "#C9A548",
+     "highlight": "#F6DA98",
+     "shadow": "#896900",
+     "Lstar": 69.3,
+     "ink": "#1B1410",
+     "inkContrast": 7.76,
+     "deutan": "#BFAD4C",
+     "protan": "#B7A43E",
+     "tritan": "#D99891",
+     "grey": "#A9A9A9",
+     "material": "Nordic gold"
+    },
+    "50": {
+     "hex": "#C9A548",
+     "highlight": "#F6DA98",
+     "shadow": "#896900",
+     "Lstar": 69.3,
+     "ink": "#1B1410",
+     "inkContrast": 7.76,
+     "deutan": "#BFAD4C",
+     "protan": "#B7A43E",
+     "tritan": "#D99891",
+     "grey": "#A9A9A9",
+     "material": "Nordic gold"
+    },
+    "100": {
+     "hex": "#C0C5CA",
+     "highlight": "#F2F6F9",
+     "shadow": "#83878B",
+     "Lstar": 79.3,
+     "ink": "#1B1410",
+     "inkContrast": 10.47,
+     "deutan": "#C2C4CA",
+     "protan": "#C3C5CA",
+     "tritan": "#BEC6C7",
+     "grey": "#C4C4C4",
+     "material": "bimetal: nickel-brass ring #CDAE4E + cupronickel centre #C0C5CA"
+    }
+   },
+   "minDeltaE00": {
+    "normal": 0.0,
+    "deutan": 0.0,
+    "protan": 0.0,
+    "tritan": 0.0,
+    "grey": 0.0
+   },
+   "worstPairs": {
+    "normal": [
+     [
+      0.0,
+      "1",
+      "2"
+     ],
+     [
+      0.0,
+      "1",
+      "5"
+     ],
+     [
+      0.0,
+      "10",
+      "20"
+     ]
+    ],
+    "deutan": [
+     [
+      0.0,
+      "1",
+      "2"
+     ],
+     [
+      0.0,
+      "1",
+      "5"
+     ],
+     [
+      0.0,
+      "10",
+      "20"
+     ]
+    ],
+    "protan": [
+     [
+      0.0,
+      "1",
+      "2"
+     ],
+     [
+      0.0,
+      "1",
+      "5"
+     ],
+     [
+      0.0,
+      "10",
+      "20"
+     ]
+    ],
+    "tritan": [
+     [
+      0.0,
+      "1",
+      "2"
+     ],
+     [
+      0.0,
+      "1",
+      "5"
+     ],
+     [
+      0.0,
+      "10",
+      "20"
+     ]
+    ],
+    "grey": [
+     [
+      0.0,
+      "1",
+      "2"
+     ],
+     [
+      0.0,
+      "1",
+      "5"
+     ],
+     [
+      0.0,
+      "10",
+      "20"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "A2",
+   "key": "A2_euro_1_to_100",
+   "title": "Euro EUR1-EUR100 (2 coins + 5 Europa-series note colours)",
+   "grades": {
+    "1": {
+     "hex": "#C0C5CA",
+     "highlight": "#F2F6F9",
+     "shadow": "#83878B",
+     "Lstar": 79.3,
+     "ink": "#1B1410",
+     "inkContrast": 10.47,
+     "deutan": "#C2C4CA",
+     "protan": "#C3C5CA",
+     "tritan": "#BEC6C7",
+     "grey": "#C4C4C4",
+     "material": "EUR1 coin: cupronickel centre #C0C5CA inside nickel-brass ring #CDAE4E"
+    },
+    "2": {
+     "hex": "#CDAE4E",
+     "highlight": "#FAE39F",
+     "shadow": "#8D7101",
+     "Lstar": 72.1,
+     "ink": "#1B1410",
+     "inkContrast": 8.46,
+     "deutan": "#C7B552",
+     "protan": "#BFAC44",
+     "tritan": "#DDA199",
+     "grey": "#B1B1B1",
+     "material": "EUR2 coin: nickel-brass centre #CDAE4E inside cupronickel ring #C0C5CA"
+    },
+    "5": {
+     "hex": "#8E9891",
+     "highlight": "#C2C9C4",
+     "shadow": "#545D57",
+     "Lstar": 61.9,
+     "ink": "#1B1410",
+     "inkContrast": 6.11,
+     "deutan": "#969591",
+     "protan": "#989691",
+     "tritan": "#8D9896",
+     "grey": "#959595",
+     "material": "EUR5 note grey"
+    },
+    "10": {
+     "hex": "#C8413B",
+     "highlight": "#ED857B",
+     "shadow": "#800000",
+     "Lstar": 47.5,
+     "ink": "#FFF8E7",
+     "inkContrast": 4.64,
+     "deutan": "#887B37",
+     "protan": "#675E39",
+     "tritan": "#DC1A41",
+     "grey": "#717171",
+     "material": "EUR10 note red"
+    },
+    "20": {
+     "hex": "#3A6CB2",
+     "highlight": "#779ED5",
+     "shadow": "#013370",
+     "Lstar": 45.4,
+     "ink": "#FFF8E7",
+     "inkContrast": 5.0,
+     "deutan": "#3B66B1",
+     "protan": "#4C72B5",
+     "tritan": "#007C86",
+     "grey": "#6B6B6B",
+     "material": "EUR20 note blue"
+    },
+    "50": {
+     "hex": "#E98A2B",
+     "highlight": "#FFC588",
+     "shadow": "#A34F00",
+     "Lstar": 66.3,
+     "ink": "#1B1410",
+     "inkContrast": 7.05,
+     "deutan": "#BEAA2C",
+     "protan": "#A79419",
+     "tritan": "#FF7478",
+     "grey": "#A1A1A1",
+     "material": "EUR50 note orange"
+    },
+    "100": {
+     "hex": "#3E9A5F",
+     "highlight": "#87C899",
+     "shadow": "#005D29",
+     "Lstar": 57.0,
+     "ink": "#1B1410",
+     "inkContrast": 5.19,
+     "deutan": "#8E8563",
+     "protan": "#9A8E5B",
+     "tritan": "#21988B",
+     "grey": "#898989",
+     "material": "EUR100 note green"
+    }
+   },
+   "minDeltaE00": {
+    "normal": 15.3,
+    "deutan": 4.4,
+    "protan": 7.5,
+    "tritan": 13.0,
+    "grey": 2.3
+   },
+   "worstPairs": {
+    "normal": [
+     [
+      15.3,
+      "1",
+      "5"
+     ],
+     [
+      18.4,
+      "2",
+      "50"
+     ],
+     [
+      20.2,
+      "5",
+      "100"
+     ]
+    ],
+    "deutan": [
+     [
+      4.4,
+      "2",
+      "50"
+     ],
+     [
+      9.0,
+      "10",
+      "100"
+     ],
+     [
+      13.0,
+      "5",
+      "100"
+     ]
+    ],
+    "protan": [
+     [
+      7.5,
+      "2",
+      "50"
+     ],
+     [
+      10.7,
+      "50",
+      "100"
+     ],
+     [
+      12.9,
+      "2",
+      "100"
+     ]
+    ],
+    "tritan": [
+     [
+      13.0,
+      "2",
+      "50"
+     ],
+     [
+      13.5,
+      "20",
+      "100"
+     ],
+     [
+      13.6,
+      "1",
+      "5"
+     ]
+    ],
+    "grey": [
+     [
+      2.3,
+      "10",
+      "20"
+     ],
+     [
+      3.8,
+      "5",
+      "50"
+     ],
+     [
+      4.1,
+      "5",
+      "100"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "B1",
+   "key": "B1_metal_textbook",
+   "title": "Metal/rarity ladder, textbook web hexes",
+   "grades": {
+    "1": {
+     "hex": "#B87333",
+     "highlight": "#E1AA7D",
+     "shadow": "#763A00",
+     "Lstar": 54.8,
+     "ink": "#1B1410",
+     "inkContrast": 4.8,
+     "deutan": "#988934",
+     "protan": "#887A2C",
+     "tritan": "#C96465",
+     "grey": "#838383",
+     "material": "copper"
+    },
+    "2": {
+     "hex": "#CD7F32",
+     "highlight": "#F5B883",
+     "shadow": "#8A4500",
+     "Lstar": 60.2,
+     "ink": "#1B1410",
+     "inkContrast": 5.79,
+     "deutan": "#AA9833",
+     "protan": "#978628",
+     "tritan": "#E06D6F",
+     "grey": "#919191",
+     "material": "bronze"
+    },
+    "5": {
+     "hex": "#C0C0C0",
+     "highlight": "#F4F4F4",
+     "shadow": "#828282",
+     "Lstar": 77.7,
+     "ink": "#1B1410",
+     "inkContrast": 10.0,
+     "deutan": "#C0C0C0",
+     "protan": "#C0C0C0",
+     "tritan": "#C0C0C0",
+     "grey": "#C0C0C0",
+     "material": "silver"
+    },
+    "10": {
+     "hex": "#D4AF37",
+     "highlight": "#FFE594",
+     "shadow": "#937200",
+     "Lstar": 72.8,
+     "ink": "#1B1410",
+     "inkContrast": 8.65,
+     "deutan": "#CCB73E",
+     "protan": "#C3AD23",
+     "tritan": "#E5A097",
+     "grey": "#B3B3B3",
+     "material": "gold"
+    },
+    "20": {
+     "hex": "#E5E4E2",
+     "highlight": "#F6F5F3",
+     "shadow": "#A5A4A2",
+     "Lstar": 90.6,
+     "ink": "#1B1410",
+     "inkContrast": 14.32,
+     "deutan": "#E5E4E2",
+     "protan": "#E5E4E2",
+     "tritan": "#E6E4E3",
+     "grey": "#E4E4E4",
+     "material": "platinum"
+    },
+    "50": {
+     "hex": "#7FB8D6",
+     "highlight": "#BFEAFF",
+     "shadow": "#467A95",
+     "Lstar": 72.0,
+     "ink": "#1B1410",
+     "inkContrast": 8.43,
+     "deutan": "#9DACD6",
+     "protan": "#A9B6D8",
+     "tritan": "#5DC0C2",
+     "grey": "#B0B0B0",
+     "material": "mythril"
+    },
+    "100": {
+     "hex": "#8A6FD1",
+     "highlight": "#B9A7F3",
+     "shadow": "#51358C",
+     "Lstar": 53.4,
+     "ink": "#1B1410",
+     "inkContrast": 4.57,
+     "deutan": "#527ECF",
+     "protan": "#4E80D5",
+     "tritan": "#7A8296",
+     "grey": "#7F7F7F",
+     "material": "celestial"
+    }
+   },
+   "minDeltaE00": {
+    "normal": 5.5,
+    "deutan": 5.6,
+    "protan": 5.2,
+    "tritan": 5.1,
+    "grey": 0.8
+   },
+   "worstPairs": {
+    "normal": [
+     [
+      5.5,
+      "1",
+      "2"
+     ],
+     [
+      8.6,
+      "5",
+      "20"
+     ],
+     [
+      17.0,
+      "5",
+      "50"
+     ]
+    ],
+    "deutan": [
+     [
+      5.6,
+      "1",
+      "2"
+     ],
+     [
+      8.6,
+      "5",
+      "20"
+     ],
+     [
+      9.4,
+      "2",
+      "10"
+     ]
+    ],
+    "protan": [
+     [
+      5.2,
+      "1",
+      "2"
+     ],
+     [
+      8.6,
+      "5",
+      "20"
+     ],
+     [
+      13.2,
+      "2",
+      "10"
+     ]
+    ],
+    "tritan": [
+     [
+      5.1,
+      "1",
+      "2"
+     ],
+     [
+      8.7,
+      "5",
+      "20"
+     ],
+     [
+      13.0,
+      "2",
+      "10"
+     ]
+    ],
+    "grey": [
+     [
+      0.8,
+      "10",
+      "50"
+     ],
+     [
+      1.5,
+      "1",
+      "100"
+     ],
+     [
+      3.5,
+      "5",
+      "10"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "B2",
+   "key": "B2_metal_tuned",
+   "title": "Metal/rarity ladder, tuned for CVD",
+   "grades": {
+    "1": {
+     "hex": "#B85C2C",
+     "highlight": "#DF9674",
+     "shadow": "#742200",
+     "Lstar": 49.5,
+     "ink": "#FFF8E7",
+     "inkContrast": 4.31,
+     "deutan": "#8C7E2A",
+     "protan": "#766926",
+     "tritan": "#CA4952",
+     "grey": "#767676",
+     "material": "copper"
+    },
+    "2": {
+     "hex": "#5A4A1E",
+     "highlight": "#857858",
+     "shadow": "#251700",
+     "Lstar": 32.2,
+     "ink": "#FFF8E7",
+     "inkContrast": 8.15,
+     "deutan": "#564E20",
+     "protan": "#524919",
+     "tritan": "#614440",
+     "grey": "#4C4C4C",
+     "material": "dark bronze"
+    },
+    "5": {
+     "hex": "#B6BDC6",
+     "highlight": "#EBF1F8",
+     "shadow": "#798087",
+     "Lstar": 76.3,
+     "ink": "#1B1410",
+     "inkContrast": 9.6,
+     "deutan": "#B8BCC6",
+     "protan": "#BABDC6",
+     "tritan": "#B2BFC0",
+     "grey": "#BCBCBC",
+     "material": "silver"
+    },
+    "10": {
+     "hex": "#E6B83C",
+     "highlight": "#FFEF9C",
+     "shadow": "#A47A00",
+     "Lstar": 76.9,
+     "ink": "#1B1410",
+     "inkContrast": 9.78,
+     "deutan": "#D9C342",
+     "protan": "#CEB728",
+     "tritan": "#F9A89F",
+     "grey": "#BEBEBE",
+     "material": "gold"
+    },
+    "20": {
+     "hex": "#F4F1EA",
+     "highlight": "#F7F5F0",
+     "shadow": "#B3B0AA",
+     "Lstar": 95.2,
+     "ink": "#1B1410",
+     "inkContrast": 16.13,
+     "deutan": "#F4F2EA",
+     "protan": "#F3F1EA",
+     "tritan": "#F6F0EF",
+     "grey": "#F1F1F1",
+     "material": "platinum"
+    },
+    "50": {
+     "hex": "#1E8FA3",
+     "highlight": "#78BECD",
+     "shadow": "#005365",
+     "Lstar": 54.6,
+     "ink": "#1B1410",
+     "inkContrast": 4.78,
+     "deutan": "#6F7DA3",
+     "protan": "#808AA4",
+     "tritan": "#009795",
+     "grey": "#838383",
+     "material": "mythril (teal)"
+    },
+    "100": {
+     "hex": "#4A2D99",
+     "highlight": "#7366B8",
+     "shadow": "#1D0056",
+     "Lstar": 28.5,
+     "ink": "#FFF8E7",
+     "inkContrast": 9.33,
+     "deutan": "#004097",
+     "protan": "#00459C",
+     "tritan": "#2E495F",
+     "grey": "#434343",
+     "material": "celestial (deep violet + star sparkle)"
+    }
+   },
+   "minDeltaE00": {
+    "normal": 15.0,
+    "deutan": 15.5,
+    "protan": 12.0,
+    "tritan": 15.2,
+    "grey": 0.5
+   },
+   "worstPairs": {
+    "normal": [
+     [
+      15.0,
+      "5",
+      "20"
+     ],
+     [
+      25.3,
+      "5",
+      "50"
+     ],
+     [
+      25.5,
+      "1",
+      "2"
+     ]
+    ],
+    "deutan": [
+     [
+      15.5,
+      "5",
+      "20"
+     ],
+     [
+      19.2,
+      "1",
+      "2"
+     ],
+     [
+      21.9,
+      "1",
+      "10"
+     ]
+    ],
+    "protan": [
+     [
+      12.0,
+      "1",
+      "2"
+     ],
+     [
+      14.6,
+      "5",
+      "20"
+     ],
+     [
+      16.9,
+      "5",
+      "50"
+     ]
+    ],
+    "tritan": [
+     [
+      15.2,
+      "5",
+      "20"
+     ],
+     [
+      22.9,
+      "1",
+      "2"
+     ],
+     [
+      23.2,
+      "10",
+      "20"
+     ]
+    ],
+    "grey": [
+     [
+      0.5,
+      "5",
+      "10"
+     ],
+     [
+      3.0,
+      "2",
+      "100"
+     ],
+     [
+      5.0,
+      "1",
+      "50"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "C",
+   "key": "C_zigzag",
+   "title": "Ordered warm/cool zig-zag ramp (CVD-safe)",
+   "grades": {
+    "1": {
+     "hex": "#4A2C17",
+     "highlight": "#725949",
+     "shadow": "#150100",
+     "Lstar": 21.3,
+     "ink": "#FFF8E7",
+     "inkContrast": 11.92,
+     "deutan": "#3C3617",
+     "protan": "#352F15",
+     "tritan": "#512627",
+     "grey": "#333333",
+     "material": "umber (warm)"
+    },
+    "2": {
+     "hex": "#2F4C7C",
+     "highlight": "#637BA1",
+     "shadow": "#011740",
+     "Lstar": 32.3,
+     "ink": "#FFF8E7",
+     "inkContrast": 8.11,
+     "deutan": "#2D497B",
+     "protan": "#38507E",
+     "tritan": "#00575E",
+     "grey": "#4C4C4C",
+     "material": "slate (cool)"
+    },
+    "5": {
+     "hex": "#8E5B2A",
+     "highlight": "#B78E6B",
+     "shadow": "#512500",
+     "Lstar": 43.4,
+     "ink": "#FFF8E7",
+     "inkContrast": 5.39,
+     "deutan": "#776B2B",
+     "protan": "#6B5F25",
+     "tritan": "#9B5050",
+     "grey": "#666666",
+     "material": "copper (warm)"
+    },
+    "10": {
+     "hex": "#5C8CC4",
+     "highlight": "#99BEEA",
+     "shadow": "#255182",
+     "Lstar": 57.1,
+     "ink": "#1B1410",
+     "inkContrast": 5.2,
+     "deutan": "#6884C3",
+     "protan": "#758FC6",
+     "tritan": "#2199A0",
+     "grey": "#898989",
+     "material": "steel blue (cool)"
+    },
+    "20": {
+     "hex": "#D2A43C",
+     "highlight": "#FDDA93",
+     "shadow": "#916800",
+     "Lstar": 69.9,
+     "ink": "#1B1410",
+     "inkContrast": 7.9,
+     "deutan": "#C3B041",
+     "protan": "#B8A42E",
+     "tritan": "#E4958F",
+     "grey": "#ABABAB",
+     "material": "gold (warm)"
+    },
+    "50": {
+     "hex": "#A3D0F2",
+     "highlight": "#D8FAFF",
+     "shadow": "#6891AF",
+     "Lstar": 81.5,
+     "ink": "#1B1410",
+     "inkContrast": 11.14,
+     "deutan": "#B7C7F1",
+     "protan": "#C2CFF4",
+     "tritan": "#8AD8DB",
+     "grey": "#CACACA",
+     "material": "ice (cool)"
+    },
+    "100": {
+     "hex": "#FFF1B5",
+     "highlight": "#FFF6C9",
+     "shadow": "#BDB079",
+     "Lstar": 95.0,
+     "ink": "#1B1410",
+     "inkContrast": 16.03,
+     "deutan": "#FFF3B7",
+     "protan": "#FDEEB1",
+     "tritan": "#FFE8E1",
+     "grey": "#F0F0F0",
+     "material": "pale gold / ivory glow (warm)"
+    }
+   },
+   "minDeltaE00": {
+    "normal": 19.2,
+    "deutan": 18.3,
+    "protan": 17.9,
+    "tritan": 18.4,
+    "grey": 8.2
+   },
+   "worstPairs": {
+    "normal": [
+     [
+      19.2,
+      "1",
+      "5"
+     ],
+     [
+      19.7,
+      "10",
+      "50"
+     ],
+     [
+      20.6,
+      "20",
+      "100"
+     ]
+    ],
+    "deutan": [
+     [
+      18.3,
+      "20",
+      "100"
+     ],
+     [
+      19.7,
+      "1",
+      "5"
+     ],
+     [
+      20.4,
+      "10",
+      "50"
+     ]
+    ],
+    "protan": [
+     [
+      17.9,
+      "1",
+      "5"
+     ],
+     [
+      19.0,
+      "10",
+      "50"
+     ],
+     [
+      20.6,
+      "20",
+      "100"
+     ]
+    ],
+    "tritan": [
+     [
+      18.4,
+      "1",
+      "5"
+     ],
+     [
+      18.8,
+      "10",
+      "50"
+     ],
+     [
+      21.8,
+      "20",
+      "100"
+     ]
+    ],
+    "grey": [
+     [
+      8.2,
+      "20",
+      "50"
+     ],
+     [
+      8.3,
+      "1",
+      "2"
+     ],
+     [
+      8.6,
+      "50",
+      "100"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "C-ref",
+   "key": "C_ref_viridis7",
+   "title": "Viridis 7-step (reference only)",
+   "grades": {
+    "1": {
+     "hex": "#440154",
+     "highlight": "#6B4078",
+     "shadow": "#170024",
+     "Lstar": 14.9,
+     "ink": "#FFF8E7",
+     "inkContrast": 14.39,
+     "deutan": "#042752",
+     "protan": "#002256",
+     "tritan": "#43172E",
+     "grey": "#252525",
+     "material": "viridis step"
+    },
+    "2": {
+     "hex": "#443983",
+     "highlight": "#706BA6",
+     "shadow": "#170044",
+     "Lstar": 28.9,
+     "ink": "#FFF8E7",
+     "inkContrast": 9.19,
+     "deutan": "#0F4281",
+     "protan": "#104686",
+     "tritan": "#2F4958",
+     "grey": "#444444",
+     "material": "viridis step"
+    },
+    "5": {
+     "hex": "#31688E",
+     "highlight": "#6F97B5",
+     "shadow": "#003051",
+     "Lstar": 42.0,
+     "ink": "#FFF8E7",
+     "inkContrast": 5.66,
+     "deutan": "#4A5F8D",
+     "protan": "#576890",
+     "tritan": "#007175",
+     "grey": "#636363",
+     "material": "viridis step"
+    },
+    "10": {
+     "hex": "#21918C",
+     "highlight": "#79BFBA",
+     "shadow": "#005552",
+     "Lstar": 54.5,
+     "ink": "#1B1410",
+     "inkContrast": 4.76,
+     "deutan": "#787E8D",
+     "protan": "#88898C",
+     "tritan": "#00958F",
+     "grey": "#828282",
+     "material": "viridis step"
+    },
+    "20": {
+     "hex": "#35B779",
+     "highlight": "#90E5B4",
+     "shadow": "#007841",
+     "Lstar": 66.5,
+     "ink": "#1B1410",
+     "inkContrast": 7.11,
+     "deutan": "#A59D7D",
+     "protan": "#B5A975",
+     "tritan": "#00B6A7",
+     "grey": "#A2A2A2",
+     "material": "viridis step"
+    },
+    "50": {
+     "hex": "#90D743",
+     "highlight": "#D0FFA0",
+     "shadow": "#569600",
+     "Lstar": 79.0,
+     "ink": "#1B1410",
+     "inkContrast": 10.39,
+     "deutan": "#D6C250",
+     "protan": "#E0C72C",
+     "tritan": "#92CEBA",
+     "grey": "#C4C4C4",
+     "material": "viridis step"
+    },
+    "100": {
+     "hex": "#FDE725",
+     "highlight": "#FFF983",
+     "shadow": "#BBA600",
+     "Lstar": 90.9,
+     "ink": "#1B1410",
+     "inkContrast": 14.41,
+     "deutan": "#FFE939",
+     "protan": "#FEE000",
+     "tritan": "#FFD6C6",
+     "grey": "#E5E5E5",
+     "material": "viridis step"
+    }
+   },
+   "minDeltaE00": {
+    "normal": 14.6,
+    "deutan": 9.7,
+    "protan": 6.8,
+    "tritan": 10.3,
+    "grey": 7.7
+   },
+   "worstPairs": {
+    "normal": [
+     [
+      14.6,
+      "1",
+      "2"
+     ],
+     [
+      18.2,
+      "20",
+      "50"
+     ],
+     [
+      19.3,
+      "2",
+      "5"
+     ]
+    ],
+    "deutan": [
+     [
+      9.7,
+      "1",
+      "2"
+     ],
+     [
+      10.5,
+      "50",
+      "100"
+     ],
+     [
+      10.8,
+      "2",
+      "5"
+     ]
+    ],
+    "protan": [
+     [
+      6.8,
+      "50",
+      "100"
+     ],
+     [
+      12.3,
+      "1",
+      "2"
+     ],
+     [
+      13.5,
+      "2",
+      "5"
+     ]
+    ],
+    "tritan": [
+     [
+      10.3,
+      "10",
+      "20"
+     ],
+     [
+      12.5,
+      "20",
+      "50"
+     ],
+     [
+      13.7,
+      "5",
+      "10"
+     ]
+    ],
+    "grey": [
+     [
+      7.7,
+      "50",
+      "100"
+     ],
+     [
+      9.4,
+      "20",
+      "50"
+     ],
+     [
+      10.0,
+      "1",
+      "2"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "D",
+   "key": "D_heraldic",
+   "title": "Heraldic tinctures mapped to euro values + Petra Sancta hatching",
+   "grades": {
+    "1": {
+     "hex": "#E9ECEF",
+     "highlight": "#F3F5F8",
+     "shadow": "#A9ACAE",
+     "Lstar": 93.3,
+     "ink": "#1B1410",
+     "inkContrast": 15.34,
+     "deutan": "#EAEBEF",
+     "protan": "#EBECEF",
+     "tritan": "#E8EDED",
+     "grey": "#ECECEC",
+     "material": "Argent (metal) - hatching: plain"
+    },
+    "2": {
+     "hex": "#E8B923",
+     "highlight": "#FFF094",
+     "shadow": "#A67B00",
+     "Lstar": 77.3,
+     "ink": "#1B1410",
+     "inkContrast": 9.87,
+     "deutan": "#DBC42E",
+     "protan": "#D0B700",
+     "tritan": "#FCA89F",
+     "grey": "#BFBFBF",
+     "material": "Or (metal) - hatching: dots"
+    },
+    "5": {
+     "hex": "#2B2B2E",
+     "highlight": "#555557",
+     "shadow": "#060607",
+     "Lstar": 17.6,
+     "ink": "#FFF8E7",
+     "inkContrast": 13.33,
+     "deutan": "#2A2B2E",
+     "protan": "#2A2B2E",
+     "tritan": "#2A2B2C",
+     "grey": "#2B2B2B",
+     "material": "Sable - hatching: horizontal+vertical grid"
+    },
+    "10": {
+     "hex": "#A81E2B",
+     "highlight": "#CE6866",
+     "shadow": "#610000",
+     "Lstar": 36.8,
+     "ink": "#FFF8E7",
+     "inkContrast": 6.87,
+     "deutan": "#6C6126",
+     "protan": "#4A442A",
+     "tritan": "#B90025",
+     "grey": "#575757",
+     "material": "Gules - hatching: vertical lines"
+    },
+    "20": {
+     "hex": "#1B4597",
+     "highlight": "#5577B7",
+     "shadow": "#000755",
+     "Lstar": 31.2,
+     "ink": "#FFF8E7",
+     "inkContrast": 8.46,
+     "deutan": "#004495",
+     "protan": "#034F9A",
+     "tritan": "#005967",
+     "grey": "#494949",
+     "material": "Azure - hatching: horizontal lines"
+    },
+    "50": {
+     "hex": "#A05BB8",
+     "highlight": "#CA96DE",
+     "shadow": "#622176",
+     "Lstar": 50.0,
+     "ink": "#FFF8E7",
+     "inkContrast": 4.23,
+     "deutan": "#5D79B5",
+     "protan": "#4873BB",
+     "tritan": "#9F6981",
+     "grey": "#777777",
+     "material": "Purpure - hatching: diagonal top-right to bottom-left"
+    },
+    "100": {
+     "hex": "#4DA457",
+     "highlight": "#93D297",
+     "shadow": "#06661F",
+     "Lstar": 60.6,
+     "ink": "#1B1410",
+     "inkContrast": 5.86,
+     "deutan": "#9A8F5C",
+     "protan": "#A69751",
+     "tritan": "#3EA092",
+     "grey": "#929292",
+     "material": "Vert - hatching: diagonal top-left to bottom-right"
+    }
+   },
+   "minDeltaE00": {
+    "normal": 24.8,
+    "deutan": 18.4,
+    "protan": 13.2,
+    "tritan": 21.1,
+    "grey": 4.8
+   },
+   "worstPairs": {
+    "normal": [
+     [
+      24.8,
+      "5",
+      "20"
+     ],
+     [
+      25.3,
+      "20",
+      "50"
+     ],
+     [
+      30.4,
+      "5",
+      "10"
+     ]
+    ],
+    "deutan": [
+     [
+      18.4,
+      "10",
+      "100"
+     ],
+     [
+      18.9,
+      "20",
+      "50"
+     ],
+     [
+      20.3,
+      "2",
+      "100"
+     ]
+    ],
+    "protan": [
+     [
+      13.2,
+      "20",
+      "50"
+     ],
+     [
+      14.2,
+      "2",
+      "100"
+     ],
+     [
+      16.7,
+      "5",
+      "10"
+     ]
+    ],
+    "tritan": [
+     [
+      21.1,
+      "5",
+      "20"
+     ],
+     [
+      24.4,
+      "10",
+      "50"
+     ],
+     [
+      25.7,
+      "2",
+      "50"
+     ]
+    ],
+    "grey": [
+     [
+      4.8,
+      "10",
+      "20"
+     ],
+     [
+      9.8,
+      "5",
+      "20"
+     ],
+     [
+      9.9,
+      "50",
+      "100"
+     ]
+    ]
+   }
+  }
+ ]
+}

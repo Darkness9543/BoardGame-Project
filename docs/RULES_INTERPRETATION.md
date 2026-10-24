@@ -75,6 +75,7 @@ The owner answered the first batch of questions in chat. The original spec is a 
 | R40 | **S24 superseded** | The Lojrar roster exists (R4); the "Warpath" faction rule is parked. | S24 |
 | R41 | **Ratasius** (S15 adopted, first option; Q100) | Commander toughness 5 is already R8. Weakness stays at range 1 unless the owner wants the range-2 alternative. | S15 |
 | R42 | **Deferred** | S08 (Soldier 2/5) and S09 (cap the Mercenary pack bonus) are "Later": Soldier stays 2/7, the bonus stays uncapped. | S08, S09 |
+| R43 | **Mixed armies** (owner, 2026-10-24 evening) | **"Each player can choose units from both factions without any restriction."** An army may contain any of the 14 units in any combination; the builder offers all 14 (grouped by faction only as presentation). The single-faction clause of R4 is withdrawn (R4's roster assignment stays, as the units' home faction). `availableRoster()` returns all 14 for every army; `checkArmy` no longer rejects off-faction units. The army's `faction` field becomes a cosmetic **banner** (crest and colours) the player picks in the builder, default Empire (open: Q107, whether to keep the banner choice at all). Consequences: Baba Yaga's "units of white" = **every tier-1 unit** (Footman and Mercenary); Sabrina's Artificer rules apply to any army that fields Artificers; Trill, Kulega and all tier-based rules are unchanged. | R4 (single-faction clause), 5.1, 7.2, `availableRoster`, `checkArmy` |
 
 **Still open after these rulings (defaults until answered):**
 
@@ -86,6 +87,7 @@ The owner answered the first batch of questions in chat. The original spec is a 
 - **Q104** 3x3 buildings: Keep centred at column 7, Market at column 19 (1-indexed), both on row 13. Confirm or move them.
 - **Q105** Market: +2 AP per turn and the tier-1 extra action is kept. Confirm, or drop the extra action.
 - **Q106** Shared wounds rounds up, so a donor at 1 toughness dies. Confirm this is intended.
+- **Q107** With mixed armies (R43), should the player still pick a cosmetic banner (Empire or Lojrar crest and colours) for the army, or should armies have no faction identity at all? Default: a banner, chosen in the builder, default Empire.
 
 ## At a glance: the decisions that shape the engine
 

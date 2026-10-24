@@ -260,11 +260,16 @@ function GhostLabel({ text, radius, y }: { readonly text: string; readonly radiu
   )
 }
 
+/** Inline style for drei `Html` overlays: they must never catch the pointer (see StatPlate). */
+const HTML_PASSTHROUGH = { pointerEvents: 'none' } as const
+
 /** Power and toughness under a hovered or selected token, and the forecast ("-8 -> 4", or LETHAL). */
 function StatPlate(props: { readonly unit: UnitView; readonly forecast: DamageForecast | null; readonly lethal: boolean; readonly radius: number; readonly y: number }) {
   const { unit, forecast, lethal, radius, y } = props
   return (
-    <Html position={[0, y, radius + 0.2]} center pointerEvents="none" zIndexRange={[20, 0]}>
+    // drei applies `pointerEvents` only in transform mode; `style` and the wrapper class keep this plate from
+    // stealing the pointer from the canvas (which cleared the hover and made the plate flicker).
+    <Html position={[0, y, radius + 0.2]} center pointerEvents="none" style={HTML_PASSTHROUGH} wrapperClass="cdr-html" zIndexRange={[20, 0]}>
       <div className="cdr-plate">
         <PlateIcon symbol={STAT_SYMBOLS.power} />
         <span className="cdr-plate-power">{unit.power}</span>

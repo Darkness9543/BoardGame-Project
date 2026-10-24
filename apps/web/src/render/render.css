@@ -154,3 +154,10 @@
   pointer-events: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
 }
+
+/* drei Html overlays (stat plates, chips, floating numbers) must never catch the pointer: a pointer entering one
+   fires pointerleave on the canvas, which cleared the hover and made the overlay flicker. */
+.cdr-html,
+.cdr-html * {
+  pointer-events: none !important;
+}

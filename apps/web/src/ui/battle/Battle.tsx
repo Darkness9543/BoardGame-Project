@@ -28,8 +28,15 @@ import { useTurnNotice } from './useTurnNotice'
 
 const NOTICE_MS = 3500
 
+/** The last pointer position on the page, so a hover card appears where the pointer already is instead of staying
+ *  invisible until the next move (which read as a flicker when the hovered unit changed under a slow pointer). */
+let lastPointer: { x: number; y: number } | null = null
+if (typeof window !== 'undefined') {
+  window.addEventListener('pointermove', (e) => (lastPointer = { x: e.clientX, y: e.clientY }), { capture: true, passive: true })
+}
+
 function HoverCard({ snap, unitId }: { readonly snap: MatchSnapshot; readonly unitId: string | null }) {
-  const [at, setAt] = useState<{ x: number; y: number } | null>(null)
+  const [at, setAt] = useState<{ x: number; y: number } | null>(lastPointer)
   useEffect(() => {
     const onMove = (e: PointerEvent) => setAt({ x: e.clientX, y: e.clientY })
     window.addEventListener('pointermove', onMove)

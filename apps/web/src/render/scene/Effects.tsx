@@ -99,6 +99,9 @@ export function Effects({ version, floaters, chips }: EffectsProps) {
   )
 }
 
+/** drei applies `pointerEvents` only in transform mode; this style keeps chips from stealing the pointer from the canvas. */
+const HTML_PASSTHROUGH = { pointerEvents: 'none' } as const
+
 interface FloatTextProps {
   readonly text: string
   readonly tone: FloatTone
@@ -112,7 +115,7 @@ interface FloatTextProps {
 function FloatText({ text, tone, stack, at, lift, delay, duration }: FloatTextProps) {
   const big = tone === 'damage' || tone === 'heal'
   return (
-    <Html position={[at.x, lift, at.z]} center pointerEvents="none" zIndexRange={[30, 10]}>
+    <Html position={[at.x, lift, at.z]} center pointerEvents="none" style={HTML_PASSTHROUGH} wrapperClass="cdr-html" zIndexRange={[30, 10]}>
       <div className="cdr-float-stack" style={{ transform: `translateY(${-stack * STACK_PX}px)` }}>
         <div
           className={big ? 'cdr-float cdr-float-big' : 'cdr-float'}
@@ -168,7 +171,7 @@ function Chip({ chip }: { readonly chip: BoardChip }) {
   const c = squareCentre(chip.square)
   const colours = chipColours(chip.tone)
   return (
-    <Html position={[c.x, CHIP_HEIGHT, c.z]} center pointerEvents="none" zIndexRange={[25, 10]}>
+    <Html position={[c.x, CHIP_HEIGHT, c.z]} center pointerEvents="none" style={HTML_PASSTHROUGH} wrapperClass="cdr-html" zIndexRange={[25, 10]}>
       <div className="cdr-chip" style={{ color: colours.ink, background: colours.bg, fontFamily: FONTS.numbers }}>
         {chip.text}
       </div>

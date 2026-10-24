@@ -202,16 +202,20 @@ export function Scene(props: SceneProps) {
       cancel()
       pointer.hoverSquare(null)
     }
+    // The hover is cleared when the pointer leaves the board STAGE (the canvas's wrapper), not the canvas itself:
+    // drei's Html overlays (stat plates, chips) are siblings of the canvas inside that wrapper, and a pointer
+    // entering one fires pointerleave on the canvas, which cleared the hover, unmounted the overlay, and flickered.
+    const stage = el.parentElement ?? el
     el.addEventListener('pointermove', onMove)
     el.addEventListener('pointerup', cancel)
     el.addEventListener('pointercancel', cancel)
-    el.addEventListener('pointerleave', onLeave)
+    stage.addEventListener('pointerleave', onLeave)
     return () => {
       cancel()
       el.removeEventListener('pointermove', onMove)
       el.removeEventListener('pointerup', cancel)
       el.removeEventListener('pointercancel', cancel)
-      el.removeEventListener('pointerleave', onLeave)
+      stage.removeEventListener('pointerleave', onLeave)
     }
   }, [gl, pointer])
 

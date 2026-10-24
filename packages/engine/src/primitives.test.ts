@@ -34,7 +34,7 @@ registerAbility(
       const unitId = decision.data['unitId']
       const toughness = decision.data['toughness']
       if (choice === 'no' || holder === null || typeof unitId !== 'string' || typeof toughness !== 'number') return
-      if (!ctx.chargeAp(holder.owner, BABA_CAULDRON_COST)) return
+      if (!ctx.chargeAp(holder.owner, BABA_CAULDRON_COST(1))) return
       const back = ctx.revive(unitId, toughness, parseSquare(choice))
       if (back !== null) ctx.exhaust(back)
       ctx.setTurnCounter(holder.owner, 'cauldron', ctx.turnCounter(holder.owner, 'cauldron') + 1)

@@ -1,27 +1,78 @@
-// Celestial Emissary (RULES_INTERPRETATION 8.13). STUB: owned by the abilities agent.
+// Celestial Emissary (RULES_INTERPRETATION 8.13; Smite's own targets and splash under owner rulings R14 and R25).
 
+import { abilityParam } from '../../content/abilities'
+import { HOLY_BLESSING_SELF, HOLY_FERVOR_SURCHARGE } from '../../constants'
+import { adjacentSquares } from '../../geometry'
 import type { AbilityDefinition } from '../types'
+
+const HOLY_BLESSING = 'emissary.holyBlessing'
+const SMITE = 'emissary.smite'
+const HOLY_FERVOR = 'emissary.holyFervor'
+
+const BLESSING_RANGE = abilityParam(HOLY_BLESSING, 'range')
+const BLESSING_HEAL = abilityParam(HOLY_BLESSING, 'heal')
+const SMITE_RANGE = abilityParam(SMITE, 'range')
+const SMITE_DAMAGE = abilityParam(SMITE, 'damage')
+const SMITE_SPLASH = abilityParam(SMITE, 'splash')
+const FERVOR_ACTIONS = abilityParam(HOLY_FERVOR, 'extraActions')
+const FERVOR_SURCHARGE = abilityParam(HOLY_FERVOR, 'surcharge')
+
+/** A8-24 / CEL-7: extra AP on the Emissary's next action, given the actions it has used this turn. */
+function fervorSurcharge(actionsUsed: number): number {
+  switch (HOLY_FERVOR_SURCHARGE) {
+    case 'everyActionAfterFirst':
+      return actionsUsed >= 1 ? FERVOR_SURCHARGE : 0
+    case 'secondActionOnly':
+      return actionsUsed === 1 ? FERVOR_SURCHARGE : 0
+  }
+}
 
 export const emissaryAbilities: readonly AbilityDefinition[] = [
   {
-    id: 'emissary.holyBlessing',
-    status: 'stub',
-    // TODO(A8-22, CEL-1..2): `active`, cost 3, no targets. resolve: every own unit within params.range of the
-    // Emissary (itself included, HOLY_BLESSING_SELF) heals params.heal via ctx.heal (capped).
+    id: HOLY_BLESSING,
+    status: 'implemented',
+    active: {
+      targets: [],
+      // A8-22 / CEL-1 / CEL-2: own units within range 2 and the Emissary itself (HOLY_BLESSING_SELF) heal 5, capped;
+      // a heal never reveals a stealthed unit.
+      resolve: (ctx, unit) => {
+        const allies = ctx.unitsWithin(unit, BLESSING_RANGE).filter((u) => u.owner === unit.owner)
+        for (const ally of HOLY_BLESSING_SELF ? [unit, ...allies] : allies) ctx.heal(ally, BLESSING_HEAL, HOLY_BLESSING)
+      },
+    },
   },
   {
-    id: 'emissary.smite',
-    status: 'stub',
-    // TODO(A8-23, CEL-3, CEL-8, R14, R25): `active`, cost 3. targets: [{ kind: 'unit', relation: 'any' (R14:
-    // FRIENDLY_SINGLE_TARGET, the UI confirms), range: params.range, includeSelf: false, allowCommander: true }].
-    // resolve: one simultaneous effect, ctx.dealDamageTogether([params.damage on the target, then params.splash on
-    // every unit on the target's 4 orthogonal neighbours, friendly fire on]), dealer = unit. Not a ranged attack.
+    id: SMITE,
+    status: 'implemented',
+    active: {
+      // A8-23 / R14: a visible unit up to range 3, an own one included (FRIENDLY_SINGLE_TARGET; the UI confirms).
+      targets: [{ kind: 'unit', label: 'Target', range: SMITE_RANGE, relation: 'harmful', includeSelf: false, allowCommander: true }],
+      resolve: (ctx, unit, targets) => {
+        const target = targets[0]
+        const victim = target?.kind === 'unit' ? ctx.unit(target.unitId) : undefined
+        if (victim === undefined || victim.anchor === null) return
+        // R25 (Q101): 8 on the target and 3 on every unit on its orthogonal neighbours (8 squares round a Size-2
+        // target), friendly fire on, the Emissary too if it stands there; one simultaneous effect. The Emissary is the
+        // dealer, so weakness applies (CEL-8, R13 floor 1). It targets a unit, so it is no ranged attack and sets off
+        // no mine (CEL-3).
+        ctx.dealSplash({
+          source: SMITE,
+          dealer: unit,
+          target: victim,
+          damage: SMITE_DAMAGE,
+          squares: adjacentSquares(victim.anchor, ctx.sizeOf(victim), 'ORTHO_4'),
+          splash: SMITE_SPLASH,
+          friendlyFire: true,
+        })
+      },
+    },
   },
   {
-    id: 'emissary.holyFervor',
-    status: 'stub',
-    // TODO(A8-24, CEL-4..7): modifyStats: the holder itself gets { actions: params.extraActions }; and
-    // actionSurcharge: (actionsUsed) => (actionsUsed >= 1 ? params.surcharge : 0) (HOLY_FERVOR_SURCHARGE).
-    // Under R12 the extra action may also be a Move (the core's MAX_MOVES_PER_TURN = 'allowance').
+    id: HOLY_FERVOR,
+    status: 'implemented',
+    // A8-24: two actions a turn; R12: the extra one may be a second Move. It adds to Command Aura and the Market,
+    // and every action after the first costs +1 AP whatever it is (CEL-6, CEL-7).
+    modifyStats: (_q, holder, target) => (target.id === holder.id ? { actions: FERVOR_ACTIONS } : null),
+    actionSurcharge: fervorSurcharge,
   },
 ]

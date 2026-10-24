@@ -7,7 +7,7 @@ import { attackTargets, reachableSquares } from './preview'
 import { isTerrain } from './state'
 import { StateQuery } from './query'
 import { buildBattle, sqs, startMatch, type Placement } from './testing/dsl'
-import { findLeaks } from './testing/fogLeak'
+import { findEventLeaks, findLeaks } from './testing/fogLeak'
 import type { GameState, RosterUnitId, Seat } from './types'
 import { projectView } from './view'
 
@@ -32,7 +32,7 @@ describe('take-back (section 9)', () => {
     record = must(record, b.south, { kind: 'move', unitId: b.id('P'), path: sqs('E6', 'E7') })
     expect(projectView(record.state, b.south).units.some((u) => u.id === b.id('N'))).toBe(true) // the move revealed it
     record = must(record, b.south, { kind: 'requestTakeback' })
-    expect(record.state.takeback.request).toMatchObject({ requester: b.south, actionSeq: 1, revealedUnits: [b.id('N')] }) // TB-5
+    expect(record.state.takeback.request).toMatchObject({ requester: b.south, actionSeq: 1, disclosure: { units: [b.id('N')], mines: [] } }) // TB-5
     record = must(record, b.north, { kind: 'acceptTakeback' })
     expect(withoutTakebackMeta(record.state)).toBe(withoutTakebackMeta(before))
     expect(record.state.takeback.used[b.south]).toBe(1)
@@ -191,10 +191,14 @@ describe('random legal playouts (fast-check, 8.3)', () => {
             if (intent === undefined) break
             const result = submit(record, seat, intent)
             if (!result.ok) throw new Error(`candidate rejected: ${result.code}`)
+            const before = record.state
             record = result.record
             expect(JSON.parse(JSON.stringify(record.state))).toEqual(record.state)
             expect(invariants(record.state)).toEqual([])
-            for (const viewer of ['host', 'guest'] as const) expect(findLeaks(record.state, viewer)).toEqual([])
+            for (const viewer of ['host', 'guest'] as const) {
+              expect(findLeaks(record.state, viewer)).toEqual([])
+              expect(findEventLeaks(before, record.state, viewer, result.events)).toEqual([])
+            }
           }
           expect(hashState(replay(record.initial, record.log))).toBe(hashState(record.state))
         },

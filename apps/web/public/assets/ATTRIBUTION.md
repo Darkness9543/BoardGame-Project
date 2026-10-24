@@ -10,6 +10,7 @@ Every file under `apps/web/public/assets/` comes from one of the sources below. 
 | Kenney Fantasy Town Kit 2.0 | CC0 1.0 | Optional (given) | `assets/models/kenney-fantasy-town-kit/` |
 | Kenney Tower Defense Kit 2.1 | CC0 1.0 | Optional (given) | `assets/models/kenney-tower-defense-kit/` |
 | Kenney Nature Kit 2.1 | CC0 1.0 | Optional (given) | `assets/models/kenney-nature-kit/` |
+| Sound effects: Kenney audio packs (4), rubberduck and artisticdude (OpenGameArt), BigSoundBank (6 authors), Freesound (21 authors) | CC0 1.0 | Optional (given) | `assets/audio/` |
 
 ## Credits text for the game
 
@@ -21,6 +22,10 @@ licensed under CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/).
 The icons were modified: background removed and recoloured.
 3D models by Kay Lousberg / KayKit (www.kaylousberg.com) and Kenney (www.kenney.nl),
 CC0 1.0 (credit optional, given with thanks).
+Sound effects by Kenney (www.kenney.nl); rubberduck and artisticdude (opengameart.org);
+BigSoundBank.com (DavidGreck, DenisChardonnet, GlaneurDeSons, Joseph SARDIN, Pablo BERGEL, Pierre SIBANARCO);
+and Freesound.org users Ambient-X, aoristos, clif_creates, daytripper, DeqstersLab, DeVern, dhallcomposer, EminYILDIRIM, JohnBuhr, magnuswaker, mh2o, michorvath, nicoproson, PaceHeart, qubodup, Raventhornn, saturdaysoundguy, Sclolex, seanhealey, spycrah, zachrau;
+all CC0 1.0 (credit optional, given with thanks). The sounds were edited, layered and remixed.
 ```
 
 ## 1. game-icons.net
@@ -277,7 +282,129 @@ Files taken (65; each model is a `.gltf` plus its `.bin`):
 | `tree_oak.glb` | `Models/GLTF format/tree_oak.glb` | blocker (oak tree) | 2 / 1 |
 | `License.txt` | `License.txt` | kit licence (CC0) |  |
 
+## 7. Sound effects (`assets/audio/`)
+
+- **Licence:** every source sound is Creative Commons Zero (CC0 1.0 Universal), https://creativecommons.org/publicdomain/zero/1.0/. All checked on 2026-10-24.
+- **Attribution required:** no. Credit given anyway (see the credits text above).
+- **Formats:** each cue ships as Ogg Vorbis (`.ogg`, preferred) and MP3 (`.mp3`, Safari fallback), 44.1 kHz, mono except `lose`, `draw` and the two ambience loops (stereo; the `win` source is mono). Files are edited (trimmed, layered, filtered, some pitch-shifted, one reversed), mixed and peak-normalised to about -3 dBFS; the table says what was done to each.
+- **Freesound files** are the site's HQ OGG previews (the original download needs a login); the licence applies to the sound, so the preview is CC0 too. The table names each sound page.
+- **`cues.json`** (same folder) maps every cue id to its files, gain, variations, sources and engine events. It is project metadata, like this file.
+
+| Source | Licence evidence | Page | Files using it |
+|---|---|---|---|
+| BigSoundBank | Each sound page says "CC0 (public domain): Free and royalty-free"; the site licence page: "Creative Commons CC0 1.0 Universal ... Use, including for commercial purposes. Without any restrictions. Without asking permission." (https://bigsoundbank.com/licenses.html) | https://bigsoundbank.com | 55 layer uses |
+| Freesound | Each sound page links "Creative Commons 0" (http://creativecommons.org/publicdomain/zero/1.0/); checked page by page | https://freesound.org | 32 layer uses |
+| Kenney - Casino Audio 1.1 | "License: (Creative Commons Zero, CC0) ... This content is free to use in personal, educational and commercial projects. Support us by crediting Kenney or www.kenney.nl (this is not mandatory)" (Impact Sounds and Interface Sounds `License.txt`; UI Audio, RPG Audio, Casino Audio and Music Jingles say "Credit (Kenney or www.kenney.nl) would be nice but is not mandatory") | https://kenney.nl/assets/casino-audio | 3 layer uses |
+| Kenney - Impact Sounds 1.0 | "License: (Creative Commons Zero, CC0) ... This content is free to use in personal, educational and commercial projects. Support us by crediting Kenney or www.kenney.nl (this is not mandatory)" (Impact Sounds and Interface Sounds `License.txt`; UI Audio, RPG Audio, Casino Audio and Music Jingles say "Credit (Kenney or www.kenney.nl) would be nice but is not mandatory") | https://kenney.nl/assets/impact-sounds | 14 layer uses |
+| Kenney - RPG Audio 1.0 | "License: (Creative Commons Zero, CC0) ... This content is free to use in personal, educational and commercial projects. Support us by crediting Kenney or www.kenney.nl (this is not mandatory)" (Impact Sounds and Interface Sounds `License.txt`; UI Audio, RPG Audio, Casino Audio and Music Jingles say "Credit (Kenney or www.kenney.nl) would be nice but is not mandatory") | https://kenney.nl/assets/rpg-audio | 6 layer uses |
+| Kenney - UI Audio 1.0 | "License: (Creative Commons Zero, CC0) ... This content is free to use in personal, educational and commercial projects. Support us by crediting Kenney or www.kenney.nl (this is not mandatory)" (Impact Sounds and Interface Sounds `License.txt`; UI Audio, RPG Audio, Casino Audio and Music Jingles say "Credit (Kenney or www.kenney.nl) would be nice but is not mandatory") | https://kenney.nl/assets/ui-audio | 1 layer use |
+| artisticdude - RPG Sound Pack | OpenGameArt pages list "License(s): CC0" for each pack (checked on the pack pages) | https://opengameart.org/content/rpg-sound-pack | 1 layer use |
+| artisticdude - Swishes Sound Pack | OpenGameArt pages list "License(s): CC0" for each pack (checked on the pack pages) | https://opengameart.org/content/swishes-sound-pack | 1 layer use |
+| rubberduck - 100 CC0 SFX | OpenGameArt pages list "License(s): CC0" for each pack (checked on the pack pages) | https://opengameart.org/content/100-cc0-sfx | 1 layer use |
+| rubberduck - 100 CC0 metal and wood SFX | OpenGameArt pages list "License(s): CC0" for each pack (checked on the pack pages) | https://opengameart.org/content/100-cc0-metal-and-wood-sfx | 4 layer uses |
+| rubberduck - 40 CC0 water / splash / slime SFX | OpenGameArt pages list "License(s): CC0" for each pack (checked on the pack pages) | https://opengameart.org/content/40-cc0-water-splash-slime-sfx | 1 layer use |
+| rubberduck - 75 CC0 breaking / falling / hit sfx | OpenGameArt pages list "License(s): CC0" for each pack (checked on the pack pages) | https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx | 4 layer uses |
+| rubberduck - 80 CC0 RPG SFX | OpenGameArt pages list "License(s): CC0" for each pack (checked on the pack pages) | https://opengameart.org/content/80-cc0-rpg-sfx | 1 layer use |
+
+| Files (`.ogg` + `.mp3`) | Layers: source file, author, edit |
+|---|---|
+| `ui.hover` | Freesound [Moving piece on a boardgame](https://freesound.org/people/zachrau/sounds/556387/), zachrau: from 0.350 s for 0.09 s, low-pass 3500 Hz |
+| `ui.click` | Freesound [chess_move_on_alabaster.wav](https://freesound.org/people/mh2o/sounds/351518/), mh2o: whole file |
+| `ui.confirm` | `Audio/chip-lay-3.ogg` ([Kenney - Casino Audio 1.1](https://kenney.nl/assets/casino-audio)), Kenney (www.kenney.nl): whole file |
+| `ui.cancel` | `Audio/card-slide-1.ogg` ([Kenney - Casino Audio 1.1](https://kenney.nl/assets/casino-audio)), Kenney (www.kenney.nl): from 0.080 s for 0.26 s |
+| `ui.error` | `lock_02.ogg` ([rubberduck - 80 CC0 RPG SFX](https://opengameart.org/content/80-cc0-rpg-sfx)), rubberduck (OpenGameArt): from 0.020 s for 0.30 s, pitch -2 st<br>`Audio/impactWood_medium_002.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): -6 dB |
+| `ui.toggle` | `Audio/switch17.ogg` ([Kenney - UI Audio 1.0](https://kenney.nl/assets/ui-audio)), Kenney (www.kenney.nl): from 0.080 s |
+| `ui.open` | BigSoundBank [Road map #2 (#2797)](https://bigsoundbank.com/road-map-2-s2797.html), Joseph SARDIN: from 0.260 s for 0.55 s |
+| `ui.close` | BigSoundBank [Closed book #2 (#1411)](https://bigsoundbank.com/closed-book-2-s1411.html), Joseph SARDIN: from 0.200 s for 0.26 s |
+| `lobby.joined` | BigSoundBank [Small Bell #3 (#0294)](https://bigsoundbank.com/small-bell-3-s0294.html), GlaneurDeSons: from 0.030 s for 1.40 s |
+| `lobby.ready` | BigSoundBank [Coin in cup #2 (#0340)](https://bigsoundbank.com/coin-in-cup-2-s0340.html), DavidGreck: from 0.060 s for 0.40 s |
+| `turn.start.own` | BigSoundBank [Bronze bell #1 (#2703)](https://bigsoundbank.com/bronze-bell-1-s2703.html), Pierre SIBANARCO: from 0.020 s for 1.50 s |
+| `turn.start.opponent` | BigSoundBank [Bass Tom, #1 (#2338)](https://bigsoundbank.com/bass-tom-1-s2338.html), Joseph SARDIN: from 0.020 s for 0.65 s, pitch -2 st |
+| `turn.end` | `wood_hit_07.ogg` ([rubberduck - 100 CC0 metal and wood SFX](https://opengameart.org/content/100-cc0-metal-and-wood-sfx)), rubberduck (OpenGameArt): from 0.000 s for 0.20 s<br>`wood_hit_07.ogg` ([rubberduck - 100 CC0 metal and wood SFX](https://opengameart.org/content/100-cc0-metal-and-wood-sfx)), rubberduck (OpenGameArt): from 0.000 s for 0.20 s, pitch -1 st, -3 dB, at +120 ms |
+| `timer.warning` | BigSoundBank [Tic Tac Mechanical Alarm Clock #3 (#2656)](https://bigsoundbank.com/tic-tac-mechanical-alarm-clock-3-s2656.html), Joseph SARDIN: from 0.425 s for 0.44 s |
+| `boost.active` | BigSoundBank [Horn #1 (#2520)](https://bigsoundbank.com/horn-1-s2520.html), Joseph SARDIN: from 0.000 s for 1.75 s |
+| `unit.select-1` | BigSoundBank [Coin spinning on a table #4 (#2700)](https://bigsoundbank.com/coin-spinning-on-a-table-4-s2700.html), Pierre SIBANARCO: from 2.880 s for 0.22 s, pitch +1 st |
+| `unit.select-2` | BigSoundBank [Coin spinning on a table #5 (#2701)](https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html), Pierre SIBANARCO: from 3.825 s for 0.22 s, pitch +1 st |
+| `unit.deselect-1` | BigSoundBank [Coin spinning on a table #2 (#2698)](https://bigsoundbank.com/coin-spinning-on-a-table-2-s2698.html), Pierre SIBANARCO: from 2.660 s for 0.20 s, pitch -2 st |
+| `unit.deselect-2` | BigSoundBank [Coin spinning on a table #2 (#2698)](https://bigsoundbank.com/coin-spinning-on-a-table-2-s2698.html), Pierre SIBANARCO: from 2.135 s for 0.20 s, pitch -2 st |
+| `unit.move.step-1` | Freesound [coin sliding on table.wav](https://freesound.org/people/seanhealey/sounds/517749/), seanhealey: from 1.950 s for 0.34 s, high-pass 120 Hz |
+| `unit.move.step-2` | Freesound [coin sliding on table.wav](https://freesound.org/people/seanhealey/sounds/517749/), seanhealey: from 3.920 s for 0.34 s, high-pass 120 Hz |
+| `unit.move.step-3` | Freesound [coin sliding on table.wav](https://freesound.org/people/seanhealey/sounds/517749/), seanhealey: from 7.450 s for 0.34 s, high-pass 120 Hz |
+| `unit.move.step-4` | Freesound [coin sliding on table.wav](https://freesound.org/people/seanhealey/sounds/517749/), seanhealey: from 9.300 s for 0.34 s, high-pass 120 Hz |
+| `unit.move.charge` | Freesound [coin sliding on table.wav](https://freesound.org/people/seanhealey/sounds/517749/), seanhealey: from 1.950 s for 0.48 s, high-pass 120 Hz<br>BigSoundBank [Whoosh #8 (#1801)](https://bigsoundbank.com/whoosh-8-s1801.html), Joseph SARDIN: from 0.200 s for 0.42 s, high-pass 150 Hz, -3 dB |
+| `march.step-1` | Freesound [several coins on wood top](https://freesound.org/people/nicoproson/sounds/776505/), nicoproson: from 0.860 s for 0.30 s |
+| `march.step-2` | Freesound [several coins on wood top](https://freesound.org/people/nicoproson/sounds/776505/), nicoproson: from 2.420 s for 0.32 s |
+| `march.step-3` | Freesound [several coins on wood top](https://freesound.org/people/nicoproson/sounds/776505/), nicoproson: from 8.560 s for 0.32 s |
+| `unit.defend` | BigSoundBank [Dumbbell, placed #2 (#3296)](https://bigsoundbank.com/dumbbell-placed-2-s3296.html), Joseph SARDIN: from 0.090 s for 0.34 s<br>`Audio/impactPlate_light_003.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): -8 dB, at +5 ms |
+| `attack.swing.light-1` | Freesound [Combat Whooshes](https://freesound.org/people/EminYILDIRIM/sounds/535359/), EminYILDIRIM: from 0.660 s for 0.26 s, high-pass 110 Hz |
+| `attack.swing.light-2` | Freesound [Combat Whooshes](https://freesound.org/people/EminYILDIRIM/sounds/535359/), EminYILDIRIM: from 1.790 s for 0.26 s, high-pass 110 Hz |
+| `attack.swing.light-3` | Freesound [Combat Whooshes](https://freesound.org/people/EminYILDIRIM/sounds/535359/), EminYILDIRIM: from 3.660 s for 0.24 s, high-pass 110 Hz |
+| `attack.swing.heavy-1` | BigSoundBank [Whoosh #10 (#1798)](https://bigsoundbank.com/whoosh-10-s1798.html), Joseph SARDIN: from 0.120 s for 0.34 s, pitch -2 st, high-pass 80 Hz |
+| `attack.swing.heavy-2` | BigSoundBank [Whoosh #5 (#1797)](https://bigsoundbank.com/whoosh-5-s1797.html), Joseph SARDIN: from 0.150 s for 0.30 s, pitch -2 st, high-pass 80 Hz |
+| `attack.swing.heavy-3` | BigSoundBank [Whoosh #8 (#1801)](https://bigsoundbank.com/whoosh-8-s1801.html), Joseph SARDIN: from 0.180 s for 0.45 s, pitch -2 st, high-pass 80 Hz |
+| `attack.ranged.shot` | Freesound [Arrow Loose and Flyby](https://freesound.org/people/saturdaysoundguy/sounds/394180/), saturdaysoundguy: whole file |
+| `hit.metal.light-1` | `bfh1_metal_hit_04.ogg` ([rubberduck - 75 CC0 breaking / falling / hit sfx](https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx)), rubberduck (OpenGameArt): whole file |
+| `hit.metal.light-2` | `bfh1_metal_hit_06.ogg` ([rubberduck - 75 CC0 breaking / falling / hit sfx](https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx)), rubberduck (OpenGameArt): whole file |
+| `hit.metal.light-3` | `metal_hit_03.ogg` ([rubberduck - 100 CC0 metal and wood SFX](https://opengameart.org/content/100-cc0-metal-and-wood-sfx)), rubberduck (OpenGameArt): whole file |
+| `hit.metal.heavy-1` | BigSoundBank [Anvil #2 (#3590)](https://bigsoundbank.com/anvil-2-s3590.html), Pablo BERGEL: from 1.205 s for 0.55 s, pitch -2 st, high-pass 90 Hz<br>`Audio/impactPunch_heavy_001.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): from 0.000 s for 0.25 s, high-pass 70 Hz, -6 dB |
+| `hit.metal.heavy-2` | BigSoundBank [Anvil #2 (#3590)](https://bigsoundbank.com/anvil-2-s3590.html), Pablo BERGEL: from 2.250 s for 0.55 s, pitch -2 st, high-pass 90 Hz<br>`Audio/impactPunch_heavy_003.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): from 0.000 s for 0.25 s, high-pass 70 Hz, -6 dB |
+| `hit.metal.heavy-3` | BigSoundBank [Anvil #1 (#3589)](https://bigsoundbank.com/anvil-1-s3589.html), Pablo BERGEL: from 2.418 s for 0.55 s, pitch -2 st, high-pass 90 Hz<br>`Audio/impactPunch_heavy_000.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): from 0.000 s for 0.25 s, high-pass 70 Hz, -6 dB |
+| `hit.blocked-1` | Freesound [Sword_Clash (7).wav](https://freesound.org/people/JohnBuhr/sounds/326868/), JohnBuhr: from 0.000 s for 0.30 s |
+| `hit.blocked-2` | Freesound [Sword Hit](https://freesound.org/people/qubodup/sounds/442769/), qubodup: from 0.000 s for 0.34 s, pitch +1 st |
+| `hit.defended-1` | `Audio/impactPlate_heavy_000.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): whole file<br>BigSoundBank [Dumbbell, placed #3 (#3297)](https://bigsoundbank.com/dumbbell-placed-3-s3297.html), Joseph SARDIN: from 0.110 s for 0.19 s, -6 dB |
+| `hit.defended-2` | `Audio/impactPlate_heavy_004.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): whole file<br>BigSoundBank [Dumbbell, placed #2 (#3296)](https://bigsoundbank.com/dumbbell-placed-2-s3296.html), Joseph SARDIN: from 0.090 s for 0.32 s, -6 dB |
+| `unit.death-1` | BigSoundBank [Coin spinning on a table #1 (#2697)](https://bigsoundbank.com/coin-spinning-on-a-table-1-s2697.html), Pierre SIBANARCO: from 10.740 s for 0.78 s, high-pass 150 Hz |
+| `unit.death-2` | BigSoundBank [Coin spinning on a table #4 (#2700)](https://bigsoundbank.com/coin-spinning-on-a-table-4-s2700.html), Pierre SIBANARCO: from 12.990 s for 0.78 s, high-pass 150 Hz |
+| `unit.death-3` | BigSoundBank [Coin spinning on a table #6 (#2702)](https://bigsoundbank.com/coin-spinning-on-a-table-6-s2702.html), Pierre SIBANARCO: from 13.500 s for 0.78 s, high-pass 150 Hz |
+| `unit.death.big-1` | BigSoundBank [Falling sheet steel bar #2 (#1772)](https://bigsoundbank.com/falling-sheet-steel-bar-2-s1772.html), Joseph SARDIN: from 0.080 s for 0.78 s<br>BigSoundBank [Coin spinning on a table #5 (#2701)](https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html), Pierre SIBANARCO: from 16.900 s for 0.82 s, pitch -3 st, high-pass 120 Hz, -3 dB, at +220 ms |
+| `unit.death.big-2` | BigSoundBank [Falling sheet steel bar #4 (#1774)](https://bigsoundbank.com/falling-sheet-steel-bar-4-s1774.html), Joseph SARDIN: from 0.110 s for 0.80 s<br>BigSoundBank [Coin spinning on a table #3 (#2699)](https://bigsoundbank.com/coin-spinning-on-a-table-3-s2699.html), Pierre SIBANARCO: from 18.600 s for 0.82 s, pitch -3 st, high-pass 120 Hz, -3 dB, at +220 ms |
+| `heal` | BigSoundBank [Finger Cymbals #1 (#2274)](https://bigsoundbank.com/finger-cymbals-1-s2274.html), Joseph SARDIN: from 0.040 s for 1.00 s, low-pass 9000 Hz |
+| `buff` | BigSoundBank [Knife blade #1 (#2574)](https://bigsoundbank.com/knife-blade-1-s2574.html), Joseph SARDIN: from 0.030 s for 0.36 s |
+| `debuff` | BigSoundBank [Small chain #1 (#0355)](https://bigsoundbank.com/small-chain-1-s0355.html), DenisChardonnet: from 0.080 s for 0.62 s, pitch -2 st |
+| `reveal` | BigSoundBank [Flag #2 (#1788)](https://bigsoundbank.com/flag-2-s1788.html), Joseph SARDIN: from 0.100 s for 0.32 s<br>`Audio/impactMetal_light_001.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): -8 dB, at +50 ms |
+| `stealth.on` | `Audio/cloth2.ogg` ([Kenney - RPG Audio 1.0](https://kenney.nl/assets/rpg-audio)), Kenney (www.kenney.nl): from 0.040 s for 0.32 s |
+| `stealth.off` | `Audio/cloth1.ogg` ([Kenney - RPG Audio 1.0](https://kenney.nl/assets/rpg-audio)), Kenney (www.kenney.nl): from 0.050 s for 0.52 s |
+| `assault-1` | `Audio/knifeSlice.ogg` ([Kenney - RPG Audio 1.0](https://kenney.nl/assets/rpg-audio)), Kenney (www.kenney.nl): from 0.060 s for 0.36 s |
+| `assault-2` | `Audio/knifeSlice2.ogg` ([Kenney - RPG Audio 1.0](https://kenney.nl/assets/rpg-audio)), Kenney (www.kenney.nl): from 0.000 s for 0.42 s |
+| `mine.place` | `metal_spring_02.ogg` ([rubberduck - 100 CC0 metal and wood SFX](https://opengameart.org/content/100-cc0-metal-and-wood-sfx)), rubberduck (OpenGameArt): whole file<br>`Audio/metalLatch.ogg` ([Kenney - RPG Audio 1.0](https://kenney.nl/assets/rpg-audio)), Kenney (www.kenney.nl): -2 dB, at +200 ms |
+| `mine.explode` | Freesound [Explosion 1](https://freesound.org/people/magnuswaker/sounds/523089/), magnuswaker: whole file<br>`bfh1_rock_falling_03.ogg` ([rubberduck - 75 CC0 breaking / falling / hit sfx](https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx)), rubberduck (OpenGameArt): -8 dB, at +300 ms |
+| `prototype.create` | BigSoundBank [Winder #7 (#2668)](https://bigsoundbank.com/winder-7-s2668.html), Joseph SARDIN: from 0.150 s for 1.05 s<br>`Audio/impactPlate_light_002.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): -2 dB, at +1080 ms |
+| `forcefield.on` | BigSoundBank [Tibetan bowl struck #3 (#2554)](https://bigsoundbank.com/tibetan-bowl-struck-3-s2554.html), Joseph SARDIN: from 0.000 s for 2.00 s |
+| `forcefield.off` | BigSoundBank [Triangle muffled #1 (#1690)](https://bigsoundbank.com/triangle-muffled-1-s1690.html), Joseph SARDIN: from 0.030 s for 0.60 s, pitch -5 st |
+| `pajazon.cast` | BigSoundBank [Whoosh #2 (#0573)](https://bigsoundbank.com/whoosh-2-s0573.html), Joseph SARDIN: from 8.120 s for 0.40 s, -4 dB<br>BigSoundBank [Gong, strong #1 (#1483)](https://bigsoundbank.com/gong-strong-1-s1483.html), Joseph SARDIN: from 0.120 s for 2.20 s, low-pass 7000 Hz, at +260 ms |
+| `pajazon.heal` | BigSoundBank [Chimes "butterfly" #1 (#2087)](https://bigsoundbank.com/chimes-butterfly-1-s2087.html), Joseph SARDIN: from 1.380 s for 0.56 s |
+| `pajazon.damage` | BigSoundBank [Quenching, cooling #4 (#1697)](https://bigsoundbank.com/quenching-cooling-4-s1697.html), Joseph SARDIN: from 0.000 s for 0.27 s |
+| `slam.impact` | Freesound [big stone door suddenly slamming shut](https://freesound.org/people/PaceHeart/sounds/465807/), PaceHeart: whole file<br>`bfh1_rock_breaking_02.ogg` ([rubberduck - 75 CC0 breaking / falling / hit sfx](https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx)), rubberduck (OpenGameArt): -6 dB, at +40 ms<br>`Audio/impactMining_000.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): -6 dB |
+| `feast` | Freesound [Hard Candy / Bone Crunch](https://freesound.org/people/clif_creates/sounds/392883/), clif_creates: from 0.000 s for 0.75 s |
+| `smite` | Freesound [TollBell.wav](https://freesound.org/people/daytripper/sounds/73678/), daytripper: from 0.000 s for 2.20 s<br>`Audio/impactPunch_heavy_001.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): -3 dB<br>BigSoundBank [Explosion #2 (#1808)](https://bigsoundbank.com/explosion-2-s1808.html), Joseph SARDIN: -10 dB |
+| `blessing` | BigSoundBank [Chimes "Dream" #1 (#2079)](https://bigsoundbank.com/chimes-dream-1-s2079.html), Joseph SARDIN: from 0.080 s for 1.90 s |
+| `savagery` | Freesound [Swing grunt.mp3](https://freesound.org/people/DeqstersLab/sounds/661242/), DeqstersLab: from 0.050 s for 0.67 s<br>`swishes/swish-7.wav` ([artisticdude - Swishes Sound Pack](https://opengameart.org/content/swishes-sound-pack)), artisticdude (OpenGameArt): -5 dB, at +180 ms |
+| `shared.wounds` | Freesound [Heart Beating](https://freesound.org/people/michorvath/sounds/273150/), michorvath: from 0.300 s for 0.65 s, high-pass 35 Hz, saturation 10 dB<br>BigSoundBank [Tibetan Bowl Struck #1 (#1110)](https://bigsoundbank.com/tibetan-bowl-struck-s1110.html), Joseph SARDIN: from 0.080 s for 0.90 s, -12 dB, at +50 ms |
+| `julio` | Freesound [Dark Magic Loop](https://freesound.org/people/qubodup/sounds/442825/), qubodup: from 0.000 s for 1.20 s<br>BigSoundBank [Bones cracking #2 (#1408)](https://bigsoundbank.com/bones-cracking-2-s1408.html), Joseph SARDIN: from 0.220 s for 0.18 s, -4 dB, at +120 ms |
+| `command.aura` | Freesound [warriordrums.wav](https://freesound.org/people/Sclolex/sounds/209546/), Sclolex: from 0.290 s for 0.62 s |
+| `mend` | `Audio/cloth3.ogg` ([Kenney - RPG Audio 1.0](https://kenney.nl/assets/rpg-audio)), Kenney (www.kenney.nl): from 0.000 s for 0.30 s, -4 dB<br>`Audio/impactMetal_light_002.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): -6 dB, at +220 ms |
+| `hexward` | `RPG Sound Pack/inventory/beads.wav` ([artisticdude - RPG Sound Pack](https://opengameart.org/content/rpg-sound-pack)), artisticdude (OpenGameArt): from 0.000 s for 0.32 s<br>BigSoundBank [Tibetan Bowl Struck #1 (#1110)](https://bigsoundbank.com/tibetan-bowl-struck-s1110.html), Joseph SARDIN: from 0.080 s for 1.00 s, pitch -3 st, -10 dB |
+| `cauldron.return` | `bubble_02.ogg` ([rubberduck - 40 CC0 water / splash / slime SFX](https://opengameart.org/content/40-cc0-water-splash-slime-sfx)), rubberduck (OpenGameArt): from 0.020 s for 0.28 s<br>`plop_02.ogg` ([rubberduck - 100 CC0 SFX](https://opengameart.org/content/100-cc0-sfx)), rubberduck (OpenGameArt): at +220 ms<br>BigSoundBank [Coin spinning on a table #5 (#2701)](https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html), Pierre SIBANARCO: from 3.825 s for 0.20 s, -4 dB, at +420 ms |
+| `revive` | BigSoundBank [Coin spinning on a table #5 (#2701)](https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html), Pierre SIBANARCO: from 16.700 s for 1.05 s, reversed, high-pass 150 Hz<br>BigSoundBank [Bronze bell #5 (#2707)](https://bigsoundbank.com/bronze-bell-5-s2707.html), Pierre SIBANARCO: from 0.030 s for 0.40 s, -6 dB, at +550 ms |
+| `weakness` | BigSoundBank [Medium Chain #1 (#0360)](https://bigsoundbank.com/medium-chain-1-s0360.html), DenisChardonnet: from 0.140 s for 0.90 s, pitch -2 st, low-pass 7000 Hz |
+| `capture.keep` | BigSoundBank [Metal barrier: Closure #1 (#2358)](https://bigsoundbank.com/grinding-metal-barrier-closure-1-s2358.html), Joseph SARDIN: from 1.600 s for 1.25 s |
+| `capture.market` | BigSoundBank [Coins #2 (#0194)](https://bigsoundbank.com/coins-2-s0194.html), Joseph SARDIN: from 2.920 s for 0.95 s |
+| `building.contested` | Freesound [Sword clash 1.wav](https://freesound.org/people/spycrah/sounds/471095/), spycrah: from 0.970 s for 0.78 s |
+| `siege.tick` | BigSoundBank [Grandfather clock, hour #1 (#1569)](https://bigsoundbank.com/grandfather-clock-hour-1-s1569.html), Joseph SARDIN: from 1.830 s for 1.20 s |
+| `win` | Freesound [Real Trumpet Fanfare 2](https://freesound.org/people/qubodup/sounds/855458/), qubodup: whole file |
+| `lose` | Freesound [funeral bell-cloche funèbre.wav](https://freesound.org/people/aoristos/sounds/329324/), aoristos: from 0.400 s for 6.00 s |
+| `draw` | Freesound [Distant War Horn.wav](https://freesound.org/people/DeVern/sounds/512490/), DeVern: from 0.100 s for 4.80 s |
+| `takeback.request` | BigSoundBank [Great Page that Turns #1 (#0362)](https://bigsoundbank.com/great-page-that-turns-1-s0362.html), DenisChardonnet: from 0.030 s for 0.95 s |
+| `takeback.accept` | BigSoundBank [Great page that turns #1 (#0363)](https://bigsoundbank.com/great-page-that-turns-1-s0363.html), DenisChardonnet: from 0.100 s for 0.65 s<br>`Audio/chip-lay-3.ogg` ([Kenney - Casino Audio 1.1](https://kenney.nl/assets/casino-audio)), Kenney (www.kenney.nl): -3 dB, at +450 ms |
+| `decision.prompt` | BigSoundBank [Small Bell #1 (#0292)](https://bigsoundbank.com/small-bell-1-s0292.html), GlaneurDeSons: from 0.040 s for 1.00 s |
+| `coin.flip` | Freesound [coin flip.wav](https://freesound.org/people/Raventhornn/sounds/181189/), Raventhornn: from 0.050 s for 1.10 s |
+| `battle.start` | Freesound [warriordrums.wav](https://freesound.org/people/Sclolex/sounds/209546/), Sclolex: from 0.000 s for 2.30 s |
+| `attack.miss` | `Audio/footstep_snow_000.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): from 0.000 s for 0.22 s<br>`Audio/impactSoft_medium_002.ogg` ([Kenney - Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds)), Kenney (www.kenney.nl): -6 dB |
+| `ambient.wind` | Freesound [Looping Gentle Wind Ambience on an Open Desert Plain.wav](https://freesound.org/people/dhallcomposer/sounds/697217/), dhallcomposer: from 2.000 s for 33.00 s, high-pass 60 Hz |
+| `ambient.camp` | Freesound [Campfire deer camp - adding kindling - med wind - part 4.wav](https://freesound.org/people/Ambient-X/sounds/660298/), Ambient-X: from 26.000 s for 33.00 s, high-pass 60 Hz, low-pass 9000 Hz |
+
 ## Not included
 
-- `manifest.json` and this file are project metadata, not third-party assets.
+- `manifest.json` and this file are project metadata, not third-party assets. So is `assets/audio/cues.json`.
+- The sound contenders that were rendered for comparison but not chosen live only in `docs/audio-direction/audio/` (for the mock page) and are not shipped. Their sources are listed in `docs/analysis/research-audio.md`.
 - `docs/analysis/research-art.md` also names KayKit `flag_<colour>.gltf`, `trees_A_*`, `rock_single_*` and `hills_*`. They were not copied, because the asset brief limited the KayKit extraction to the castle, market, tower and wall files. They are in the same repo at the same commit if they are wanted later.

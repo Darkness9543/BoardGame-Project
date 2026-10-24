@@ -1,13 +1,13 @@
-// Factions (7.2). Owner ruling R4: the PDF's two columns are the two rosters, one unit per tier each.
+// Factions (7.2). Owner ruling R4: the PDF's two columns are the two rosters, one unit per tier each. Owner ruling
+// R43: an army may mix units of both rosters, so a faction is the army's banner and its units' home.
 
-import { LOJRAR_PROXY_ROSTER } from '../constants'
 import type { FactionId, RosterUnitId } from '../types'
-import { ROSTER } from './units'
+import { ROSTER, ROSTER_IDS } from './units'
 
 export interface FactionDef {
   readonly id: FactionId
   readonly name: string
-  /** The faction's own 7 units, in tier order. */
+  /** The faction's own 7 units (their home faction, R4), in tier order: presentation grouping since R43. */
   readonly roster: readonly RosterUnitId[]
 }
 
@@ -26,8 +26,7 @@ export function factionDef(id: FactionId): FactionDef {
   return def
 }
 
-/** R4: an army fields its own faction's units only (LOJRAR_PROXY_ROSTER, now false, was the old A7-05 stand-in). */
-export function availableRoster(id: FactionId): readonly RosterUnitId[] {
-  if (id === 'lojrar' && LOJRAR_PROXY_ROSTER) return [...factionDef('empire').roster, ...factionDef('lojrar').roster]
-  return factionDef(id).roster
+/** R43: every army may field all 14 units, whatever its banner. */
+export function availableRoster(_banner: FactionId): readonly RosterUnitId[] {
+  return ROSTER_IDS
 }

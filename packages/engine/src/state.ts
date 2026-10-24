@@ -18,7 +18,7 @@ import { buildingDef } from './content/buildings'
 import { DEFAULT_SCENARIO, scenarioDef, type ScenarioDef } from './content/scenarios'
 import { unitDef } from './content/units'
 import { footprintSquares, sameSquare, squareExists, squareIndex } from './geometry'
-import { nextId, seedRng } from './rng'
+import { sha256Hex } from './hash'
 import type {
   AbilityId,
   BuildingState,
@@ -65,7 +65,7 @@ export function createGame(options: CreateGameOptions): GameState {
     phase: 'lobby',
     settings,
     seed: options.seed,
-    rng: seedRng(options.seed),
+    idCounter: 0,
     southSeat: null,
     seats: { host: newSeatState(options.names?.host ?? 'Host'), guest: newSeatState(options.names?.guest ?? 'Guest') },
     units: [],
@@ -79,6 +79,7 @@ export function createGame(options: CreateGameOptions): GameState {
     takeback: { request: null, declined: [], used: { host: 0, guest: 0 } },
     drawOffer: null,
     firstContactRound: null,
+    matchStats: { host: {}, guest: {} },
     lastAction: null,
     actionCount: 0,
     nextSeq: 1,
@@ -264,7 +265,14 @@ export function mineAt(state: GameState, s: Square): MineState | undefined {
 
 // ---------------------------------------------------------------- ids and creation order
 
-/** Draws an opaque id from the state RNG (mutates `state.rng`), skipping ids already in use. */
+/** Hex digits of an id's digest (48 bits). */
+const ID_DIGEST_CHARS = 12
+
+/**
+ * Draws an opaque id such as 'u-3f9c2a7b10de' (mutates `state.idCounter`), skipping ids already in use. It is a digest
+ * of the secret seed and the counter (NC 7.19 #2, #3), never an RNG output whose small state a seat could recover
+ * from its own ids and walk forward.
+ */
 export function drawId(state: GameState, prefix: string): string {
   const used = new Set<string>([
     ...state.units.map((u) => u.id),
@@ -274,8 +282,8 @@ export function drawId(state: GameState, prefix: string): string {
     ...state.decisions.map((d) => d.id),
   ])
   for (;;) {
-    const [id, rng] = nextId(state.rng, prefix)
-    state.rng = rng
+    const id = `${prefix}-${sha256Hex(`${state.seed}|id|${state.idCounter}`).slice(0, ID_DIGEST_CHARS)}`
+    state.idCounter += 1
     if (!used.has(id)) return id
   }
 }

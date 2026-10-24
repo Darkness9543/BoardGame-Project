@@ -1,0 +1,166 @@
+/* The board stage and the SVG placeholder renderer. */
+
+.board-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  border-radius: var(--radius);
+  background: radial-gradient(ellipse at 50% 40%, #2a2017, var(--board-void, #17120d) 75%);
+  border: 1px solid var(--ui-border);
+  overflow: hidden;
+}
+
+.svgb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.svgb text {
+  font-family: var(--font-ui);
+}
+
+.svgb-coords text {
+  font-family: var(--font-numbers);
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--ui-ink-faint);
+}
+
+.svgb-building-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  fill: #f3ead2;
+  paint-order: stroke;
+  stroke: #2b1d0e;
+  stroke-width: 3px;
+}
+
+.svgb-ghost-label {
+  font-size: 9px;
+  font-weight: 700;
+  fill: #e9ddff;
+  paint-order: stroke;
+  stroke: #1b1410;
+  stroke-width: 3px;
+}
+
+.svgb-step-badge {
+  font-family: var(--font-numbers);
+  font-size: 12px;
+  font-weight: 800;
+  fill: #1b1410;
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 4px;
+}
+
+.svgb-chip {
+  font-family: var(--font-numbers);
+  font-size: 11px;
+  font-weight: 800;
+  fill: #fff8e7;
+}
+
+.svgb-floater {
+  font-family: var(--font-numbers);
+  font-size: 17px;
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: #1b1410;
+  stroke-width: 4px;
+  animation: floater 1.1s ease-out;
+  transform-box: fill-box;
+}
+
+.svgb-floater-damage {
+  fill: var(--ov-damage);
+}
+
+.svgb-floater-heal {
+  fill: var(--ov-heal);
+}
+
+.svgb-floater-word {
+  fill: var(--ov-selection);
+  font-size: 13px;
+}
+
+.svgb-floater-warn {
+  fill: var(--ov-hazard);
+  font-size: 14px;
+}
+
+.svgb-still {
+  animation: none;
+}
+
+@keyframes floater {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-26px);
+  }
+}
+
+.svgb-flash {
+  stroke-dasharray: 6 6;
+  animation: flash 320ms linear;
+  opacity: 0.9;
+}
+
+@keyframes flash {
+  from {
+    stroke-dashoffset: 24;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 0.9;
+  }
+}
+
+.svgb-ready > g > circle:nth-of-type(2) {
+  animation: ready 2.2s ease-in-out infinite;
+}
+
+@keyframes ready {
+  50% {
+    filter: drop-shadow(0 0 3px rgba(255, 243, 176, 0.9));
+  }
+}
+
+.svgb-focus rect {
+  animation: focus-pulse 1s ease-in-out infinite;
+}
+
+@keyframes focus-pulse {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.svgb-path line {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svgb-floater,
+  .svgb-flash,
+  .svgb-ready > g > circle:nth-of-type(2),
+  .svgb-focus rect {
+    animation: none;
+  }
+}

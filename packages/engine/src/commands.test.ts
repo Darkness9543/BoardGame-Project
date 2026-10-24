@@ -4,8 +4,10 @@ import { apply, validate, type Intent } from './commands'
 import { apForRound } from './constants'
 import { filterEvents, projectView } from './view'
 import { createGame, DEFAULT_SETTINGS } from './state'
-import { parseSquare } from './geometry'
-import { startMatch } from './testing/dsl'
+import { scenarioDef } from './content/scenarios'
+import { parseSquare, squareExists } from './geometry'
+import { targetOptions } from './preview'
+import { buildBattle, startMatch } from './testing/dsl'
 import type { ArmyList, GameState, Seat } from './types'
 
 const EMPIRE: ArmyList = { faction: 'empire', commander: 'trill', units: { footman: 2, soldier: 1, paladin: 1 } }
@@ -23,9 +25,8 @@ describe('army validation (5.1, 7.2)', () => {
     expect(check).toMatchObject({ ok: true, cost: 2 + 2 + 20, unitCount: 4 })
   })
 
-  it('rejects over-budget armies, other factions\' units and unavailable commanders', () => {
+  it('rejects over-budget armies and unavailable commanders', () => {
     expect(checkArmy({ faction: 'empire', commander: 'trill', units: { emissary: 2, berserker: 1 } }, DEFAULT_SETTINGS).ok).toBe(false)
-    expect(checkArmy({ faction: 'empire', commander: 'trill', units: { ranger: 1 } }, DEFAULT_SETTINGS).errors).toContain("Ranger is not in this faction's roster") // R4
     expect(checkArmy({ faction: 'empire', commander: 'baseline', units: {} }, DEFAULT_SETTINGS).ok).toBe(false)
     expect(checkArmy({ faction: 'empire', commander: 'baseline', units: {} }, { ...DEFAULT_SETTINGS, devContent: true }).ok).toBe(true)
   })
@@ -41,6 +42,19 @@ describe('army validation (5.1, 7.2)', () => {
     expect(checkArmy({ faction: 'lojrar', commander: 'sabrina', units: { artificer: 20 } }, DEFAULT_SETTINGS)).toMatchObject({ ok: true, cost: 200 })
     expect(checkArmy({ faction: 'empire', commander: 'sabrina', units: { paladin: 2 } }, DEFAULT_SETTINGS)).toMatchObject({ cost: 48 })
     expect(checkArmy({ faction: 'empire', commander: 'trill', units: {} }, DEFAULT_SETTINGS).warnings).toHaveLength(1)
+  })
+
+  it('refuses an unknown faction banner without throwing (R43)', () => {
+    const bogus = JSON.parse('{"faction":"atlantis","commander":"trill","units":{}}') as ArmyList
+    expect(checkArmy(bogus, DEFAULT_SETTINGS)).toMatchObject({ ok: false, errors: ['Unknown faction'] })
+    expect(validate(createGame({ seed: 'r4' }), 'host', { kind: 'setArmy', army: bogus })).toMatchObject({ ok: false, code: 'INVALID_ARMY' })
+  })
+
+  it('accepts units of both factions in one army, under either banner (R43)', () => {
+    const mixed: ArmyList = { faction: 'empire', commander: 'trill', units: { footman: 2, mercenary: 2 } }
+    expect(checkArmy(mixed, DEFAULT_SETTINGS)).toMatchObject({ ok: true, errors: [] })
+    expect(checkArmy({ faction: 'lojrar', commander: 'trill', units: { footman: 1, ranger: 1 } }, DEFAULT_SETTINGS).ok).toBe(true)
+    expect(validate(createGame({ seed: 'r43' }), 'host', { kind: 'setArmy', army: mixed })).toEqual({ ok: true })
   })
 
   it('caps deployed units at 50, commander excluded (R2) and still checks deployability (A5-03)', () => {
@@ -204,5 +218,31 @@ describe('starting the battle (2.1, 2.3)', () => {
     const resigned = must(record.state, north, { kind: 'resign' })
     expect(resigned.result).toMatchObject({ winner: south, reason: 'resignation' })
     expect(validate(resigned, south, { kind: 'endTurn' })).toMatchObject({ ok: false, code: 'GAME_OVER' })
+  })
+})
+
+describe('terrain is never a target (1.7, A1-11, A1-13)', () => {
+  it('refuses Forceful slam on a Keep square and a Pajazon centred inside the Keep, but not the open squares beside it', () => {
+    const b = buildBattle({ south: ['beast@D11:BEAST', 'royalWizard@E14:W'] })
+    const slam = (square: string): Intent => ({ kind: 'useAbility', unitId: b.id('BEAST'), abilityId: 'beast.forcefulSlam', targets: [{ kind: 'square', square: parseSquare(square) }] })
+    const pajazon = (square: string): Intent => ({ kind: 'useAbility', unitId: b.id('W'), abilityId: 'royalWizard.pajazon', targets: [{ kind: 'square', square: parseSquare(square) }] })
+    expect(validate(b.state, b.south, slam('F12'))).toMatchObject({ ok: false, code: 'SQUARE_UNAVAILABLE', message: "Target square: blockers and buildings can't be targeted" })
+    expect(validate(b.state, b.south, slam('D13')).ok).toBe(true)
+    expect(validate(b.state, b.south, pajazon('F12'))).toMatchObject({ ok: false, code: 'SQUARE_UNAVAILABLE' })
+    expect(validate(b.state, b.south, pajazon('E12')).ok).toBe(true)
+    const view = projectView(b.state, b.south)
+    expect(targetOptions(view, b.id('BEAST'), 'beast.forcefulSlam', 0, []).some((t) => t.kind === 'square' && t.square.x === 5 && t.square.y === 11)).toBe(false)
+  })
+
+  it('refuses a blocker square on the Crossroads too', () => {
+    const scenario = scenarioDef('crossroads')
+    const blocker = scenario.blockers[0]
+    if (blocker === undefined) throw new Error('Crossroads has no blockers')
+    const neighbour = [{ x: blocker.x, y: blocker.y - 1 }, { x: blocker.x, y: blocker.y + 1 }, { x: blocker.x - 1, y: blocker.y }, { x: blocker.x + 1, y: blocker.y }].find(
+      (s) => squareExists(s) && !scenario.blockers.some((o) => o.x === s.x && o.y === s.y),
+    )
+    if (neighbour === undefined) throw new Error('no open square next to the blocker')
+    const b = buildBattle({ south: [{ type: 'royalWizard', at: neighbour, label: 'W' }], settings: { scenarioId: 'crossroads' } })
+    expect(validate(b.state, b.south, { kind: 'useAbility', unitId: b.id('W'), abilityId: 'royalWizard.pajazon', targets: [{ kind: 'square', square: blocker }] })).toMatchObject({ ok: false, code: 'SQUARE_UNAVAILABLE' })
   })
 })

@@ -15,7 +15,7 @@ export * from './content/index'
 // Geometry, hashing, RNG
 export * from './geometry'
 export { canonicalJson, fnv1a32, fnv1a64Hex, hashJson, sha256Hex, utf8Bytes } from './hash'
-export { combineSecrets, commitSecret, flipFirstSeat, nextId, nextInt, nextUint32, seedRng, verifySecret } from './rng'
+export { combineSecrets, commitSecret, flipFirstSeat, nextInt, nextUint32, seedRng, verifySecret } from './rng'
 
 // Game creation and commands
 export { createGame, DEFAULT_SETTINGS, type CreateGameOptions } from './state'
@@ -35,6 +35,7 @@ export {
   type MarchDirection,
 } from './commands'
 export { armyCost, armyUnitCount, checkArmy, zoneCapacity, type ArmyCheck } from './army'
+export { type DisclosedAction } from './disclosure'
 export { allowedZones, deploymentSquares } from './deployment'
 
 // Views, events, previews
@@ -49,6 +50,7 @@ export {
   type MineView,
   type OwnUnitDetails,
   type PlayerView,
+  type TakebackRequestView,
   type TakebackView,
   type UnitView,
 } from './view'
@@ -67,6 +69,7 @@ export {
 export { StateQuery, type AreaCore, type BuildingCore, type MineCore, type RulesQuery, type StatsQuery, type UnitStats, type UnitTurnView } from './query'
 export { computeHit, collectHit, PIPELINE_RULES, runPipeline, type Contribution, type PipelineInput, type PipelineResult, type PipelineRules } from './damage'
 export { lovContains, visionMask } from './vision'
+export { matchSummary, type MatchSummary } from './summary'
 
 // History: log, replay, take-back frames, snapshots
 export {
@@ -89,7 +92,8 @@ export {
 // Ability framework (for unit and commander files, and tests)
 export type * from './abilities/types'
 export { allAbilityDefinitions, getAbility, liveAbility, registerAbility } from './abilities/registry'
+export { woundShare } from './abilities/units/priestess'
 
 // Scenario DSL for tests and a dev sandbox
 export { act, buildBattle, sqs, startMatch, unitIn, type Battle, type BattleSpec, type MatchStartSpec, type Placement, type PlacementSpec } from './testing/dsl'
-export { findLeaks } from './testing/fogLeak'
+export { findEventLeaks, findLeaks } from './testing/fogLeak'

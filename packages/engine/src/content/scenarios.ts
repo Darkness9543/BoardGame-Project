@@ -11,6 +11,9 @@ export interface ScenarioBuilding {
   readonly anchor: Square
 }
 
+/** R36: both kinds are impassable terrain; only tall blockers stop sight (VISION_OCCLUSION = 'tallBlockers'). */
+export type BlockerKind = 'low' | 'tall'
+
 export interface ScenarioDef {
   readonly id: ScenarioId
   readonly name: string
@@ -23,13 +26,21 @@ export interface ScenarioDef {
   readonly buildings: readonly ScenarioBuilding[]
 }
 
+/** Every blocker of a scenario with its kind (R36), low ones first. */
+export function scenarioBlockers(scenario: ScenarioDef): readonly { readonly square: Square; readonly kind: BlockerKind }[] {
+  return [
+    ...scenario.blockers.map((square) => ({ square, kind: 'low' as const })),
+    ...scenario.tallBlockers.map((square) => ({ square, kind: 'tall' as const })),
+  ]
+}
+
 // R32: 3x3 buildings centred on the middle row: Keep centre (6, 12) = G13, Market centre (18, 12) = S13.
 const BUILDINGS: readonly ScenarioBuilding[] = [
   { kind: 'keep', anchor: parseSquare('F12') }, // Keep F12:H14 (x 5-7, y 11-13)
   { kind: 'market', anchor: parseSquare('R12') }, // Market R12:T14 (x 17-19, y 11-13)
 ]
 
-// R32 re-lay: the 21 Crossroads blockers stay where they were; with the 3x3 buildings they still leave both
+// R32 (Q104 open): the 21 Crossroads blockers keep their v1 squares; with the 3x3 buildings they still leave both
 // 16-square rings clear, keep 180-degree symmetry and keep every walkable square connected (geometry.test.ts).
 // prettier-ignore
 const CROSSROADS_BLOCKERS: readonly string[] = [

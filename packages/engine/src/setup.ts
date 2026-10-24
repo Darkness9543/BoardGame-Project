@@ -37,15 +37,13 @@ export function updateSettings(r: Resolver, patch: Partial<MatchSettings>): void
 }
 
 /**
- * A2-04: the coin flip uses the state RNG reseeded with the commit-reveal coin seed (rng.combineSecrets), so
+ * A2-04: the coin flip seeds the RNG with the game seed and the commit-reveal coin seed (rng.combineSecrets), so
  * neither side can bias it; the winner plays South. Then every unit instance is created undeployed.
  * Commanders are public from the lobby (R16); with COMMANDER_REVEAL 'deploymentStart' they are announced here.
  */
 export function startDeployment(r: Resolver, coinSeed: string): void {
   const state = r.state
-  state.rng = seedRng(`${state.seed}|${coinSeed}`)
-  const [south, rng] = flipFirstSeat(state.rng)
-  state.rng = rng
+  const [south] = flipFirstSeat(seedRng(`${state.seed}|${coinSeed}`))
   state.southSeat = south
   r.emit({ type: 'coinFlipped', southSeat: south }, SEATS)
 

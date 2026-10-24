@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { abilityParam } from './content/abilities'
-import { registerAbility } from './abilities/registry'
+import { getAbility, registerAbility } from './abilities/registry'
 import { validate } from './commands'
 import { parseSquare } from './geometry'
 import { act, buildBattle, sqs, unitIn } from './testing/dsl'
@@ -132,11 +132,14 @@ describe('active abilities (2.8, A2-10)', () => {
   })
 
   it('refuses abilities that are still stubs, and passives', () => {
+    const stealth = getAbility('rogue.stealth')
+    registerAbility({ id: 'rogue.stealth', status: 'stub' }, { replace: true }) // Stealth is implemented now: a test-local stub
     const b = buildBattle({ south: ['rogue@E5:R', 'paladin@G5:P'] })
     expect(validate(b.state, b.south, { kind: 'useAbility', unitId: b.id('R'), abilityId: 'rogue.stealth', targets: [] })).toMatchObject({
       ok: false,
       code: 'NOT_IMPLEMENTED',
     })
+    if (stealth !== undefined) registerAbility(stealth, { replace: true })
     expect(validate(b.state, b.south, { kind: 'useAbility', unitId: b.id('P'), abilityId: 'paladin.reinforcedArmor', targets: [] })).toMatchObject({
       ok: false,
       code: 'NOT_ACTIVE_ABILITY',

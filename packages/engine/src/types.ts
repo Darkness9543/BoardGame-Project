@@ -1,9 +1,11 @@
 // Core identifiers and the GameState shape. The state is plain JSON (no Map, Set, class, undefined
-// or NaN), integers only, and holds its own RNG state, so it can be cloned, hashed, sent and replayed.
+// or NaN), integers only, and derives its ids and coin flip from its own seed, so it can be cloned, hashed, sent
+// and replayed.
 // Engine code mutates private clones only; callers must treat every GameState they receive as immutable.
 
 import type { PreferenceValue } from './constants'
 import type { ActionIntent } from './commands'
+import type { DisclosedAction } from './disclosure'
 
 /** A player slot. The lobby creator is the host; who plays South is decided by the coin flip (A2-04). Strictly two seats (A13-02). */
 export type Seat = 'host' | 'guest'
@@ -46,7 +48,10 @@ export type BuildingKind = 'keep' | 'market'
 export type ScenarioId = 'crossroads' | 'openField'
 export type Phase = 'lobby' | 'deployment' | 'battle' | 'ended'
 
-/** Opaque ids drawn from the seeded RNG, so they reveal nothing about army size (NC 7.19 #2). */
+/**
+ * Opaque ids: digests of the secret game seed and a counter (state.drawId), so a seat that sees some of them can
+ * neither predict others nor count the hidden objects created in between (NC 7.19 #2, #3).
+ */
 export type UnitId = string
 export type MineId = string
 export type AreaId = string
@@ -235,14 +240,33 @@ export interface PendingDecision {
   data: Record<string, JsonValue>
 }
 
+/** A mine of the other side that an action set off or revealed to its actor (a set-off mine is gone, so its square is kept). */
+export interface DisclosedMine {
+  id: MineId
+  square: Square
+  setOff: boolean
+}
+
+/** 9 TB-5 / A9-03: what an action (and the prompts it caused) showed its actor about the other side. */
+export interface ActionDisclosure {
+  /** The other side's units the actor saw only because of the action. */
+  units: UnitId[]
+  mines: DisclosedMine[]
+  /** The other side's Assaults that fired during it (TB-9: undone with it). */
+  assaults: number
+  /** Reaction prompts the other side answered because of it. */
+  prompts: number
+}
+
 export interface TakebackRequest {
   requester: Seat
   actionSeq: number
-  /** The action to undo (shown to the decider, 9 TB-4). */
+  /** The action to undo, as the requester sent it (shown to the requester only). */
   action: ActionIntent
-  /** What the action revealed to the requester about the decider's side (9 TB-5). */
-  revealedUnits: UnitId[]
-  revealedMines: MineId[]
+  /** The same action as the decider saw it (9 TB-4 within 4.8): all the decider is shown of it. */
+  seenByDecider: DisclosedAction
+  /** TB-5: what the action revealed to the requester about the decider's side (the decider's view only). */
+  disclosure: ActionDisclosure
 }
 
 export interface TakebackState {
@@ -256,6 +280,10 @@ export interface LastAction {
   seq: number
   seat: Seat
   intent: ActionIntent
+  /** The action as the other seat saw it, for a take-back request (9 TB-4). */
+  seenByOther: DisclosedAction
+  /** TB-5: what it, and the prompts it caused, revealed to the actor about the other side. */
+  disclosure: ActionDisclosure
 }
 
 /** A6-12: conquest = enemy commander killed; domination = own commander reached the last row; R30: siege. */
@@ -268,6 +296,20 @@ export interface GameResult {
   readonly turnNumber: number
 }
 
+/** R39: what one seat's units of one type dealt and suffered; damage counts toughness actually removed (no overkill). */
+export interface UnitTypeTally {
+  /** To enemy units, with this type as the dealer (a mine credits its Artificer, an area its caster). */
+  damageDealt: number
+  damageTaken: number
+  /** Enemy units killed by damage this type dealt. */
+  kills: number
+  /** Own units of this type that died, any cause. */
+  losses: number
+}
+
+/** R38 / R39: running per-seat, per-unit-type tallies, summarised by the matchSummary event at game end. */
+export type MatchStats = Record<Seat, Partial<Record<UnitTypeId, UnitTypeTally>>>
+
 /** mulberry32 state (uint32). */
 export interface RngState {
   readonly s: number
@@ -278,8 +320,10 @@ export interface GameState {
   rulesVersion: number
   phase: Phase
   settings: MatchSettings
+  /** Secret until the post-game audit (R37): the coin flip and every id derive from it. */
   seed: string
-  rng: RngState
+  /** Ids drawn so far (state.drawId). */
+  idCounter: number
   /** Set by the coin flip when deployment starts. */
   southSeat: Seat | null
   seats: Record<Seat, SeatState>
@@ -298,6 +342,8 @@ export interface GameState {
   drawOffer: Seat | null
   /** R28: the round of first contact (any unit first saw an enemy unit); null = the approach boost still runs. */
   firstContactRound: number | null
+  /** R38 / R39: per-unit-type damage, kills and losses (never in a PlayerView; published by the matchSummary event). */
+  matchStats: MatchStats
   /** Most recent battle action (move, attack, defend, ability, end turn); take-back targets it. */
   lastAction: LastAction | null
   actionCount: number

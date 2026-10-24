@@ -111,8 +111,8 @@ function option(kind: ActionKind, abilityId: string | null, cost: number, blocke
 
 /**
  * The action bar for one unit, with costs and the reason (visible to the player) why an action is disabled.
- * Multi-pick abilities are enabled when every pick has a candidate; the full legality of a chosen
- * combination is validateIntent's job once the picks are made.
+ * A two-pick ability is enabled only when some first pick leaves a legal second one (Shared wounds needs a donor and
+ * another recipient); the full legality of a chosen combination is validateIntent's job once the picks are made.
  */
 export function legalActions(view: PlayerView, unitId: UnitId): ActionOption[] {
   const q = new ViewQuery(view)
@@ -165,17 +165,33 @@ function targetsBlocked(view: PlayerView, unitId: UnitId, abilityId: string): st
     const verdict = validateIntent(view, { kind: 'useAbility', unitId, abilityId, targets: [] })
     return verdict.ok ? null : verdict.message
   }
+  if (specs.length === 2) {
+    const pairs = targetOptions(view, unitId, abilityId, 0, []).some((first) => targetOptions(view, unitId, abilityId, 1, [first]).length > 0)
+    return pairs ? null : 'No valid target'
+  }
   return specs.every((_, index) => targetOptions(view, unitId, abilityId, index, []).length > 0) ? null : 'No valid target'
 }
 
-/** Candidates for pick `index` of an ability that satisfy its declarative spec (custom validate excluded). */
+/**
+ * Candidates for pick `index` of an ability that satisfy its declarative spec. When `picked` holds every earlier pick
+ * and this is the last one, the candidates also pass the whole check (`validateIntent`, the ability's own `validate`
+ * included), so a UI highlights only targets the authority will accept. Earlier picks can't be judged that way.
+ */
 export function targetOptions(
   view: PlayerView,
   unitId: UnitId,
   abilityId: string,
   index: number,
-  _picked: readonly AbilityTarget[],
+  picked: readonly AbilityTarget[],
 ): AbilityTarget[] {
+  const candidates = specCandidates(view, unitId, abilityId, index)
+  const specs = liveAbility(abilityId)?.active?.targets ?? []
+  const complete = index === specs.length - 1 && picked.length === index && specs[index]?.kind !== 'connectedSquares'
+  if (!complete) return candidates
+  return candidates.filter((c) => validateIntent(view, { kind: 'useAbility', unitId, abilityId, targets: [...picked, c] }).ok)
+}
+
+function specCandidates(view: PlayerView, unitId: UnitId, abilityId: string, index: number): AbilityTarget[] {
   const q = new ViewQuery(view)
   const unit = q.viewUnit(unitId)
   const spec = liveAbility(abilityId)?.active?.targets[index]
@@ -186,7 +202,7 @@ export function targetOptions(
       for (const other of q.units()) candidates.push({ kind: 'unit', unitId: other.id })
       break
     case 'square':
-      for (const square of squaresWithin(unit.anchor, unit.size, spec.range)) candidates.push({ kind: 'square', square })
+      for (const square of squaresWithin(unit.anchor, unit.size, spec.range, spec.metric)) candidates.push({ kind: 'square', square })
       break
     case 'area3x3':
       for (const square of squaresWithin(unit.anchor, unit.size, spec.centreRange)) candidates.push({ kind: 'square', square })

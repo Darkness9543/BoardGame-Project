@@ -14,6 +14,7 @@ import type {
   MinePlacement,
   ResolveContext,
   RevealCause,
+  SplashSpec,
 } from './abilities/types'
 import {
   MINDS_EYE_REVEALS_MINES,
@@ -36,6 +37,7 @@ import {
   opponentOf,
 } from './state'
 import { syncAuraToughness } from './stats'
+import { matchSummary, recordDamage, recordLoss, type DamageCredit } from './summary'
 import { SEATS, type DeathCause, type GameResultReason, type GameState, type MineState, type Seat, type Square, type UnitCore, type UnitId, type UnitState } from './types'
 import { detectorOf, maskHas, unitVisibleTo, visionMask, watchersOf } from './vision'
 
@@ -62,9 +64,10 @@ export class Resolver extends StateQuery implements ResolveContext {
     return this.state.result !== null
   }
 
-  /** Vision depends on positions, stealth and LOV; call after any change to them. */
+  /** Vision depends on positions, stealth and LOV; call after any change to them. It also records first contact (R28). */
   invalidate(): void {
     this.visionCache = {}
+    this.noteFirstContact()
   }
 
   vision(seat: Seat): Uint8Array {
@@ -118,7 +121,12 @@ export class Resolver extends StateQuery implements ResolveContext {
     this.state.transition = null
     this.state.takeback.request = null
     this.state.drawOffer = null
+    // settle() stops once the game is over, so auras whose source fell in the final resolution (Hex Ward with Baba Yaga,
+    // a Strong aura) end here: the final board shows consistent toughness (A2-26, A3-11).
+    for (const unit of this.state.units) syncAuraToughness(this, unit)
     this.emit({ type: 'gameEnded', result: this.state.result }, SEATS)
+    const summary = matchSummary(this.state)
+    if (summary !== null) this.emit({ type: 'matchSummary', summary }, SEATS) // R38, R39
   }
 
   // ---------------------------------------------------------------- AP and actions (2.3, 2.4)
@@ -178,17 +186,40 @@ export class Resolver extends StateQuery implements ResolveContext {
     )
   }
 
+  /** R25 Smite / A8-20 Forceful slam: the main hit is listed first, so a unit on both takes only the main damage. */
+  dealSplash(spec: SplashSpec): readonly DamageOutcome[] {
+    const hits: HitContext[] = []
+    const add = (target: UnitCore, base: number): void => {
+      if (spec.friendlyFire || target.owner !== spec.dealer.owner) hits.push({ target, kind: 'ability', base, source: spec.source, dealer: spec.dealer })
+    }
+    if (spec.target !== null) add(spec.target, spec.damage)
+    for (const square of spec.squares) {
+      const unit = this.unitAt(square)
+      if (unit !== undefined) add(unit, spec.splash)
+    }
+    return this.dealDamageTogether(hits)
+  }
+
+  /** R39: the dealer, else the unit the core credits (a mine's Artificer, an area's caster), else nobody. */
+  private creditOf(hit: HitContext): DamageCredit | null {
+    if (hit.dealer !== null) return { seat: hit.dealer.owner, type: hit.dealer.type }
+    const id = hit.creditId ?? null
+    const unit = id === null ? undefined : (this.stateUnit(id) ?? this.fallenUnit(id))
+    return unit === undefined ? null : { seat: unit.owner, type: unit.type }
+  }
+
   /** Several damage instances resolved as one event (end-of-turn ticks): computed on the board before, applied together, deaths together. */
   dealSimultaneous(hits: readonly HitContext[]): readonly DamageOutcome[] {
     if (this.isOver()) return hits.map((h) => NO_DAMAGE(h.target.id))
     const computed = hits.map((hit) => ({ hit, unit: this.stateUnit(hit.target.id), result: computeHit(this, hit) }))
-    const applied: { hit: HitContext; unit: UnitState; amount: number; outcomeIndex: number }[] = []
+    const applied: { hit: HitContext; unit: UnitState; amount: number; removed: number; outcomeIndex: number }[] = []
     const outcomes: DamageOutcome[] = computed.map((c, index) => {
       if (c.unit === undefined || c.unit.anchor === null || c.result.amount <= 0) {
         return { targetId: c.hit.target.id, amount: 0, breakdown: c.result.breakdown, killed: false }
       }
+      const removed = Math.min(c.result.amount, Math.max(0, c.unit.toughness))
       c.unit.toughness -= c.result.amount
-      applied.push({ hit: c.hit, unit: c.unit, amount: c.result.amount, outcomeIndex: index })
+      applied.push({ hit: c.hit, unit: c.unit, amount: c.result.amount, removed, outcomeIndex: index })
       return { targetId: c.unit.id, amount: c.result.amount, breakdown: c.result.breakdown, killed: false }
     })
     // A4-07 (R2): damage received inside enemy LOV reveals a stealthed unit; audiences are computed after it.
@@ -211,6 +242,7 @@ export class Resolver extends StateQuery implements ResolveContext {
       }
     }
     const dead = applied.filter((a) => a.unit.toughness <= 0 && this.state.units.includes(a.unit))
+    for (const a of applied) recordDamage(this.state.matchStats, this.creditOf(a.hit), a.unit, a.removed, dead.includes(a)) // R39
     for (const d of dead) {
       const outcome = outcomes[d.outcomeIndex]
       if (outcome !== undefined) outcomes[d.outcomeIndex] = { ...outcome, killed: true }
@@ -258,6 +290,7 @@ export class Resolver extends StateQuery implements ResolveContext {
       this.state.units.splice(index, 1)
       unit.defending = false
       this.state.fallen.push({ unit, diedOnTurn: this.turnNumber, cause })
+      recordLoss(this.state.matchStats, unit) // R39
       this.emit({ type: 'unitDied', unitId: unit.id, unitType: unit.type, owner: unit.owner, at: unit.anchor, cause }, audience)
     }
     this.invalidate()
@@ -306,11 +339,15 @@ export class Resolver extends StateQuery implements ResolveContext {
     return lost
   }
 
-  /** R28: records the round of first contact once any seat sees an enemy unit (mines never count). */
+  /**
+   * R28: records the round of first contact the moment any seat sees an enemy unit (stealthed ones only once
+   * revealed; mines never count). invalidate() calls it on every vision change, so a sighting that ends within the
+   * same action (the mover dies on a mine) still counts. Before South's first turn starts, it is round 1.
+   */
   noteFirstContact(): void {
     if (this.state.firstContactRound !== null || this.state.phase !== 'battle') return
     const contact = this.units().some((u) => this.canSee(this.opponentOf(u.owner), u))
-    if (contact) this.state.firstContactRound = Math.ceil(this.turnNumber / 2)
+    if (contact) this.state.firstContactRound = Math.max(1, Math.ceil(this.turnNumber / 2))
   }
 
   sacrifice(target: UnitCore, _source: string): void {
@@ -370,13 +407,17 @@ export class Resolver extends StateQuery implements ResolveContext {
     const index = this.state.mines.indexOf(mine)
     if (index < 0) return
     this.state.mines.splice(index, 1)
-    this.emit(
-      { type: 'mineExploded', mineId: mine.id, owner: mine.owner, square: mine.square, victimId: victim?.id ?? null, trigger },
-      this.seatsSeeingSquare(mine.square, mine.owner),
-    )
+    // 4.8: the owner and every seat watching the square learn of the explosion, but only a seat that can see the
+    // victim learns which unit it was (a stealthed unit on an unwatched mine stays unnamed).
+    const audience = this.seatsSeeingSquare(mine.square, mine.owner)
+    const named = victim === null ? [] : audience.filter((s) => this.canSee(s, victim))
+    const body = { type: 'mineExploded' as const, mineId: mine.id, owner: mine.owner, square: mine.square, trigger }
+    this.emit({ ...body, victimId: victim?.id ?? null }, named)
+    this.emit({ ...body, victimId: null }, audience.filter((s) => !named.includes(s)))
     if (victim === null) return
     const big = this.sizeOf(victim) >= MINE_LARGE_MIN_SIZE
-    this.dealDamage({ target: victim, kind: 'mine', base: MINE_DAMAGE + (big ? MINE_LARGE_BONUS : 0), source: 'mine', dealer: null })
+    const base = MINE_DAMAGE + (big ? MINE_LARGE_BONUS : 0)
+    this.dealDamage({ target: victim, kind: 'mine', base, source: 'mine', dealer: null, creditId: mine.placedBy })
   }
 
   /** Mines on squares a unit just entered (TMN-2: each one is a separate instance). Returns whether any went off. */
@@ -421,10 +462,12 @@ export class Resolver extends StateQuery implements ResolveContext {
     this.state.units.push(unit)
     unit.toughness = this.stats(unit).baseToughness
     this.invalidate()
-    this.emit(
-      { type: 'unitCreated', unitId: unit.id, unitType: type, owner, anchor, createdBy: createdBy?.id ?? null },
-      this.seatsSeeing(unit),
-    )
+    // A seat that sees the dummy but not its Artificer learns of the dummy only (4.8, A4-12).
+    const audience = this.seatsSeeing(unit)
+    const told = createdBy === null ? [] : audience.filter((s) => this.canSee(s, createdBy))
+    const body = { type: 'unitCreated' as const, unitId: unit.id, unitType: type, owner, anchor }
+    this.emit({ ...body, createdBy: createdBy?.id ?? null }, told)
+    this.emit({ ...body, createdBy: null }, audience.filter((s) => !told.includes(s)))
     this.triggerMines(unit, footprint) // A8-16: "a unit created on it"
     this.settle() // R1 reveals but no Assault (ROG-4); aura gains apply
     return this.stateUnit(unit.id) ?? null

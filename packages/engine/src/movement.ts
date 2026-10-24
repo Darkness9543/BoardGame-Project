@@ -55,11 +55,14 @@ function overlapsOther(r: Resolver, unit: UnitState): boolean {
 /** Assault and other "enemy came adjacent" hooks: stationary enemies first, then the mover (ROG-6). */
 function runAdjacencyHooks(r: Resolver, mover: UnitState, gained: readonly UnitState[], step: StepInfo): boolean {
   let interrupt = false
+  // ROG-6: every trigger is judged as the step happens, before any of them resolves (an Assault reveals its target).
+  const stealthed = new Set([mover, ...gained].filter((u) => u.stealthed).map((u) => u.id))
   for (const holder of [...gained].sort((a, b) => a.seq - b.seq)) {
     for (const id of r.abilitiesOf(holder)) {
       const hook = liveAbility(id)?.onAdjacencyGained
       if (hook === undefined || r.isOver() || !r.state.units.includes(holder) || !r.state.units.includes(mover)) continue
-      if (hook(r, holder, { step, enemies: [mover], holderIsMover: false }) === 'interrupt') interrupt = true
+      const info = { step, enemies: [mover], holderIsMover: false, holderStealthed: stealthed.has(holder.id) }
+      if (hook(r, holder, info) === 'interrupt') interrupt = true
     }
   }
   if (gained.length > 0) {
@@ -67,7 +70,7 @@ function runAdjacencyHooks(r: Resolver, mover: UnitState, gained: readonly UnitS
       const hook = liveAbility(id)?.onAdjacencyGained
       if (hook === undefined || r.isOver() || !r.state.units.includes(mover)) continue
       const alive = gained.filter((g) => r.state.units.includes(g))
-      if (alive.length > 0 && hook(r, mover, { step, enemies: alive, holderIsMover: true }) === 'interrupt') interrupt = true
+      if (alive.length > 0 && hook(r, mover, { step, enemies: alive, holderIsMover: true, holderStealthed: stealthed.has(mover.id) }) === 'interrupt') interrupt = true
     }
   }
   return interrupt

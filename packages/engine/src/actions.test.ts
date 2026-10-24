@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { registerAbility } from './abilities/registry'
 import { validate } from './commands'
-import { APPROACH_BOOST, CHARGE_SURCHARGE, GROUP_MARCH_COST, SCOURGE_AP_BONUS, apForRound } from './constants'
+import { APPROACH_BOOST, CHARGE_SURCHARGE, GROUP_MARCH_COST, GROUP_MARCH_MAX, SCOURGE_AP_BONUS, apForRound } from './constants'
 import { parseSquare } from './geometry'
 import { act, buildBattle, sqs, unitIn } from './testing/dsl'
 import { filterEvents } from './view'
@@ -65,6 +65,15 @@ describe('Charge (R26)', () => {
     expect(unitIn(r.state, b.id('P'))?.turn.basicAttack).toBe(false)
     expect(r.state.seats[b.south].ap).toBe(20 - (2 + CHARGE_SURCHARGE))
   })
+
+  it('ends on a bump into an enemy that was hidden at declaration: no attack, AP spent', () => {
+    // The Soldier's LOV shows the target; the stealthed Rogue on the path is revealed when the Paladin steps next to it.
+    const b = buildBattle({ south: ['paladin@E5:P', 'soldier@H7'], north: [{ type: 'rogue', at: 'E7', label: 'R', stealthed: true }, 'footman@F7:F'] })
+    const r = act(b.state, b.south, { kind: 'charge', unitId: b.id('P'), path: sqs('E6', 'E7'), target: { kind: 'unit', unitId: b.id('F') } })
+    expect(unitIn(r.state, b.id('P'))).toMatchObject({ anchor: parseSquare('E6'), turn: expect.objectContaining({ actionsUsed: 1, moves: 1, basicAttack: false }) })
+    expect(unitIn(r.state, b.id('F'))?.toughness).toBe(2)
+    expect(r.state.seats[b.south].ap).toBe(20 - (2 + CHARGE_SURCHARGE))
+  })
 })
 
 describe('Group march (R27)', () => {
@@ -92,6 +101,16 @@ describe('Group march (R27)', () => {
     const r = act(b.state, b.south, { kind: 'groupMarch', unitIds: [b.id('A'), b.id('B')], direction: 'north' })
     expect(unitIn(r.state, b.id('A'))).toBeUndefined() // 5 damage on a 1/2 Footman
     expect(unitIn(r.state, b.id('B'))?.anchor).toEqual(parseSquare('F6'))
+  })
+
+  it(`lets the commander march, front to back, and takes at most ${GROUP_MARCH_MAX} units`, () => {
+    const b = buildBattle({ south: ['commander@E3:C', 'footman@E4:F'] })
+    const r = act(b.state, b.south, { kind: 'groupMarch', unitIds: [b.id('C'), b.id('F')], direction: 'north' })
+    expect([b.id('C'), b.id('F')].map((id) => unitIn(r.state, id)?.anchor)).toEqual(sqs('E4', 'E5'))
+    const row = buildBattle({ south: ['E', 'F', 'G', 'H', 'I', 'J', 'K'].map((c) => `footman@${c}5:${c}`) })
+    const march = (labels: string[]) => validate(row.state, row.south, { kind: 'groupMarch', unitIds: labels.map((l) => row.id(l)), direction: 'north' })
+    expect(march(['E', 'F', 'G', 'H', 'I', 'J', 'K'])).toMatchObject({ ok: false, code: 'INVALID_TARGET' })
+    expect(march(['E', 'F', 'G', 'H', 'I', 'J']).ok).toBe(true)
   })
 })
 

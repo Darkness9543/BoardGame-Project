@@ -4,37 +4,37 @@
 // the fog lifts.
 // Last-seen markers are client memory and never part of a view (A4-16).
 
-import { ADJACENCY, apForRound, ARMY_LISTS_PUBLIC, COMMANDER_REVEAL, SHOW_OPPONENT_AP, type PreferenceValue } from './constants'
+import { ADJACENCY, ARMY_LISTS_PUBLIC, COMMANDER_REVEAL, SHOW_OPPONENT_AP, type PreferenceValue } from './constants'
+import type { DisclosedAction } from './disclosure'
 import { abilitiesFor } from './content/derived'
 import { buildingDef } from './content/buildings'
 import { scenarioDef } from './content/scenarios'
 import { unitDef } from './content/units'
-import { actionSurcharge } from './economy'
+import { actionSurcharge, roundPool } from './economy'
 import type { GameEvent, VisibleEvent } from './events'
 import { adjacencyMetric, footprintSquares, sameSquare, SQUARE_COUNT, squareExists, squareIndex } from './geometry'
 import { measureDistance, StateQuery, type AreaCore, type BuildingCore, type MineCore, type RulesQuery, type UnitStats, type UnitTurnView } from './query'
 import { blocksSightIn, globalTurnOfOwnTurn, opponentOf, sideOf, sightBlockersExist, unitAbilities } from './state'
-import {
-  SEATS,
-  type AbilityId,
-  type ArmyList,
-  type CommanderId,
-  type CooldownState,
-  type DecisionOption,
-  type GameResult,
-  type GameState,
-  type JsonValue,
-  type MatchSettings,
-  type Metric,
-  type Phase,
-  type Seat,
-  type Side,
-  type Square,
-  type TakebackRequest,
-  type Tier,
-  type UnitCore,
-  type UnitId,
-  type UnitState,
+import type {
+  AbilityId,
+  ActionDisclosure,
+  ArmyList,
+  CommanderId,
+  CooldownState,
+  DecisionOption,
+  GameResult,
+  GameState,
+  JsonValue,
+  MatchSettings,
+  Metric,
+  Phase,
+  Seat,
+  Side,
+  Square,
+  Tier,
+  UnitCore,
+  UnitId,
+  UnitState,
 } from './types'
 import { lovContains, mineVisibleTo, unitVisibleTo, visionMask } from './vision'
 
@@ -77,11 +77,23 @@ export interface DecisionView {
   readonly options: readonly DecisionOption[]
   readonly defaultOption: string
   readonly timeoutSeconds: number
+  /** The seat preference that answers this kind of prompt without asking (A2-30: 'revive'), or null. */
+  readonly preferenceKey: string | null
   readonly data: Readonly<Record<string, JsonValue>>
 }
 
+/** A take-back request as one seat may know it (9 TB-4, TB-5 within 4.2 and 4.8). */
+export interface TakebackRequestView {
+  readonly requester: Seat
+  readonly actionSeq: number
+  /** The requester's own action; for the decider, the action as far as the decider saw it. */
+  readonly action: DisclosedAction
+  /** TB-5: what the action revealed to the requester about the decider's side; null in the requester's view. */
+  readonly disclosure: ActionDisclosure | null
+}
+
 export interface TakebackView {
-  readonly request: TakebackRequest | null
+  readonly request: TakebackRequestView | null
   /** Whether this seat may request a take-back now (9 TB-3). */
   readonly canRequest: boolean
   readonly usedByMe: number
@@ -102,7 +114,7 @@ export interface PlayerView {
   readonly myAp: number
   /** AP owed and deducted from my next pool (Cauldron, R11). */
   readonly myApDebt: number
-  /** This round's pool size, the same for both players (R1; public, A4-02). */
+  /** This round's pool for both players: the R1 curve, doubled while R28's approach boost runs (public). */
   readonly apPool: number
   /** Opponent's remaining AP and AP debt when SHOW_OPPONENT_AP (R15), else null. */
   readonly opponentAp: number | null
@@ -190,7 +202,10 @@ function commanderRevealed(state: GameState): boolean {
   }
 }
 
-/** 9 TB-3 / TB-7 / A9-05: may `seat` ask to undo the most recent action? */
+/**
+ * 9 TB-3 / TB-7 / A9-05: may `seat` ask to undo the most recent action? A prompt the seat may not know about doesn't
+ * count (2.11): a request made meanwhile waits like any other intent.
+ */
 export function canRequestTakeback(state: GameState, seat: Seat): boolean {
   const last = state.lastAction
   const limit = state.settings.takebacksPerGame
@@ -198,7 +213,7 @@ export function canRequestTakeback(state: GameState, seat: Seat): boolean {
     state.settings.takebacks &&
     state.phase === 'battle' &&
     state.takeback.request === null &&
-    state.decisions.length === 0 &&
+    !state.decisions.some((d) => d.publicTo.includes(seat)) &&
     last !== null &&
     last.seat === seat &&
     !state.takeback.declined.includes(last.seq) &&
@@ -243,11 +258,12 @@ export function projectView(state: GameState, seat: Seat): PlayerView {
           options: head.options,
           defaultOption: head.defaultOption,
           timeoutSeconds: head.timeoutSeconds,
+          preferenceKey: head.preferenceKey,
           data: head.data,
         }
       : null
   const commandersPublic = commanderRevealed(state)
-  const armiesPublic = ended || (ARMY_LISTS_PUBLIC && state.phase !== 'lobby')
+  const armiesPublic = ended || (ARMY_LISTS_PUBLIC && state.phase !== 'lobby') // R33: from the start of deployment
   const limit = state.settings.takebacksPerGame
   return {
     seat,
@@ -260,7 +276,7 @@ export function projectView(state: GameState, seat: Seat): PlayerView {
     ownTurns: { host: state.seats.host.ownTurns, guest: state.seats.guest.ownTurns },
     myAp: state.seats[seat].ap,
     myApDebt: state.seats[seat].apDebt,
-    apPool: apForRound(state.turn === null ? 1 : Math.ceil(state.turn.number / 2)),
+    apPool: roundPool(state.turn === null ? 1 : Math.ceil(state.turn.number / 2), state.firstContactRound),
     opponentAp: SHOW_OPPONENT_AP ? state.seats[other].ap : null,
     opponentApDebt: SHOW_OPPONENT_AP ? state.seats[other].apDebt : null,
     firstContactRound: state.firstContactRound,
@@ -292,13 +308,25 @@ export function projectView(state: GameState, seat: Seat): PlayerView {
     decision,
     opponentDeciding: head !== undefined && head.seat !== seat && head.publicTo.includes(seat),
     takeback: {
-      request: state.takeback.request,
+      request: requestView(state, seat),
       canRequest: canRequestTakeback(state, seat),
       usedByMe: state.takeback.used[seat],
       remaining: limit === null ? null : Math.max(0, limit - state.takeback.used[seat]),
     },
     drawOffer: state.drawOffer,
     result: state.result,
+  }
+}
+
+function requestView(state: GameState, seat: Seat): TakebackRequestView | null {
+  const request = state.takeback.request
+  if (request === null) return null
+  const mine = request.requester === seat
+  return {
+    requester: request.requester,
+    actionSeq: request.actionSeq,
+    action: mine ? request.action : request.seenByDecider,
+    disclosure: mine ? null : request.disclosure,
   }
 }
 

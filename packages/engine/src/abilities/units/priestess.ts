@@ -1,22 +1,83 @@
-// Priestess (RULES_INTERPRETATION 8.7). STUB: owned by the abilities agent.
+// Priestess (RULES_INTERPRETATION 8.7, with owner ruling R19 for Shared wounds).
 
-import type { AbilityDefinition } from '../types'
+import { abilityParam } from '../../content/abilities'
+import { SHARED_WOUNDS_RECIPIENT, SHARED_WOUNDS_ROUNDING } from '../../constants'
+import { adjacencyMetric } from '../../geometry'
+import type { RulesQuery } from '../../query'
+import type { UnitCore } from '../../types'
+import type { AbilityDefinition, AbilityTarget, TargetSpec } from '../types'
+
+const STRONG_AURA = 'priestess.strongAura'
+const AURA_POWER = abilityParam(STRONG_AURA, 'power')
+const AURA_TOUGHNESS = abilityParam(STRONG_AURA, 'toughness')
+const SHARED_WOUNDS = 'priestess.sharedWounds'
+
+/** The Priestess herself or an own unit adjacent to her (A8-09; a Beast with any square adjacent, PRI-3). */
+function nearPriestess(label: string): TargetSpec {
+  return { kind: 'unit', label, range: 1, metric: adjacencyMetric(), relation: 'own', includeSelf: true, allowCommander: true }
+}
+
+function recipientSpec(): TargetSpec {
+  switch (SHARED_WOUNDS_RECIPIENT) {
+    case 'selfOrAdjacent': // PRI-9 (Q75)
+      return nearPriestess('Recipient')
+  }
+}
+
+/** What the donor loses and the recipient may gain: half its current toughness, R19 rounding up (A8-09: down). */
+export function woundShare(toughness: number): number {
+  switch (SHARED_WOUNDS_ROUNDING) {
+    case 'ceil':
+      return Math.ceil(toughness / 2)
+    case 'floor':
+      return Math.floor(toughness / 2)
+  }
+}
+
+function pickedUnit(q: RulesQuery, target: AbilityTarget | undefined): UnitCore | undefined {
+  return target?.kind === 'unit' ? q.unit(target.unitId) : undefined
+}
 
 export const priestessAbilities: readonly AbilityDefinition[] = [
   {
-    id: 'priestess.strongAura',
-    status: 'stub',
-    // TODO(A8-08, A3-11, PRI-1..4): modifyStats(q, holder, target): own units adjacent to the holder (not the
-    // holder) get { power: params.power, maxToughness: params.toughness }. The core syncs current toughness
-    // when the aura is gained or lost (losing it never kills) and applies one copy per unit (A3-15).
+    id: STRONG_AURA,
+    status: 'implemented',
+    // A8-08 / PRI-1..4: own units adjacent to her (not herself; dummies and the commander included) get +1 Power and
+    // +1 max toughness. The core moves current toughness with it, never below 1 on loss (A3-11), and applies one copy
+    // however many Priestesses are adjacent (A3-15); two adjacent Priestesses buff each other (PRI-2).
+    modifyStats: (q, holder, target) =>
+      target.id !== holder.id && target.owner === holder.owner && q.isAdjacent(holder, target)
+        ? { power: AURA_POWER, maxToughness: AURA_TOUGHNESS }
+        : null,
   },
   {
-    id: 'priestess.sharedWounds',
-    status: 'stub',
-    // TODO(A8-09, A3-08, PRI-5..12): `active`, cost = the Priestess's AP (content 'unit'). targets: donor and
-    // recipient, each { kind: 'unit', relation: 'own', range: 1, includeSelf: true, allowCommander: true }.
-    // validate: distinct. resolve (R19: SHARED_WOUNDS_ROUNDING = ceil): amount = ceil(donor.toughness / 2);
-    // ctx.loseToughness(donor, amount, id, { canKill: true }) (a donor at 1 dies); ctx.heal(recipient, amount, id)
-    // (overflow is wasted). The commander may not be a donor that would die (A7-04: never sacrificed).
+    id: SHARED_WOUNDS,
+    status: 'implemented',
+    // A8-09: costs the Priestess's own AP (2, A2-12) and her action; both picks are made together; no cooldown.
+    active: {
+      targets: [nearPriestess('Donor'), recipientSpec()], // PRI-8: own units only
+      validate: (q, _unit, targets) => {
+        const donor = pickedUnit(q, targets[0])
+        const recipient = pickedUnit(q, targets[1])
+        if (donor === undefined || recipient === undefined) return 'Choose a donor and a recipient'
+        if (donor.id === recipient.id) return 'The donor and the recipient must be different units' // PRI-12
+        const share = woundShare(donor.toughness)
+        if (share < 1) return 'The donor has no toughness to share' // PRI-5, only when rounding down
+        // A7-04: a commander is never sacrificed, so under R19 it may give only while it survives the loss.
+        if (q.isCommander(donor) && donor.toughness - share < 1) return 'The commander cannot give its last toughness'
+        return null
+      },
+      resolve: (ctx, _unit, targets) => {
+        const donor = pickedUnit(ctx, targets[0])
+        const recipient = pickedUnit(ctx, targets[1])
+        if (donor === undefined || recipient === undefined) return
+        const share = woundShare(donor.toughness)
+        // A3-08: not damage (no reductions, Defend or reveal, PRI-11). R19 / Q106: a donor at 1 dies, a death for every
+        // trigger; the core runs its death triggers after this effect (2.11).
+        ctx.loseToughness(donor, share, SHARED_WOUNDS, { canKill: !ctx.isCommander(donor) })
+        // PRI-6 / PRI-7: capped at the recipient's max toughness, auras included; the rest is wasted.
+        ctx.heal(recipient, share, SHARED_WOUNDS)
+      },
+    },
   },
 ]

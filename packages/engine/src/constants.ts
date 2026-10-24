@@ -2,11 +2,12 @@
 // numbers the engine needs. Assumption IDs (A2-07, ...) point at section 10 of that document, so an
 // owner answer becomes a one-line edit here. Per-ability numbers live in content/abilities.ts.
 
-import type { Tier, UnitTypeId } from './types'
+import type { FactionId, Tier, UnitTypeId } from './types'
 
-export const SCHEMA_VERSION = 1
-/** Bump on any rules change; the netcode handshake compares it (NC 7.17). */
-export const RULES_VERSION = 1
+/** 2: GameState.matchStats (R38, R39). 3: idCounter replaces rng (opaque ids); take-back disclosures in lastAction. */
+export const SCHEMA_VERSION = 3
+/** Bump on any rules change; the netcode handshake compares it (NC 7.17). 2: the rulings compliance audit. 3: R43-R45. */
+export const RULES_VERSION = 3
 
 // ---------------------------------------------------------------- board and geometry (section 1)
 
@@ -169,7 +170,7 @@ export const SIMULTANEOUS_COMMANDER_DEATH: 'draw' = 'draw'
 
 // ---------------------------------------------------------------- commanders and factions (section 7)
 
-/** Owner ruling R4 (supersedes A7-05): each faction has its own 7-unit roster; no proxy. */
+/** Owner ruling R4 (supersedes A7-05): each faction has its own 7-unit roster; no proxy. R43: armies mix both freely. */
 export const LOJRAR_PROXY_ROSTER = false
 /** Owner ruling R7 (supersedes A7-06): any commander may lead either faction. true = group A Empire, group B Lojrar. */
 export const COMMANDER_FACTION_LOCK = false
@@ -191,8 +192,13 @@ export const SABRINA_ARTIFICER_COST = 10
 export const SABRINA_ARTIFICER_TIER: Tier = 10
 export const SABRINA_SURCHARGE = 120
 export const SABRINA_SURCHARGE_MIN_TIER: Tier = 20
-/** Owner rulings R6 / R11 (supersede A7-12): Baba Yaga's "units of white" are the tier-1 units. */
-export const BABA_WHITE_GRADES: readonly Tier[] = [1]
+/**
+ * Owner ruling R44 (supersedes R6's BABA_WHITE_GRADES = [1] and A7-12): Baba Yaga's "units of white" are the Lojrar
+ * Clan units, any tier, in any army that fields them (R43).
+ */
+export const BABA_WHITE: { readonly faction: FactionId } = { faction: 'lojrar' }
+/** R45: Baba Yaga's commander toughness (as Queso and Trill; two of her variants need her near the line). */
+export const BABA_COMMANDER_TOUGHNESS = 6
 /**
  * Owner ruling R11 (supersedes A7-13; BABA_USES_PER_TURN and BABA_CD_SCOPE are withdrawn): the player picks one
  * variant with Baba Yaga; it is stored in the army (ArmyList.variant, the per-army BABA_VARIANT) and revealed
@@ -200,15 +206,23 @@ export const BABA_WHITE_GRADES: readonly Tier[] = [1]
  */
 export const BABA_VARIANTS = ['mend', 'hex-ward', 'cauldron'] as const
 export type BabaVariant = (typeof BABA_VARIANTS)[number]
-/** R11 variant A "Mend the swarm": 1 AP, restore to max, not an action, own turn, no CD, 3 uses per turn army-wide. */
+/**
+ * R11 variant A "Mend the swarm", retuned by R45: 1 AP restores 4 toughness (capped at max); not an action, own turn,
+ * no CD; 3 uses per turn army-wide, at most 2 on the same unit per turn.
+ */
 export const BABA_MEND_COST = 1
+export const BABA_MEND_HEAL = 4
 export const BABA_MEND_USES_PER_TURN = 3
-/** R11 variant B "Hex Ward": own white units within range 3 get +1 max and current toughness and take 1 less damage. */
+export const BABA_MEND_MAX_PER_UNIT = 2
+/** R11 variant B "Hex Ward" (kept by R45): own white units within range 3 get +1 max and current toughness and take 1 less damage. */
 export const BABA_HEX_RANGE = 3
 export const BABA_HEX_REDUCTION = 1
 export const BABA_HEX_TOUGHNESS = 1
-/** R11 variant C "Cauldron": 1 AP per return (owed when it happens on the opponent's turn), 2 per turn, twice per unit. */
-export const BABA_CAULDRON_COST = 1
+/**
+ * R11 variant C "Cauldron": AP per return (owed when it happens on the opponent's turn), 2 per turn, twice per unit.
+ * R45: the cost is ceil(tier / 5), minimum 1 (types 1, 2, 5: 1 AP; 10: 2; 20: 4; 50: 10; 100: 20).
+ */
+export const BABA_CAULDRON_COST = (tier: Tier | null): number => Math.max(1, Math.ceil((tier ?? 1) / 5))
 export const BABA_CAULDRON_PER_TURN = 2
 export const BABA_CAULDRON_PER_UNIT = 2
 export const BABA_CAULDRON_AP_DEBT = true

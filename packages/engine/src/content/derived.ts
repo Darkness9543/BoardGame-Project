@@ -1,6 +1,7 @@
 // Facts that follow from content alone (unit type + the owner's commander and its variant). Commander
 // identities and variants are public from the lobby (R16, R11), so the authority and clients compute these.
 
+import { BABA_WHITE } from '../constants'
 import type { AbilityId, CommanderId, RosterUnitId, Tier, UnitTypeId } from '../types'
 import { commanderDef, commanderVariant, type CommanderStats, type UnitFilter } from './commanders'
 import { unitDef } from './units'
@@ -15,7 +16,14 @@ export function tierFor(type: UnitTypeId, commander: CommanderId | null): Tier |
 function matches(filter: UnitFilter, type: UnitTypeId, tier: Tier | null): boolean {
   if (filter.types !== undefined && !filter.types.includes(type)) return false
   if (filter.tiers !== undefined && (tier === null || !filter.tiers.includes(tier))) return false
+  const faction = unitDef(type).faction
+  if (filter.factions !== undefined && (faction === null || !filter.factions.includes(faction))) return false
   return true
+}
+
+/** R44: Baba Yaga's "units of white" are the Lojrar Clan units (BABA_WHITE), whatever their tier. */
+export function isBabaWhite(type: UnitTypeId): boolean {
+  return unitDef(type).faction === BABA_WHITE.faction
 }
 
 /**

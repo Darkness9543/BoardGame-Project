@@ -1,15 +1,26 @@
-// Ratasius I "The Great" (RULES_INTERPRETATION 7.8). STUB: owned by the commanders agent. LOV 6 is content data.
+// Ratasius I "The Great" (RULES_INTERPRETATION 7.8, A7-14; owner rulings R13, R41). His LOV 6 is content data.
 
+import { abilityParam } from '../../content/abilities'
 import type { AbilityDefinition } from '../types'
+
+const ID = 'ratasius.great'
 
 export const ratasiusAbilities: readonly AbilityDefinition[] = [
   {
-    id: 'ratasius.great',
-    status: 'stub',
-    // TODO(A7-14, A4-08, A4-11, X-02, X-22, X-32):
-    // - detection: () => ({ kind: 'range', range: params.detectionRange }) (reveals stealthed units and mines).
-    // - attackerSubtraction(q, holder, hit): hit.dealer is an enemy of the holder within
-    //   params.weaknessRange -> params.weakness. The core only calls step 3 for dealt damage (never mines or
-    //   Pajazon ticks) and floors at 1 (WEAKNESS_FLOOR, owner ruling R13).
+    id: ID,
+    status: 'implemented',
+    // A4-08 / A4-11 / RAT-7: enemy stealthed units and enemy mines within range 3 are revealed, state-based on both
+    // turns. A stealthed Rogue is revealed at distance 3, so it can never Assault him (RAT-6, X-02).
+    detection: () => ({ kind: 'range', range: abilityParam(ID, 'detectionRange') }),
+    // A7-14 / R41: an enemy dealer within range 1 deals 4 less per damage instance, against every target (RAT-2),
+    // judged where it stands when the damage resolves (RAT-1: an aura, no lingering status; a 2x2 by any square, RAT-5).
+    // The core asks only for damage dealt right now by a unit, never mines or Pajazon ticks (RAT-3, X-22), and floors
+    // the hit at WEAKNESS_FLOOR = 1 (R13, which supersedes A3-04's floor 0).
+    attackerSubtraction: (q, holder, hit) => {
+      if (hit.dealer === null) return 0
+      const dealer = q.unit(hit.dealer.id) ?? hit.dealer
+      if (dealer.owner === holder.owner) return 0
+      return q.distance(holder, dealer) <= abilityParam(ID, 'weaknessRange') ? abilityParam(ID, 'weakness') : 0
+    },
   },
 ]

@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { canonicalJson, fnv1a64Hex, hashJson, sha256Hex } from './hash'
-import { combineSecrets, commitSecret, flipFirstSeat, nextId, nextUint32, seedRng, verifySecret } from './rng'
+import { combineSecrets, commitSecret, flipFirstSeat, nextUint32, seedRng, verifySecret } from './rng'
+import { createGame, drawId } from './state'
+import { startMatch } from './testing/dsl'
 
 describe('SHA-256 (commit-reveal, S28)', () => {
   it.each([
@@ -56,9 +58,20 @@ describe('seeded RNG and commit-reveal (A2-04)', () => {
     expect(seats).toEqual(new Set(['host', 'guest']))
   })
 
-  it('draws opaque ids', () => {
-    const [id] = nextId(seedRng('x'), 'u')
-    expect(id).toMatch(/^u-[0-9a-z]{7}$/)
+  it('draws opaque ids from the secret seed and a counter, not from a 32-bit RNG a seat could recover (NC 7.19 #2, #3)', () => {
+    const state = createGame({ seed: 'secret' })
+    expect([drawId(state, 'u'), drawId(state, 'm')]).toEqual([`u-${sha256Hex('secret|id|0').slice(0, 12)}`, `m-${sha256Hex('secret|id|1').slice(0, 12)}`])
+    expect(state.idCounter).toBe(2)
+    expect(drawId(createGame({ seed: 'other' }), 'u')).not.toBe(`u-${sha256Hex('secret|id|0').slice(0, 12)}`)
+    expect(Object.keys(state)).not.toContain('rng')
+  })
+
+  it("gives a match's units ids that the public inputs alone (armies, coin seed) don't determine", () => {
+    const armies = { host: { faction: 'empire', commander: 'trill', units: { footman: 2 } }, guest: { faction: 'lojrar', commander: 'queso', units: { mercenary: 2 } } } as const
+    const ids = (seed: string) => startMatch({ armies, seed, coinSeed: 'coin' }).state.units.map((u) => u.id)
+    const a = ids('host-secret-a')
+    expect(ids('host-secret-a')).toEqual(a) // replay is exact
+    expect(ids('host-secret-b').some((id) => a.includes(id))).toBe(false)
   })
 
   it('verifies commitments and combines both secrets', () => {

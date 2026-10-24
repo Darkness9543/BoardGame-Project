@@ -14,6 +14,7 @@ import {
   CHARGE_MIN_MOVEMENT,
   CHARGE_SURCHARGE,
   FORCEFIELD_SHAPE,
+  FRIENDLY_SINGLE_TARGET,
   GROUP_MARCH_COST,
   GROUP_MARCH_ENABLED,
   GROUP_MARCH_MAX,
@@ -23,6 +24,7 @@ import { abilityData, hasAbilityData } from './content/abilities'
 import { SCENARIOS } from './content/scenarios'
 import { answerDecision, processDecisions } from './decisions'
 import { checkPlacement } from './deployment'
+import { disclose, NO_DISCLOSURE, seenBy, UNSEEN } from './disclosure'
 import { abilityCost, basicActionCost, checkAp, checkCanAct, cooldownBlocks } from './economy'
 import type { GameEvent } from './events'
 import { footprintSquares, isOrthogonallyConnected, isSquare2x2 } from './geometry'
@@ -136,18 +138,20 @@ export function checkTarget(q: RulesQuery, unit: UnitCore, spec: TargetSpec, tar
       if (picked === undefined || picked.anchor === null) return reject('INVALID_TARGET', `${spec.label}: no such unit`)
       if (picked.id === unit.id && !spec.includeSelf) return reject('INVALID_TARGET', `${spec.label}: not this unit`)
       if (spec.relation === 'own' && picked.owner !== unit.owner) return reject('INVALID_TARGET', `${spec.label}: choose one of your units`)
-      if (spec.relation === 'enemy' && picked.owner === unit.owner) return reject('INVALID_TARGET', `${spec.label}: choose an enemy unit`)
+      const enemyOnly = spec.relation === 'enemy' || (spec.relation === 'harmful' && !FRIENDLY_SINGLE_TARGET) // R14
+      if (enemyOnly && picked.owner === unit.owner) return reject('INVALID_TARGET', `${spec.label}: choose an enemy unit`)
       if (q.isCommander(picked) && !spec.allowCommander) return reject('INVALID_TARGET', `${spec.label}: not a commander`)
-      if (q.distance(unit, picked) > spec.range) return reject('OUT_OF_RANGE', `${spec.label}: out of range`)
+      if (q.distance(unit, picked, spec.metric) > spec.range) return reject('OUT_OF_RANGE', `${spec.label}: out of range`)
       return null
     }
     case 'square': {
       if (target.kind !== 'square') return reject('INVALID_TARGET', `${spec.label}: choose a square`)
       const s = target.square
       if (!q.squareExists(s)) return reject('INVALID_TARGET', `${spec.label}: no such square`)
-      const d = q.distance(unit, s)
+      if (q.isTerrain(s)) return reject('SQUARE_UNAVAILABLE', `${spec.label}: blockers and buildings can't be targeted`) // A1-11, A1-13
+      const d = q.distance(unit, s, spec.metric)
       if (d < spec.minRange || d > spec.range) return reject('OUT_OF_RANGE', `${spec.label}: out of range`)
-      if (spec.free && (q.isTerrain(s) || q.unitAt(s) !== undefined || q.mineAt(s)?.owner === unit.owner)) {
+      if (spec.free && (q.unitAt(s) !== undefined || q.mineAt(s)?.owner === unit.owner)) {
         return reject('SQUARE_UNAVAILABLE', `${spec.label}: the square is not free`) // A8-13
       }
       return null
@@ -155,6 +159,7 @@ export function checkTarget(q: RulesQuery, unit: UnitCore, spec: TargetSpec, tar
     case 'area3x3': {
       if (target.kind !== 'square') return reject('INVALID_TARGET', `${spec.label}: choose a centre square`)
       if (!q.squareExists(target.square)) return reject('INVALID_TARGET', `${spec.label}: no such square`)
+      if (q.isTerrain(target.square)) return reject('SQUARE_UNAVAILABLE', `${spec.label}: blockers and buildings can't be targeted`) // A1-11, A1-13
       if (q.distance(unit, target.square) > spec.centreRange) return reject('OUT_OF_RANGE', `${spec.label}: out of range`)
       return null
     }
@@ -185,6 +190,8 @@ export function checkAbilityReady(q: RulesQuery, seat: Seat, unit: UnitCore, abi
     const blocked = checkCanAct(q, unit, 'other')
     if (blocked !== null) return blocked
   }
+  const unmet = liveAbility(abilityId)?.active?.requirement?.(q, unit) ?? null
+  if (unmet !== null) return reject('REQUIREMENT_NOT_MET', unmet)
   return checkAp(q, seat, abilityCost(q, unit, data))
 }
 
@@ -385,17 +392,20 @@ function checkGroupMarch(q: RulesQuery, view: PlayerView, unitIds: readonly Unit
   return checkAp(q, view.seat, GROUP_MARCH_COST)
 }
 
+/** What a seat may still send while a reaction prompt is pending. */
+const DURING_DECISIONS: readonly IntentKind[] = ['respondDecision', 'resign', 'setPreference']
+
 /**
- * The authority's check. Hidden-state gates come first and never say why beyond "wait": a decision the seat
- * may not know about pauses it (the session should queue the intent rather than show the rejection).
+ * The authority's check. The seat's own view judges first, so no refusal depends on something it can't see; then a
+ * decision it may not know about pauses a legal intent without saying why beyond "wait" (2.11: the session queues it
+ * rather than showing the rejection, so even a probe can't tell a hidden prompt from an animation pause).
  */
 export function validate(state: GameState, seat: Seat, intent: Intent, options: ApplyOptions = {}): Validation {
-  if (state.phase === 'battle' && state.decisions.length > 0) {
-    const allowed: readonly IntentKind[] = ['respondDecision', 'resign', 'setPreference']
-    if (!allowed.includes(intent.kind)) return reject('DECISION_PENDING', 'Waiting for a decision')
-  }
   const verdict = validateIntent(projectView(state, seat), intent)
   if (!verdict.ok) return verdict
+  if (state.phase === 'battle' && state.decisions.length > 0 && !DURING_DECISIONS.includes(intent.kind)) {
+    return reject('DECISION_PENDING', 'Waiting for a decision')
+  }
   if (intent.kind === 'acceptTakeback') {
     const request = state.takeback.request
     if (request === null || options.stateBeforeAction?.(request.actionSeq) === undefined) {
@@ -410,7 +420,7 @@ export function validate(state: GameState, seat: Seat, intent: Intent, options: 
 function resolveAction(r: Resolver, seat: Seat, intent: ActionIntent): void {
   const state = r.state
   state.actionCount += 1
-  state.lastAction = { seq: state.actionCount, seat, intent }
+  state.lastAction = { seq: state.actionCount, seat, intent, seenByOther: UNSEEN, disclosure: NO_DISCLOSURE } // completed by recordForTakeback
   if (intent.kind === 'endTurn') {
     endTurn(r)
     return
@@ -462,7 +472,7 @@ function resolveAction(r: Resolver, seat: Seat, intent: ActionIntent): void {
       unit.turn.abilityUses[data.id] = (unit.turn.abilityUses[data.id] ?? 0) + 1
       r.emit({ type: 'abilityUsed', unitId: unit.id, abilityId: data.id, targets: intent.targets }, [seat])
       const other = opponentOf(seat)
-      if (r.canSee(other, unit)) r.emit({ type: 'abilityUsed', unitId: unit.id, abilityId: data.id, targets: [] }, [other])
+      if (active.secret !== true && r.canSee(other, unit)) r.emit({ type: 'abilityUsed', unitId: unit.id, abilityId: data.id, targets: [] }, [other])
       r.withAbilityScope(() => active.resolve(r, unit, intent.targets))
       break
     }
@@ -485,7 +495,7 @@ function resolveGroupMarch(r: Resolver, seat: Seat, unitIds: readonly UnitId[], 
   }
 }
 
-function resolveIntent(r: Resolver, seat: Seat, intent: Intent, options: ApplyOptions): void {
+function resolveIntent(r: Resolver, seat: Seat, intent: Intent): void {
   const state = r.state
   switch (intent.kind) {
     case 'setArmy':
@@ -527,10 +537,7 @@ function resolveIntent(r: Resolver, seat: Seat, intent: Intent, options: ApplyOp
     case 'requestTakeback': {
       const last = state.lastAction
       if (last === null) return
-      const before = options.stateBeforeAction?.(last.seq)
-      const decider = opponentOf(seat)
-      const disclosed = before === undefined ? { units: [], mines: [] } : revealedBy(before, state, seat, decider)
-      state.takeback.request = { requester: seat, actionSeq: last.seq, action: last.intent, revealedUnits: disclosed.units, revealedMines: disclosed.mines }
+      state.takeback.request = { requester: seat, actionSeq: last.seq, action: last.intent, seenByDecider: last.seenByOther, disclosure: last.disclosure }
       r.emit({ type: 'takebackRequested', seat, actionSeq: last.seq }, SEATS)
       return
     }
@@ -566,13 +573,18 @@ function resolveIntent(r: Resolver, seat: Seat, intent: Intent, options: ApplyOp
   }
 }
 
-/** TB-5 / A9-03: the decider's units and mines that the requester saw only after the action (it may still be undone, with consent). */
-function revealedBy(before: GameState, after: GameState, requester: Seat, decider: Seat): { units: string[]; mines: string[] } {
-  const was = projectView(before, requester)
-  const now = projectView(after, requester)
-  return {
-    units: now.units.filter((u) => u.owner === decider && !was.units.some((w) => w.id === u.id)).map((u) => u.id),
-    mines: now.mines.filter((m) => m.owner === decider && !was.mines.some((w) => w.id === m.id)).map((m) => m.id),
+/**
+ * TB-4 / TB-5: an action records what the other seat saw of it and what it showed its actor; the answers to the
+ * prompts it caused (and anything else before the next action) add to the latter.
+ */
+function recordForTakeback(before: GameState, after: GameState, seat: Seat, intent: Intent, events: readonly GameEvent[]): void {
+  const last = after.lastAction
+  if (last === null || after.phase !== 'battle') return
+  if (isActionIntent(intent)) {
+    last.seenByOther = seenBy(intent, before, after, events, opponentOf(seat))
+    last.disclosure = disclose(NO_DISCLOSURE, before, after, events, seat)
+  } else {
+    last.disclosure = disclose(last.disclosure, before, after, events, last.seat)
   }
 }
 
@@ -602,7 +614,8 @@ export function apply(state: GameState, seat: Seat, intent: Intent, options: App
   }
   const draft = cloneState(state)
   const r = new Resolver(draft)
-  resolveIntent(r, seat, intent, options)
+  resolveIntent(r, seat, intent)
   r.noteFirstContact() // R28
+  recordForTakeback(state, draft, seat, intent, r.events)
   return { ok: true, state: draft, events: r.events }
 }

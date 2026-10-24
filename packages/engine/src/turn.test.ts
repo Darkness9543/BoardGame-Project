@@ -32,6 +32,8 @@ registerAbility(
   },
   { replace: true },
 )
+// The real beacon (R24) would add its heal to the resumed heal step; its own tests are in abilities/commanders/queso.test.ts.
+registerAbility({ id: 'queso.beacon', status: 'stub' }, { replace: true })
 registerAbility(
   {
     id: 'queso.revive',
@@ -143,7 +145,11 @@ describe('reaction decisions during the end phase (2.11, A2-30, X-26)', () => {
     expect(paused.transition).toEqual({ endingSeat: b.south, next: 'heal' })
     expect(paused.turn?.activeSeat).toBe(b.south)
     expect(projectView(paused, b.south).decision?.kind).toBe('queso.revive')
-    expect(validate(paused, b.north, { kind: 'endTurn' })).toMatchObject({ ok: false, code: 'DECISION_PENDING' })
+    expect(validate(paused, b.south, { kind: 'endTurn' })).toMatchObject({ ok: false, code: 'DECISION_PENDING' })
+    // North can't see the prompt: it is answered as if there were none (2.11), and a legal intent waits.
+    expect(validate(paused, b.north, { kind: 'endTurn' })).toEqual(validate(b.state, b.north, { kind: 'endTurn' }))
+    expect(validate(paused, b.north, { kind: 'endTurn' })).toMatchObject({ ok: false, code: 'NOT_YOUR_TURN' })
+    expect(validate(paused, b.north, { kind: 'offerDraw' })).toMatchObject({ ok: false, code: 'DECISION_PENDING' })
 
     const decisionId = paused.decisions[0]?.id ?? ''
     const r = act(paused, b.south, { kind: 'respondDecision', decisionId, choice: 'yes' })

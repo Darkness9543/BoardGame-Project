@@ -1,0 +1,156 @@
+/* DOM pieces of the 3D board: floating combat text and the stat plate. Colours and fonts come from the theme,
+   through inline styles and the --cdr-* properties BoardRenderer sets; this file holds layout and motion.
+   Classes are prefixed cdr- (coin duel renderer). */
+
+.cdr-board {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cdr-board canvas {
+  display: block;
+  outline: none;
+}
+
+.cdr-float-stack {
+  pointer-events: none;
+}
+
+.cdr-float {
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.9),
+    0 0 6px rgba(0, 0, 0, 0.75);
+  animation-name: cdr-rise;
+  animation-timing-function: cubic-bezier(0.2, 0.7, 0.3, 1);
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+}
+
+.cdr-float-big {
+  font-size: 24px;
+}
+
+@keyframes cdr-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.75);
+  }
+  12% {
+    opacity: 1;
+    transform: translateY(0) scale(1.12);
+  }
+  24% {
+    transform: translateY(-4px) scale(1);
+  }
+  78% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-34px) scale(1);
+  }
+}
+
+@keyframes cdr-fade {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.cdr-reduced .cdr-float {
+  animation-name: cdr-fade;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cdr-float {
+    animation-name: cdr-fade;
+  }
+}
+
+.cdr-plate {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  padding: 2px 7px 3px;
+  border-radius: 999px;
+  background: var(--cdr-plate-bg);
+  border: 1px solid var(--cdr-plate-edge);
+  color: var(--cdr-plate-ink);
+  font-family: var(--cdr-font-numbers);
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1.1;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+.cdr-plate-max {
+  opacity: 0.6;
+}
+
+.cdr-plate-icon {
+  display: inline-block;
+  align-self: center;
+  width: 11px;
+  height: 11px;
+  margin: 0 1px 0 3px;
+  background: currentColor;
+  opacity: 0.75;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.cdr-plate-icon:first-child {
+  margin-left: 0;
+}
+
+.cdr-plate-hurt {
+  color: var(--cdr-hurt);
+}
+
+.cdr-plate-forecast {
+  margin-left: 6px;
+  color: var(--cdr-forecast);
+}
+
+.cdr-plate-lethal {
+  margin-left: 6px;
+  color: var(--cdr-lethal);
+  text-transform: uppercase;
+}
+
+.cdr-chip {
+  padding: 2px 8px 3px;
+  border-radius: 999px;
+  border: 1px solid rgba(241, 230, 200, 0.35);
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1.1;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}

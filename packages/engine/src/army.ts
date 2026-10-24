@@ -8,7 +8,7 @@ import {
 } from './constants'
 import { commanderDef, groupFaction, isCommanderId } from './content/commanders'
 import { unitCost } from './content/derived'
-import { availableRoster } from './content/factions'
+import { FACTIONS } from './content/factions'
 import { buildingDef } from './content/buildings'
 import { scenarioDef } from './content/scenarios'
 import { ROSTER_IDS, unitDef } from './content/units'
@@ -54,6 +54,10 @@ export function checkArmy(army: ArmyList, settings: MatchSettings): ArmyCheck {
   if (!isCommanderId(army.commander)) {
     return { ok: false, cost: 0, unitCount: 0, errors: ['Unknown commander'], warnings }
   }
+  // R43: the banner must be a known faction; the payload comes from the network, so it is an error, not a throw.
+  if (!FACTIONS.some((f) => f.id === army.faction)) {
+    return { ok: false, cost: 0, unitCount: 0, errors: ['Unknown faction'], warnings }
+  }
   const commander = commanderDef(army.commander)
   if (!commander.selectable && !settings.devContent) errors.push(`${commander.name} is not available`)
   // R7: commanders are not tied to a faction; the lock alternative maps group A to the Empire and B to Lojrar.
@@ -65,7 +69,6 @@ export function checkArmy(army: ArmyList, settings: MatchSettings): ArmyCheck {
     errors.push(`${commander.name} has no variants`)
   }
 
-  const roster = availableRoster(army.faction)
   let nonVanguardArea = 0
   let totalArea = 0
   for (const [key, count] of Object.entries(army.units)) {
@@ -78,7 +81,6 @@ export function checkArmy(army: ArmyList, settings: MatchSettings): ArmyCheck {
       errors.push(`Bad count for ${key}`)
       continue
     }
-    if (count > 0 && !roster.includes(type)) errors.push(`${unitDef(type).name} is not in this faction's roster`)
     const area = unitDef(type).size ** 2 * count
     totalArea += area
     if (!unitDef(type).vanguard) nonVanguardArea += area
@@ -88,6 +90,7 @@ export function checkArmy(army: ArmyList, settings: MatchSettings): ArmyCheck {
   const unitCount = armyUnitCount(army)
   if (cost > settings.budget) errors.push(`Over budget: ${cost} of ${settings.budget}`) // A5-02
   if (MUST_SPEND_FULL_BUDGET && cost !== settings.budget) errors.push('The whole budget must be spent')
+  // R2 / R10: roster units only; the commander and units created in play never count.
   if (ARMY_UNIT_CAP !== null && unitCount > ARMY_UNIT_CAP) errors.push(`At most ${ARMY_UNIT_CAP} units`)
   // A5-03: the army must fit; the commander takes one normal-zone square.
   const capacity = zoneCapacity(settings)

@@ -10,13 +10,20 @@ import {
   BABA_HEX_REDUCTION,
   BABA_HEX_TOUGHNESS,
   BABA_MEND_COST,
+  BABA_MEND_HEAL,
+  BABA_MEND_MAX_PER_UNIT,
   BABA_MEND_USES_PER_TURN,
   COMMAND_AURA_RANGE,
+  DUMMY_CAP,
+  DUMMY_MOVE,
   JULIO_DAMAGE_CAP,
   KULEGA_HEAL_CAP,
+  MINE_CAP,
   QUESO_BEACON_HEAL,
+  QUESO_REVIVE_COST,
   SCOURGE_AP_BONUS,
   SMITE_SPLASH,
+  TRILL_COMMANDER_TOUGHNESS,
   TRILL_TOUGHNESS_BONUS,
   MINE_DAMAGE,
   MINE_LARGE_BONUS,
@@ -27,7 +34,7 @@ import {
   RATASIUS_WEAKNESS_RANGE,
   SHARED_WOUNDS_COST,
 } from '../constants'
-import type { AbilityId } from '../types'
+import { TIERS, type AbilityId, type Tier } from '../types'
 
 /** passive = always on, no action; active = declared by the player; triggered = fires by itself (8.0). */
 export type AbilityKind = 'passive' | 'active' | 'triggered'
@@ -187,12 +194,13 @@ export const ABILITY_DATA: readonly AbilityData[] = [
     params: {},
     text:
       "Create a dummy unit in a free adjacent square. It's a 0/7 unit, it cannot move and has a LOV of 1 and AP 1. A maximum " +
-      'of 3 dummies can be active at the same time (all Artificers; every two Artificers beyond the first one increase this limit by 1).',
+      `of ${DUMMY_CAP(1)} dummies can be active at the same time (all Artificers; every two Artificers beyond the first one ` +
+      'increase this limit by 1).',
     assumptions: ['A8-13', 'A8-14'],
   }),
   passive('artificer.madInventor', {
     name: 'Mad Inventor',
-    params: { power: 1, movement: 1 },
+    params: { power: 1, movement: DUMMY_MOVE },
     text:
       'No-ACB prototypes can move when adjacent to any allied Artificer and gain {power} Power. (This effect disappears when the ' +
       'Artificer steps out of range.)',
@@ -204,7 +212,7 @@ export const ABILITY_DATA: readonly AbilityData[] = [
     params: { damage: MINE_DAMAGE, largeBonus: MINE_LARGE_BONUS },
     text:
       'Deploy an invisible mine in a free adjacent square. It explodes when any unit steps on it, dealing {damage} damage, ' +
-      '+{largeBonus} if the unit has a size of 2 or greater. A maximum of 5 mines can be active at the same time (all ' +
+      `+{largeBonus} if the unit has a size of 2 or greater. A maximum of ${MINE_CAP(1)} mines can be active at the same time (all ` +
       'Artificers; each Artificer beyond the first one increases this limit by 1). Mines can be triggered from a distance by ' +
       'attacking the square with a ranged attack.',
     assumptions: ['A8-16', 'A8-17'],
@@ -284,7 +292,7 @@ export const ABILITY_DATA: readonly AbilityData[] = [
   passive('trill.hydrocephalic', {
     name: 'The Hydrocephalic',
     params: { toughness: TRILL_TOUGHNESS_BONUS }, // R23: was +2
-    text: 'All your units of type 1, 2 and 5 gain {toughness} toughness. The commander has toughness 6.',
+    text: `All your units of type 1, 2 and 5 gain {toughness} toughness. The commander has toughness ${TRILL_COMMANDER_TOUGHNESS}.`,
     assumptions: ['A7-08', 'R23'],
   }),
   passive('kulega.finePrinter', {
@@ -309,28 +317,33 @@ export const ABILITY_DATA: readonly AbilityData[] = [
       'use mines. Each other unit of type 20 and above is 20% more expensive to deploy.',
     assumptions: ['A7-11'],
   }),
-  // Baba Yaga (owner ruling R11 replaces the spec's regeneration; white = tier 1, R6). One variant per army.
+  // Baba Yaga (owner ruling R11 replaces the spec's regeneration; R44: white = the Lojrar Clan units; R45: the
+  // balanced numbers). One variant per army.
   active('babaYaga.mend', {
     name: 'Regenerate',
     apCost: BABA_MEND_COST,
     usesAction: false,
-    params: { perTurn: BABA_MEND_USES_PER_TURN },
-    text: 'Restore this unit to its max toughness for {apCost} AP. Not an action. At most {perTurn} uses per turn across your army.',
-    assumptions: ['R11', 'R6'],
+    usesPerTurn: BABA_MEND_MAX_PER_UNIT, // R45: at most 2 on the same unit per turn
+    params: { heal: BABA_MEND_HEAL, perTurn: BABA_MEND_USES_PER_TURN },
+    text:
+      'Restore {heal} toughness to this unit for {apCost} AP. Not an action. At most {perTurn} uses per turn across your army, ' +
+      `and at most ${BABA_MEND_MAX_PER_UNIT} on the same unit.`,
+    assumptions: ['R11', 'R44', 'R45'],
   }),
   passive('babaYaga.hexWard', {
     name: 'Hex Ward',
     params: { range: BABA_HEX_RANGE, toughness: BABA_HEX_TOUGHNESS, reduction: BABA_HEX_REDUCTION },
-    text: 'Your units of white within range {range} of Baba Yaga gain {toughness} toughness and take {reduction} less damage (not below 1).',
-    assumptions: ['R11', 'R6', 'A3-11'],
+    text: 'Your Lojrar Clan units within range {range} of Baba Yaga gain {toughness} toughness and take {reduction} less damage (not below 1).',
+    assumptions: ['R11', 'R44', 'R45', 'A3-11'],
   }),
   triggered('babaYaga.cauldron', {
     name: 'Cauldron',
-    params: { cost: BABA_CAULDRON_COST, perTurn: BABA_CAULDRON_PER_TURN, perUnit: BABA_CAULDRON_PER_UNIT },
+    params: { perTurn: BABA_CAULDRON_PER_TURN, perUnit: BABA_CAULDRON_PER_UNIT },
     text:
-      'When one of your units of white dies, you may pay {cost} AP to return it at full toughness to a free square adjacent ' +
-      "to Baba Yaga. At most {perTurn} returns per turn and {perUnit} per unit per game. On the opponent's turn the AP is owed.",
-    assumptions: ['R11', 'R6', 'A2-30'],
+      `When one of your Lojrar Clan units dies, you may pay AP by its type (${cauldronCostText()}) to return it at full ` +
+      'toughness to a free square adjacent to Baba Yaga. At most {perTurn} returns per turn and {perUnit} per unit per game. ' +
+      "On the opponent's turn the AP is owed.",
+    assumptions: ['R11', 'R44', 'R45', 'A2-30'],
   }),
   passive('ratasius.great', {
     name: 'The Great',
@@ -350,11 +363,25 @@ export const ABILITY_DATA: readonly AbilityData[] = [
     name: 'Revive',
     params: { range: 2 },
     text:
-      'When one of your units in that area dies you can choose to sacrifice max toughness (3 for a type-100 unit, 2 for ' +
-      'type 50, 1 otherwise) to revive that unit with half of its base toughness rounded up.',
+      `When one of your units in that area dies you can choose to sacrifice max toughness (${QUESO_REVIVE_COST(100)} for a ` +
+      `type-100 unit, ${QUESO_REVIVE_COST(50)} for type 50, ${QUESO_REVIVE_COST(1)} otherwise) to revive that unit with half ` +
+      'of its base toughness rounded up.',
     assumptions: ['A7-16', 'A2-30', 'R18'],
   }),
 ]
+
+/** R45 in words, from BABA_CAULDRON_COST: "type 1, 2 and 5: 1 AP; type 10: 2 AP; ...". */
+export function cauldronCostText(): string {
+  const groups: { readonly cost: number; readonly tiers: Tier[] }[] = []
+  for (const tier of TIERS) {
+    const cost = BABA_CAULDRON_COST(tier)
+    const last = groups[groups.length - 1]
+    if (last !== undefined && last.cost === cost) last.tiers.push(tier)
+    else groups.push({ cost, tiers: [tier] })
+  }
+  const list = (tiers: readonly Tier[]): string => (tiers.length === 1 ? String(tiers[0]) : `${tiers.slice(0, -1).join(', ')} and ${tiers[tiers.length - 1]}`)
+  return groups.map((g) => `type ${list(g.tiers)}: ${g.cost} AP`).join('; ')
+}
 
 const BY_ID = new Map<AbilityId, AbilityData>(ABILITY_DATA.map((a) => [a.id, a]))
 

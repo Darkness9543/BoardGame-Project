@@ -1,6 +1,6 @@
-// Seeded deterministic RNG (mulberry32) whose whole state is one uint32 stored in GameState, plus the
-// commit-reveal helpers the session uses for a fair first-player coin flip (NC 7.15, S28). The engine
-// never calls Math.random or reads the clock.
+// Seeded deterministic RNG (mulberry32, one uint32 of state) for the first-player coin flip, plus the commit-reveal
+// helpers the session uses to make that flip fair (NC 7.15, S28). Ids are not drawn from it: a 32-bit state can be
+// recovered from one output (state.drawId). The engine never calls Math.random or reads the clock.
 
 import { fnv1a32, sha256Hex } from './hash'
 import type { RngState, Seat } from './types'
@@ -29,11 +29,6 @@ export function flipFirstSeat(rng: RngState): readonly [Seat, RngState] {
   return [bit === 0 ? 'host' : 'guest', next]
 }
 
-/** Opaque id such as 'u-3k9f2a1' (NC 7.19 #2: ids must not reveal army size or creation order). */
-export function nextId(rng: RngState, prefix: string): readonly [string, RngState] {
-  const [value, next] = nextUint32(rng)
-  return [`${prefix}-${value.toString(36).padStart(7, '0')}`, next]
-}
 
 // ---------------------------------------------------------------- commit-reveal (S28)
 

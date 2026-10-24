@@ -1,0 +1,238 @@
+/* Shared components: coins, stat lines, ability lists, tier chips, army listings. */
+
+.coin {
+  flex: none;
+  overflow: visible;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  list-style: none;
+  margin: 6px 0;
+  padding: 0;
+}
+
+.stats-compact {
+  gap: 4px 9px;
+}
+
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ui-ink-muted);
+}
+
+.stat-value {
+  font-family: var(--font-numbers);
+  font-weight: 800;
+  font-size: 1.02rem;
+  color: var(--ui-ink);
+}
+
+.stats-compact .stat-value {
+  font-size: 0.92rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+}
+
+.stat-up .stat-value {
+  color: var(--ui-ok);
+}
+
+.stat-up .stat-value::after {
+  content: '▲';
+  font-size: 0.6em;
+  margin-left: 1px;
+}
+
+.stat-down .stat-value {
+  color: var(--ui-danger);
+}
+
+.abilities {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ability {
+  padding: 8px 10px;
+  border-radius: var(--radius-small);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--ui-border);
+}
+
+.ability-off {
+  opacity: 0.6;
+}
+
+.ability-off .ability-name {
+  text-decoration: line-through;
+}
+
+.ability-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.ability-name {
+  font-weight: 700;
+  margin-right: 2px;
+}
+
+.ability-text {
+  margin: 4px 0 0;
+  font-size: 0.84rem;
+  color: var(--ui-ink-muted);
+}
+
+.ability-status {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: var(--ui-info);
+}
+
+.tag-passive {
+  color: #c6b8e6;
+}
+
+.tag-active {
+  color: var(--ui-accent);
+  border-color: var(--ui-accent);
+}
+
+.tag-triggered {
+  color: #9fd7c9;
+}
+
+.tier-chip {
+  display: inline-grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-family: var(--font-numbers);
+  font-weight: 800;
+  border: 3px solid var(--owner-me);
+}
+
+.tier-1 {
+  background: var(--grade-1);
+  color: var(--grade-1-ink);
+}
+
+.tier-2 {
+  background: var(--grade-2);
+  color: var(--grade-2-ink);
+}
+
+.tier-5 {
+  background: var(--grade-5);
+  color: var(--grade-5-ink);
+}
+
+.tier-10 {
+  background: var(--grade-10);
+  color: var(--grade-10-ink);
+}
+
+.tier-20 {
+  background: var(--grade-20);
+  color: var(--grade-20-ink);
+}
+
+.tier-50 {
+  background: var(--grade-50);
+  color: var(--grade-50-ink);
+}
+
+.tier-100 {
+  background: var(--grade-100);
+  color: var(--grade-100-ink);
+}
+
+.armies-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.army-listing-title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.army-listing-commander {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 6px;
+}
+
+.army-listing-units {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 4px 10px;
+}
+
+.army-listing-units li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.86rem;
+}
+
+.pip {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 3px;
+  border-radius: 50%;
+  background: var(--ui-accent);
+}
+
+.pip-used {
+  background: transparent;
+  border: 1px solid var(--ui-ink-faint);
+}
+
+.progress {
+  position: relative;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--ui-bg-raised);
+  border: 1px solid var(--ui-border);
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.progress span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: linear-gradient(90deg, #8a6a1c, var(--ui-accent));
+}
+
+.progress em {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 16px;
+}

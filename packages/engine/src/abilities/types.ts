@@ -10,6 +10,7 @@ import type {
   DecisionId,
   DecisionOption,
   JsonValue,
+  Metric,
   Seat,
   Square,
   Tier,
@@ -51,6 +52,11 @@ export interface HitContext {
   readonly source: string
   /** The unit dealing the damage right now (attacks, Smite, Slam, Julio); null for mines and ticks. */
   readonly dealer: UnitCore | null
+  /**
+   * Match statistics only (R39): the unit credited when there is no dealer (a mine's Artificer, an area's caster).
+   * It never changes the damage; the core sets it for mines and end-of-turn ticks.
+   */
+  readonly creditId?: UnitId | null
 }
 
 export type PipelineStep = 'base' | 'addition' | 'subtraction' | 'reduction' | 'defend'
@@ -86,6 +92,11 @@ export interface AdjacencyInfo {
   /** Enemy units whose distance to the holder became 1 in this step (the mover, or for the mover itself all of them). */
   readonly enemies: readonly UnitCore[]
   readonly holderIsMover: boolean
+  /**
+   * Whether the holder was stealthed when this step's adjacency triggers were collected. An earlier hook of the
+   * same step may have revealed it since (ROG-6: two stealthed Rogues meeting both Assault, the stationary one first).
+   */
+  readonly holderStealthed: boolean
 }
 
 /** 'interrupt' ends the move after this step (2.5 step 7). */
@@ -148,14 +159,22 @@ export interface DecisionCore {
 
 // ---------------------------------------------------------------- targeting (declarative, UI-driven)
 
-export type Relation = 'own' | 'enemy' | 'any'
+/**
+ * Whose units a unit pick may name. 'harmful' is for single-target harmful effects (Smite, Julio Vernification):
+ * enemy units, plus own units while FRIENDLY_SINGLE_TARGET is on (owner ruling R14; the UI confirms an own target).
+ */
+export type Relation = 'own' | 'enemy' | 'any' | 'harmful'
 
-/** One pick of an active ability, in order. Ranges are Manhattan from the user's footprint. */
+/**
+ * One pick of an active ability, in order. Ranges are measured from the user's footprint, in Manhattan distance unless
+ * `metric` says otherwise: an "adjacent" pick passes `metric: adjacencyMetric()` so it follows the ADJACENCY switch.
+ */
 export type TargetSpec =
   | {
       readonly kind: 'unit'
       readonly label: string
       readonly range: number
+      readonly metric?: Metric
       readonly relation: Relation
       readonly includeSelf: boolean
       readonly allowCommander: boolean
@@ -165,6 +184,7 @@ export type TargetSpec =
       readonly label: string
       readonly minRange: number
       readonly range: number
+      readonly metric?: Metric
       /** Exists, open ground, no known unit, no own mine (A8-13). */
       readonly free: boolean
     }
@@ -204,12 +224,35 @@ export interface AreaSpec {
 
 export type MinePlacement = 'placed' | 'blockedByHiddenMine'
 
+/**
+ * Fixed ability damage on one unit plus a splash on squares, resolved as one simultaneous effect (3.4). Smite (R25):
+ * squares = adjacentSquares(target anchor, size, 'ORTHO_4'). Forceful slam (A8-20): squares = slamSplash(...).
+ */
+export interface SplashSpec {
+  readonly source: AbilityId
+  /** The unit dealing it (Ratasius' weakness applies, R13 floors it at 1). */
+  readonly dealer: UnitCore
+  /** The unit taking the main hit (Smite's target, the unit on Slam's target square), or null for an empty square. */
+  readonly target: UnitCore | null
+  readonly damage: number
+  /** Squares whose units take `splash`; squares without a unit, terrain and off-board squares absorb nothing. */
+  readonly squares: readonly Square[]
+  readonly splash: number
+  /** false = the dealer's own units are skipped (SLAM_FRIENDLY_FIRE's alternative); R25's Smite splash passes true. */
+  readonly friendlyFire: boolean
+}
+
 /** Truth-side context for resolving effects. All state changes go through these methods. */
 export interface ResolveContext extends RulesQuery {
   /** Every hit goes through the pipeline; deaths and their triggers resolve immediately. */
   dealDamage(hit: HitContext): DamageOutcome
   /** Simultaneous damage (3.4): computed on the board before, applied together, deaths resolved together. */
   dealDamageTogether(hits: readonly HitContext[]): readonly DamageOutcome[]
+  /**
+   * A target hit plus a splash as one effect (Smite R25, Forceful slam A8-20): every unit is hit once, a unit on
+   * both takes only the main hit, and no mine goes off. Outcomes list the main target first when there is one.
+   */
+  dealSplash(spec: SplashSpec): readonly DamageOutcome[]
   /** Capped at max toughness (A3-10). Returns the amount actually healed. */
   heal(target: UnitCore, amount: number, source: string): number
   /**
@@ -264,8 +307,15 @@ export interface ActiveSpec {
   readonly targets: readonly TargetSpec[]
   /** Extra legality on the actor's knowledge only; return a player-facing reason, or null if legal. */
   readonly validate?: (q: RulesQuery, unit: UnitCore, targets: readonly AbilityTarget[]) => string | null
+  /**
+   * A precondition that doesn't depend on the targets (Savagery needs a basic Attack this turn), on the actor's
+   * knowledge. checkAbilityReady runs it, so the action bar (legalActions) shows the reason before any pick.
+   */
+  readonly requirement?: (q: RulesQuery, unit: UnitCore) => string | null
   /** Resolves against the true state. AP, the action, cooldowns and use counts are already paid. */
   readonly resolve: (ctx: ResolveContext, unit: UnitCore, targets: readonly AbilityTarget[]) => void
+  /** The opponent is not told the ability was used, even when it sees the user (4.8: a mine placement tells it nothing). */
+  readonly secret?: boolean
 }
 
 export interface AreaHooks {

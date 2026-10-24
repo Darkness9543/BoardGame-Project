@@ -7,3 +7,7 @@ coverage/
 Thumbs.db
 .env
 .env.*
+
+# Python bytecode from the analysis scripts
+__pycache__/
+*.pyc

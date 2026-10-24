@@ -11,6 +11,7 @@ import type {
   RevealCause,
 } from './abilities/types'
 import type { PreferenceValue } from './constants'
+import type { MatchSummary } from './summary'
 import type {
   AbilityId,
   AreaId,
@@ -129,6 +130,8 @@ export type EventBody =
   | { readonly type: 'drawDeclined'; readonly seat: Seat }
   | { readonly type: 'preferenceChanged'; readonly seat: Seat; readonly key: string; readonly value: PreferenceValue }
   | { readonly type: 'gameEnded'; readonly result: GameResult }
+  /** R38 / R39: right after gameEnded, to both seats (the fog has lifted): the match as data for the local log. */
+  | { readonly type: 'matchSummary'; readonly summary: MatchSummary }
 
 export type EventType = EventBody['type']
 

@@ -19,6 +19,7 @@ import {
 } from './constants'
 import { buildingDef } from './content/buildings'
 import { processDecisions } from './decisions'
+import { approachBoostApplies } from './economy'
 import { ringSquares, sameSquare } from './geometry'
 import type { Resolver } from './resolve'
 import { freshTurnState, opponentOf } from './state'
@@ -28,25 +29,27 @@ interface Tick {
   readonly source: string
   readonly target: UnitId
   readonly amount: number
+  /** R39: the holder, or the area's caster, credited in match statistics. */
+  readonly creditId: UnitId | null
 }
 
 /** Collects end-of-turn effects as data from units (APNAP) and areas; one tick per unit per source (A3-15). */
 function collectTurnEffects(r: Resolver, endingSeat: Seat): { damage: Tick[]; heal: Tick[] } {
   const damage: Tick[] = []
   const heal: Tick[] = []
-  const add = (source: string, effects: TurnEffects | null | undefined): void => {
+  const add = (source: string, creditId: UnitId | null, effects: TurnEffects | null | undefined): void => {
     if (effects === null || effects === undefined) return
-    for (const d of effects.damage ?? []) damage.push({ source, target: d.target, amount: d.amount })
-    for (const h of effects.heal ?? []) heal.push({ source, target: h.target, amount: h.amount })
+    for (const d of effects.damage ?? []) damage.push({ source, target: d.target, amount: d.amount, creditId })
+    for (const h of effects.heal ?? []) heal.push({ source, target: h.target, amount: h.amount, creditId })
   }
   for (const holder of r.holdersApnap()) {
     for (const id of r.abilitiesOf(holder)) {
       const def = liveAbility(id)
-      add(id, holder.owner === endingSeat ? def?.endOfOwnTurn?.(r, holder) : def?.endOfOpponentTurn?.(r, holder))
+      add(id, holder.id, holder.owner === endingSeat ? def?.endOfOwnTurn?.(r, holder) : def?.endOfOpponentTurn?.(r, holder))
     }
   }
   for (const area of [...r.state.areas].sort((a, b) => a.seq - b.seq)) {
-    add(area.abilityId, liveAbility(area.abilityId)?.area?.endOfTurn?.(r, area, endingSeat))
+    add(area.abilityId, area.sourceId, liveAbility(area.abilityId)?.area?.endOfTurn?.(r, area, endingSeat))
   }
   const once = (ticks: Tick[]): Tick[] => {
     const seen = new Set<string>()
@@ -65,7 +68,7 @@ function applyDamageTicks(r: Resolver, ticks: readonly Tick[]): void {
   const hits: HitContext[] = []
   for (const t of ticks) {
     const target = r.stateUnit(t.target)
-    if (target !== undefined && t.amount > 0) hits.push({ target, kind: 'tick', base: t.amount, source: t.source, dealer: null })
+    if (target !== undefined && t.amount > 0) hits.push({ target, kind: 'tick', base: t.amount, source: t.source, dealer: null, creditId: t.creditId })
   }
   if (hits.length > 0) r.dealSimultaneous(hits)
 }
@@ -120,16 +123,16 @@ function checkSiege(r: Resolver, seat: Seat): void {
 }
 
 /**
- * The AP a seat starts its turn with: the round's curve (R1 with R28's late escalation), doubled until the end
- * of the round of first contact (R28's approach boost), then the Market's and Tribute's bonuses after the cap
- * (R31, R25), carry-over (A2-03: none) and any Cauldron debt (R11).
+ * The AP a seat's turn brings before any Cauldron debt (R11): the round's curve (R1 with R28's late escalation),
+ * doubled until the end of the round of first contact (R28's approach boost), then the Market's and Tribute's
+ * bonuses after the cap (R31, R25) and carry-over (A2-03: none).
  */
 function turnPool(r: Resolver, seat: Seat, turnNumber: number, ownTurn: number): number {
   const state = r.state
   const round = Math.ceil(turnNumber / 2)
   const first = state.southSeat === seat && ownTurn === 1
   const curve = first && FIRST_TURN_AP !== null ? FIRST_TURN_AP : apForRound(round)
-  const boosted = state.firstContactRound === null || round <= state.firstContactRound ? curve * APPROACH_BOOST : curve
+  const boosted = approachBoostApplies(round, state.firstContactRound) ? curve * APPROACH_BOOST : curve
   const market = state.buildings.some((b) => b.kind === 'market' && b.controller === seat) ? MARKET_AP_BONUS : 0
   const bonuses = new Map<string, number>()
   for (const holder of r.holdersApnap()) {
@@ -141,7 +144,7 @@ function turnPool(r: Resolver, seat: Seat, turnNumber: number, ownTurn: number):
   }
   const tribute = [...bonuses.values()].reduce((sum, n) => sum + n, 0)
   const carried = Math.min(AP_CARRYOVER, Math.max(0, state.seats[seat].ap))
-  return Math.max(0, boosted + market + tribute + carried - state.seats[seat].apDebt)
+  return boosted + market + tribute + carried
 }
 
 /** Runs (or resumes) the end phase of the active player and then starts the opponent's turn. */
@@ -168,11 +171,25 @@ export function runTurnTransition(r: Resolver): void {
         break
       case 'start':
         r.state.transition = null
+        loseUnspentAp(r, ending)
         startTurn(r, opponentOf(ending))
         return
     }
     if (processDecisions(r) === 'waiting') return
   }
+}
+
+/**
+ * A2-03: AP left once the end phase is over is lost (the end phase may still spend it, a Cauldron return on the owner's
+ * own turn); up to AP_CARRYOVER of it is kept for the seat's next pool. Both seats see the drop (R15).
+ */
+function loseUnspentAp(r: Resolver, seat: Seat): void {
+  const seatState = r.state.seats[seat]
+  const kept = Math.min(AP_CARRYOVER, Math.max(0, seatState.ap))
+  if (kept === seatState.ap) return
+  const before = seatState.ap
+  seatState.ap = kept
+  r.emit({ type: 'apChanged', seat, ap: kept, delta: kept - before }, SHOW_OPPONENT_AP ? SEATS : [seat])
 }
 
 export function endTurn(r: Resolver): void {
@@ -200,12 +217,14 @@ export function startTurn(r: Resolver, seat: Seat): void {
   for (const unit of state.units) if (unit.owner === seat) unit.turn = freshTurnState()
   seatState.counters = {}
   for (const s of SEATS) state.seats[s].turnCounters = {}
-  // 3. Refill AP (R1, R9, R25, R28, R31, R11; see turnPool).
+  // 3. Refill AP (R1, R9, R25, R28, R31; see turnPool), less the Cauldron debt (R11: owed). With R45's costs a debt can
+  //    exceed the pool (two costly returns on the opponent's turn); what is still owed carries to the following turn.
   const number = (state.turn?.number ?? 0) + 1
   r.noteFirstContact()
   const before = seatState.ap
-  seatState.ap = turnPool(r, seat, number, ownTurn)
-  seatState.apDebt = 0
+  const pool = turnPool(r, seat, number, ownTurn)
+  seatState.ap = Math.max(0, pool - seatState.apDebt)
+  seatState.apDebt = Math.max(0, seatState.apDebt - pool)
   r.emit({ type: 'apChanged', seat, ap: seatState.ap, delta: seatState.ap - before }, SHOW_OPPONENT_AP ? SEATS : [seat])
   // 4. Advance the own-turn index; cooldown readiness follows from it (A2-22).
   seatState.ownTurns = ownTurn

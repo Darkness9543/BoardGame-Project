@@ -1,0 +1,3076 @@
+{
+ "version": 1,
+ "generated": "2026-10-24",
+ "basePath": "assets/audio/",
+ "formats": {
+  "preferred": "ogg",
+  "fallback": "mp3",
+  "note": "Use the .ogg list where new Audio().canPlayType('audio/ogg; codecs=\"vorbis\"') is not empty, else the parallel .mp3 list (Safari). Same order, same content."
+ },
+ "loudness": {
+  "peakDbfs": -3.0,
+  "note": "Every file is peak-normalised to about -3 dBFS. 'gain' brings each cue to its category loudness target (max 100 ms K-weighted loudness, ITU-R BS.1770 filter); loops use integrated loudness."
+ },
+ "userVolumes": {
+  "master": 0.8,
+  "effects": 0.9,
+  "ambient": 0.5,
+  "note": "Persist per player. 'effects' scales every bus except 'ambient'. Output = cue gain x bus level x effects (or ambient) x master."
+ },
+ "buses": {
+  "ui": 0.8,
+  "turn": 0.9,
+  "unit": 0.9,
+  "attack": 0.9,
+  "hit": 1.0,
+  "death": 1.0,
+  "effect": 0.9,
+  "big": 1.0,
+  "objective": 0.9,
+  "stinger": 0.9,
+  "ambient": 0.7
+ },
+ "ducking": [
+  {
+   "trigger": [
+    "hit.metal.heavy",
+    "unit.death.big",
+    "mine.explode",
+    "slam.impact",
+    "smite"
+   ],
+   "duck": {
+    "ui": -6,
+    "ambient": -4
+   },
+   "attackMs": 10,
+   "holdMs": 120,
+   "releaseMs": 350
+  },
+  {
+   "trigger": [
+    "win",
+    "lose",
+    "draw"
+   ],
+   "duck": {
+    "ui": -10,
+    "turn": -10,
+    "unit": -10,
+    "attack": -10,
+    "hit": -10,
+    "death": -10,
+    "effect": -10,
+    "big": -10,
+    "objective": -10,
+    "ambient": -8
+   },
+   "attackMs": 50,
+   "holdMs": "while playing",
+   "releaseMs": 1200
+  },
+  {
+   "trigger": [
+    "turn.start.own",
+    "turn.start.opponent",
+    "boost.active",
+    "decision.prompt"
+   ],
+   "duck": {
+    "ambient": -3
+   },
+   "attackMs": 30,
+   "holdMs": 400,
+   "releaseMs": 600
+  }
+ ],
+ "voices": {
+  "max": 16,
+  "stealing": "drop the new play if its priority is lower than every playing voice; otherwise stop the oldest voice with the lowest priority",
+  "note": "Per-cue caps are maxVoices; minIntervalMs drops repeats of the same cue that arrive sooner."
+ },
+ "unlock": "Browsers start an AudioContext suspended. Create it on load, call resume() inside the first pointerdown or keydown handler, and show the speaker icon as muted until then.",
+ "cues": {
+  "ui.hover": {
+   "files": [
+    "assets/audio/ui.hover.ogg"
+   ],
+   "mp3": [
+    "assets/audio/ui.hover.mp3"
+   ],
+   "gain": 0.45,
+   "variations": 1,
+   "source": "Freesound “Moving piece on a boardgame” by zachrau",
+   "license": "CC0-1.0",
+   "author": "zachrau",
+   "bus": "ui",
+   "events": [
+    "client: pointer enters a button, square or unit (throttle to 1 per 60 ms)"
+   ],
+   "durationMs": 87,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 1,
+   "priority": 10,
+   "minIntervalMs": 60,
+   "why": "A fingertip tick of a wooden piece on the board, low-passed so it sits under everything; one tiny transient that never tires.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Moving piece on a boardgame",
+     "author": "zachrau",
+     "page": "https://freesound.org/people/zachrau/sounds/556387/",
+     "url": "https://cdn.freesound.org/previews/556/556387_676927-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "ui.click": {
+   "files": [
+    "assets/audio/ui.click.ogg"
+   ],
+   "mp3": [
+    "assets/audio/ui.click.mp3"
+   ],
+   "gain": 0.65,
+   "variations": 1,
+   "source": "Freesound “chess_move_on_alabaster.wav” by mh2o",
+   "license": "CC0-1.0",
+   "author": "mh2o",
+   "bus": "ui",
+   "events": [
+    "client: any button press without a more specific cue"
+   ],
+   "durationMs": 93,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 20,
+   "minIntervalMs": 40,
+   "why": "A stone piece set on an alabaster board: a dry, solid tock with no ring, the board-game equivalent of a button press.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "chess_move_on_alabaster.wav",
+     "author": "mh2o",
+     "page": "https://freesound.org/people/mh2o/sounds/351518/",
+     "url": "https://cdn.freesound.org/previews/351/351518_4502687-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "ui.confirm": {
+   "files": [
+    "assets/audio/ui.confirm.ogg"
+   ],
+   "mp3": [
+    "assets/audio/ui.confirm.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "Kenney - Casino Audio 1.1: Audio/chip-lay-3.ogg",
+   "license": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "bus": "ui",
+   "events": [
+    "client: an action is committed (move or target confirmed, confirmDeployment, dialog OK)"
+   ],
+   "durationMs": 263,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 40,
+   "minIntervalMs": 40,
+   "why": "A clay chip laid down firmly: a short, mid-heavy clack that says 'committed' without a musical tone.",
+   "sources": [
+    {
+     "pack": "Kenney - Casino Audio 1.1",
+     "title": "chip-lay-3",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/casino-audio",
+     "url": "https://kenney.nl/media/pages/assets/casino-audio/2472606a04-1721639069/kenney_casino-audio.zip",
+     "member": "Audio/chip-lay-3.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "ui.cancel": {
+   "files": [
+    "assets/audio/ui.cancel.ogg"
+   ],
+   "mp3": [
+    "assets/audio/ui.cancel.mp3"
+   ],
+   "gain": 0.7,
+   "variations": 1,
+   "source": "Kenney - Casino Audio 1.1: Audio/card-slide-1.ogg",
+   "license": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "bus": "ui",
+   "events": [
+    "client: action withdrawn, dialog cancelled, Escape or right-click"
+   ],
+   "durationMs": 222,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 20,
+   "minIntervalMs": 40,
+   "why": "A card slid back across felt: softer and lower-energy than confirm, so 'withdraw' is heard as the opposite gesture.",
+   "sources": [
+    {
+     "pack": "Kenney - Casino Audio 1.1",
+     "title": "card-slide-1",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/casino-audio",
+     "url": "https://kenney.nl/media/pages/assets/casino-audio/2472606a04-1721639069/kenney_casino-audio.zip",
+     "member": "Audio/card-slide-1.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "ui.error": {
+   "files": [
+    "assets/audio/ui.error.ogg"
+   ],
+   "mp3": [
+    "assets/audio/ui.error.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "rubberduck - 80 CC0 RPG SFX: lock_02.ogg + Kenney - Impact Sounds 1.0: Audio/impactWood_medium_002.ogg",
+   "license": "CC0-1.0",
+   "author": "rubberduck (OpenGameArt); Kenney (www.kenney.nl)",
+   "bus": "ui",
+   "events": [
+    "a Rejection from validateIntent / submit for a player action (e.g. NOT_ENOUGH_AP, OUT_OF_RANGE)"
+   ],
+   "durationMs": 329,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 60,
+   "minIntervalMs": 200,
+   "why": "A locked latch that will not give plus a dull knock: the one UI sound with a rattle, so 'not allowed' is unmistakable.",
+   "sources": [
+    {
+     "pack": "rubberduck - 80 CC0 RPG SFX",
+     "title": "lock_02",
+     "author": "rubberduck (OpenGameArt)",
+     "page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+     "url": "https://opengameart.org/sites/default/files/80-CC0-RPG-SFX_0.zip",
+     "member": "lock_02.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactWood_medium_002",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactWood_medium_002.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "ui.toggle": {
+   "files": [
+    "assets/audio/ui.toggle.ogg"
+   ],
+   "mp3": [
+    "assets/audio/ui.toggle.mp3"
+   ],
+   "gain": 0.82,
+   "variations": 1,
+   "source": "Kenney - UI Audio 1.0: Audio/switch17.ogg",
+   "license": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "bus": "ui",
+   "events": [
+    "client: a switch or segmented control (top / iso camera, settings)"
+   ],
+   "durationMs": 234,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 20,
+   "minIntervalMs": 40,
+   "why": "A real mechanical switch, short and mid-pitched; distinct from click (stone) and confirm (clay).",
+   "sources": [
+    {
+     "pack": "Kenney - UI Audio 1.0",
+     "title": "switch17",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/ui-audio",
+     "url": "https://kenney.nl/media/pages/assets/ui-audio/490d233f68-1677590494/kenney_ui-audio.zip",
+     "member": "Audio/switch17.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "ui.open": {
+   "files": [
+    "assets/audio/ui.open.ogg"
+   ],
+   "mp3": [
+    "assets/audio/ui.open.mp3"
+   ],
+   "gain": 0.79,
+   "variations": 1,
+   "source": "BigSoundBank “Road map #2 (#2797)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "ui",
+   "events": [
+    "client: a panel or dialog opens (unit card, army builder, log)"
+   ],
+   "durationMs": 547,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 20,
+   "minIntervalMs": 40,
+   "why": "A campaign map unfolded on the table: papery, brief, and in keeping with the parchment UI skin.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Road map #2 (#2797)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/road-map-2-s2797.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2797.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "ui.close": {
+   "files": [
+    "assets/audio/ui.close.ogg"
+   ],
+   "mp3": [
+    "assets/audio/ui.close.mp3"
+   ],
+   "gain": 0.78,
+   "variations": 1,
+   "source": "BigSoundBank “Closed book #2 (#1411)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "ui",
+   "events": [
+    "client: a panel or dialog closes"
+   ],
+   "durationMs": 231,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 20,
+   "minIntervalMs": 40,
+   "why": "A book shut on the table: a short, soft thump that closes the gesture ui.open started.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Closed book #2 (#1411)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/closed-book-2-s1411.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1411.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "lobby.joined": {
+   "files": [
+    "assets/audio/lobby.joined.ogg"
+   ],
+   "mp3": [
+    "assets/audio/lobby.joined.mp3"
+   ],
+   "gain": 0.43,
+   "variations": 1,
+   "source": "BigSoundBank “Small Bell #3 (#0294)” by GlaneurDeSons",
+   "license": "CC0-1.0",
+   "author": "GlaneurDeSons",
+   "bus": "turn",
+   "events": [
+    "session: the opponent joins the lobby (netcode layer, not an engine event)"
+   ],
+   "durationMs": 1396,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 70,
+   "minIntervalMs": 250,
+   "why": "A small hand bell like a shop door bell: someone has walked in.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Small Bell #3 (#0294)",
+     "author": "GlaneurDeSons",
+     "page": "https://bigsoundbank.com/small-bell-3-s0294.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0294.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "lobby.ready": {
+   "files": [
+    "assets/audio/lobby.ready.ogg"
+   ],
+   "mp3": [
+    "assets/audio/lobby.ready.mp3"
+   ],
+   "gain": 0.86,
+   "variations": 1,
+   "source": "BigSoundBank “Coin in cup #2 (#0340)” by DavidGreck",
+   "license": "CC0-1.0",
+   "author": "DavidGreck",
+   "bus": "turn",
+   "events": [
+    "readyChanged (ready: true), either seat"
+   ],
+   "durationMs": 392,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 70,
+   "minIntervalMs": 250,
+   "why": "A coin dropped into a cup: your stake is in. Keeps the coin motif from the first screen.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Coin in cup #2 (#0340)",
+     "author": "DavidGreck",
+     "page": "https://bigsoundbank.com/coin-in-cup-2-s0340.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0340.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "turn.start.own": {
+   "files": [
+    "assets/audio/turn.start.own.ogg"
+   ],
+   "mp3": [
+    "assets/audio/turn.start.own.mp3"
+   ],
+   "gain": 0.45,
+   "variations": 1,
+   "source": "BigSoundBank “Bronze bell #1 (#2703)” by Pierre SIBANARCO",
+   "license": "CC0-1.0",
+   "author": "Pierre SIBANARCO",
+   "bus": "turn",
+   "events": [
+    "turnStarted (seat = me)"
+   ],
+   "durationMs": 1413,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 70,
+   "minIntervalMs": 250,
+   "why": "One warm bronze bell strike: bright, short and pleasant, the only 'go' signal that is tonal.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Bronze bell #1 (#2703)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/bronze-bell-1-s2703.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2703.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "turn.start.opponent": {
+   "files": [
+    "assets/audio/turn.start.opponent.ogg"
+   ],
+   "mp3": [
+    "assets/audio/turn.start.opponent.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "BigSoundBank “Bass Tom, #1 (#2338)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "turn",
+   "events": [
+    "turnStarted (seat = opponent)"
+   ],
+   "durationMs": 647,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 70,
+   "minIntervalMs": 250,
+   "why": "A single low war-drum boom pitched down: ominous and clearly not your bell.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Bass Tom, #1 (#2338)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/bass-tom-1-s2338.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2338.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "turn.end": {
+   "files": [
+    "assets/audio/turn.end.ogg"
+   ],
+   "mp3": [
+    "assets/audio/turn.end.mp3"
+   ],
+   "gain": 0.66,
+   "variations": 1,
+   "source": "rubberduck - 100 CC0 metal and wood SFX: wood_hit_07.ogg",
+   "license": "CC0-1.0",
+   "author": "rubberduck (OpenGameArt)",
+   "bus": "turn",
+   "events": [
+    "turnEnded (seat = me), or the endTurn intent accepted"
+   ],
+   "durationMs": 329,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 70,
+   "minIntervalMs": 250,
+   "why": "Two knuckle knocks on the table, the gesture players use to pass.",
+   "sources": [
+    {
+     "pack": "rubberduck - 100 CC0 metal and wood SFX",
+     "title": "wood_hit_07",
+     "author": "rubberduck (OpenGameArt)",
+     "page": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx",
+     "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip",
+     "member": "wood_hit_07.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "timer.warning": {
+   "files": [
+    "assets/audio/timer.warning.ogg"
+   ],
+   "mp3": [
+    "assets/audio/timer.warning.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "BigSoundBank “Tic Tac Mechanical Alarm Clock #3 (#2656)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "turn",
+   "events": [
+    "client turn timer (R29): once per second in the last 10 s of the turn time and again in the last 10 s of the bank"
+   ],
+   "durationMs": 318,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 70,
+   "minIntervalMs": 800,
+   "why": "One tick-tock of a mechanical clock; play once per second in the last 10 s, never as a loop.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Tic Tac Mechanical Alarm Clock #3 (#2656)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/tic-tac-mechanical-alarm-clock-3-s2656.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2656.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "boost.active": {
+   "files": [
+    "assets/audio/boost.active.ogg"
+   ],
+   "mp3": [
+    "assets/audio/boost.active.mp3"
+   ],
+   "gain": 0.72,
+   "variations": 1,
+   "source": "BigSoundBank “Horn #1 (#2520)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "turn",
+   "events": [
+    "approach boost (R28): the first turnStarted of the battle while AP is doubled, and once more when the view's firstContactRound becomes set (the boost ends with that round)"
+   ],
+   "durationMs": 1653,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 70,
+   "minIntervalMs": 250,
+   "why": "One real horn call at first contact: a battlefield signal everyone understands; used once per match.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Horn #1 (#2520)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/horn-1-s2520.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2520.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "unit.select": {
+   "files": [
+    "assets/audio/unit.select-1.ogg",
+    "assets/audio/unit.select-2.ogg"
+   ],
+   "mp3": [
+    "assets/audio/unit.select-1.mp3",
+    "assets/audio/unit.select-2.mp3"
+   ],
+   "gain": 0.97,
+   "variations": 2,
+   "source": "BigSoundBank “Coin spinning on a table #4 (#2700)” by Pierre SIBANARCO + BigSoundBank “Coin spinning on a table #5 (#2701)” by Pierre SIBANARCO",
+   "license": "CC0-1.0",
+   "author": "Pierre SIBANARCO",
+   "bus": "unit",
+   "events": [
+    "client: an own unit is selected"
+   ],
+   "durationMs": 213,
+   "pitchJitterSemitones": 0.5,
+   "gainJitterDb": 1.5,
+   "maxVoices": 1,
+   "priority": 30,
+   "minIntervalMs": 50,
+   "why": "A two-euro coin tapped on a wooden table (same recording session as the death sounds), nudged up a semitone: picking up your piece.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Coin spinning on a table #4 (#2700)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/coin-spinning-on-a-table-4-s2700.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2700.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Coin spinning on a table #5 (#2701)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "unit.deselect": {
+   "files": [
+    "assets/audio/unit.deselect-1.ogg",
+    "assets/audio/unit.deselect-2.ogg"
+   ],
+   "mp3": [
+    "assets/audio/unit.deselect-1.mp3",
+    "assets/audio/unit.deselect-2.mp3"
+   ],
+   "gain": 0.7,
+   "variations": 2,
+   "source": "BigSoundBank “Coin spinning on a table #2 (#2698)” by Pierre SIBANARCO",
+   "license": "CC0-1.0",
+   "author": "Pierre SIBANARCO",
+   "bus": "unit",
+   "events": [
+    "client: selection cleared",
+    "unitPlaced / unitUnplaced during deployment (same files)"
+   ],
+   "durationMs": 222,
+   "pitchJitterSemitones": 0.5,
+   "gainJitterDb": 1.5,
+   "maxVoices": 2,
+   "priority": 25,
+   "minIntervalMs": 50,
+   "why": "The same coin set back down, two semitones lower and quieter: the inverse of select.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Coin spinning on a table #2 (#2698)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/coin-spinning-on-a-table-2-s2698.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2698.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "unit.move.step": {
+   "files": [
+    "assets/audio/unit.move.step-1.ogg",
+    "assets/audio/unit.move.step-2.ogg",
+    "assets/audio/unit.move.step-3.ogg",
+    "assets/audio/unit.move.step-4.ogg"
+   ],
+   "mp3": [
+    "assets/audio/unit.move.step-1.mp3",
+    "assets/audio/unit.move.step-2.mp3",
+    "assets/audio/unit.move.step-3.mp3",
+    "assets/audio/unit.move.step-4.mp3"
+   ],
+   "gain": 0.39,
+   "variations": 4,
+   "source": "Freesound “coin sliding on table.wav” by seanhealey",
+   "license": "CC0-1.0",
+   "author": "seanhealey",
+   "bus": "unit",
+   "events": [
+    "unitMoved (one event per step): space the plays 120-160 ms apart to match the token animation"
+   ],
+   "durationMs": 337,
+   "pitchJitterSemitones": 0.5,
+   "gainJitterDb": 1.5,
+   "maxVoices": 3,
+   "priority": 35,
+   "minIntervalMs": 50,
+   "why": "One short slide of a large coin across a wooden table per square: metal-on-wood grit, under 0.4 s so steps stay countable.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "coin sliding on table.wav",
+     "author": "seanhealey",
+     "page": "https://freesound.org/people/seanhealey/sounds/517749/",
+     "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "unit.move.charge": {
+   "files": [
+    "assets/audio/unit.move.charge.ogg"
+   ],
+   "mp3": [
+    "assets/audio/unit.move.charge.mp3"
+   ],
+   "gain": 0.68,
+   "variations": 1,
+   "source": "Freesound “coin sliding on table.wav” by seanhealey + BigSoundBank “Whoosh #8 (#1801)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "seanhealey; Joseph SARDIN",
+   "bus": "unit",
+   "events": [
+    "the first unitMoved of a charge intent (R26); its other steps use unit.move.step at -3 dB"
+   ],
+   "durationMs": 476,
+   "pitchJitterSemitones": 0.5,
+   "gainJitterDb": 1.5,
+   "maxVoices": 3,
+   "priority": 35,
+   "minIntervalMs": 50,
+   "why": "A longer coin slide with a metal-tube whoosh on top: the move and the intent to strike in one gesture.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "coin sliding on table.wav",
+     "author": "seanhealey",
+     "page": "https://freesound.org/people/seanhealey/sounds/517749/",
+     "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Whoosh #8 (#1801)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/whoosh-8-s1801.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1801.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "march.step": {
+   "files": [
+    "assets/audio/march.step-1.ogg",
+    "assets/audio/march.step-2.ogg",
+    "assets/audio/march.step-3.ogg"
+   ],
+   "mp3": [
+    "assets/audio/march.step-1.mp3",
+    "assets/audio/march.step-2.mp3",
+    "assets/audio/march.step-3.mp3"
+   ],
+   "gain": 0.6,
+   "variations": 3,
+   "source": "Freesound “several coins on wood top” by nicoproson",
+   "license": "CC0-1.0",
+   "author": "nicoproson",
+   "bus": "unit",
+   "events": [
+    "the unitMoved events of one groupMarch intent (R27): one play per march wave, not one per unit"
+   ],
+   "durationMs": 317,
+   "pitchJitterSemitones": 0.5,
+   "gainJitterDb": 1.5,
+   "maxVoices": 1,
+   "priority": 35,
+   "minIntervalMs": 50,
+   "why": "Several coins rattling across wood at once: a group step that is obviously plural; one sound per march, not per unit.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "several coins on wood top",
+     "author": "nicoproson",
+     "page": "https://freesound.org/people/nicoproson/sounds/776505/",
+     "url": "https://cdn.freesound.org/previews/776/776505_457982-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "unit.defend": {
+   "files": [
+    "assets/audio/unit.defend.ogg"
+   ],
+   "mp3": [
+    "assets/audio/unit.defend.mp3"
+   ],
+   "gain": 0.87,
+   "variations": 1,
+   "source": "BigSoundBank “Dumbbell, placed #2 (#3296)” by Joseph SARDIN + Kenney - Impact Sounds 1.0: Audio/impactPlate_light_003.ogg",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN; Kenney (www.kenney.nl)",
+   "bus": "unit",
+   "events": [
+    "defendChanged (defending: true, reason: action)"
+   ],
+   "durationMs": 477,
+   "pitchJitterSemitones": 0.5,
+   "gainJitterDb": 1.5,
+   "maxVoices": 3,
+   "priority": 35,
+   "minIntervalMs": 50,
+   "why": "A heavy weight planted on a wooden floor with a faint plate ring: bracing behind a shield, low and short.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Dumbbell, placed #2 (#3296)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/dumbbell-placed-2-s3296.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/3296.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactPlate_light_003",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactPlate_light_003.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "attack.swing.light": {
+   "files": [
+    "assets/audio/attack.swing.light-1.ogg",
+    "assets/audio/attack.swing.light-2.ogg",
+    "assets/audio/attack.swing.light-3.ogg"
+   ],
+   "mp3": [
+    "assets/audio/attack.swing.light-1.mp3",
+    "assets/audio/attack.swing.light-2.mp3",
+    "assets/audio/attack.swing.light-3.mp3"
+   ],
+   "gain": 0.97,
+   "variations": 3,
+   "source": "Freesound “Combat Whooshes” by EminYILDIRIM",
+   "license": "CC0-1.0",
+   "author": "EminYILDIRIM",
+   "bus": "attack",
+   "events": [
+    "unitAttacked, melee, attacker Power below 10"
+   ],
+   "durationMs": 257,
+   "pitchJitterSemitones": 0.6,
+   "gainJitterDb": 1.5,
+   "maxVoices": 3,
+   "priority": 50,
+   "minIntervalMs": 40,
+   "why": "Short real combat whooshes (Zoom H6 recordings), high-passed: fast air, no metal, so the hit that follows carries the material.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Combat Whooshes",
+     "author": "EminYILDIRIM",
+     "page": "https://freesound.org/people/EminYILDIRIM/sounds/535359/",
+     "url": "https://cdn.freesound.org/previews/535/535359_10912485-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "attack.swing.heavy": {
+   "files": [
+    "assets/audio/attack.swing.heavy-1.ogg",
+    "assets/audio/attack.swing.heavy-2.ogg",
+    "assets/audio/attack.swing.heavy-3.ogg"
+   ],
+   "mp3": [
+    "assets/audio/attack.swing.heavy-1.mp3",
+    "assets/audio/attack.swing.heavy-2.mp3",
+    "assets/audio/attack.swing.heavy-3.mp3"
+   ],
+   "gain": 0.73,
+   "variations": 3,
+   "source": "BigSoundBank “Whoosh #10 (#1798)” by Joseph SARDIN + BigSoundBank “Whoosh #5 (#1797)” by Joseph SARDIN + BigSoundBank “Whoosh #8 (#1801)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "attack",
+   "events": [
+    "unitAttacked, melee, attacker Power 10 or more, or a Size-2 attacker"
+   ],
+   "durationMs": 490,
+   "pitchJitterSemitones": 0.6,
+   "gainJitterDb": 1.5,
+   "maxVoices": 3,
+   "priority": 50,
+   "minIntervalMs": 40,
+   "why": "Longer whooshes of a bamboo stick, a long wooden stick and a metal tube, two semitones down: weight you can hear before the blow lands.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Whoosh #10 (#1798)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/whoosh-10-s1798.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1798.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Whoosh #5 (#1797)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/whoosh-5-s1797.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1797.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Whoosh #8 (#1801)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/whoosh-8-s1801.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1801.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "attack.ranged.shot": {
+   "files": [
+    "assets/audio/attack.ranged.shot.ogg"
+   ],
+   "mp3": [
+    "assets/audio/attack.ranged.shot.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "Freesound “Arrow Loose and Flyby” by saturdaysoundguy",
+   "license": "CC0-1.0",
+   "author": "saturdaysoundguy",
+   "bus": "attack",
+   "events": [
+    "unitAttacked from range 2 or more (Ranger), including a blind shot at a square"
+   ],
+   "durationMs": 640,
+   "pitchJitterSemitones": 0.6,
+   "gainJitterDb": 1.5,
+   "maxVoices": 3,
+   "priority": 50,
+   "minIntervalMs": 40,
+   "why": "Arrow release and fly-by in 0.6 s: string snap first, then air, so it reads as a shot even off-screen.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Arrow Loose and Flyby",
+     "author": "saturdaysoundguy",
+     "page": "https://freesound.org/people/saturdaysoundguy/sounds/394180/",
+     "url": "https://cdn.freesound.org/previews/394/394180_7280678-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "hit.metal.light": {
+   "files": [
+    "assets/audio/hit.metal.light-1.ogg",
+    "assets/audio/hit.metal.light-2.ogg",
+    "assets/audio/hit.metal.light-3.ogg"
+   ],
+   "mp3": [
+    "assets/audio/hit.metal.light-1.mp3",
+    "assets/audio/hit.metal.light-2.mp3",
+    "assets/audio/hit.metal.light-3.mp3"
+   ],
+   "gain": 0.92,
+   "variations": 3,
+   "source": "rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_metal_hit_04.ogg + rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_metal_hit_06.ogg + rubberduck - 100 CC0 metal and wood SFX: metal_hit_03.ogg",
+   "license": "CC0-1.0",
+   "author": "rubberduck (OpenGameArt)",
+   "bus": "hit",
+   "events": [
+    "unitDamaged with amount below 8 and no decisive reduction or defend step"
+   ],
+   "durationMs": 355,
+   "pitchJitterSemitones": 0.5,
+   "gainJitterDb": 1.5,
+   "maxVoices": 4,
+   "priority": 60,
+   "minIntervalMs": 30,
+   "why": "Real small metal hits from rubberduck's breaking/falling and metal packs: a coin edge chipped, bright but short (under 0.3 s).",
+   "sources": [
+    {
+     "pack": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+     "title": "bfh1_metal_hit_04",
+     "author": "rubberduck (OpenGameArt)",
+     "page": "https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx",
+     "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip",
+     "member": "bfh1_metal_hit_04.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+     "title": "bfh1_metal_hit_06",
+     "author": "rubberduck (OpenGameArt)",
+     "page": "https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx",
+     "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip",
+     "member": "bfh1_metal_hit_06.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "rubberduck - 100 CC0 metal and wood SFX",
+     "title": "metal_hit_03",
+     "author": "rubberduck (OpenGameArt)",
+     "page": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx",
+     "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip",
+     "member": "metal_hit_03.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "hit.metal.heavy": {
+   "files": [
+    "assets/audio/hit.metal.heavy-1.ogg",
+    "assets/audio/hit.metal.heavy-2.ogg",
+    "assets/audio/hit.metal.heavy-3.ogg"
+   ],
+   "mp3": [
+    "assets/audio/hit.metal.heavy-1.mp3",
+    "assets/audio/hit.metal.heavy-2.mp3",
+    "assets/audio/hit.metal.heavy-3.mp3"
+   ],
+   "gain": 0.8,
+   "variations": 3,
+   "source": "BigSoundBank “Anvil #2 (#3590)” by Pablo BERGEL + Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_001.ogg + Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_003.ogg + BigSoundBank “Anvil #1 (#3589)” by Pablo BERGEL + Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_000.ogg",
+   "license": "CC0-1.0",
+   "author": "Pablo BERGEL; Kenney (www.kenney.nl)",
+   "bus": "hit",
+   "events": [
+    "unitDamaged with amount 8 or more (start the visual hit-stop on this sound)"
+   ],
+   "durationMs": 614,
+   "pitchJitterSemitones": 0.5,
+   "gainJitterDb": 1.5,
+   "maxVoices": 2,
+   "priority": 70,
+   "minIntervalMs": 30,
+   "why": "A blacksmith's hammer on an anvil, pitched down two semitones, over a dull body punch: the forge clang gives grit, the punch gives weight.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Anvil #2 (#3590)",
+     "author": "Pablo BERGEL",
+     "page": "https://bigsoundbank.com/anvil-2-s3590.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/3590.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactPunch_heavy_001",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactPunch_heavy_001.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactPunch_heavy_003",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactPunch_heavy_003.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Anvil #1 (#3589)",
+     "author": "Pablo BERGEL",
+     "page": "https://bigsoundbank.com/anvil-1-s3589.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/3589.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactPunch_heavy_000",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactPunch_heavy_000.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "hit.blocked": {
+   "files": [
+    "assets/audio/hit.blocked-1.ogg",
+    "assets/audio/hit.blocked-2.ogg"
+   ],
+   "mp3": [
+    "assets/audio/hit.blocked-1.mp3",
+    "assets/audio/hit.blocked-2.mp3"
+   ],
+   "gain": 0.67,
+   "variations": 2,
+   "source": "Freesound “Sword_Clash (7).wav” by JohnBuhr + Freesound “Sword Hit” by qubodup",
+   "license": "CC0-1.0",
+   "author": "JohnBuhr; qubodup",
+   "bus": "hit",
+   "events": [
+    "unitDamaged whose breakdown has a reduction step from Reinforced Armor, Forcefield or Hex Ward"
+   ],
+   "durationMs": 312,
+   "pitchJitterSemitones": 0.5,
+   "gainJitterDb": 1.5,
+   "maxVoices": 4,
+   "priority": 60,
+   "minIntervalMs": 30,
+   "why": "A bright blade-on-blade ping with a fast decay: armour or a forcefield turned the blow (shape cue: high and thin, never low).",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Sword_Clash (7).wav",
+     "author": "JohnBuhr",
+     "page": "https://freesound.org/people/JohnBuhr/sounds/326868/",
+     "url": "https://cdn.freesound.org/previews/326/326868_4077311-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Freesound",
+     "title": "Sword Hit",
+     "author": "qubodup",
+     "page": "https://freesound.org/people/qubodup/sounds/442769/",
+     "url": "https://cdn.freesound.org/previews/442/442769_71257-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "hit.defended": {
+   "files": [
+    "assets/audio/hit.defended-1.ogg",
+    "assets/audio/hit.defended-2.ogg"
+   ],
+   "mp3": [
+    "assets/audio/hit.defended-1.mp3",
+    "assets/audio/hit.defended-2.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 2,
+   "source": "Kenney - Impact Sounds 1.0: Audio/impactPlate_heavy_000.ogg + BigSoundBank “Dumbbell, placed #3 (#3297)” by Joseph SARDIN + Kenney - Impact Sounds 1.0: Audio/impactPlate_heavy_004.ogg + BigSoundBank “Dumbbell, placed #2 (#3296)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl); Joseph SARDIN",
+   "bus": "hit",
+   "events": [
+    "unitDamaged whose breakdown has a defend step"
+   ],
+   "durationMs": 556,
+   "pitchJitterSemitones": 0.5,
+   "gainJitterDb": 1.5,
+   "maxVoices": 4,
+   "priority": 60,
+   "minIntervalMs": 30,
+   "why": "A heavy iron-plate thud with a muffled weight under it: the blow landed on a braced shield (low and dull, the opposite of hit.blocked).",
+   "sources": [
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactPlate_heavy_000",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactPlate_heavy_000.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Dumbbell, placed #3 (#3297)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/dumbbell-placed-3-s3297.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/3297.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactPlate_heavy_004",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactPlate_heavy_004.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Dumbbell, placed #2 (#3296)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/dumbbell-placed-2-s3296.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/3296.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "unit.death": {
+   "files": [
+    "assets/audio/unit.death-1.ogg",
+    "assets/audio/unit.death-2.ogg",
+    "assets/audio/unit.death-3.ogg"
+   ],
+   "mp3": [
+    "assets/audio/unit.death-1.mp3",
+    "assets/audio/unit.death-2.mp3",
+    "assets/audio/unit.death-3.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 3,
+   "source": "BigSoundBank “Coin spinning on a table #1 (#2697)” by Pierre SIBANARCO + BigSoundBank “Coin spinning on a table #4 (#2700)” by Pierre SIBANARCO + BigSoundBank “Coin spinning on a table #6 (#2702)” by Pierre SIBANARCO",
+   "license": "CC0-1.0",
+   "author": "Pierre SIBANARCO",
+   "bus": "death",
+   "events": [
+    "unitDied for a unit below tier 50 (dummies included)"
+   ],
+   "durationMs": 777,
+   "pitchJitterSemitones": 0.4,
+   "gainJitterDb": 1.0,
+   "maxVoices": 3,
+   "priority": 80,
+   "minIntervalMs": 60,
+   "why": "The last second of a real two-euro coin spinning down on a wooden table: the wobble speeds up and the coin falls flat. A coin dying, not a body.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Coin spinning on a table #1 (#2697)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/coin-spinning-on-a-table-1-s2697.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2697.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Coin spinning on a table #4 (#2700)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/coin-spinning-on-a-table-4-s2700.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2700.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Coin spinning on a table #6 (#2702)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/coin-spinning-on-a-table-6-s2702.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2702.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "unit.death.big": {
+   "files": [
+    "assets/audio/unit.death.big-1.ogg",
+    "assets/audio/unit.death.big-2.ogg"
+   ],
+   "mp3": [
+    "assets/audio/unit.death.big-1.mp3",
+    "assets/audio/unit.death.big-2.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 2,
+   "source": "BigSoundBank “Falling sheet steel bar #2 (#1772)” by Joseph SARDIN + BigSoundBank “Coin spinning on a table #5 (#2701)” by Pierre SIBANARCO + BigSoundBank “Falling sheet steel bar #4 (#1774)” by Joseph SARDIN + BigSoundBank “Coin spinning on a table #3 (#2699)” by Pierre SIBANARCO",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN; Pierre SIBANARCO",
+   "bus": "death",
+   "events": [
+    "unitDied for tier 50 and 100 units and commanders"
+   ],
+   "durationMs": 1195,
+   "pitchJitterSemitones": 0.4,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 90,
+   "minIntervalMs": 60,
+   "why": "A sheet-steel bar crashing down, then a deeper coin settling three semitones lower: tier 50 and 100 fall like heavy coins.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Falling sheet steel bar #2 (#1772)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/falling-sheet-steel-bar-2-s1772.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1772.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Coin spinning on a table #5 (#2701)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Falling sheet steel bar #4 (#1774)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/falling-sheet-steel-bar-4-s1774.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1774.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Coin spinning on a table #3 (#2699)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/coin-spinning-on-a-table-3-s2699.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2699.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "heal": {
+   "files": [
+    "assets/audio/heal.ogg"
+   ],
+   "mp3": [
+    "assets/audio/heal.mp3"
+   ],
+   "gain": 0.46,
+   "variations": 1,
+   "source": "BigSoundBank “Finger Cymbals #1 (#2274)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "effect",
+   "events": [
+    "unitHealed from a source without its own cue (Queso's beacon, the Shared wounds recipient, Perseverance)"
+   ],
+   "durationMs": 932,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "Finger cymbals: a soft, bright shimmer with a clean decay; the only 'sparkle' in the set, kept short.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Finger Cymbals #1 (#2274)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/finger-cymbals-1-s2274.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2274.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "buff": {
+   "files": [
+    "assets/audio/buff.ogg"
+   ],
+   "mp3": [
+    "assets/audio/buff.mp3"
+   ],
+   "gain": 0.47,
+   "variations": 1,
+   "source": "BigSoundBank “Knife blade #1 (#2574)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "effect",
+   "events": [
+    "maxToughnessChanged with delta above 0, or a bonus that has no cue of its own"
+   ],
+   "durationMs": 356,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A knife blade set ringing: steel being sharpened. Rising strength without a synth riser.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Knife blade #1 (#2574)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/knife-blade-1-s2574.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2574.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "debuff": {
+   "files": [
+    "assets/audio/debuff.ogg"
+   ],
+   "mp3": [
+    "assets/audio/debuff.mp3"
+   ],
+   "gain": 0.46,
+   "variations": 1,
+   "source": "BigSoundBank “Small chain #1 (#0355)” by DenisChardonnet",
+   "license": "CC0-1.0",
+   "author": "DenisChardonnet",
+   "bus": "effect",
+   "events": [
+    "toughnessLost, or maxToughnessChanged with delta below 0"
+   ],
+   "durationMs": 693,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A small chain dragged and pitched down: weighed down, shackled.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Small chain #1 (#0355)",
+     "author": "DenisChardonnet",
+     "page": "https://bigsoundbank.com/small-chain-1-s0355.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0355.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "reveal": {
+   "files": [
+    "assets/audio/reveal.ogg"
+   ],
+   "mp3": [
+    "assets/audio/reveal.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "BigSoundBank “Flag #2 (#1788)” by Joseph SARDIN + Kenney - Impact Sounds 1.0: Audio/impactMetal_light_001.ogg",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN; Kenney (www.kenney.nl)",
+   "bus": "effect",
+   "events": [
+    "unitRevealed (adjacency, damage or detection)",
+    "mineRevealed (same files)"
+   ],
+   "durationMs": 317,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 65,
+   "minIntervalMs": 60,
+   "why": "A cloak snapped away plus a faint metal glint: a hidden coin is suddenly on the table.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Flag #2 (#1788)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/flag-2-s1788.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1788.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactMetal_light_001",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactMetal_light_001.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "stealth.on": {
+   "files": [
+    "assets/audio/stealth.on.ogg"
+   ],
+   "mp3": [
+    "assets/audio/stealth.on.mp3"
+   ],
+   "gain": 0.6,
+   "variations": 1,
+   "source": "Kenney - RPG Audio 1.0: Audio/cloth2.ogg",
+   "license": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "bus": "effect",
+   "events": [
+    "stealthChanged (stealthed: true), owner only"
+   ],
+   "durationMs": 311,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A soft cloth rustle, the quietest effect in the set: the Rogue pulls up the hood.",
+   "sources": [
+    {
+     "pack": "Kenney - RPG Audio 1.0",
+     "title": "cloth2",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/rpg-audio",
+     "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip",
+     "member": "Audio/cloth2.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "stealth.off": {
+   "files": [
+    "assets/audio/stealth.off.ogg"
+   ],
+   "mp3": [
+    "assets/audio/stealth.off.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "Kenney - RPG Audio 1.0: Audio/cloth1.ogg",
+   "license": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "bus": "effect",
+   "events": [
+    "stealthChanged (stealthed: false) that is not caused by a reveal"
+   ],
+   "durationMs": 505,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A fuller cloth movement: the hood comes down by choice (reveal is the louder, involuntary version).",
+   "sources": [
+    {
+     "pack": "Kenney - RPG Audio 1.0",
+     "title": "cloth1",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/rpg-audio",
+     "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip",
+     "member": "Audio/cloth1.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "assault": {
+   "files": [
+    "assets/audio/assault-1.ogg",
+    "assets/audio/assault-2.ogg"
+   ],
+   "mp3": [
+    "assets/audio/assault-1.mp3",
+    "assets/audio/assault-2.mp3"
+   ],
+   "gain": 0.58,
+   "variations": 2,
+   "source": "Kenney - RPG Audio 1.0: Audio/knifeSlice.ogg + Kenney - RPG Audio 1.0: Audio/knifeSlice2.ogg",
+   "license": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "bus": "effect",
+   "events": [
+    "the unitAttacked of rogue.assault (the Rogue's free strike)"
+   ],
+   "durationMs": 417,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 60,
+   "minIntervalMs": 60,
+   "why": "A quick knife slice: the Rogue's free strike when an enemy steps adjacent, short and sharp.",
+   "sources": [
+    {
+     "pack": "Kenney - RPG Audio 1.0",
+     "title": "knifeSlice",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/rpg-audio",
+     "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip",
+     "member": "Audio/knifeSlice.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - RPG Audio 1.0",
+     "title": "knifeSlice2",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/rpg-audio",
+     "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip",
+     "member": "Audio/knifeSlice2.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "mine.place": {
+   "files": [
+    "assets/audio/mine.place.ogg"
+   ],
+   "mp3": [
+    "assets/audio/mine.place.mp3"
+   ],
+   "gain": 0.65,
+   "variations": 1,
+   "source": "rubberduck - 100 CC0 metal and wood SFX: metal_spring_02.ogg + Kenney - RPG Audio 1.0: Audio/metalLatch.ogg",
+   "license": "CC0-1.0",
+   "author": "rubberduck (OpenGameArt); Kenney (www.kenney.nl)",
+   "bus": "effect",
+   "events": [
+    "minePlaced (owner only)"
+   ],
+   "durationMs": 448,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A spring cocked, then a latch clicks: the Trip Mine is armed. Mechanical, quiet, owner-only.",
+   "sources": [
+    {
+     "pack": "rubberduck - 100 CC0 metal and wood SFX",
+     "title": "metal_spring_02",
+     "author": "rubberduck (OpenGameArt)",
+     "page": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx",
+     "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip",
+     "member": "metal_spring_02.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - RPG Audio 1.0",
+     "title": "metalLatch",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/rpg-audio",
+     "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip",
+     "member": "Audio/metalLatch.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "mine.explode": {
+   "files": [
+    "assets/audio/mine.explode.ogg"
+   ],
+   "mp3": [
+    "assets/audio/mine.explode.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "Freesound “Explosion 1” by magnuswaker + rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_rock_falling_03.ogg",
+   "license": "CC0-1.0",
+   "author": "magnuswaker; rubberduck (OpenGameArt)",
+   "bus": "big",
+   "events": [
+    "mineExploded"
+   ],
+   "durationMs": 1184,
+   "pitchJitterSemitones": 0.2,
+   "gainJitterDb": 0.5,
+   "maxVoices": 1,
+   "priority": 90,
+   "minIntervalMs": 150,
+   "why": "A rough analogue explosion with stones falling after it: a dirty bang, 1.2 s, no cinematic tail.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Explosion 1",
+     "author": "magnuswaker",
+     "page": "https://freesound.org/people/magnuswaker/sounds/523089/",
+     "url": "https://cdn.freesound.org/previews/523/523089_11537497-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+     "title": "bfh1_rock_falling_03",
+     "author": "rubberduck (OpenGameArt)",
+     "page": "https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx",
+     "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip",
+     "member": "bfh1_rock_falling_03.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "prototype.create": {
+   "files": [
+    "assets/audio/prototype.create.ogg"
+   ],
+   "mp3": [
+    "assets/audio/prototype.create.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "BigSoundBank “Winder #7 (#2668)” by Joseph SARDIN + Kenney - Impact Sounds 1.0: Audio/impactPlate_light_002.ogg",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN; Kenney (www.kenney.nl)",
+   "bus": "effect",
+   "events": [
+    "unitCreated (createdBy: artificer.prototypeNoAcb)"
+   ],
+   "durationMs": 1539,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A clockwork key wound twice, then a plate set down: the Artificer's dummy is built from gears, not magic.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Winder #7 (#2668)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/winder-7-s2668.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2668.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactPlate_light_002",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactPlate_light_002.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "forcefield.on": {
+   "files": [
+    "assets/audio/forcefield.on.ogg"
+   ],
+   "mp3": [
+    "assets/audio/forcefield.on.mp3"
+   ],
+   "gain": 0.9,
+   "variations": 1,
+   "source": "BigSoundBank “Tibetan bowl struck #3 (#2554)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "effect",
+   "events": [
+    "areaCreated (abilityId: royalWizard.forcefield)"
+   ],
+   "durationMs": 1945,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A struck Tibetan bowl blooming: a resonant metal hum that reads as a barrier forming, never a sci-fi zap.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Tibetan bowl struck #3 (#2554)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/tibetan-bowl-struck-3-s2554.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2554.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "forcefield.off": {
+   "files": [
+    "assets/audio/forcefield.off.ogg"
+   ],
+   "mp3": [
+    "assets/audio/forcefield.off.mp3"
+   ],
+   "gain": 0.57,
+   "variations": 1,
+   "source": "BigSoundBank “Triangle muffled #1 (#1690)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "effect",
+   "events": [
+    "areaExpired of a Forcefield area"
+   ],
+   "durationMs": 773,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A muffled triangle pitched down five semitones: a ring choked off, the barrier is gone.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Triangle muffled #1 (#1690)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/triangle-muffled-1-s1690.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1690.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "pajazon.cast": {
+   "files": [
+    "assets/audio/pajazon.cast.ogg"
+   ],
+   "mp3": [
+    "assets/audio/pajazon.cast.mp3"
+   ],
+   "gain": 0.54,
+   "variations": 1,
+   "source": "BigSoundBank “Whoosh #2 (#0573)” by Joseph SARDIN + BigSoundBank “Gong, strong #1 (#1483)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "effect",
+   "events": [
+    "abilityUsed / areaCreated (royalWizard.pajazon)"
+   ],
+   "durationMs": 2386,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A deep sword whoosh into a gong bloom: an area spell lands on a 3x3 patch; the gong's spread reads as 'area'.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Whoosh #2 (#0573)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/whoosh-2-s0573.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0573.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Gong, strong #1 (#1483)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/gong-strong-1-s1483.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1483.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "pajazon.heal": {
+   "files": [
+    "assets/audio/pajazon.heal.ogg"
+   ],
+   "mp3": [
+    "assets/audio/pajazon.heal.mp3"
+   ],
+   "gain": 0.48,
+   "variations": 1,
+   "source": "BigSoundBank “Chimes \"butterfly\" #1 (#2087)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "effect",
+   "events": [
+    "unitHealed (source: royalWizard.pajazon): one per unit, 80 ms apart"
+   ],
+   "durationMs": 512,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 3,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A small chime cluster per healed unit at end of turn: quiet and distinct from the single-target heal cymbal.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Chimes \"butterfly\" #1 (#2087)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/chimes-butterfly-1-s2087.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2087.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "pajazon.damage": {
+   "files": [
+    "assets/audio/pajazon.damage.ogg"
+   ],
+   "mp3": [
+    "assets/audio/pajazon.damage.mp3"
+   ],
+   "gain": 0.49,
+   "variations": 1,
+   "source": "BigSoundBank “Quenching, cooling #4 (#1697)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "effect",
+   "events": [
+    "unitDamaged (source: royalWizard.pajazon): replaces the hit sound, 80 ms apart"
+   ],
+   "durationMs": 267,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 3,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "Hot metal quenched in water: a short hiss per damaged enemy, the 'burn' tick.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Quenching, cooling #4 (#1697)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/quenching-cooling-4-s1697.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1697.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "slam.impact": {
+   "files": [
+    "assets/audio/slam.impact.ogg"
+   ],
+   "mp3": [
+    "assets/audio/slam.impact.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "Freesound “big stone door suddenly slamming shut” by PaceHeart + rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_rock_breaking_02.ogg + Kenney - Impact Sounds 1.0: Audio/impactMining_000.ogg",
+   "license": "CC0-1.0",
+   "author": "PaceHeart; rubberduck (OpenGameArt); Kenney (www.kenney.nl)",
+   "bus": "big",
+   "events": [
+    "abilityUsed (beast.forcefulSlam); its unitDamaged events use hit.metal.light at -6 dB"
+   ],
+   "durationMs": 896,
+   "pitchJitterSemitones": 0.2,
+   "gainJitterDb": 0.5,
+   "maxVoices": 1,
+   "priority": 90,
+   "minIntervalMs": 150,
+   "why": "A stone door slammed shut with rubble and a pick strike under it: the Beast hits the ground, low and gritty.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "big stone door suddenly slamming shut",
+     "author": "PaceHeart",
+     "page": "https://freesound.org/people/PaceHeart/sounds/465807/",
+     "url": "https://cdn.freesound.org/previews/465/465807_1348084-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+     "title": "bfh1_rock_breaking_02",
+     "author": "rubberduck (OpenGameArt)",
+     "page": "https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx",
+     "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip",
+     "member": "bfh1_rock_breaking_02.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactMining_000",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactMining_000.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "feast": {
+   "files": [
+    "assets/audio/feast.ogg"
+   ],
+   "mp3": [
+    "assets/audio/feast.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "Freesound “Hard Candy / Bone Crunch” by clif_creates",
+   "license": "CC0-1.0",
+   "author": "clif_creates",
+   "bus": "effect",
+   "events": [
+    "abilityUsed (beast.feast); the eaten unit's unitDied plays no death sound"
+   ],
+   "durationMs": 747,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "One hard crunch, recorded an inch from the mouth: the Beast eats a unit. Visceral, but a single bite, no gore loop.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Hard Candy / Bone Crunch",
+     "author": "clif_creates",
+     "page": "https://freesound.org/people/clif_creates/sounds/392883/",
+     "url": "https://cdn.freesound.org/previews/392/392883_3530854-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "smite": {
+   "files": [
+    "assets/audio/smite.ogg"
+   ],
+   "mp3": [
+    "assets/audio/smite.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "Freesound “TollBell.wav” by daytripper + Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_001.ogg + BigSoundBank “Explosion #2 (#1808)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "daytripper; Kenney (www.kenney.nl); Joseph SARDIN",
+   "bus": "big",
+   "events": [
+    "abilityUsed (emissary.smite); the splash hits use hit.metal.light"
+   ],
+   "durationMs": 2152,
+   "pitchJitterSemitones": 0.2,
+   "gainJitterDb": 0.5,
+   "maxVoices": 1,
+   "priority": 90,
+   "minIntervalMs": 150,
+   "why": "A huge bell struck over a body punch and a crack: holy force arriving, heavy and short (bell tail faded in 2.2 s).",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "TollBell.wav",
+     "author": "daytripper",
+     "page": "https://freesound.org/people/daytripper/sounds/73678/",
+     "url": "https://cdn.freesound.org/previews/73/73678_796067-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactPunch_heavy_001",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactPunch_heavy_001.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Explosion #2 (#1808)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/explosion-2-s1808.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1808.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "blessing": {
+   "files": [
+    "assets/audio/blessing.ogg"
+   ],
+   "mp3": [
+    "assets/audio/blessing.mp3"
+   ],
+   "gain": 0.41,
+   "variations": 1,
+   "source": "BigSoundBank “Chimes \"Dream\" #1 (#2079)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "effect",
+   "events": [
+    "abilityUsed (emissary.holyBlessing)"
+   ],
+   "durationMs": 1857,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A cluster of dream chimes: bright and airy, the 'holy' counterpart to the heal cymbal.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Chimes \"Dream\" #1 (#2079)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/chimes-dream-1-s2079.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2079.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "savagery": {
+   "files": [
+    "assets/audio/savagery.ogg"
+   ],
+   "mp3": [
+    "assets/audio/savagery.mp3"
+   ],
+   "gain": 0.61,
+   "variations": 1,
+   "source": "Freesound “Swing grunt.mp3” by DeqstersLab + artisticdude - Swishes Sound Pack: swishes/swish-7.wav",
+   "license": "CC0-1.0",
+   "author": "DeqstersLab; artisticdude (OpenGameArt)",
+   "bus": "effect",
+   "events": [
+    "abilityUsed (berserker.savagery), before its swing"
+   ],
+   "durationMs": 658,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A warrior's effort grunt with a heavy swish on top: the Berserker's extra attack, human and visceral, under 0.8 s.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Swing grunt.mp3",
+     "author": "DeqstersLab",
+     "page": "https://freesound.org/people/DeqstersLab/sounds/661242/",
+     "url": "https://cdn.freesound.org/previews/661/661242_189858-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "artisticdude - Swishes Sound Pack",
+     "title": "swish-7",
+     "author": "artisticdude (OpenGameArt)",
+     "page": "https://opengameart.org/content/swishes-sound-pack",
+     "url": "https://opengameart.org/sites/default/files/swishes.zip",
+     "member": "swishes/swish-7.wav",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "shared.wounds": {
+   "files": [
+    "assets/audio/shared.wounds.ogg"
+   ],
+   "mp3": [
+    "assets/audio/shared.wounds.mp3"
+   ],
+   "gain": 0.62,
+   "variations": 1,
+   "source": "Freesound “Heart Beating” by michorvath + BigSoundBank “Tibetan Bowl Struck #1 (#1110)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "michorvath; Joseph SARDIN",
+   "bus": "effect",
+   "events": [
+    "abilityUsed (priestess.sharedWounds)"
+   ],
+   "durationMs": 924,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "Two heartbeats with a faint bowl under them: life passed from one unit to another. Saturated so the beat survives phone speakers.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Heart Beating",
+     "author": "michorvath",
+     "page": "https://freesound.org/people/michorvath/sounds/273150/",
+     "url": "https://cdn.freesound.org/previews/273/273150_3094998-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Tibetan Bowl Struck #1 (#1110)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/tibetan-bowl-struck-s1110.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1110.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "julio": {
+   "files": [
+    "assets/audio/julio.ogg"
+   ],
+   "mp3": [
+    "assets/audio/julio.mp3"
+   ],
+   "gain": 0.72,
+   "variations": 1,
+   "source": "Freesound “Dark Magic Loop” by qubodup + BigSoundBank “Bones cracking #2 (#1408)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "qubodup; Joseph SARDIN",
+   "bus": "effect",
+   "events": [
+    "abilityUsed (juliomancer.julioVernification)"
+   ],
+   "durationMs": 1200,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A dark energy pulse with a bone crack in it: the Juliomancer spends an own unit as a weapon.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Dark Magic Loop",
+     "author": "qubodup",
+     "page": "https://freesound.org/people/qubodup/sounds/442825/",
+     "url": "https://cdn.freesound.org/previews/442/442825_71257-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Bones cracking #2 (#1408)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/bones-cracking-2-s1408.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1408.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "command.aura": {
+   "files": [
+    "assets/audio/command.aura.ogg"
+   ],
+   "mp3": [
+    "assets/audio/command.aura.mp3"
+   ],
+   "gain": 0.67,
+   "variations": 1,
+   "source": "Freesound “warriordrums.wav” by Sclolex",
+   "license": "CC0-1.0",
+   "author": "Sclolex",
+   "bus": "effect",
+   "events": [
+    "scourge.commandAura grants its extra action (abilityNote), at most once per turn"
+   ],
+   "durationMs": 617,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 2000,
+   "why": "Two war-drum hits: the Scourge drives its troops (an extra action), martial and short.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "warriordrums.wav",
+     "author": "Sclolex",
+     "page": "https://freesound.org/people/Sclolex/sounds/209546/",
+     "url": "https://cdn.freesound.org/previews/209/209546_985466-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "mend": {
+   "files": [
+    "assets/audio/mend.ogg"
+   ],
+   "mp3": [
+    "assets/audio/mend.mp3"
+   ],
+   "gain": 0.81,
+   "variations": 1,
+   "source": "Kenney - RPG Audio 1.0: Audio/cloth3.ogg + Kenney - Impact Sounds 1.0: Audio/impactMetal_light_002.ogg",
+   "license": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "bus": "effect",
+   "events": [
+    "abilityUsed (babaYaga.mend)"
+   ],
+   "durationMs": 475,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A cloth wipe, then a clean tink: Baba Yaga polishes a white coin back to full.",
+   "sources": [
+    {
+     "pack": "Kenney - RPG Audio 1.0",
+     "title": "cloth3",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/rpg-audio",
+     "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip",
+     "member": "Audio/cloth3.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactMetal_light_002",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactMetal_light_002.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "hexward": {
+   "files": [
+    "assets/audio/hexward.ogg"
+   ],
+   "mp3": [
+    "assets/audio/hexward.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "artisticdude - RPG Sound Pack: RPG Sound Pack/inventory/beads.wav + BigSoundBank “Tibetan Bowl Struck #1 (#1110)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "artisticdude (OpenGameArt); Joseph SARDIN",
+   "bus": "effect",
+   "events": [
+    "a unit gains the babaYaga.hexWard aura (maxToughnessChanged with that source), at most once per turn"
+   ],
+   "durationMs": 1170,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 1500,
+   "why": "A rattle of beads over a low bowl hum: a witch's charm, not an energy shield.",
+   "sources": [
+    {
+     "pack": "artisticdude - RPG Sound Pack",
+     "title": "beads",
+     "author": "artisticdude (OpenGameArt)",
+     "page": "https://opengameart.org/content/rpg-sound-pack",
+     "url": "https://opengameart.org/sites/default/files/rpg_sound_pack.zip",
+     "member": "RPG Sound Pack/inventory/beads.wav",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Tibetan Bowl Struck #1 (#1110)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/tibetan-bowl-struck-s1110.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1110.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "cauldron.return": {
+   "files": [
+    "assets/audio/cauldron.return.ogg"
+   ],
+   "mp3": [
+    "assets/audio/cauldron.return.mp3"
+   ],
+   "gain": 0.67,
+   "variations": 1,
+   "source": "rubberduck - 40 CC0 water / splash / slime SFX: bubble_02.ogg + rubberduck - 100 CC0 SFX: plop_02.ogg + BigSoundBank “Coin spinning on a table #5 (#2701)” by Pierre SIBANARCO",
+   "license": "CC0-1.0",
+   "author": "rubberduck (OpenGameArt); Pierre SIBANARCO",
+   "bus": "effect",
+   "events": [
+    "unitRevived after a babaYaga.cauldron decision"
+   ],
+   "durationMs": 603,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 60,
+   "why": "A bubble, a plop and a coin landing: the white unit climbs out of the cauldron next to Baba Yaga.",
+   "sources": [
+    {
+     "pack": "rubberduck - 40 CC0 water / splash / slime SFX",
+     "title": "bubble_02",
+     "author": "rubberduck (OpenGameArt)",
+     "page": "https://opengameart.org/content/40-cc0-water-splash-slime-sfx",
+     "url": "https://opengameart.org/sites/default/files/water-splash-slime-sfx.zip",
+     "member": "bubble_02.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "rubberduck - 100 CC0 SFX",
+     "title": "plop_02",
+     "author": "rubberduck (OpenGameArt)",
+     "page": "https://opengameart.org/content/100-cc0-sfx",
+     "url": "https://opengameart.org/sites/default/files/100-CC0-SFX_0.zip",
+     "member": "plop_02.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Coin spinning on a table #5 (#2701)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "revive": {
+   "files": [
+    "assets/audio/revive.ogg"
+   ],
+   "mp3": [
+    "assets/audio/revive.mp3"
+   ],
+   "gain": 0.88,
+   "variations": 1,
+   "source": "BigSoundBank “Coin spinning on a table #5 (#2701)” by Pierre SIBANARCO + BigSoundBank “Bronze bell #5 (#2707)” by Pierre SIBANARCO",
+   "license": "CC0-1.0",
+   "author": "Pierre SIBANARCO",
+   "bus": "effect",
+   "events": [
+    "unitRevived (queso.revive)"
+   ],
+   "durationMs": 1050,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 80,
+   "minIntervalMs": 60,
+   "why": "The coin-death sound played backwards into a bronze bell: the fall is undone. The inverse of unit.death, so it reads instantly.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Coin spinning on a table #5 (#2701)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "BigSoundBank",
+     "title": "Bronze bell #5 (#2707)",
+     "author": "Pierre SIBANARCO",
+     "page": "https://bigsoundbank.com/bronze-bell-5-s2707.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2707.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "weakness": {
+   "files": [
+    "assets/audio/weakness.ogg"
+   ],
+   "mp3": [
+    "assets/audio/weakness.mp3"
+   ],
+   "gain": 0.39,
+   "variations": 1,
+   "source": "BigSoundBank “Medium Chain #1 (#0360)” by DenisChardonnet",
+   "license": "CC0-1.0",
+   "author": "DenisChardonnet",
+   "bus": "effect",
+   "events": [
+    "unitDamaged whose breakdown has Ratasius' weakness step (at most once per turn per unit)"
+   ],
+   "durationMs": 1007,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 55,
+   "minIntervalMs": 1500,
+   "why": "A heavier chain, pitched down and dulled: Ratasius' aura shackles adjacent enemies (heavier than debuff).",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Medium Chain #1 (#0360)",
+     "author": "DenisChardonnet",
+     "page": "https://bigsoundbank.com/medium-chain-1-s0360.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0360.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "capture.keep": {
+   "files": [
+    "assets/audio/capture.keep.ogg"
+   ],
+   "mp3": [
+    "assets/audio/capture.keep.mp3"
+   ],
+   "gain": 0.84,
+   "variations": 1,
+   "source": "BigSoundBank “Metal barrier: Closure #1 (#2358)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "objective",
+   "events": [
+    "buildingCaptured (building: keep)"
+   ],
+   "durationMs": 1159,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 75,
+   "minIntervalMs": 300,
+   "why": "A heavy iron barrier swinging shut with a slam: the Keep's gate is yours.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Metal barrier: Closure #1 (#2358)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/grinding-metal-barrier-closure-1-s2358.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/2358.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "capture.market": {
+   "files": [
+    "assets/audio/capture.market.ogg"
+   ],
+   "mp3": [
+    "assets/audio/capture.market.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "BigSoundBank “Coins #2 (#0194)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "objective",
+   "events": [
+    "buildingCaptured (building: market)"
+   ],
+   "durationMs": 740,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 75,
+   "minIntervalMs": 300,
+   "why": "A handful of coins poured into a terracotta pot: the Market pays you.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Coins #2 (#0194)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/coins-2-s0194.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0194.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "building.contested": {
+   "files": [
+    "assets/audio/building.contested.ogg"
+   ],
+   "mp3": [
+    "assets/audio/building.contested.mp3"
+   ],
+   "gain": 0.34,
+   "variations": 1,
+   "source": "Freesound “Sword clash 1.wav” by spycrah",
+   "license": "CC0-1.0",
+   "author": "spycrah",
+   "bus": "objective",
+   "events": [
+    "buildingContested"
+   ],
+   "durationMs": 673,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 75,
+   "minIntervalMs": 300,
+   "why": "Two blades crossing: both sides hold units in the capture ring.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Sword clash 1.wav",
+     "author": "spycrah",
+     "page": "https://freesound.org/people/spycrah/sounds/471095/",
+     "url": "https://cdn.freesound.org/previews/471/471095_9856191-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "siege.tick": {
+   "files": [
+    "assets/audio/siege.tick.ogg"
+   ],
+   "mp3": [
+    "assets/audio/siege.tick.mp3"
+   ],
+   "gain": 0.91,
+   "variations": 1,
+   "source": "BigSoundBank “Grandfather clock, hour #1 (#1569)” by Joseph SARDIN",
+   "license": "CC0-1.0",
+   "author": "Joseph SARDIN",
+   "bus": "objective",
+   "events": [
+    "the view's siegeTurns counter (R30) goes up at the start of an own turn while both buildings are held"
+   ],
+   "durationMs": 1116,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 75,
+   "minIntervalMs": 300,
+   "why": "One strike of a grandfather clock's hour bell: the Siege counter advances, time is running out.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Grandfather clock, hour #1 (#1569)",
+     "author": "Joseph SARDIN",
+     "page": "https://bigsoundbank.com/grandfather-clock-hour-1-s1569.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/1569.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "win": {
+   "files": [
+    "assets/audio/win.ogg"
+   ],
+   "mp3": [
+    "assets/audio/win.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "Freesound “Real Trumpet Fanfare 2” by qubodup",
+   "license": "CC0-1.0",
+   "author": "qubodup",
+   "bus": "stinger",
+   "events": [
+    "gameEnded, result: this seat won"
+   ],
+   "durationMs": 8739,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 100,
+   "minIntervalMs": 1000,
+   "why": "Real military trumpets (public-domain US Marine Corps footage, cleaned by qubodup): a ceremony, not a chiptune.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Real Trumpet Fanfare 2",
+     "author": "qubodup",
+     "page": "https://freesound.org/people/qubodup/sounds/855458/",
+     "url": "https://cdn.freesound.org/previews/855/855458_71257-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "lose": {
+   "files": [
+    "assets/audio/lose.ogg"
+   ],
+   "mp3": [
+    "assets/audio/lose.mp3"
+   ],
+   "gain": 0.58,
+   "variations": 1,
+   "source": "Freesound “funeral bell-cloche funèbre.wav” by aoristos",
+   "license": "CC0-1.0",
+   "author": "aoristos",
+   "bus": "stinger",
+   "events": [
+    "gameEnded, result: this seat lost (also resign)"
+   ],
+   "durationMs": 5773,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 100,
+   "minIntervalMs": 1000,
+   "why": "One toll of a mediaeval church's funeral bell: defeat as a fact, without a sad-trombone joke.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "funeral bell-cloche funèbre.wav",
+     "author": "aoristos",
+     "page": "https://freesound.org/people/aoristos/sounds/329324/",
+     "url": "https://cdn.freesound.org/previews/329/329324_2060528-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "draw": {
+   "files": [
+    "assets/audio/draw.ogg"
+   ],
+   "mp3": [
+    "assets/audio/draw.mp3"
+   ],
+   "gain": 0.45,
+   "variations": 1,
+   "source": "Freesound “Distant War Horn.wav” by DeVern",
+   "license": "CC0-1.0",
+   "author": "DeVern",
+   "bus": "stinger",
+   "events": [
+    "gameEnded, result: draw (accepted draw offer)"
+   ],
+   "durationMs": 4782,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 100,
+   "minIntervalMs": 1000,
+   "why": "A distant war horn fading: the armies withdraw, no winner.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Distant War Horn.wav",
+     "author": "DeVern",
+     "page": "https://freesound.org/people/DeVern/sounds/512490/",
+     "url": "https://cdn.freesound.org/previews/512/512490_2866779-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "takeback.request": {
+   "files": [
+    "assets/audio/takeback.request.ogg"
+   ],
+   "mp3": [
+    "assets/audio/takeback.request.mp3"
+   ],
+   "gain": 0.88,
+   "variations": 1,
+   "source": "BigSoundBank “Great Page that Turns #1 (#0362)” by DenisChardonnet",
+   "license": "CC0-1.0",
+   "author": "DenisChardonnet",
+   "bus": "ui",
+   "events": [
+    "takebackRequested"
+   ],
+   "durationMs": 943,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 50,
+   "minIntervalMs": 40,
+   "why": "A large page turned back: asking to rewind one action.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Great Page that Turns #1 (#0362)",
+     "author": "DenisChardonnet",
+     "page": "https://bigsoundbank.com/great-page-that-turns-1-s0362.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0362.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "takeback.accept": {
+   "files": [
+    "assets/audio/takeback.accept.ogg"
+   ],
+   "mp3": [
+    "assets/audio/takeback.accept.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "BigSoundBank “Great page that turns #1 (#0363)” by DenisChardonnet + Kenney - Casino Audio 1.1: Audio/chip-lay-3.ogg",
+   "license": "CC0-1.0",
+   "author": "DenisChardonnet; Kenney (www.kenney.nl)",
+   "bus": "ui",
+   "events": [
+    "takebackApplied"
+   ],
+   "durationMs": 713,
+   "pitchJitterSemitones": 0.3,
+   "gainJitterDb": 1.0,
+   "maxVoices": 2,
+   "priority": 50,
+   "minIntervalMs": 40,
+   "why": "A page turned and a chip put back on its square: the rewind is granted.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Great page that turns #1 (#0363)",
+     "author": "DenisChardonnet",
+     "page": "https://bigsoundbank.com/great-page-that-turns-1-s0363.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0363.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Casino Audio 1.1",
+     "title": "chip-lay-3",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/casino-audio",
+     "url": "https://kenney.nl/media/pages/assets/casino-audio/2472606a04-1721639069/kenney_casino-audio.zip",
+     "member": "Audio/chip-lay-3.ogg",
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "decision.prompt": {
+   "files": [
+    "assets/audio/decision.prompt.ogg"
+   ],
+   "mp3": [
+    "assets/audio/decision.prompt.mp3"
+   ],
+   "gain": 0.48,
+   "variations": 1,
+   "source": "BigSoundBank “Small Bell #1 (#0292)” by GlaneurDeSons",
+   "license": "CC0-1.0",
+   "author": "GlaneurDeSons",
+   "bus": "turn",
+   "events": [
+    "decisionRequested (seat = me): Queso revive or Cauldron return prompt"
+   ],
+   "durationMs": 942,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 85,
+   "minIntervalMs": 250,
+   "why": "A small hand bell: a reaction prompt (Queso revive, Cauldron return) needs an answer within 15 s.",
+   "sources": [
+    {
+     "pack": "BigSoundBank",
+     "title": "Small Bell #1 (#0292)",
+     "author": "GlaneurDeSons",
+     "page": "https://bigsoundbank.com/small-bell-1-s0292.html",
+     "url": "https://bigsoundbank.com/UPLOAD/ogg/0292.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ]
+  },
+  "coin.flip": {
+   "files": [
+    "assets/audio/coin.flip.ogg"
+   ],
+   "mp3": [
+    "assets/audio/coin.flip.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "Freesound “coin flip.wav” by Raventhornn",
+   "license": "CC0-1.0",
+   "author": "Raventhornn",
+   "bus": "turn",
+   "events": [
+    "coinFlipped (first player)"
+   ],
+   "durationMs": 1028,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 70,
+   "minIntervalMs": 250,
+   "why": "A real coin flicked into the air and caught: the first-player coin flip (coinFlipped).",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "coin flip.wav",
+     "author": "Raventhornn",
+     "page": "https://freesound.org/people/Raventhornn/sounds/181189/",
+     "url": "https://cdn.freesound.org/previews/181/181189_3274491-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ],
+   "extra": true
+  },
+  "battle.start": {
+   "files": [
+    "assets/audio/battle.start.ogg"
+   ],
+   "mp3": [
+    "assets/audio/battle.start.mp3"
+   ],
+   "gain": 0.81,
+   "variations": 1,
+   "source": "Freesound “warriordrums.wav” by Sclolex",
+   "license": "CC0-1.0",
+   "author": "Sclolex",
+   "bus": "turn",
+   "events": [
+    "battleStarted"
+   ],
+   "durationMs": 2254,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 1,
+   "priority": 70,
+   "minIntervalMs": 250,
+   "why": "A roll of war drums when both deployments are confirmed (battleStarted).",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "warriordrums.wav",
+     "author": "Sclolex",
+     "page": "https://freesound.org/people/Sclolex/sounds/209546/",
+     "url": "https://cdn.freesound.org/previews/209/209546_985466-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ],
+   "extra": true
+  },
+  "attack.miss": {
+   "files": [
+    "assets/audio/attack.miss.ogg"
+   ],
+   "mp3": [
+    "assets/audio/attack.miss.mp3"
+   ],
+   "gain": 0.78,
+   "variations": 1,
+   "source": "Kenney - Impact Sounds 1.0: Audio/footstep_snow_000.ogg + Kenney - Impact Sounds 1.0: Audio/impactSoft_medium_002.ogg",
+   "license": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "bus": "attack",
+   "events": [
+    "attackMissed (blind shot at an empty square)"
+   ],
+   "durationMs": 198,
+   "pitchJitterSemitones": 0.6,
+   "gainJitterDb": 1.5,
+   "maxVoices": 3,
+   "priority": 50,
+   "minIntervalMs": 40,
+   "why": "A blind shot that lands in empty sand (attackMissed): a dry crunch with no metal.",
+   "sources": [
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "footstep_snow_000",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/footstep_snow_000.ogg",
+     "license": "CC0-1.0"
+    },
+    {
+     "pack": "Kenney - Impact Sounds 1.0",
+     "title": "impactSoft_medium_002",
+     "author": "Kenney (www.kenney.nl)",
+     "page": "https://kenney.nl/assets/impact-sounds",
+     "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+     "member": "Audio/impactSoft_medium_002.ogg",
+     "license": "CC0-1.0"
+    }
+   ],
+   "extra": true
+  },
+  "ambient.wind": {
+   "files": [
+    "assets/audio/ambient.wind.ogg"
+   ],
+   "mp3": [
+    "assets/audio/ambient.wind.mp3"
+   ],
+   "gain": 0.15,
+   "variations": 1,
+   "source": "Freesound “Looping Gentle Wind Ambience on an Open Desert Plain.wav” by dhallcomposer",
+   "license": "CC0-1.0",
+   "author": "dhallcomposer",
+   "bus": "ambient",
+   "events": [
+    "menus, lobby and battle background (loop)"
+   ],
+   "durationMs": 30000,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 2,
+   "priority": 0,
+   "minIntervalMs": 0,
+   "why": "A steady, gentle wind over an open plain, designed to loop: fills silence without gusts that could mask a cue.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Looping Gentle Wind Ambience on an Open Desert Plain.wav",
+     "author": "dhallcomposer",
+     "page": "https://freesound.org/people/dhallcomposer/sounds/697217/",
+     "url": "https://cdn.freesound.org/previews/697/697217_7678208-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ],
+   "loop": {
+    "start": 0.0,
+    "end": 30.0
+   },
+   "optional": true
+  },
+  "ambient.camp": {
+   "files": [
+    "assets/audio/ambient.camp.ogg"
+   ],
+   "mp3": [
+    "assets/audio/ambient.camp.mp3"
+   ],
+   "gain": 1.0,
+   "variations": 1,
+   "source": "Freesound “Campfire deer camp - adding kindling - med wind - part 4.wav” by Ambient-X",
+   "license": "CC0-1.0",
+   "author": "Ambient-X",
+   "bus": "ambient",
+   "events": [
+    "battle background under the wind (loop)"
+   ],
+   "durationMs": 30000,
+   "pitchJitterSemitones": 0.0,
+   "gainJitterDb": 0.0,
+   "maxVoices": 2,
+   "priority": 0,
+   "minIntervalMs": 0,
+   "why": "A campfire with a medium wind, recorded at a hunting camp: the war camp around the sand table.",
+   "sources": [
+    {
+     "pack": "Freesound",
+     "title": "Campfire deer camp - adding kindling - med wind - part 4.wav",
+     "author": "Ambient-X",
+     "page": "https://freesound.org/people/Ambient-X/sounds/660298/",
+     "url": "https://cdn.freesound.org/previews/660/660298_13721094-hq.ogg",
+     "member": null,
+     "license": "CC0-1.0"
+    }
+   ],
+   "loop": {
+    "start": 0.0,
+    "end": 30.0
+   },
+   "optional": true
+  }
+ }
+}

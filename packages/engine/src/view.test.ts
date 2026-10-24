@@ -50,6 +50,20 @@ describe('projectView (4.2, 4.9)', () => {
     expect(findLeaks(b.state, b.north)).toEqual([])
   })
 
+  it("does not report a seat's own death square when a hidden enemy stands on it later", () => {
+    const fight = buildBattle({ south: ['footman@E5:A', 'footman@F5:B'], north: ['paladin@T20:H'] })
+    const dead = fight.state.units.find((u) => u.id === fight.id('B'))
+    const hidden = fight.state.units.find((u) => u.id === fight.id('H'))
+    if (dead === undefined || hidden?.anchor == null) throw new Error('setup')
+    const state: GameState = {
+      ...fight.state,
+      units: fight.state.units.filter((u) => u.id !== dead.id),
+      fallen: [{ unit: { ...dead, anchor: hidden.anchor }, diedOnTurn: 1, cause: 'damage' }],
+    }
+    expect(projectView(state, fight.south).fallen.map((f) => f.anchor)).toEqual([hidden.anchor])
+    expect(findLeaks(state, fight.south)).toEqual([])
+  })
+
   it('clips enemy areas to vision (A4-13)', () => {
     const s = structuredCloneState(b.state)
     s.areas.push({ id: 'a-x', abilityId: 'royalWizard.pajazon', owner: b.north, sourceId: null, squares: area3x3(parseSquare('E9')), createdOnOwnTurn: 0, expiresAtOwnTurn: 2, seq: 99, data: {} })

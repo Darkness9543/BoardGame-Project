@@ -4,7 +4,7 @@ import { CORNER_RULE } from '../constants'
 import { ABILITY_DATA, abilityText } from './abilities'
 import { COMMANDERS, commanderDef } from './commanders'
 import { abilitiesFor, tierFor, unitCost } from './derived'
-import { availableRoster } from './factions'
+import { availableRoster, factionDef } from './factions'
 import { SCENARIOS } from './scenarios'
 import { COMMANDER_UNIT, NO_ACB_UNIT, ROSTER, unitDef } from './units'
 
@@ -33,13 +33,17 @@ describe('unit lines (spec digit by digit, with owner rulings R8, R20, R21, R25)
     expect(def.cost).toBe(tier ?? 0) // A5-01: cost = tier
   })
 
-  it('splits the 14 units into two 7-unit rosters, one unit per tier each (owner ruling R4)', () => {
+  it('splits the 14 units into two 7-unit home rosters, one unit per tier each (owner ruling R4)', () => {
     expect(ROSTER).toHaveLength(14)
-    expect(availableRoster('empire')).toEqual(['footman', 'soldier', 'berserker', 'priestess', 'paladin', 'royalWizard', 'emissary'])
-    expect(availableRoster('lojrar')).toEqual(['mercenary', 'ranger', 'rogue', 'juliomancer', 'artificer', 'beast', 'scourge'])
+    expect(factionDef('empire').roster).toEqual(['footman', 'soldier', 'berserker', 'priestess', 'paladin', 'royalWizard', 'emissary'])
+    expect(factionDef('lojrar').roster).toEqual(['mercenary', 'ranger', 'rogue', 'juliomancer', 'artificer', 'beast', 'scourge'])
     for (const faction of ['empire', 'lojrar'] as const) {
-      expect(new Set(availableRoster(faction).map((id) => unitDef(id).tier)).size).toBe(7)
+      expect(new Set(factionDef(faction).roster.map((id) => unitDef(id).tier)).size).toBe(7)
     }
+  })
+
+  it('offers all 14 units to every army, whatever its banner (owner ruling R43)', () => {
+    for (const faction of ['empire', 'lojrar'] as const) expect(availableRoster(faction)).toEqual(ROSTER.map((u) => u.id))
   })
 
   it('marks only the Rogue and the Ranger as Vanguard (A5-04) and never deploys dummies', () => {
@@ -54,7 +58,7 @@ describe('commanders (section 7, owner rulings R7, R8, R11)', () => {
     ['trill', 'A', 1, 6, 3, 2, 1], // R23
     ['kulega', 'A', 1, 5, 3, 2, 1],
     ['sabrina', 'A', 1, 5, 3, 2, 1],
-    ['babaYaga', 'B', 1, 5, 3, 2, 1],
+    ['babaYaga', 'B', 1, 6, 3, 2, 1], // R45
     ['ratasius', 'B', 1, 5, 6, 2, 1],
     ['queso', 'B', 1, 6, 3, 2, 2], // R8, R17
   ] as const)('%s (group %s) is %i/%i LOV %i Mv %i AP %i', (id, group, power, toughness, lov, movement, ap) => {
@@ -64,14 +68,26 @@ describe('commanders (section 7, owner rulings R7, R8, R11)', () => {
     expect(c.selectable).toBe(true)
   })
 
-  it('gives Baba Yaga three variants with their own abilities (R11)', () => {
+  it('gives Baba Yaga three variants with their own abilities (R11); "white" = the Lojrar Clan units (R44)', () => {
     expect(commanderDef('babaYaga').variants.map((v) => v.id)).toEqual(['mend', 'hex-ward', 'cauldron'])
-    expect(abilitiesFor('footman', 'babaYaga', 'mend')).toContain('babaYaga.mend')
-    expect(abilitiesFor('mercenary', 'babaYaga', 'mend')).toContain('babaYaga.mend')
-    expect(abilitiesFor('soldier', 'babaYaga', 'mend')).not.toContain('babaYaga.mend') // white = tier 1 (R6)
+    for (const type of ['mercenary', 'ranger', 'rogue', 'juliomancer', 'artificer', 'beast', 'scourge'] as const) {
+      expect(abilitiesFor(type, 'babaYaga', 'mend')).toContain('babaYaga.mend')
+    }
+    for (const type of ['footman', 'soldier', 'berserker', 'priestess', 'paladin', 'royalWizard', 'emissary', 'commander', 'noAcb'] as const) {
+      expect(abilitiesFor(type, 'babaYaga', 'mend')).not.toContain('babaYaga.mend')
+    }
     expect(abilitiesFor('commander', 'babaYaga', 'hex-ward')).toEqual(['babaYaga.hexWard'])
     expect(abilitiesFor('commander', 'babaYaga', 'cauldron')).toEqual(['babaYaga.cauldron'])
-    expect(abilitiesFor('footman', 'babaYaga', 'cauldron')).not.toContain('babaYaga.mend')
+    expect(abilitiesFor('mercenary', 'babaYaga', 'cauldron')).not.toContain('babaYaga.mend')
+  })
+
+  it("prints Baba Yaga's R45 numbers in her variant texts", () => {
+    const text = (id: string) => commanderDef('babaYaga').variants.find((v) => v.id === id)?.text ?? ''
+    expect(text('mend')).toContain('restore 4 toughness')
+    expect(text('mend')).toContain('at most 2 on the same unit')
+    expect(text('cauldron')).toContain('type 1, 2 and 5: 1 AP; type 10: 2 AP; type 20: 4 AP; type 50: 10 AP; type 100: 20 AP')
+    expect(abilityText('babaYaga.mend')).toBe('Restore 4 toughness to this unit for 1 AP. Not an action. At most 3 uses per turn across your army, and at most 2 on the same unit.')
+    expect(abilityText('babaYaga.cauldron')).toContain('Lojrar Clan units')
   })
 
   it('applies Sabrina prices: Artificer 10, other type >= 20 x1.2 rounded up (A7-11)', () => {
@@ -114,8 +130,8 @@ describe('ability data and definitions', () => {
     }
   })
 
-  it('implements the three kernel exemplars', () => {
-    for (const id of ['soldier.perseverance', 'paladin.reinforcedArmor', 'ranger.rangedAttack']) expect(getAbility(id)?.status).toBe('implemented')
+  it('implements every ability in the content table: no stub is left', () => {
+    expect(ABILITY_DATA.filter((a) => getAbility(a.id)?.status !== 'implemented').map((a) => a.id)).toEqual([])
   })
 
   it('renders card text from the same numbers the rules use, with the S26 fixes', () => {

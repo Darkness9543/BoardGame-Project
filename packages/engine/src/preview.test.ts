@@ -36,9 +36,9 @@ describe('legalActions', () => {
       ['attack', null, 2, false], // M12 is out of melee range
       ['defend', null, 2, true],
       ['charge', null, 3, true], // R26: step to M11 (Movement 2 - 1), then strike M12
-      ['ability', 'rogue.stealth', 1, false],
+      ['ability', 'rogue.stealth', 1, true],
     ])
-    expect(options[4]?.reason).toBe('Stealth is not implemented yet')
+    expect(options[4]?.reason).toBeNull() // no enemy LOV reaches M10 (A4-05)
     const moved = act(b.state, b.south, { kind: 'move', unitId: b.id('R'), path: sqs('L10') }).state
     expect(legalActions(projectView(moved, b.south), b.id('R')).every((o) => !o.enabled)).toBe(true)
   })
@@ -57,7 +57,36 @@ describe('previews', () => {
 
   it('offers only squares the targeting spec allows', () => {
     const b = buildBattle({ south: ['ranger@M10:R'] })
-    // Abilities that are still stubs offer nothing yet.
+    // A unit without the ability, or an ability with no picks, offers nothing.
     expect(targetOptions(projectView(b.state, b.south), b.id('R'), 'rogue.stealth', 0, [])).toEqual([])
+  })
+
+  it("filters the last pick through the ability's own checks once the earlier picks are known", () => {
+    const b = buildBattle({ south: ['priestess@M10:P', 'soldier@M11:S'] })
+    const view = projectView(b.state, b.south)
+    const ids = (targets: readonly { kind: string; unitId?: string }[]) => targets.map((t) => t.unitId).sort()
+    // The spec alone (no picks yet): the Priestess and her neighbour, for either pick.
+    expect(ids(targetOptions(view, b.id('P'), 'priestess.sharedWounds', 1, []))).toEqual([b.id('P'), b.id('S')].sort())
+    // With the donor picked, the recipient must be another unit (PRI-12).
+    expect(ids(targetOptions(view, b.id('P'), 'priestess.sharedWounds', 1, [{ kind: 'unit', unitId: b.id('S') }]))).toEqual([b.id('P')])
+  })
+})
+
+describe('two-pick abilities need a legal pair before the action bar enables them', () => {
+  const option = (b: ReturnType<typeof buildBattle>, label: string, abilityId: string) =>
+    legalActions(projectView(b.state, b.south), b.id(label)).find((o) => o.kind === 'ability' && o.abilityId === abilityId)
+
+  it('Shared wounds: a Priestess alone has no donor-recipient pair; with a neighbour she has', () => {
+    const alone = buildBattle({ south: [{ type: 'priestess', at: 'M10', label: 'P', toughness: 5 }] })
+    expect(option(alone, 'P', 'priestess.sharedWounds')).toMatchObject({ enabled: false, reason: 'No valid target' })
+    const pair = buildBattle({ south: ['priestess@M10:P', { type: 'soldier', at: 'M11', label: 'S', toughness: 3 }] })
+    expect(option(pair, 'P', 'priestess.sharedWounds')).toMatchObject({ enabled: true })
+  })
+
+  it('Julio Vernification: the only unit in range is the one it would sacrifice', () => {
+    const b = buildBattle({ south: ['juliomancer@J5:J', 'footman@J6:F'] })
+    expect(option(b, 'J', 'juliomancer.julioVernification')).toMatchObject({ enabled: false, reason: 'No valid target' })
+    const target = buildBattle({ south: ['juliomancer@J5:J', 'footman@J6:F'], north: ['berserker@J7:B'] })
+    expect(option(target, 'J', 'juliomancer.julioVernification')).toMatchObject({ enabled: true })
   })
 })

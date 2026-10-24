@@ -2,11 +2,21 @@
 // RulesQuery, so they run on the actor's view.
 
 import { liveAbility } from './abilities/registry'
-import { ABILITY_COST_MODE, MAX_MOVES_PER_TURN } from './constants'
+import { ABILITY_COST_MODE, apForRound, APPROACH_BOOST, MAX_MOVES_PER_TURN } from './constants'
 import type { AbilityData } from './content/abilities'
 import type { RulesQuery } from './query'
 import { reject, type Rejection } from './rejection'
 import type { Seat, UnitCore } from './types'
+
+/** R28: the approach boost runs until the end of the round of first contact (null = no contact yet). */
+export function approachBoostApplies(round: number, firstContactRound: number | null): boolean {
+  return firstContactRound === null || round <= firstContactRound
+}
+
+/** R1 + R28: what both seats get in a round, before the per-seat Market, Tribute and AP debt (turn.ts). */
+export function roundPool(round: number, firstContactRound: number | null): number {
+  return apForRound(round) * (approachBoostApplies(round, firstContactRound) ? APPROACH_BOOST : 1)
+}
 
 /** Extra AP on the unit's next action (Holy Fervor, A8-24). Only actions pay it. */
 export function actionSurcharge(q: RulesQuery, unit: UnitCore): number {

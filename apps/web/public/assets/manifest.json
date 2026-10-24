@@ -2110,5 +2110,2529 @@
   "license": "CC0-1.0",
   "author": "Kenney (www.kenney.nl)",
   "intendedUse": "kit licence (CC0)"
+ },
+ {
+  "path": "assets/audio/ui.hover.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/556/556387_676927-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "zachrau",
+  "intendedUse": "sound cue ui.hover (Ogg Vorbis, mono, 0.09 s) [edited: Freesound \u201cMoving piece on a boardgame\u201d by zachrau: from 0.350 s for 0.09 s, low-pass 3500 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.hover.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/556/556387_676927-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "zachrau",
+  "intendedUse": "sound cue ui.hover (MP3 fallback, mono, 0.09 s) [edited: Freesound \u201cMoving piece on a boardgame\u201d by zachrau: from 0.350 s for 0.09 s, low-pass 3500 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.click.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/351/351518_4502687-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "mh2o",
+  "intendedUse": "sound cue ui.click (Ogg Vorbis, mono, 0.09 s) [edited: Freesound \u201cchess_move_on_alabaster.wav\u201d by mh2o: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.click.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/351/351518_4502687-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "mh2o",
+  "intendedUse": "sound cue ui.click (MP3 fallback, mono, 0.10 s) [edited: Freesound \u201cchess_move_on_alabaster.wav\u201d by mh2o: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.confirm.ogg",
+  "source": "Kenney - Casino Audio 1.1",
+  "url": "https://kenney.nl/media/pages/assets/casino-audio/2472606a04-1721639069/kenney_casino-audio.zip#Audio/chip-lay-3.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue ui.confirm (Ogg Vorbis, mono, 0.26 s) [edited: Kenney - Casino Audio 1.1: Audio/chip-lay-3.ogg: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.confirm.mp3",
+  "source": "Kenney - Casino Audio 1.1",
+  "url": "https://kenney.nl/media/pages/assets/casino-audio/2472606a04-1721639069/kenney_casino-audio.zip#Audio/chip-lay-3.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue ui.confirm (MP3 fallback, mono, 0.27 s) [edited: Kenney - Casino Audio 1.1: Audio/chip-lay-3.ogg: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.cancel.ogg",
+  "source": "Kenney - Casino Audio 1.1",
+  "url": "https://kenney.nl/media/pages/assets/casino-audio/2472606a04-1721639069/kenney_casino-audio.zip#Audio/card-slide-1.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue ui.cancel (Ogg Vorbis, mono, 0.22 s) [edited: Kenney - Casino Audio 1.1: Audio/card-slide-1.ogg: from 0.080 s for 0.26 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.cancel.mp3",
+  "source": "Kenney - Casino Audio 1.1",
+  "url": "https://kenney.nl/media/pages/assets/casino-audio/2472606a04-1721639069/kenney_casino-audio.zip#Audio/card-slide-1.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue ui.cancel (MP3 fallback, mono, 0.23 s) [edited: Kenney - Casino Audio 1.1: Audio/card-slide-1.ogg: from 0.080 s for 0.26 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.error.ogg",
+  "source": "rubberduck - 80 CC0 RPG SFX + Kenney - Impact Sounds 1.0",
+  "url": "https://opengameart.org/sites/default/files/80-CC0-RPG-SFX_0.zip#lock_02.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt) + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue ui.error (Ogg Vorbis, mono, 0.33 s) [edited: rubberduck - 80 CC0 RPG SFX: lock_02.ogg: from 0.020 s for 0.30 s, pitch -2 st; Kenney - Impact Sounds 1.0: Audio/impactWood_medium_002.ogg: -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "rubberduck - 80 CC0 RPG SFX",
+    "title": "lock_02",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/80-CC0-RPG-SFX_0.zip#lock_02.ogg",
+    "page": "https://opengameart.org/content/80-cc0-rpg-sfx"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactWood_medium_002",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactWood_medium_002.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/ui.error.mp3",
+  "source": "rubberduck - 80 CC0 RPG SFX + Kenney - Impact Sounds 1.0",
+  "url": "https://opengameart.org/sites/default/files/80-CC0-RPG-SFX_0.zip#lock_02.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt) + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue ui.error (MP3 fallback, mono, 0.33 s) [edited: rubberduck - 80 CC0 RPG SFX: lock_02.ogg: from 0.020 s for 0.30 s, pitch -2 st; Kenney - Impact Sounds 1.0: Audio/impactWood_medium_002.ogg: -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "rubberduck - 80 CC0 RPG SFX",
+    "title": "lock_02",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/80-CC0-RPG-SFX_0.zip#lock_02.ogg",
+    "page": "https://opengameart.org/content/80-cc0-rpg-sfx"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactWood_medium_002",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactWood_medium_002.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/ui.toggle.ogg",
+  "source": "Kenney - UI Audio 1.0",
+  "url": "https://kenney.nl/media/pages/assets/ui-audio/490d233f68-1677590494/kenney_ui-audio.zip#Audio/switch17.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue ui.toggle (Ogg Vorbis, mono, 0.23 s) [edited: Kenney - UI Audio 1.0: Audio/switch17.ogg: from 0.080 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.toggle.mp3",
+  "source": "Kenney - UI Audio 1.0",
+  "url": "https://kenney.nl/media/pages/assets/ui-audio/490d233f68-1677590494/kenney_ui-audio.zip#Audio/switch17.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue ui.toggle (MP3 fallback, mono, 0.24 s) [edited: Kenney - UI Audio 1.0: Audio/switch17.ogg: from 0.080 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.open.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2797.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue ui.open (Ogg Vorbis, mono, 0.55 s) [edited: BigSoundBank \u201cRoad map #2 (#2797)\u201d by Joseph SARDIN: from 0.260 s for 0.55 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.open.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2797.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue ui.open (MP3 fallback, mono, 0.55 s) [edited: BigSoundBank \u201cRoad map #2 (#2797)\u201d by Joseph SARDIN: from 0.260 s for 0.55 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.close.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1411.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue ui.close (Ogg Vorbis, mono, 0.23 s) [edited: BigSoundBank \u201cClosed book #2 (#1411)\u201d by Joseph SARDIN: from 0.200 s for 0.26 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ui.close.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1411.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue ui.close (MP3 fallback, mono, 0.23 s) [edited: BigSoundBank \u201cClosed book #2 (#1411)\u201d by Joseph SARDIN: from 0.200 s for 0.26 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/lobby.joined.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0294.ogg",
+  "license": "CC0-1.0",
+  "author": "GlaneurDeSons",
+  "intendedUse": "sound cue lobby.joined (Ogg Vorbis, mono, 1.40 s) [edited: BigSoundBank \u201cSmall Bell #3 (#0294)\u201d by GlaneurDeSons: from 0.030 s for 1.40 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/lobby.joined.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0294.ogg",
+  "license": "CC0-1.0",
+  "author": "GlaneurDeSons",
+  "intendedUse": "sound cue lobby.joined (MP3 fallback, mono, 1.40 s) [edited: BigSoundBank \u201cSmall Bell #3 (#0294)\u201d by GlaneurDeSons: from 0.030 s for 1.40 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/lobby.ready.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0340.ogg",
+  "license": "CC0-1.0",
+  "author": "DavidGreck",
+  "intendedUse": "sound cue lobby.ready (Ogg Vorbis, mono, 0.39 s) [edited: BigSoundBank \u201cCoin in cup #2 (#0340)\u201d by DavidGreck: from 0.060 s for 0.40 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/lobby.ready.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0340.ogg",
+  "license": "CC0-1.0",
+  "author": "DavidGreck",
+  "intendedUse": "sound cue lobby.ready (MP3 fallback, mono, 0.40 s) [edited: BigSoundBank \u201cCoin in cup #2 (#0340)\u201d by DavidGreck: from 0.060 s for 0.40 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/turn.start.own.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2703.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue turn.start.own (Ogg Vorbis, mono, 1.41 s) [edited: BigSoundBank \u201cBronze bell #1 (#2703)\u201d by Pierre SIBANARCO: from 0.020 s for 1.50 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/turn.start.own.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2703.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue turn.start.own (MP3 fallback, mono, 1.41 s) [edited: BigSoundBank \u201cBronze bell #1 (#2703)\u201d by Pierre SIBANARCO: from 0.020 s for 1.50 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/turn.start.opponent.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2338.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue turn.start.opponent (Ogg Vorbis, mono, 0.65 s) [edited: BigSoundBank \u201cBass Tom, #1 (#2338)\u201d by Joseph SARDIN: from 0.020 s for 0.65 s, pitch -2 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/turn.start.opponent.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2338.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue turn.start.opponent (MP3 fallback, mono, 0.65 s) [edited: BigSoundBank \u201cBass Tom, #1 (#2338)\u201d by Joseph SARDIN: from 0.020 s for 0.65 s, pitch -2 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/turn.end.ogg",
+  "source": "rubberduck - 100 CC0 metal and wood SFX",
+  "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#wood_hit_07.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt)",
+  "intendedUse": "sound cue turn.end (Ogg Vorbis, mono, 0.33 s) [edited: rubberduck - 100 CC0 metal and wood SFX: wood_hit_07.ogg: from 0.000 s for 0.20 s; rubberduck - 100 CC0 metal and wood SFX: wood_hit_07.ogg: from 0.000 s for 0.20 s, pitch -1 st, -3 dB, at +120 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "rubberduck - 100 CC0 metal and wood SFX",
+    "title": "wood_hit_07",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#wood_hit_07.ogg",
+    "page": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx"
+   },
+   {
+    "source": "rubberduck - 100 CC0 metal and wood SFX",
+    "title": "wood_hit_07",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#wood_hit_07.ogg",
+    "page": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/turn.end.mp3",
+  "source": "rubberduck - 100 CC0 metal and wood SFX",
+  "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#wood_hit_07.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt)",
+  "intendedUse": "sound cue turn.end (MP3 fallback, mono, 0.33 s) [edited: rubberduck - 100 CC0 metal and wood SFX: wood_hit_07.ogg: from 0.000 s for 0.20 s; rubberduck - 100 CC0 metal and wood SFX: wood_hit_07.ogg: from 0.000 s for 0.20 s, pitch -1 st, -3 dB, at +120 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "rubberduck - 100 CC0 metal and wood SFX",
+    "title": "wood_hit_07",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#wood_hit_07.ogg",
+    "page": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx"
+   },
+   {
+    "source": "rubberduck - 100 CC0 metal and wood SFX",
+    "title": "wood_hit_07",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#wood_hit_07.ogg",
+    "page": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/timer.warning.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2656.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue timer.warning (Ogg Vorbis, mono, 0.32 s) [edited: BigSoundBank \u201cTic Tac Mechanical Alarm Clock #3 (#2656)\u201d by Joseph SARDIN: from 0.425 s for 0.44 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/timer.warning.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2656.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue timer.warning (MP3 fallback, mono, 0.30 s) [edited: BigSoundBank \u201cTic Tac Mechanical Alarm Clock #3 (#2656)\u201d by Joseph SARDIN: from 0.425 s for 0.44 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/boost.active.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2520.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue boost.active (Ogg Vorbis, mono, 1.65 s) [edited: BigSoundBank \u201cHorn #1 (#2520)\u201d by Joseph SARDIN: from 0.000 s for 1.75 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/boost.active.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2520.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue boost.active (MP3 fallback, mono, 1.65 s) [edited: BigSoundBank \u201cHorn #1 (#2520)\u201d by Joseph SARDIN: from 0.000 s for 1.75 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.select-1.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2700.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.select, variation 1 of 2 (Ogg Vorbis, mono, 0.20 s) [edited: BigSoundBank \u201cCoin spinning on a table #4 (#2700)\u201d by Pierre SIBANARCO: from 2.880 s for 0.22 s, pitch +1 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.select-1.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2700.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.select, variation 1 of 2 (MP3 fallback, mono, 0.20 s) [edited: BigSoundBank \u201cCoin spinning on a table #4 (#2700)\u201d by Pierre SIBANARCO: from 2.880 s for 0.22 s, pitch +1 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.select-2.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.select, variation 2 of 2 (Ogg Vorbis, mono, 0.21 s) [edited: BigSoundBank \u201cCoin spinning on a table #5 (#2701)\u201d by Pierre SIBANARCO: from 3.825 s for 0.22 s, pitch +1 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.select-2.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.select, variation 2 of 2 (MP3 fallback, mono, 0.19 s) [edited: BigSoundBank \u201cCoin spinning on a table #5 (#2701)\u201d by Pierre SIBANARCO: from 3.825 s for 0.22 s, pitch +1 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.deselect-1.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2698.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.deselect, variation 1 of 2 (Ogg Vorbis, mono, 0.22 s) [edited: BigSoundBank \u201cCoin spinning on a table #2 (#2698)\u201d by Pierre SIBANARCO: from 2.660 s for 0.20 s, pitch -2 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.deselect-1.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2698.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.deselect, variation 1 of 2 (MP3 fallback, mono, 0.22 s) [edited: BigSoundBank \u201cCoin spinning on a table #2 (#2698)\u201d by Pierre SIBANARCO: from 2.660 s for 0.20 s, pitch -2 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.deselect-2.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2698.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.deselect, variation 2 of 2 (Ogg Vorbis, mono, 0.22 s) [edited: BigSoundBank \u201cCoin spinning on a table #2 (#2698)\u201d by Pierre SIBANARCO: from 2.135 s for 0.20 s, pitch -2 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.deselect-2.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2698.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.deselect, variation 2 of 2 (MP3 fallback, mono, 0.23 s) [edited: BigSoundBank \u201cCoin spinning on a table #2 (#2698)\u201d by Pierre SIBANARCO: from 2.135 s for 0.20 s, pitch -2 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.move.step-1.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "seanhealey",
+  "intendedUse": "sound cue unit.move.step, variation 1 of 4 (Ogg Vorbis, mono, 0.34 s) [edited: Freesound \u201ccoin sliding on table.wav\u201d by seanhealey: from 1.950 s for 0.34 s, high-pass 120 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.move.step-1.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "seanhealey",
+  "intendedUse": "sound cue unit.move.step, variation 1 of 4 (MP3 fallback, mono, 0.34 s) [edited: Freesound \u201ccoin sliding on table.wav\u201d by seanhealey: from 1.950 s for 0.34 s, high-pass 120 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.move.step-2.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "seanhealey",
+  "intendedUse": "sound cue unit.move.step, variation 2 of 4 (Ogg Vorbis, mono, 0.34 s) [edited: Freesound \u201ccoin sliding on table.wav\u201d by seanhealey: from 3.920 s for 0.34 s, high-pass 120 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.move.step-2.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "seanhealey",
+  "intendedUse": "sound cue unit.move.step, variation 2 of 4 (MP3 fallback, mono, 0.34 s) [edited: Freesound \u201ccoin sliding on table.wav\u201d by seanhealey: from 3.920 s for 0.34 s, high-pass 120 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.move.step-3.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "seanhealey",
+  "intendedUse": "sound cue unit.move.step, variation 3 of 4 (Ogg Vorbis, mono, 0.34 s) [edited: Freesound \u201ccoin sliding on table.wav\u201d by seanhealey: from 7.450 s for 0.34 s, high-pass 120 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.move.step-3.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "seanhealey",
+  "intendedUse": "sound cue unit.move.step, variation 3 of 4 (MP3 fallback, mono, 0.34 s) [edited: Freesound \u201ccoin sliding on table.wav\u201d by seanhealey: from 7.450 s for 0.34 s, high-pass 120 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.move.step-4.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "seanhealey",
+  "intendedUse": "sound cue unit.move.step, variation 4 of 4 (Ogg Vorbis, mono, 0.34 s) [edited: Freesound \u201ccoin sliding on table.wav\u201d by seanhealey: from 9.300 s for 0.34 s, high-pass 120 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.move.step-4.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "seanhealey",
+  "intendedUse": "sound cue unit.move.step, variation 4 of 4 (MP3 fallback, mono, 0.34 s) [edited: Freesound \u201ccoin sliding on table.wav\u201d by seanhealey: from 9.300 s for 0.34 s, high-pass 120 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.move.charge.ogg",
+  "source": "Freesound + BigSoundBank",
+  "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "seanhealey + Joseph SARDIN",
+  "intendedUse": "sound cue unit.move.charge (Ogg Vorbis, mono, 0.48 s) [edited: Freesound \u201ccoin sliding on table.wav\u201d by seanhealey: from 1.950 s for 0.48 s, high-pass 120 Hz; BigSoundBank \u201cWhoosh #8 (#1801)\u201d by Joseph SARDIN: from 0.200 s for 0.42 s, high-pass 150 Hz, -3 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "coin sliding on table.wav",
+    "author": "seanhealey",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+    "page": "https://freesound.org/people/seanhealey/sounds/517749/"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Whoosh #8 (#1801)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1801.ogg",
+    "page": "https://bigsoundbank.com/whoosh-8-s1801.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/unit.move.charge.mp3",
+  "source": "Freesound + BigSoundBank",
+  "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "seanhealey + Joseph SARDIN",
+  "intendedUse": "sound cue unit.move.charge (MP3 fallback, mono, 0.48 s) [edited: Freesound \u201ccoin sliding on table.wav\u201d by seanhealey: from 1.950 s for 0.48 s, high-pass 120 Hz; BigSoundBank \u201cWhoosh #8 (#1801)\u201d by Joseph SARDIN: from 0.200 s for 0.42 s, high-pass 150 Hz, -3 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "coin sliding on table.wav",
+    "author": "seanhealey",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/517/517749_1357596-hq.ogg",
+    "page": "https://freesound.org/people/seanhealey/sounds/517749/"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Whoosh #8 (#1801)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1801.ogg",
+    "page": "https://bigsoundbank.com/whoosh-8-s1801.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/march.step-1.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/776/776505_457982-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "nicoproson",
+  "intendedUse": "sound cue march.step, variation 1 of 3 (Ogg Vorbis, mono, 0.30 s) [edited: Freesound \u201cseveral coins on wood top\u201d by nicoproson: from 0.860 s for 0.30 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/march.step-1.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/776/776505_457982-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "nicoproson",
+  "intendedUse": "sound cue march.step, variation 1 of 3 (MP3 fallback, mono, 0.30 s) [edited: Freesound \u201cseveral coins on wood top\u201d by nicoproson: from 0.860 s for 0.30 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/march.step-2.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/776/776505_457982-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "nicoproson",
+  "intendedUse": "sound cue march.step, variation 2 of 3 (Ogg Vorbis, mono, 0.32 s) [edited: Freesound \u201cseveral coins on wood top\u201d by nicoproson: from 2.420 s for 0.32 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/march.step-2.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/776/776505_457982-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "nicoproson",
+  "intendedUse": "sound cue march.step, variation 2 of 3 (MP3 fallback, mono, 0.32 s) [edited: Freesound \u201cseveral coins on wood top\u201d by nicoproson: from 2.420 s for 0.32 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/march.step-3.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/776/776505_457982-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "nicoproson",
+  "intendedUse": "sound cue march.step, variation 3 of 3 (Ogg Vorbis, mono, 0.32 s) [edited: Freesound \u201cseveral coins on wood top\u201d by nicoproson: from 8.560 s for 0.32 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/march.step-3.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/776/776505_457982-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "nicoproson",
+  "intendedUse": "sound cue march.step, variation 3 of 3 (MP3 fallback, mono, 0.32 s) [edited: Freesound \u201cseveral coins on wood top\u201d by nicoproson: from 8.560 s for 0.32 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.defend.ogg",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/3296.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue unit.defend (Ogg Vorbis, mono, 0.48 s) [edited: BigSoundBank \u201cDumbbell, placed #2 (#3296)\u201d by Joseph SARDIN: from 0.090 s for 0.34 s; Kenney - Impact Sounds 1.0: Audio/impactPlate_light_003.ogg: -8 dB, at +5 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Dumbbell, placed #2 (#3296)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3296.ogg",
+    "page": "https://bigsoundbank.com/dumbbell-placed-2-s3296.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPlate_light_003",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_light_003.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/unit.defend.mp3",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/3296.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue unit.defend (MP3 fallback, mono, 0.48 s) [edited: BigSoundBank \u201cDumbbell, placed #2 (#3296)\u201d by Joseph SARDIN: from 0.090 s for 0.34 s; Kenney - Impact Sounds 1.0: Audio/impactPlate_light_003.ogg: -8 dB, at +5 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Dumbbell, placed #2 (#3296)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3296.ogg",
+    "page": "https://bigsoundbank.com/dumbbell-placed-2-s3296.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPlate_light_003",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_light_003.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/attack.swing.light-1.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/535/535359_10912485-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "EminYILDIRIM",
+  "intendedUse": "sound cue attack.swing.light, variation 1 of 3 (Ogg Vorbis, mono, 0.26 s) [edited: Freesound \u201cCombat Whooshes\u201d by EminYILDIRIM: from 0.660 s for 0.26 s, high-pass 110 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.swing.light-1.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/535/535359_10912485-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "EminYILDIRIM",
+  "intendedUse": "sound cue attack.swing.light, variation 1 of 3 (MP3 fallback, mono, 0.26 s) [edited: Freesound \u201cCombat Whooshes\u201d by EminYILDIRIM: from 0.660 s for 0.26 s, high-pass 110 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.swing.light-2.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/535/535359_10912485-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "EminYILDIRIM",
+  "intendedUse": "sound cue attack.swing.light, variation 2 of 3 (Ogg Vorbis, mono, 0.26 s) [edited: Freesound \u201cCombat Whooshes\u201d by EminYILDIRIM: from 1.790 s for 0.26 s, high-pass 110 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.swing.light-2.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/535/535359_10912485-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "EminYILDIRIM",
+  "intendedUse": "sound cue attack.swing.light, variation 2 of 3 (MP3 fallback, mono, 0.26 s) [edited: Freesound \u201cCombat Whooshes\u201d by EminYILDIRIM: from 1.790 s for 0.26 s, high-pass 110 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.swing.light-3.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/535/535359_10912485-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "EminYILDIRIM",
+  "intendedUse": "sound cue attack.swing.light, variation 3 of 3 (Ogg Vorbis, mono, 0.26 s) [edited: Freesound \u201cCombat Whooshes\u201d by EminYILDIRIM: from 3.660 s for 0.24 s, high-pass 110 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.swing.light-3.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/535/535359_10912485-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "EminYILDIRIM",
+  "intendedUse": "sound cue attack.swing.light, variation 3 of 3 (MP3 fallback, mono, 0.24 s) [edited: Freesound \u201cCombat Whooshes\u201d by EminYILDIRIM: from 3.660 s for 0.24 s, high-pass 110 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.swing.heavy-1.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1798.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue attack.swing.heavy, variation 1 of 3 (Ogg Vorbis, mono, 0.37 s) [edited: BigSoundBank \u201cWhoosh #10 (#1798)\u201d by Joseph SARDIN: from 0.120 s for 0.34 s, pitch -2 st, high-pass 80 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.swing.heavy-1.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1798.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue attack.swing.heavy, variation 1 of 3 (MP3 fallback, mono, 0.37 s) [edited: BigSoundBank \u201cWhoosh #10 (#1798)\u201d by Joseph SARDIN: from 0.120 s for 0.34 s, pitch -2 st, high-pass 80 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.swing.heavy-2.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1797.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue attack.swing.heavy, variation 2 of 3 (Ogg Vorbis, mono, 0.31 s) [edited: BigSoundBank \u201cWhoosh #5 (#1797)\u201d by Joseph SARDIN: from 0.150 s for 0.30 s, pitch -2 st, high-pass 80 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.swing.heavy-2.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1797.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue attack.swing.heavy, variation 2 of 3 (MP3 fallback, mono, 0.31 s) [edited: BigSoundBank \u201cWhoosh #5 (#1797)\u201d by Joseph SARDIN: from 0.150 s for 0.30 s, pitch -2 st, high-pass 80 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.swing.heavy-3.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1801.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue attack.swing.heavy, variation 3 of 3 (Ogg Vorbis, mono, 0.49 s) [edited: BigSoundBank \u201cWhoosh #8 (#1801)\u201d by Joseph SARDIN: from 0.180 s for 0.45 s, pitch -2 st, high-pass 80 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.swing.heavy-3.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1801.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue attack.swing.heavy, variation 3 of 3 (MP3 fallback, mono, 0.49 s) [edited: BigSoundBank \u201cWhoosh #8 (#1801)\u201d by Joseph SARDIN: from 0.180 s for 0.45 s, pitch -2 st, high-pass 80 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.ranged.shot.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/394/394180_7280678-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "saturdaysoundguy",
+  "intendedUse": "sound cue attack.ranged.shot (Ogg Vorbis, mono, 0.64 s) [edited: Freesound \u201cArrow Loose and Flyby\u201d by saturdaysoundguy: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.ranged.shot.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/394/394180_7280678-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "saturdaysoundguy",
+  "intendedUse": "sound cue attack.ranged.shot (MP3 fallback, mono, 0.64 s) [edited: Freesound \u201cArrow Loose and Flyby\u201d by saturdaysoundguy: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/hit.metal.light-1.ogg",
+  "source": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+  "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip#bfh1_metal_hit_04.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt)",
+  "intendedUse": "sound cue hit.metal.light, variation 1 of 3 (Ogg Vorbis, mono, 0.24 s) [edited: rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_metal_hit_04.ogg: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/hit.metal.light-1.mp3",
+  "source": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+  "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip#bfh1_metal_hit_04.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt)",
+  "intendedUse": "sound cue hit.metal.light, variation 1 of 3 (MP3 fallback, mono, 0.25 s) [edited: rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_metal_hit_04.ogg: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/hit.metal.light-2.ogg",
+  "source": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+  "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip#bfh1_metal_hit_06.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt)",
+  "intendedUse": "sound cue hit.metal.light, variation 2 of 3 (Ogg Vorbis, mono, 0.30 s) [edited: rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_metal_hit_06.ogg: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/hit.metal.light-2.mp3",
+  "source": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+  "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip#bfh1_metal_hit_06.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt)",
+  "intendedUse": "sound cue hit.metal.light, variation 2 of 3 (MP3 fallback, mono, 0.30 s) [edited: rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_metal_hit_06.ogg: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/hit.metal.light-3.ogg",
+  "source": "rubberduck - 100 CC0 metal and wood SFX",
+  "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#metal_hit_03.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt)",
+  "intendedUse": "sound cue hit.metal.light, variation 3 of 3 (Ogg Vorbis, mono, 0.35 s) [edited: rubberduck - 100 CC0 metal and wood SFX: metal_hit_03.ogg: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/hit.metal.light-3.mp3",
+  "source": "rubberduck - 100 CC0 metal and wood SFX",
+  "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#metal_hit_03.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt)",
+  "intendedUse": "sound cue hit.metal.light, variation 3 of 3 (MP3 fallback, mono, 0.36 s) [edited: rubberduck - 100 CC0 metal and wood SFX: metal_hit_03.ogg: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/hit.metal.heavy-1.ogg",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/3590.ogg",
+  "license": "CC0-1.0",
+  "author": "Pablo BERGEL + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue hit.metal.heavy, variation 1 of 3 (Ogg Vorbis, mono, 0.61 s) [edited: BigSoundBank \u201cAnvil #2 (#3590)\u201d by Pablo BERGEL: from 1.205 s for 0.55 s, pitch -2 st, high-pass 90 Hz; Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_001.ogg: from 0.000 s for 0.25 s, high-pass 70 Hz, -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Anvil #2 (#3590)",
+    "author": "Pablo BERGEL",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3590.ogg",
+    "page": "https://bigsoundbank.com/anvil-2-s3590.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPunch_heavy_001",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPunch_heavy_001.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/hit.metal.heavy-1.mp3",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/3590.ogg",
+  "license": "CC0-1.0",
+  "author": "Pablo BERGEL + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue hit.metal.heavy, variation 1 of 3 (MP3 fallback, mono, 0.62 s) [edited: BigSoundBank \u201cAnvil #2 (#3590)\u201d by Pablo BERGEL: from 1.205 s for 0.55 s, pitch -2 st, high-pass 90 Hz; Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_001.ogg: from 0.000 s for 0.25 s, high-pass 70 Hz, -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Anvil #2 (#3590)",
+    "author": "Pablo BERGEL",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3590.ogg",
+    "page": "https://bigsoundbank.com/anvil-2-s3590.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPunch_heavy_001",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPunch_heavy_001.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/hit.metal.heavy-2.ogg",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/3590.ogg",
+  "license": "CC0-1.0",
+  "author": "Pablo BERGEL + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue hit.metal.heavy, variation 2 of 3 (Ogg Vorbis, mono, 0.61 s) [edited: BigSoundBank \u201cAnvil #2 (#3590)\u201d by Pablo BERGEL: from 2.250 s for 0.55 s, pitch -2 st, high-pass 90 Hz; Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_003.ogg: from 0.000 s for 0.25 s, high-pass 70 Hz, -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Anvil #2 (#3590)",
+    "author": "Pablo BERGEL",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3590.ogg",
+    "page": "https://bigsoundbank.com/anvil-2-s3590.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPunch_heavy_003",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPunch_heavy_003.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/hit.metal.heavy-2.mp3",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/3590.ogg",
+  "license": "CC0-1.0",
+  "author": "Pablo BERGEL + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue hit.metal.heavy, variation 2 of 3 (MP3 fallback, mono, 0.62 s) [edited: BigSoundBank \u201cAnvil #2 (#3590)\u201d by Pablo BERGEL: from 2.250 s for 0.55 s, pitch -2 st, high-pass 90 Hz; Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_003.ogg: from 0.000 s for 0.25 s, high-pass 70 Hz, -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Anvil #2 (#3590)",
+    "author": "Pablo BERGEL",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3590.ogg",
+    "page": "https://bigsoundbank.com/anvil-2-s3590.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPunch_heavy_003",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPunch_heavy_003.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/hit.metal.heavy-3.ogg",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/3589.ogg",
+  "license": "CC0-1.0",
+  "author": "Pablo BERGEL + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue hit.metal.heavy, variation 3 of 3 (Ogg Vorbis, mono, 0.60 s) [edited: BigSoundBank \u201cAnvil #1 (#3589)\u201d by Pablo BERGEL: from 2.418 s for 0.55 s, pitch -2 st, high-pass 90 Hz; Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_000.ogg: from 0.000 s for 0.25 s, high-pass 70 Hz, -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Anvil #1 (#3589)",
+    "author": "Pablo BERGEL",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3589.ogg",
+    "page": "https://bigsoundbank.com/anvil-1-s3589.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPunch_heavy_000",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPunch_heavy_000.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/hit.metal.heavy-3.mp3",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/3589.ogg",
+  "license": "CC0-1.0",
+  "author": "Pablo BERGEL + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue hit.metal.heavy, variation 3 of 3 (MP3 fallback, mono, 0.60 s) [edited: BigSoundBank \u201cAnvil #1 (#3589)\u201d by Pablo BERGEL: from 2.418 s for 0.55 s, pitch -2 st, high-pass 90 Hz; Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_000.ogg: from 0.000 s for 0.25 s, high-pass 70 Hz, -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Anvil #1 (#3589)",
+    "author": "Pablo BERGEL",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3589.ogg",
+    "page": "https://bigsoundbank.com/anvil-1-s3589.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPunch_heavy_000",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPunch_heavy_000.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/hit.blocked-1.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/326/326868_4077311-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "JohnBuhr",
+  "intendedUse": "sound cue hit.blocked, variation 1 of 2 (Ogg Vorbis, mono, 0.31 s) [edited: Freesound \u201cSword_Clash (7).wav\u201d by JohnBuhr: from 0.000 s for 0.30 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/hit.blocked-1.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/326/326868_4077311-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "JohnBuhr",
+  "intendedUse": "sound cue hit.blocked, variation 1 of 2 (MP3 fallback, mono, 0.29 s) [edited: Freesound \u201cSword_Clash (7).wav\u201d by JohnBuhr: from 0.000 s for 0.30 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/hit.blocked-2.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/442/442769_71257-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "qubodup",
+  "intendedUse": "sound cue hit.blocked, variation 2 of 2 (Ogg Vorbis, mono, 0.31 s) [edited: Freesound \u201cSword Hit\u201d by qubodup: from 0.000 s for 0.34 s, pitch +1 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/hit.blocked-2.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/442/442769_71257-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "qubodup",
+  "intendedUse": "sound cue hit.blocked, variation 2 of 2 (MP3 fallback, mono, 0.31 s) [edited: Freesound \u201cSword Hit\u201d by qubodup: from 0.000 s for 0.34 s, pitch +1 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/hit.defended-1.ogg",
+  "source": "Kenney - Impact Sounds 1.0 + BigSoundBank",
+  "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_heavy_000.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl) + Joseph SARDIN",
+  "intendedUse": "sound cue hit.defended, variation 1 of 2 (Ogg Vorbis, mono, 0.49 s) [edited: Kenney - Impact Sounds 1.0: Audio/impactPlate_heavy_000.ogg: whole file; BigSoundBank \u201cDumbbell, placed #3 (#3297)\u201d by Joseph SARDIN: from 0.110 s for 0.19 s, -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPlate_heavy_000",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_heavy_000.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Dumbbell, placed #3 (#3297)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3297.ogg",
+    "page": "https://bigsoundbank.com/dumbbell-placed-3-s3297.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/hit.defended-1.mp3",
+  "source": "Kenney - Impact Sounds 1.0 + BigSoundBank",
+  "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_heavy_000.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl) + Joseph SARDIN",
+  "intendedUse": "sound cue hit.defended, variation 1 of 2 (MP3 fallback, mono, 0.49 s) [edited: Kenney - Impact Sounds 1.0: Audio/impactPlate_heavy_000.ogg: whole file; BigSoundBank \u201cDumbbell, placed #3 (#3297)\u201d by Joseph SARDIN: from 0.110 s for 0.19 s, -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPlate_heavy_000",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_heavy_000.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Dumbbell, placed #3 (#3297)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3297.ogg",
+    "page": "https://bigsoundbank.com/dumbbell-placed-3-s3297.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/hit.defended-2.ogg",
+  "source": "Kenney - Impact Sounds 1.0 + BigSoundBank",
+  "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_heavy_004.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl) + Joseph SARDIN",
+  "intendedUse": "sound cue hit.defended, variation 2 of 2 (Ogg Vorbis, mono, 0.56 s) [edited: Kenney - Impact Sounds 1.0: Audio/impactPlate_heavy_004.ogg: whole file; BigSoundBank \u201cDumbbell, placed #2 (#3296)\u201d by Joseph SARDIN: from 0.090 s for 0.32 s, -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPlate_heavy_004",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_heavy_004.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Dumbbell, placed #2 (#3296)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3296.ogg",
+    "page": "https://bigsoundbank.com/dumbbell-placed-2-s3296.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/hit.defended-2.mp3",
+  "source": "Kenney - Impact Sounds 1.0 + BigSoundBank",
+  "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_heavy_004.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl) + Joseph SARDIN",
+  "intendedUse": "sound cue hit.defended, variation 2 of 2 (MP3 fallback, mono, 0.56 s) [edited: Kenney - Impact Sounds 1.0: Audio/impactPlate_heavy_004.ogg: whole file; BigSoundBank \u201cDumbbell, placed #2 (#3296)\u201d by Joseph SARDIN: from 0.090 s for 0.32 s, -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPlate_heavy_004",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_heavy_004.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Dumbbell, placed #2 (#3296)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/3296.ogg",
+    "page": "https://bigsoundbank.com/dumbbell-placed-2-s3296.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/unit.death-1.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2697.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.death, variation 1 of 3 (Ogg Vorbis, mono, 0.78 s) [edited: BigSoundBank \u201cCoin spinning on a table #1 (#2697)\u201d by Pierre SIBANARCO: from 10.740 s for 0.78 s, high-pass 150 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.death-1.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2697.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.death, variation 1 of 3 (MP3 fallback, mono, 0.78 s) [edited: BigSoundBank \u201cCoin spinning on a table #1 (#2697)\u201d by Pierre SIBANARCO: from 10.740 s for 0.78 s, high-pass 150 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.death-2.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2700.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.death, variation 2 of 3 (Ogg Vorbis, mono, 0.78 s) [edited: BigSoundBank \u201cCoin spinning on a table #4 (#2700)\u201d by Pierre SIBANARCO: from 12.990 s for 0.78 s, high-pass 150 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.death-2.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2700.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.death, variation 2 of 3 (MP3 fallback, mono, 0.78 s) [edited: BigSoundBank \u201cCoin spinning on a table #4 (#2700)\u201d by Pierre SIBANARCO: from 12.990 s for 0.78 s, high-pass 150 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.death-3.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2702.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.death, variation 3 of 3 (Ogg Vorbis, mono, 0.78 s) [edited: BigSoundBank \u201cCoin spinning on a table #6 (#2702)\u201d by Pierre SIBANARCO: from 13.500 s for 0.78 s, high-pass 150 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.death-3.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2702.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.death, variation 3 of 3 (MP3 fallback, mono, 0.78 s) [edited: BigSoundBank \u201cCoin spinning on a table #6 (#2702)\u201d by Pierre SIBANARCO: from 13.500 s for 0.78 s, high-pass 150 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/unit.death.big-1.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1772.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN + Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.death.big, variation 1 of 2 (Ogg Vorbis, mono, 1.20 s) [edited: BigSoundBank \u201cFalling sheet steel bar #2 (#1772)\u201d by Joseph SARDIN: from 0.080 s for 0.78 s; BigSoundBank \u201cCoin spinning on a table #5 (#2701)\u201d by Pierre SIBANARCO: from 16.900 s for 0.82 s, pitch -3 st, high-pass 120 Hz, -3 dB, at +220 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Falling sheet steel bar #2 (#1772)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1772.ogg",
+    "page": "https://bigsoundbank.com/falling-sheet-steel-bar-2-s1772.html"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Coin spinning on a table #5 (#2701)",
+    "author": "Pierre SIBANARCO",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+    "page": "https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/unit.death.big-1.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1772.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN + Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.death.big, variation 1 of 2 (MP3 fallback, mono, 1.20 s) [edited: BigSoundBank \u201cFalling sheet steel bar #2 (#1772)\u201d by Joseph SARDIN: from 0.080 s for 0.78 s; BigSoundBank \u201cCoin spinning on a table #5 (#2701)\u201d by Pierre SIBANARCO: from 16.900 s for 0.82 s, pitch -3 st, high-pass 120 Hz, -3 dB, at +220 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Falling sheet steel bar #2 (#1772)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1772.ogg",
+    "page": "https://bigsoundbank.com/falling-sheet-steel-bar-2-s1772.html"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Coin spinning on a table #5 (#2701)",
+    "author": "Pierre SIBANARCO",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+    "page": "https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/unit.death.big-2.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1774.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN + Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.death.big, variation 2 of 2 (Ogg Vorbis, mono, 1.20 s) [edited: BigSoundBank \u201cFalling sheet steel bar #4 (#1774)\u201d by Joseph SARDIN: from 0.110 s for 0.80 s; BigSoundBank \u201cCoin spinning on a table #3 (#2699)\u201d by Pierre SIBANARCO: from 18.600 s for 0.82 s, pitch -3 st, high-pass 120 Hz, -3 dB, at +220 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Falling sheet steel bar #4 (#1774)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1774.ogg",
+    "page": "https://bigsoundbank.com/falling-sheet-steel-bar-4-s1774.html"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Coin spinning on a table #3 (#2699)",
+    "author": "Pierre SIBANARCO",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2699.ogg",
+    "page": "https://bigsoundbank.com/coin-spinning-on-a-table-3-s2699.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/unit.death.big-2.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1774.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN + Pierre SIBANARCO",
+  "intendedUse": "sound cue unit.death.big, variation 2 of 2 (MP3 fallback, mono, 1.20 s) [edited: BigSoundBank \u201cFalling sheet steel bar #4 (#1774)\u201d by Joseph SARDIN: from 0.110 s for 0.80 s; BigSoundBank \u201cCoin spinning on a table #3 (#2699)\u201d by Pierre SIBANARCO: from 18.600 s for 0.82 s, pitch -3 st, high-pass 120 Hz, -3 dB, at +220 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Falling sheet steel bar #4 (#1774)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1774.ogg",
+    "page": "https://bigsoundbank.com/falling-sheet-steel-bar-4-s1774.html"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Coin spinning on a table #3 (#2699)",
+    "author": "Pierre SIBANARCO",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2699.ogg",
+    "page": "https://bigsoundbank.com/coin-spinning-on-a-table-3-s2699.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/heal.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2274.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue heal (Ogg Vorbis, mono, 0.93 s) [edited: BigSoundBank \u201cFinger Cymbals #1 (#2274)\u201d by Joseph SARDIN: from 0.040 s for 1.00 s, low-pass 9000 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/heal.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2274.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue heal (MP3 fallback, mono, 0.94 s) [edited: BigSoundBank \u201cFinger Cymbals #1 (#2274)\u201d by Joseph SARDIN: from 0.040 s for 1.00 s, low-pass 9000 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/buff.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2574.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue buff (Ogg Vorbis, mono, 0.36 s) [edited: BigSoundBank \u201cKnife blade #1 (#2574)\u201d by Joseph SARDIN: from 0.030 s for 0.36 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/buff.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2574.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue buff (MP3 fallback, mono, 0.36 s) [edited: BigSoundBank \u201cKnife blade #1 (#2574)\u201d by Joseph SARDIN: from 0.030 s for 0.36 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/debuff.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0355.ogg",
+  "license": "CC0-1.0",
+  "author": "DenisChardonnet",
+  "intendedUse": "sound cue debuff (Ogg Vorbis, mono, 0.69 s) [edited: BigSoundBank \u201cSmall chain #1 (#0355)\u201d by DenisChardonnet: from 0.080 s for 0.62 s, pitch -2 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/debuff.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0355.ogg",
+  "license": "CC0-1.0",
+  "author": "DenisChardonnet",
+  "intendedUse": "sound cue debuff (MP3 fallback, mono, 0.70 s) [edited: BigSoundBank \u201cSmall chain #1 (#0355)\u201d by DenisChardonnet: from 0.080 s for 0.62 s, pitch -2 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/reveal.ogg",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1788.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue reveal (Ogg Vorbis, mono, 0.32 s) [edited: BigSoundBank \u201cFlag #2 (#1788)\u201d by Joseph SARDIN: from 0.100 s for 0.32 s; Kenney - Impact Sounds 1.0: Audio/impactMetal_light_001.ogg: -8 dB, at +50 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Flag #2 (#1788)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1788.ogg",
+    "page": "https://bigsoundbank.com/flag-2-s1788.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactMetal_light_001",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactMetal_light_001.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/reveal.mp3",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1788.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue reveal (MP3 fallback, mono, 0.32 s) [edited: BigSoundBank \u201cFlag #2 (#1788)\u201d by Joseph SARDIN: from 0.100 s for 0.32 s; Kenney - Impact Sounds 1.0: Audio/impactMetal_light_001.ogg: -8 dB, at +50 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Flag #2 (#1788)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1788.ogg",
+    "page": "https://bigsoundbank.com/flag-2-s1788.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactMetal_light_001",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactMetal_light_001.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/stealth.on.ogg",
+  "source": "Kenney - RPG Audio 1.0",
+  "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/cloth2.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue stealth.on (Ogg Vorbis, mono, 0.31 s) [edited: Kenney - RPG Audio 1.0: Audio/cloth2.ogg: from 0.040 s for 0.32 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/stealth.on.mp3",
+  "source": "Kenney - RPG Audio 1.0",
+  "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/cloth2.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue stealth.on (MP3 fallback, mono, 0.32 s) [edited: Kenney - RPG Audio 1.0: Audio/cloth2.ogg: from 0.040 s for 0.32 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/stealth.off.ogg",
+  "source": "Kenney - RPG Audio 1.0",
+  "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/cloth1.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue stealth.off (Ogg Vorbis, mono, 0.51 s) [edited: Kenney - RPG Audio 1.0: Audio/cloth1.ogg: from 0.050 s for 0.52 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/stealth.off.mp3",
+  "source": "Kenney - RPG Audio 1.0",
+  "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/cloth1.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue stealth.off (MP3 fallback, mono, 0.51 s) [edited: Kenney - RPG Audio 1.0: Audio/cloth1.ogg: from 0.050 s for 0.52 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/assault-1.ogg",
+  "source": "Kenney - RPG Audio 1.0",
+  "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/knifeSlice.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue assault, variation 1 of 2 (Ogg Vorbis, mono, 0.36 s) [edited: Kenney - RPG Audio 1.0: Audio/knifeSlice.ogg: from 0.060 s for 0.36 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/assault-1.mp3",
+  "source": "Kenney - RPG Audio 1.0",
+  "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/knifeSlice.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue assault, variation 1 of 2 (MP3 fallback, mono, 0.36 s) [edited: Kenney - RPG Audio 1.0: Audio/knifeSlice.ogg: from 0.060 s for 0.36 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/assault-2.ogg",
+  "source": "Kenney - RPG Audio 1.0",
+  "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/knifeSlice2.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue assault, variation 2 of 2 (Ogg Vorbis, mono, 0.42 s) [edited: Kenney - RPG Audio 1.0: Audio/knifeSlice2.ogg: from 0.000 s for 0.42 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/assault-2.mp3",
+  "source": "Kenney - RPG Audio 1.0",
+  "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/knifeSlice2.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue assault, variation 2 of 2 (MP3 fallback, mono, 0.42 s) [edited: Kenney - RPG Audio 1.0: Audio/knifeSlice2.ogg: from 0.000 s for 0.42 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/mine.place.ogg",
+  "source": "rubberduck - 100 CC0 metal and wood SFX + Kenney - RPG Audio 1.0",
+  "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#metal_spring_02.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt) + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue mine.place (Ogg Vorbis, mono, 0.45 s) [edited: rubberduck - 100 CC0 metal and wood SFX: metal_spring_02.ogg: whole file; Kenney - RPG Audio 1.0: Audio/metalLatch.ogg: -2 dB, at +200 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "rubberduck - 100 CC0 metal and wood SFX",
+    "title": "metal_spring_02",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#metal_spring_02.ogg",
+    "page": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx"
+   },
+   {
+    "source": "Kenney - RPG Audio 1.0",
+    "title": "metalLatch",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/metalLatch.ogg",
+    "page": "https://kenney.nl/assets/rpg-audio"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/mine.place.mp3",
+  "source": "rubberduck - 100 CC0 metal and wood SFX + Kenney - RPG Audio 1.0",
+  "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#metal_spring_02.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt) + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue mine.place (MP3 fallback, mono, 0.45 s) [edited: rubberduck - 100 CC0 metal and wood SFX: metal_spring_02.ogg: whole file; Kenney - RPG Audio 1.0: Audio/metalLatch.ogg: -2 dB, at +200 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "rubberduck - 100 CC0 metal and wood SFX",
+    "title": "metal_spring_02",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/100-CC0-wood-metal-SFX.zip#metal_spring_02.ogg",
+    "page": "https://opengameart.org/content/100-cc0-metal-and-wood-sfx"
+   },
+   {
+    "source": "Kenney - RPG Audio 1.0",
+    "title": "metalLatch",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/metalLatch.ogg",
+    "page": "https://kenney.nl/assets/rpg-audio"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/mine.explode.ogg",
+  "source": "Freesound + rubberduck - 75 CC0 breaking / falling / hit sfx",
+  "url": "https://cdn.freesound.org/previews/523/523089_11537497-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "magnuswaker + rubberduck (OpenGameArt)",
+  "intendedUse": "sound cue mine.explode (Ogg Vorbis, mono, 1.18 s) [edited: Freesound \u201cExplosion 1\u201d by magnuswaker: whole file; rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_rock_falling_03.ogg: -8 dB, at +300 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "Explosion 1",
+    "author": "magnuswaker",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/523/523089_11537497-hq.ogg",
+    "page": "https://freesound.org/people/magnuswaker/sounds/523089/"
+   },
+   {
+    "source": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+    "title": "bfh1_rock_falling_03",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip#bfh1_rock_falling_03.ogg",
+    "page": "https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/mine.explode.mp3",
+  "source": "Freesound + rubberduck - 75 CC0 breaking / falling / hit sfx",
+  "url": "https://cdn.freesound.org/previews/523/523089_11537497-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "magnuswaker + rubberduck (OpenGameArt)",
+  "intendedUse": "sound cue mine.explode (MP3 fallback, mono, 1.18 s) [edited: Freesound \u201cExplosion 1\u201d by magnuswaker: whole file; rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_rock_falling_03.ogg: -8 dB, at +300 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "Explosion 1",
+    "author": "magnuswaker",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/523/523089_11537497-hq.ogg",
+    "page": "https://freesound.org/people/magnuswaker/sounds/523089/"
+   },
+   {
+    "source": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+    "title": "bfh1_rock_falling_03",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip#bfh1_rock_falling_03.ogg",
+    "page": "https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/prototype.create.ogg",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2668.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue prototype.create (Ogg Vorbis, mono, 1.54 s) [edited: BigSoundBank \u201cWinder #7 (#2668)\u201d by Joseph SARDIN: from 0.150 s for 1.05 s; Kenney - Impact Sounds 1.0: Audio/impactPlate_light_002.ogg: -2 dB, at +1080 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Winder #7 (#2668)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2668.ogg",
+    "page": "https://bigsoundbank.com/winder-7-s2668.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPlate_light_002",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_light_002.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/prototype.create.mp3",
+  "source": "BigSoundBank + Kenney - Impact Sounds 1.0",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2668.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue prototype.create (MP3 fallback, mono, 1.54 s) [edited: BigSoundBank \u201cWinder #7 (#2668)\u201d by Joseph SARDIN: from 0.150 s for 1.05 s; Kenney - Impact Sounds 1.0: Audio/impactPlate_light_002.ogg: -2 dB, at +1080 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Winder #7 (#2668)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2668.ogg",
+    "page": "https://bigsoundbank.com/winder-7-s2668.html"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPlate_light_002",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPlate_light_002.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/forcefield.on.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2554.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue forcefield.on (Ogg Vorbis, mono, 1.95 s) [edited: BigSoundBank \u201cTibetan bowl struck #3 (#2554)\u201d by Joseph SARDIN: from 0.000 s for 2.00 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/forcefield.on.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2554.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue forcefield.on (MP3 fallback, mono, 1.95 s) [edited: BigSoundBank \u201cTibetan bowl struck #3 (#2554)\u201d by Joseph SARDIN: from 0.000 s for 2.00 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/forcefield.off.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1690.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue forcefield.off (Ogg Vorbis, mono, 0.77 s) [edited: BigSoundBank \u201cTriangle muffled #1 (#1690)\u201d by Joseph SARDIN: from 0.030 s for 0.60 s, pitch -5 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/forcefield.off.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1690.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue forcefield.off (MP3 fallback, mono, 0.78 s) [edited: BigSoundBank \u201cTriangle muffled #1 (#1690)\u201d by Joseph SARDIN: from 0.030 s for 0.60 s, pitch -5 st; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/pajazon.cast.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0573.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue pajazon.cast (Ogg Vorbis, mono, 2.39 s) [edited: BigSoundBank \u201cWhoosh #2 (#0573)\u201d by Joseph SARDIN: from 8.120 s for 0.40 s, -4 dB; BigSoundBank \u201cGong, strong #1 (#1483)\u201d by Joseph SARDIN: from 0.120 s for 2.20 s, low-pass 7000 Hz, at +260 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Whoosh #2 (#0573)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/0573.ogg",
+    "page": "https://bigsoundbank.com/whoosh-2-s0573.html"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Gong, strong #1 (#1483)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1483.ogg",
+    "page": "https://bigsoundbank.com/gong-strong-1-s1483.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/pajazon.cast.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0573.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue pajazon.cast (MP3 fallback, mono, 2.39 s) [edited: BigSoundBank \u201cWhoosh #2 (#0573)\u201d by Joseph SARDIN: from 8.120 s for 0.40 s, -4 dB; BigSoundBank \u201cGong, strong #1 (#1483)\u201d by Joseph SARDIN: from 0.120 s for 2.20 s, low-pass 7000 Hz, at +260 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Whoosh #2 (#0573)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/0573.ogg",
+    "page": "https://bigsoundbank.com/whoosh-2-s0573.html"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Gong, strong #1 (#1483)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1483.ogg",
+    "page": "https://bigsoundbank.com/gong-strong-1-s1483.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/pajazon.heal.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2087.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue pajazon.heal (Ogg Vorbis, mono, 0.51 s) [edited: BigSoundBank \u201cChimes \"butterfly\" #1 (#2087)\u201d by Joseph SARDIN: from 1.380 s for 0.56 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/pajazon.heal.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2087.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue pajazon.heal (MP3 fallback, mono, 0.52 s) [edited: BigSoundBank \u201cChimes \"butterfly\" #1 (#2087)\u201d by Joseph SARDIN: from 1.380 s for 0.56 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/pajazon.damage.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1697.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue pajazon.damage (Ogg Vorbis, mono, 0.27 s) [edited: BigSoundBank \u201cQuenching, cooling #4 (#1697)\u201d by Joseph SARDIN: from 0.000 s for 0.27 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/pajazon.damage.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1697.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue pajazon.damage (MP3 fallback, mono, 0.27 s) [edited: BigSoundBank \u201cQuenching, cooling #4 (#1697)\u201d by Joseph SARDIN: from 0.000 s for 0.27 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/slam.impact.ogg",
+  "source": "Freesound + rubberduck - 75 CC0 breaking / falling / hit sfx + Kenney - Impact Sounds 1.0",
+  "url": "https://cdn.freesound.org/previews/465/465807_1348084-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "PaceHeart + rubberduck (OpenGameArt) + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue slam.impact (Ogg Vorbis, mono, 0.90 s) [edited: Freesound \u201cbig stone door suddenly slamming shut\u201d by PaceHeart: whole file; rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_rock_breaking_02.ogg: -6 dB, at +40 ms; Kenney - Impact Sounds 1.0: Audio/impactMining_000.ogg: -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "big stone door suddenly slamming shut",
+    "author": "PaceHeart",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/465/465807_1348084-hq.ogg",
+    "page": "https://freesound.org/people/PaceHeart/sounds/465807/"
+   },
+   {
+    "source": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+    "title": "bfh1_rock_breaking_02",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip#bfh1_rock_breaking_02.ogg",
+    "page": "https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactMining_000",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactMining_000.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/slam.impact.mp3",
+  "source": "Freesound + rubberduck - 75 CC0 breaking / falling / hit sfx + Kenney - Impact Sounds 1.0",
+  "url": "https://cdn.freesound.org/previews/465/465807_1348084-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "PaceHeart + rubberduck (OpenGameArt) + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue slam.impact (MP3 fallback, mono, 0.90 s) [edited: Freesound \u201cbig stone door suddenly slamming shut\u201d by PaceHeart: whole file; rubberduck - 75 CC0 breaking / falling / hit sfx: bfh1_rock_breaking_02.ogg: -6 dB, at +40 ms; Kenney - Impact Sounds 1.0: Audio/impactMining_000.ogg: -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "big stone door suddenly slamming shut",
+    "author": "PaceHeart",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/465/465807_1348084-hq.ogg",
+    "page": "https://freesound.org/people/PaceHeart/sounds/465807/"
+   },
+   {
+    "source": "rubberduck - 75 CC0 breaking / falling / hit sfx",
+    "title": "bfh1_rock_breaking_02",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/sfx_breaking_and_falling.zip#bfh1_rock_breaking_02.ogg",
+    "page": "https://opengameart.org/content/75-cc0-breaking-falling-hit-sfx"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactMining_000",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactMining_000.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/feast.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/392/392883_3530854-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "clif_creates",
+  "intendedUse": "sound cue feast (Ogg Vorbis, mono, 0.75 s) [edited: Freesound \u201cHard Candy / Bone Crunch\u201d by clif_creates: from 0.000 s for 0.75 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/feast.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/392/392883_3530854-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "clif_creates",
+  "intendedUse": "sound cue feast (MP3 fallback, mono, 0.75 s) [edited: Freesound \u201cHard Candy / Bone Crunch\u201d by clif_creates: from 0.000 s for 0.75 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/smite.ogg",
+  "source": "Freesound + Kenney - Impact Sounds 1.0 + BigSoundBank",
+  "url": "https://cdn.freesound.org/previews/73/73678_796067-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "daytripper + Kenney (www.kenney.nl) + Joseph SARDIN",
+  "intendedUse": "sound cue smite (Ogg Vorbis, mono, 2.15 s) [edited: Freesound \u201cTollBell.wav\u201d by daytripper: from 0.000 s for 2.20 s; Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_001.ogg: -3 dB; BigSoundBank \u201cExplosion #2 (#1808)\u201d by Joseph SARDIN: -10 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "TollBell.wav",
+    "author": "daytripper",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/73/73678_796067-hq.ogg",
+    "page": "https://freesound.org/people/daytripper/sounds/73678/"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPunch_heavy_001",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPunch_heavy_001.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Explosion #2 (#1808)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1808.ogg",
+    "page": "https://bigsoundbank.com/explosion-2-s1808.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/smite.mp3",
+  "source": "Freesound + Kenney - Impact Sounds 1.0 + BigSoundBank",
+  "url": "https://cdn.freesound.org/previews/73/73678_796067-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "daytripper + Kenney (www.kenney.nl) + Joseph SARDIN",
+  "intendedUse": "sound cue smite (MP3 fallback, mono, 2.15 s) [edited: Freesound \u201cTollBell.wav\u201d by daytripper: from 0.000 s for 2.20 s; Kenney - Impact Sounds 1.0: Audio/impactPunch_heavy_001.ogg: -3 dB; BigSoundBank \u201cExplosion #2 (#1808)\u201d by Joseph SARDIN: -10 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "TollBell.wav",
+    "author": "daytripper",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/73/73678_796067-hq.ogg",
+    "page": "https://freesound.org/people/daytripper/sounds/73678/"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactPunch_heavy_001",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactPunch_heavy_001.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Explosion #2 (#1808)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1808.ogg",
+    "page": "https://bigsoundbank.com/explosion-2-s1808.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/blessing.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2079.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue blessing (Ogg Vorbis, mono, 1.86 s) [edited: BigSoundBank \u201cChimes \"Dream\" #1 (#2079)\u201d by Joseph SARDIN: from 0.080 s for 1.90 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/blessing.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2079.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue blessing (MP3 fallback, mono, 1.86 s) [edited: BigSoundBank \u201cChimes \"Dream\" #1 (#2079)\u201d by Joseph SARDIN: from 0.080 s for 1.90 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/savagery.ogg",
+  "source": "Freesound + artisticdude - Swishes Sound Pack",
+  "url": "https://cdn.freesound.org/previews/661/661242_189858-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "DeqstersLab + artisticdude (OpenGameArt)",
+  "intendedUse": "sound cue savagery (Ogg Vorbis, mono, 0.66 s) [edited: Freesound \u201cSwing grunt.mp3\u201d by DeqstersLab: from 0.050 s for 0.67 s; artisticdude - Swishes Sound Pack: swishes/swish-7.wav: -5 dB, at +180 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "Swing grunt.mp3",
+    "author": "DeqstersLab",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/661/661242_189858-hq.ogg",
+    "page": "https://freesound.org/people/DeqstersLab/sounds/661242/"
+   },
+   {
+    "source": "artisticdude - Swishes Sound Pack",
+    "title": "swish-7",
+    "author": "artisticdude (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/swishes.zip#swishes/swish-7.wav",
+    "page": "https://opengameart.org/content/swishes-sound-pack"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/savagery.mp3",
+  "source": "Freesound + artisticdude - Swishes Sound Pack",
+  "url": "https://cdn.freesound.org/previews/661/661242_189858-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "DeqstersLab + artisticdude (OpenGameArt)",
+  "intendedUse": "sound cue savagery (MP3 fallback, mono, 0.66 s) [edited: Freesound \u201cSwing grunt.mp3\u201d by DeqstersLab: from 0.050 s for 0.67 s; artisticdude - Swishes Sound Pack: swishes/swish-7.wav: -5 dB, at +180 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "Swing grunt.mp3",
+    "author": "DeqstersLab",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/661/661242_189858-hq.ogg",
+    "page": "https://freesound.org/people/DeqstersLab/sounds/661242/"
+   },
+   {
+    "source": "artisticdude - Swishes Sound Pack",
+    "title": "swish-7",
+    "author": "artisticdude (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/swishes.zip#swishes/swish-7.wav",
+    "page": "https://opengameart.org/content/swishes-sound-pack"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/shared.wounds.ogg",
+  "source": "Freesound + BigSoundBank",
+  "url": "https://cdn.freesound.org/previews/273/273150_3094998-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "michorvath + Joseph SARDIN",
+  "intendedUse": "sound cue shared.wounds (Ogg Vorbis, mono, 0.92 s) [edited: Freesound \u201cHeart Beating\u201d by michorvath: from 0.300 s for 0.65 s, high-pass 35 Hz, saturation 10 dB; BigSoundBank \u201cTibetan Bowl Struck #1 (#1110)\u201d by Joseph SARDIN: from 0.080 s for 0.90 s, -12 dB, at +50 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "Heart Beating",
+    "author": "michorvath",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/273/273150_3094998-hq.ogg",
+    "page": "https://freesound.org/people/michorvath/sounds/273150/"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Tibetan Bowl Struck #1 (#1110)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1110.ogg",
+    "page": "https://bigsoundbank.com/tibetan-bowl-struck-s1110.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/shared.wounds.mp3",
+  "source": "Freesound + BigSoundBank",
+  "url": "https://cdn.freesound.org/previews/273/273150_3094998-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "michorvath + Joseph SARDIN",
+  "intendedUse": "sound cue shared.wounds (MP3 fallback, mono, 0.93 s) [edited: Freesound \u201cHeart Beating\u201d by michorvath: from 0.300 s for 0.65 s, high-pass 35 Hz, saturation 10 dB; BigSoundBank \u201cTibetan Bowl Struck #1 (#1110)\u201d by Joseph SARDIN: from 0.080 s for 0.90 s, -12 dB, at +50 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "Heart Beating",
+    "author": "michorvath",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/273/273150_3094998-hq.ogg",
+    "page": "https://freesound.org/people/michorvath/sounds/273150/"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Tibetan Bowl Struck #1 (#1110)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1110.ogg",
+    "page": "https://bigsoundbank.com/tibetan-bowl-struck-s1110.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/julio.ogg",
+  "source": "Freesound + BigSoundBank",
+  "url": "https://cdn.freesound.org/previews/442/442825_71257-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "qubodup + Joseph SARDIN",
+  "intendedUse": "sound cue julio (Ogg Vorbis, mono, 1.20 s) [edited: Freesound \u201cDark Magic Loop\u201d by qubodup: from 0.000 s for 1.20 s; BigSoundBank \u201cBones cracking #2 (#1408)\u201d by Joseph SARDIN: from 0.220 s for 0.18 s, -4 dB, at +120 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "Dark Magic Loop",
+    "author": "qubodup",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/442/442825_71257-hq.ogg",
+    "page": "https://freesound.org/people/qubodup/sounds/442825/"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Bones cracking #2 (#1408)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1408.ogg",
+    "page": "https://bigsoundbank.com/bones-cracking-2-s1408.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/julio.mp3",
+  "source": "Freesound + BigSoundBank",
+  "url": "https://cdn.freesound.org/previews/442/442825_71257-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "qubodup + Joseph SARDIN",
+  "intendedUse": "sound cue julio (MP3 fallback, mono, 1.20 s) [edited: Freesound \u201cDark Magic Loop\u201d by qubodup: from 0.000 s for 1.20 s; BigSoundBank \u201cBones cracking #2 (#1408)\u201d by Joseph SARDIN: from 0.220 s for 0.18 s, -4 dB, at +120 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Freesound",
+    "title": "Dark Magic Loop",
+    "author": "qubodup",
+    "license": "CC0-1.0",
+    "url": "https://cdn.freesound.org/previews/442/442825_71257-hq.ogg",
+    "page": "https://freesound.org/people/qubodup/sounds/442825/"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Bones cracking #2 (#1408)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1408.ogg",
+    "page": "https://bigsoundbank.com/bones-cracking-2-s1408.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/command.aura.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/209/209546_985466-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "Sclolex",
+  "intendedUse": "sound cue command.aura (Ogg Vorbis, mono, 0.62 s) [edited: Freesound \u201cwarriordrums.wav\u201d by Sclolex: from 0.290 s for 0.62 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/command.aura.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/209/209546_985466-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "Sclolex",
+  "intendedUse": "sound cue command.aura (MP3 fallback, mono, 0.62 s) [edited: Freesound \u201cwarriordrums.wav\u201d by Sclolex: from 0.290 s for 0.62 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/mend.ogg",
+  "source": "Kenney - RPG Audio 1.0 + Kenney - Impact Sounds 1.0",
+  "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/cloth3.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue mend (Ogg Vorbis, mono, 0.47 s) [edited: Kenney - RPG Audio 1.0: Audio/cloth3.ogg: from 0.000 s for 0.30 s, -4 dB; Kenney - Impact Sounds 1.0: Audio/impactMetal_light_002.ogg: -6 dB, at +220 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Kenney - RPG Audio 1.0",
+    "title": "cloth3",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/cloth3.ogg",
+    "page": "https://kenney.nl/assets/rpg-audio"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactMetal_light_002",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactMetal_light_002.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/mend.mp3",
+  "source": "Kenney - RPG Audio 1.0 + Kenney - Impact Sounds 1.0",
+  "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/cloth3.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue mend (MP3 fallback, mono, 0.45 s) [edited: Kenney - RPG Audio 1.0: Audio/cloth3.ogg: from 0.000 s for 0.30 s, -4 dB; Kenney - Impact Sounds 1.0: Audio/impactMetal_light_002.ogg: -6 dB, at +220 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Kenney - RPG Audio 1.0",
+    "title": "cloth3",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/rpg-audio/8e99002d76-1677590336/kenney_rpg-audio.zip#Audio/cloth3.ogg",
+    "page": "https://kenney.nl/assets/rpg-audio"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactMetal_light_002",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactMetal_light_002.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/hexward.ogg",
+  "source": "artisticdude - RPG Sound Pack + BigSoundBank",
+  "url": "https://opengameart.org/sites/default/files/rpg_sound_pack.zip#RPG%20Sound%20Pack/inventory/beads.wav",
+  "license": "CC0-1.0",
+  "author": "artisticdude (OpenGameArt) + Joseph SARDIN",
+  "intendedUse": "sound cue hexward (Ogg Vorbis, mono, 1.17 s) [edited: artisticdude - RPG Sound Pack: RPG Sound Pack/inventory/beads.wav: from 0.000 s for 0.32 s; BigSoundBank \u201cTibetan Bowl Struck #1 (#1110)\u201d by Joseph SARDIN: from 0.080 s for 1.00 s, pitch -3 st, -10 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "artisticdude - RPG Sound Pack",
+    "title": "beads",
+    "author": "artisticdude (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/rpg_sound_pack.zip#RPG%20Sound%20Pack/inventory/beads.wav",
+    "page": "https://opengameart.org/content/rpg-sound-pack"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Tibetan Bowl Struck #1 (#1110)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1110.ogg",
+    "page": "https://bigsoundbank.com/tibetan-bowl-struck-s1110.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/hexward.mp3",
+  "source": "artisticdude - RPG Sound Pack + BigSoundBank",
+  "url": "https://opengameart.org/sites/default/files/rpg_sound_pack.zip#RPG%20Sound%20Pack/inventory/beads.wav",
+  "license": "CC0-1.0",
+  "author": "artisticdude (OpenGameArt) + Joseph SARDIN",
+  "intendedUse": "sound cue hexward (MP3 fallback, mono, 1.17 s) [edited: artisticdude - RPG Sound Pack: RPG Sound Pack/inventory/beads.wav: from 0.000 s for 0.32 s; BigSoundBank \u201cTibetan Bowl Struck #1 (#1110)\u201d by Joseph SARDIN: from 0.080 s for 1.00 s, pitch -3 st, -10 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "artisticdude - RPG Sound Pack",
+    "title": "beads",
+    "author": "artisticdude (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/rpg_sound_pack.zip#RPG%20Sound%20Pack/inventory/beads.wav",
+    "page": "https://opengameart.org/content/rpg-sound-pack"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Tibetan Bowl Struck #1 (#1110)",
+    "author": "Joseph SARDIN",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/1110.ogg",
+    "page": "https://bigsoundbank.com/tibetan-bowl-struck-s1110.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/cauldron.return.ogg",
+  "source": "rubberduck - 40 CC0 water / splash / slime SFX + rubberduck - 100 CC0 SFX + BigSoundBank",
+  "url": "https://opengameart.org/sites/default/files/water-splash-slime-sfx.zip#bubble_02.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt) + Pierre SIBANARCO",
+  "intendedUse": "sound cue cauldron.return (Ogg Vorbis, mono, 0.60 s) [edited: rubberduck - 40 CC0 water / splash / slime SFX: bubble_02.ogg: from 0.020 s for 0.28 s; rubberduck - 100 CC0 SFX: plop_02.ogg: at +220 ms; BigSoundBank \u201cCoin spinning on a table #5 (#2701)\u201d by Pierre SIBANARCO: from 3.825 s for 0.20 s, -4 dB, at +420 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "rubberduck - 40 CC0 water / splash / slime SFX",
+    "title": "bubble_02",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/water-splash-slime-sfx.zip#bubble_02.ogg",
+    "page": "https://opengameart.org/content/40-cc0-water-splash-slime-sfx"
+   },
+   {
+    "source": "rubberduck - 100 CC0 SFX",
+    "title": "plop_02",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/100-CC0-SFX_0.zip#plop_02.ogg",
+    "page": "https://opengameart.org/content/100-cc0-sfx"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Coin spinning on a table #5 (#2701)",
+    "author": "Pierre SIBANARCO",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+    "page": "https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/cauldron.return.mp3",
+  "source": "rubberduck - 40 CC0 water / splash / slime SFX + rubberduck - 100 CC0 SFX + BigSoundBank",
+  "url": "https://opengameart.org/sites/default/files/water-splash-slime-sfx.zip#bubble_02.ogg",
+  "license": "CC0-1.0",
+  "author": "rubberduck (OpenGameArt) + Pierre SIBANARCO",
+  "intendedUse": "sound cue cauldron.return (MP3 fallback, mono, 0.60 s) [edited: rubberduck - 40 CC0 water / splash / slime SFX: bubble_02.ogg: from 0.020 s for 0.28 s; rubberduck - 100 CC0 SFX: plop_02.ogg: at +220 ms; BigSoundBank \u201cCoin spinning on a table #5 (#2701)\u201d by Pierre SIBANARCO: from 3.825 s for 0.20 s, -4 dB, at +420 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "rubberduck - 40 CC0 water / splash / slime SFX",
+    "title": "bubble_02",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/water-splash-slime-sfx.zip#bubble_02.ogg",
+    "page": "https://opengameart.org/content/40-cc0-water-splash-slime-sfx"
+   },
+   {
+    "source": "rubberduck - 100 CC0 SFX",
+    "title": "plop_02",
+    "author": "rubberduck (OpenGameArt)",
+    "license": "CC0-1.0",
+    "url": "https://opengameart.org/sites/default/files/100-CC0-SFX_0.zip#plop_02.ogg",
+    "page": "https://opengameart.org/content/100-cc0-sfx"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Coin spinning on a table #5 (#2701)",
+    "author": "Pierre SIBANARCO",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+    "page": "https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/revive.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue revive (Ogg Vorbis, mono, 1.05 s) [edited: BigSoundBank \u201cCoin spinning on a table #5 (#2701)\u201d by Pierre SIBANARCO: from 16.700 s for 1.05 s, reversed, high-pass 150 Hz; BigSoundBank \u201cBronze bell #5 (#2707)\u201d by Pierre SIBANARCO: from 0.030 s for 0.40 s, -6 dB, at +550 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Coin spinning on a table #5 (#2701)",
+    "author": "Pierre SIBANARCO",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+    "page": "https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Bronze bell #5 (#2707)",
+    "author": "Pierre SIBANARCO",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2707.ogg",
+    "page": "https://bigsoundbank.com/bronze-bell-5-s2707.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/revive.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+  "license": "CC0-1.0",
+  "author": "Pierre SIBANARCO",
+  "intendedUse": "sound cue revive (MP3 fallback, mono, 1.05 s) [edited: BigSoundBank \u201cCoin spinning on a table #5 (#2701)\u201d by Pierre SIBANARCO: from 16.700 s for 1.05 s, reversed, high-pass 150 Hz; BigSoundBank \u201cBronze bell #5 (#2707)\u201d by Pierre SIBANARCO: from 0.030 s for 0.40 s, -6 dB, at +550 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Coin spinning on a table #5 (#2701)",
+    "author": "Pierre SIBANARCO",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2701.ogg",
+    "page": "https://bigsoundbank.com/coin-spinning-on-a-table-5-s2701.html"
+   },
+   {
+    "source": "BigSoundBank",
+    "title": "Bronze bell #5 (#2707)",
+    "author": "Pierre SIBANARCO",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/2707.ogg",
+    "page": "https://bigsoundbank.com/bronze-bell-5-s2707.html"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/weakness.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0360.ogg",
+  "license": "CC0-1.0",
+  "author": "DenisChardonnet",
+  "intendedUse": "sound cue weakness (Ogg Vorbis, mono, 1.01 s) [edited: BigSoundBank \u201cMedium Chain #1 (#0360)\u201d by DenisChardonnet: from 0.140 s for 0.90 s, pitch -2 st, low-pass 7000 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/weakness.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0360.ogg",
+  "license": "CC0-1.0",
+  "author": "DenisChardonnet",
+  "intendedUse": "sound cue weakness (MP3 fallback, mono, 1.01 s) [edited: BigSoundBank \u201cMedium Chain #1 (#0360)\u201d by DenisChardonnet: from 0.140 s for 0.90 s, pitch -2 st, low-pass 7000 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/capture.keep.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2358.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue capture.keep (Ogg Vorbis, mono, 1.16 s) [edited: BigSoundBank \u201cMetal barrier: Closure #1 (#2358)\u201d by Joseph SARDIN: from 1.600 s for 1.25 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/capture.keep.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/2358.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue capture.keep (MP3 fallback, mono, 1.16 s) [edited: BigSoundBank \u201cMetal barrier: Closure #1 (#2358)\u201d by Joseph SARDIN: from 1.600 s for 1.25 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/capture.market.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0194.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue capture.market (Ogg Vorbis, mono, 0.74 s) [edited: BigSoundBank \u201cCoins #2 (#0194)\u201d by Joseph SARDIN: from 2.920 s for 0.95 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/capture.market.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0194.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue capture.market (MP3 fallback, mono, 0.74 s) [edited: BigSoundBank \u201cCoins #2 (#0194)\u201d by Joseph SARDIN: from 2.920 s for 0.95 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/building.contested.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/471/471095_9856191-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "spycrah",
+  "intendedUse": "sound cue building.contested (Ogg Vorbis, mono, 0.67 s) [edited: Freesound \u201cSword clash 1.wav\u201d by spycrah: from 0.970 s for 0.78 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/building.contested.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/471/471095_9856191-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "spycrah",
+  "intendedUse": "sound cue building.contested (MP3 fallback, mono, 0.68 s) [edited: Freesound \u201cSword clash 1.wav\u201d by spycrah: from 0.970 s for 0.78 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/siege.tick.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1569.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue siege.tick (Ogg Vorbis, mono, 1.12 s) [edited: BigSoundBank \u201cGrandfather clock, hour #1 (#1569)\u201d by Joseph SARDIN: from 1.830 s for 1.20 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/siege.tick.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/1569.ogg",
+  "license": "CC0-1.0",
+  "author": "Joseph SARDIN",
+  "intendedUse": "sound cue siege.tick (MP3 fallback, mono, 1.12 s) [edited: BigSoundBank \u201cGrandfather clock, hour #1 (#1569)\u201d by Joseph SARDIN: from 1.830 s for 1.20 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/win.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/855/855458_71257-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "qubodup",
+  "intendedUse": "sound cue win (Ogg Vorbis, mono, 8.74 s) [edited: Freesound \u201cReal Trumpet Fanfare 2\u201d by qubodup: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/win.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/855/855458_71257-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "qubodup",
+  "intendedUse": "sound cue win (MP3 fallback, mono, 8.74 s) [edited: Freesound \u201cReal Trumpet Fanfare 2\u201d by qubodup: whole file; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/lose.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/329/329324_2060528-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "aoristos",
+  "intendedUse": "sound cue lose (Ogg Vorbis, stereo, 5.77 s) [edited: Freesound \u201cfuneral bell-cloche fun\u00e8bre.wav\u201d by aoristos: from 0.400 s for 6.00 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/lose.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/329/329324_2060528-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "aoristos",
+  "intendedUse": "sound cue lose (MP3 fallback, stereo, 5.77 s) [edited: Freesound \u201cfuneral bell-cloche fun\u00e8bre.wav\u201d by aoristos: from 0.400 s for 6.00 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/draw.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/512/512490_2866779-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "DeVern",
+  "intendedUse": "sound cue draw (Ogg Vorbis, stereo, 4.78 s) [edited: Freesound \u201cDistant War Horn.wav\u201d by DeVern: from 0.100 s for 4.80 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/draw.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/512/512490_2866779-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "DeVern",
+  "intendedUse": "sound cue draw (MP3 fallback, stereo, 4.78 s) [edited: Freesound \u201cDistant War Horn.wav\u201d by DeVern: from 0.100 s for 4.80 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/takeback.request.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0362.ogg",
+  "license": "CC0-1.0",
+  "author": "DenisChardonnet",
+  "intendedUse": "sound cue takeback.request (Ogg Vorbis, mono, 0.94 s) [edited: BigSoundBank \u201cGreat Page that Turns #1 (#0362)\u201d by DenisChardonnet: from 0.030 s for 0.95 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/takeback.request.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0362.ogg",
+  "license": "CC0-1.0",
+  "author": "DenisChardonnet",
+  "intendedUse": "sound cue takeback.request (MP3 fallback, mono, 0.95 s) [edited: BigSoundBank \u201cGreat Page that Turns #1 (#0362)\u201d by DenisChardonnet: from 0.030 s for 0.95 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/takeback.accept.ogg",
+  "source": "BigSoundBank + Kenney - Casino Audio 1.1",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0363.ogg",
+  "license": "CC0-1.0",
+  "author": "DenisChardonnet + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue takeback.accept (Ogg Vorbis, mono, 0.71 s) [edited: BigSoundBank \u201cGreat page that turns #1 (#0363)\u201d by DenisChardonnet: from 0.100 s for 0.65 s; Kenney - Casino Audio 1.1: Audio/chip-lay-3.ogg: -3 dB, at +450 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Great page that turns #1 (#0363)",
+    "author": "DenisChardonnet",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/0363.ogg",
+    "page": "https://bigsoundbank.com/great-page-that-turns-1-s0363.html"
+   },
+   {
+    "source": "Kenney - Casino Audio 1.1",
+    "title": "chip-lay-3",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/casino-audio/2472606a04-1721639069/kenney_casino-audio.zip#Audio/chip-lay-3.ogg",
+    "page": "https://kenney.nl/assets/casino-audio"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/takeback.accept.mp3",
+  "source": "BigSoundBank + Kenney - Casino Audio 1.1",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0363.ogg",
+  "license": "CC0-1.0",
+  "author": "DenisChardonnet + Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue takeback.accept (MP3 fallback, mono, 0.72 s) [edited: BigSoundBank \u201cGreat page that turns #1 (#0363)\u201d by DenisChardonnet: from 0.100 s for 0.65 s; Kenney - Casino Audio 1.1: Audio/chip-lay-3.ogg: -3 dB, at +450 ms; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "BigSoundBank",
+    "title": "Great page that turns #1 (#0363)",
+    "author": "DenisChardonnet",
+    "license": "CC0-1.0",
+    "url": "https://bigsoundbank.com/UPLOAD/ogg/0363.ogg",
+    "page": "https://bigsoundbank.com/great-page-that-turns-1-s0363.html"
+   },
+   {
+    "source": "Kenney - Casino Audio 1.1",
+    "title": "chip-lay-3",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/casino-audio/2472606a04-1721639069/kenney_casino-audio.zip#Audio/chip-lay-3.ogg",
+    "page": "https://kenney.nl/assets/casino-audio"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/decision.prompt.ogg",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0292.ogg",
+  "license": "CC0-1.0",
+  "author": "GlaneurDeSons",
+  "intendedUse": "sound cue decision.prompt (Ogg Vorbis, mono, 0.94 s) [edited: BigSoundBank \u201cSmall Bell #1 (#0292)\u201d by GlaneurDeSons: from 0.040 s for 1.00 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/decision.prompt.mp3",
+  "source": "BigSoundBank",
+  "url": "https://bigsoundbank.com/UPLOAD/ogg/0292.ogg",
+  "license": "CC0-1.0",
+  "author": "GlaneurDeSons",
+  "intendedUse": "sound cue decision.prompt (MP3 fallback, mono, 0.94 s) [edited: BigSoundBank \u201cSmall Bell #1 (#0292)\u201d by GlaneurDeSons: from 0.040 s for 1.00 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/coin.flip.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/181/181189_3274491-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "Raventhornn",
+  "intendedUse": "sound cue coin.flip (Ogg Vorbis, mono, 1.03 s) [edited: Freesound \u201ccoin flip.wav\u201d by Raventhornn: from 0.050 s for 1.10 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/coin.flip.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/181/181189_3274491-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "Raventhornn",
+  "intendedUse": "sound cue coin.flip (MP3 fallback, mono, 1.03 s) [edited: Freesound \u201ccoin flip.wav\u201d by Raventhornn: from 0.050 s for 1.10 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/battle.start.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/209/209546_985466-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "Sclolex",
+  "intendedUse": "sound cue battle.start (Ogg Vorbis, mono, 2.25 s) [edited: Freesound \u201cwarriordrums.wav\u201d by Sclolex: from 0.000 s for 2.30 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/battle.start.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/209/209546_985466-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "Sclolex",
+  "intendedUse": "sound cue battle.start (MP3 fallback, mono, 2.25 s) [edited: Freesound \u201cwarriordrums.wav\u201d by Sclolex: from 0.000 s for 2.30 s; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/attack.miss.ogg",
+  "source": "Kenney - Impact Sounds 1.0",
+  "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/footstep_snow_000.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue attack.miss (Ogg Vorbis, mono, 0.20 s) [edited: Kenney - Impact Sounds 1.0: Audio/footstep_snow_000.ogg: from 0.000 s for 0.22 s; Kenney - Impact Sounds 1.0: Audio/impactSoft_medium_002.ogg: -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "footstep_snow_000",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/footstep_snow_000.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactSoft_medium_002",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactSoft_medium_002.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/attack.miss.mp3",
+  "source": "Kenney - Impact Sounds 1.0",
+  "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/footstep_snow_000.ogg",
+  "license": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "intendedUse": "sound cue attack.miss (MP3 fallback, mono, 0.20 s) [edited: Kenney - Impact Sounds 1.0: Audio/footstep_snow_000.ogg: from 0.000 s for 0.22 s; Kenney - Impact Sounds 1.0: Audio/impactSoft_medium_002.ogg: -6 dB; mixed, peak about -3 dBFS]",
+  "layers": [
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "footstep_snow_000",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/footstep_snow_000.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   },
+   {
+    "source": "Kenney - Impact Sounds 1.0",
+    "title": "impactSoft_medium_002",
+    "author": "Kenney (www.kenney.nl)",
+    "license": "CC0-1.0",
+    "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip#Audio/impactSoft_medium_002.ogg",
+    "page": "https://kenney.nl/assets/impact-sounds"
+   }
+  ]
+ },
+ {
+  "path": "assets/audio/ambient.wind.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/697/697217_7678208-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "dhallcomposer",
+  "intendedUse": "sound cue ambient.wind (Ogg Vorbis, stereo, 30.00 s) [edited: Freesound \u201cLooping Gentle Wind Ambience on an Open Desert Plain.wav\u201d by dhallcomposer: from 2.000 s for 33.00 s, high-pass 60 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ambient.wind.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/697/697217_7678208-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "dhallcomposer",
+  "intendedUse": "sound cue ambient.wind (MP3 fallback, stereo, 30.00 s) [edited: Freesound \u201cLooping Gentle Wind Ambience on an Open Desert Plain.wav\u201d by dhallcomposer: from 2.000 s for 33.00 s, high-pass 60 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ambient.camp.ogg",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/660/660298_13721094-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "Ambient-X",
+  "intendedUse": "sound cue ambient.camp (Ogg Vorbis, stereo, 30.00 s) [edited: Freesound \u201cCampfire deer camp - adding kindling - med wind - part 4.wav\u201d by Ambient-X: from 26.000 s for 33.00 s, high-pass 60 Hz, low-pass 9000 Hz; mixed, peak about -3 dBFS]"
+ },
+ {
+  "path": "assets/audio/ambient.camp.mp3",
+  "source": "Freesound",
+  "url": "https://cdn.freesound.org/previews/660/660298_13721094-hq.ogg",
+  "license": "CC0-1.0",
+  "author": "Ambient-X",
+  "intendedUse": "sound cue ambient.camp (MP3 fallback, stereo, 30.00 s) [edited: Freesound \u201cCampfire deer camp - adding kindling - med wind - part 4.wav\u201d by Ambient-X: from 26.000 s for 33.00 s, high-pass 60 Hz, low-pass 9000 Hz; mixed, peak about -3 dBFS]"
  }
 ]

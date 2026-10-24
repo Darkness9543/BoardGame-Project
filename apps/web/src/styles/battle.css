@@ -571,12 +571,21 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  max-width: 280px;
-  padding: 6px 10px;
+  max-width: 360px;
+  padding: 10px 14px;
   border-radius: var(--radius-small);
   border: 1px solid var(--ui-border-strong);
   background: rgba(28, 22, 17, 0.96);
   box-shadow: var(--shadow);
+}
+
+/* Larger than the HUD's body text: the owner found the hover readouts too small. */
+.hover-card .strong {
+  font-size: 1.1rem;
+}
+
+.hover-card .small {
+  font-size: 0.98rem;
 }
 
 /* ---------------------------------------------------------------- bottom: action bar, AP, end turn */

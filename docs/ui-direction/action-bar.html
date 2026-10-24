@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coin Duel Action Bar Options</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600;700&family=Barlow+Semi+Condensed:wght@600;800&display=swap">
+<style>
+  /* Layout: one column of three full-width mocks of the battle screen's command area, each followed by its
+     pros, cons and verdict. Chrome mirrors the game's HUD tokens so the mocks read as the real thing. */
+  :root {
+    --bg: #14100c; --panel: #1c1611; --panel-high: #26201a; --panel-raised: #2e261d; --line: #3a3127; --line-strong: #5a4b35;
+    --ink: #f1e6c8; --muted: #a89d85; --gold: #d4a93a; --gold-ink: #1b1410; --ok: #7fc48f; --warn: #e2a24a; --bad: #e0646c;
+    --font-display: "Cinzel", Georgia, serif; --font-ui: "Inter", system-ui, sans-serif; --font-num: "Barlow Semi Condensed", "Arial Narrow", sans-serif;
+    --radius: 10px; --radius-small: 7px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-ui); font-size: 15px; line-height: 1.5; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 28px max(16px, env(safe-area-inset-left, 0px)) 60px max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 44px; }
+  h1 { font-family: var(--font-display); font-weight: 900; font-size: clamp(1.6rem, 1rem + 2vw, 2.4rem); letter-spacing: 0.03em; margin: 0; }
+  h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; margin: 0 0 4px; letter-spacing: 0.02em; }
+  h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 0 0 6px; font-weight: 700; }
+  p { margin: 0; max-width: 72ch; }
+  .lede { color: var(--muted); }
+  .option { display: flex; flex-direction: column; gap: 14px; }
+  .mock { background: #0f0c09; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; overflow-x: auto; }
+  .screen { min-width: 960px; display: grid; gap: 10px; }
+  .board { height: 150px; border-radius: var(--radius); background:
+      repeating-linear-gradient(0deg, transparent 0 23px, rgba(0,0,0,0.18) 23px 24px),
+      repeating-linear-gradient(90deg, transparent 0 23px, rgba(0,0,0,0.18) 23px 24px),
+      linear-gradient(#5f574a, #4f483d); position: relative; border: 1px solid var(--line); }
+  .board.dim::after { content: "the board"; position: absolute; inset: 0; display: grid; place-items: center; color: rgba(241,230,200,0.35); font-family: var(--font-display); letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.8rem; }
+  .bar { display: flex; align-items: center; gap: 12px; padding: 8px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .ico { width: 20px; height: 20px; filter: invert(0.92) sepia(0.5) saturate(1.6) hue-rotate(-10deg); flex: none; }
+  .kbd { font-family: var(--font-num); font-size: 0.72rem; font-weight: 700; padding: 1px 5px; border: 1px solid var(--line-strong); border-bottom-width: 2px; border-radius: 4px; color: var(--muted); background: var(--panel-high); }
+  .tag { font-family: var(--font-num); font-size: 0.75rem; padding: 1px 6px; border-radius: 999px; background: var(--panel-raised); color: var(--muted); }
+  .coin { width: 40px; height: 40px; border-radius: 50%; flex: none; display: grid; place-items: center; background: radial-gradient(circle at 35% 30%, #4a4a4a, #2b2b2e 70%); border: 3px solid #c9a34a; box-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+  .coin .ico { width: 20px; height: 20px; }
+  .ap { display: flex; align-items: center; gap: 8px; font-family: var(--font-num); font-weight: 800; font-size: 1.25rem; }
+  .pips { display: flex; gap: 2px; } .pips i { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); } .pips i.off { background: var(--line-strong); }
+  .btn { font: inherit; color: var(--ink); background: var(--panel-high); border: 1px solid var(--line-strong); border-radius: var(--radius-small); padding: 8px 12px; display: inline-flex; align-items: center; gap: 6px; }
+  .btn-end { background: var(--gold); color: var(--gold-ink); font-weight: 800; border-color: #b8902c; padding: 10px 16px; }
+  .btn-ghost { color: var(--muted); }
+  /* current bar (reference) */
+  .pill { display: inline-flex; align-items: center; gap: 5px; padding: 6px 9px; font-size: 0.86rem; font-weight: 600; background: var(--panel-high); border: 1px solid var(--line-strong); border-radius: var(--radius-small); white-space: nowrap; }
+  .pill.on { border-color: var(--gold); background: #4a3a1c; box-shadow: inset 0 -2px 0 var(--gold); }
+  .pill.off { opacity: 0.45; }
+  .pill .cost { color: var(--muted); font-family: var(--font-num); font-size: 0.8rem; }
+  /* A: command dock */
+  .dock { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; padding: 10px 14px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .unit { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .unit .name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; }
+  .unit .stats { font-family: var(--font-num); font-weight: 700; color: var(--muted); font-size: 0.9rem; }
+  .tiles { display: flex; align-items: stretch; gap: 8px; }
+  .group { display: flex; gap: 8px; align-items: stretch; }
+  .sep { width: 1px; background: var(--line-strong); margin: 4px 6px; }
+  .tile { position: relative; width: 92px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 10px 6px 8px; background: var(--panel-high); border: 1px solid var(--line-strong); border-radius: var(--radius-small); color: var(--ink); font: inherit; cursor: pointer; }
+  .tile .ico { width: 28px; height: 28px; }
+  .tile .lbl { font-weight: 700; font-size: 0.86rem; }
+  .tile .cost { position: absolute; top: 5px; right: 6px; font-family: var(--font-num); font-weight: 800; font-size: 0.78rem; color: var(--gold); }
+  .tile .cost .sur { color: var(--warn); }
+  .tile .key { position: absolute; top: 5px; left: 6px; }
+  .tile .why { font-size: 0.68rem; color: var(--muted); text-align: center; line-height: 1.2; }
+  .tile.on { border-color: var(--gold); background: #4a3a1c; box-shadow: 0 0 0 1px var(--gold), 0 4px 14px rgba(212,169,58,0.25); }
+  .tile.off { opacity: 0.5; filter: grayscale(0.4); }
+  .tile.ability { width: 128px; border-style: dashed; }
+  .tile .cd { position: absolute; right: 6px; bottom: 6px; width: 16px; height: 16px; border-radius: 50%; background: conic-gradient(var(--gold) 0 50%, var(--line-strong) 50% 100%); }
+  .right { display: flex; align-items: center; gap: 12px; }
+  /* B: side panel */
+  .split { display: grid; grid-template-columns: 300px 1fr; gap: 10px; }
+  .side { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+  .card { display: flex; gap: 10px; align-items: center; }
+  .rows { display: flex; flex-direction: column; gap: 6px; }
+  .row { display: grid; grid-template-columns: 26px 1fr auto auto; align-items: center; gap: 10px; padding: 8px 10px; background: var(--panel-high); border: 1px solid var(--line-strong); border-radius: var(--radius-small); }
+  .row .t { font-weight: 700; font-size: 0.9rem; } .row .d { font-size: 0.76rem; color: var(--muted); }
+  .row .cost { font-family: var(--font-num); font-weight: 800; color: var(--gold); }
+  .row.on { border-color: var(--gold); background: #4a3a1c; } .row.off { opacity: 0.5; }
+  /* C: radial */
+  .radial-stage { position: relative; height: 260px; }
+  .radial-stage .board { height: 260px; }
+  .token { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+  .ring { position: absolute; left: 50%; top: 50%; width: 0; height: 0; }
+  .ring .node { position: absolute; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: var(--panel); border: 2px solid var(--line-strong); display: grid; place-items: center; }
+  .ring .node .ico { width: 22px; height: 22px; }
+  .ring .node .key { position: absolute; bottom: -8px; right: -6px; }
+  .ring .node.on { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(212,169,58,0.35); }
+  .ring .node.off { opacity: 0.45; }
+  .ring .node .ct { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); font-family: var(--font-num); font-size: 0.72rem; font-weight: 800; color: var(--gold); background: var(--panel); padding: 0 4px; border-radius: 4px; }
+  .verdict { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .verdict ul { margin: 0; padding-left: 18px; } .verdict li { margin: 2px 0; }
+  .rec { border: 1px solid var(--gold); border-radius: var(--radius); padding: 14px 16px; background: #221a0f; display: flex; flex-direction: column; gap: 6px; }
+  .rec .badge { display: inline-block; font-family: var(--font-num); font-weight: 800; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-ink); background: var(--gold); padding: 2px 8px; border-radius: 999px; align-self: flex-start; }
+  @media (max-width: 760px) { .verdict { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header style="display:flex;flex-direction:column;gap:8px">
+    <h1>Coin Duel Action Bar Options</h1>
+    <p class="lede">Three arrangements of the command area, all showing the same moment: your Berserker 1 (8 Power, 3 Toughness) is selected with Move previewed, 19 of 20 AP left, 8 units still able to act. The current bar is shown first for comparison. Icons are the game's own.</p>
+  </header>
+
+  <section class="option">
+    <div>
+      <h3>Reference</h3>
+      <h2>The current bar</h2>
+      <p class="lede">One row of same-weight pills with inline cost text; abilities and basic actions look alike; it scrolls sideways when it runs out of room; disabled reasons live only in tooltips.</p>
+    </div>
+    <div class="mock"><div class="screen">
+      <div class="board dim"></div>
+      <div class="bar">
+        <div class="unit"><span class="coin"><img class="ico" src="../../apps/web/public/assets/icons/clean/battle-axe.svg" alt=""></span><span class="unit .name" style="font-family:var(--font-display);font-weight:700">Berserker 1</span></div>
+        <span class="pill on"><img class="ico" src="../../apps/web/public/assets/icons/clean/walking-boot.svg" alt="">Move <span class="cost">1 AP</span> <span class="kbd">M</span></span>
+        <span class="pill"><img class="ico" src="../../apps/web/public/assets/icons/clean/crossed-swords.svg" alt="">Attack <span class="cost">1 AP</span> <span class="kbd">A</span></span>
+        <span class="pill"><img class="ico" src="../../apps/web/public/assets/icons/clean/checked-shield.svg" alt="">Defend <span class="cost">1 AP</span> <span class="kbd">D</span></span>
+        <span class="pill off"><img class="ico" src="../../apps/web/public/assets/icons/clean/pointy-sword.svg" alt="">Charge <span class="cost">1 AP +1</span> <span class="kbd">C</span></span>
+        <span class="pill"><img class="ico" src="../../apps/web/public/assets/icons/clean/knight-banner.svg" alt="">March <span class="cost">2 AP</span> <span class="kbd">G</span></span>
+        <span class="pill off"><img class="ico" src="../../apps/web/public/assets/icons/clean/enrage.svg" alt="">Savagery <span class="cost">2 AP</span> <span class="kbd">S</span></span>
+        <span class="btn btn-ghost" style="margin-left:auto">Next <span class="kbd">Tab</span> <span class="tag">8</span></span>
+        <span class="btn btn-ghost"><img class="ico" src="../../apps/web/public/assets/icons/clean/anticlockwise-rotation.svg" alt="">Take back</span>
+        <span class="ap">19 / 20</span>
+        <span class="btn btn-end">End turn · 19 AP left <span class="kbd">Ctrl ⏎</span></span>
+      </div>
+    </div></div>
+  </section>
+
+  <section class="option">
+    <div>
+      <h3>Option A</h3>
+      <h2>Command dock</h2>
+      <p class="lede">The bar becomes a dock of large tiles. Icon on top, name below, AP cost in the corner, hotkey in the other corner. Basic actions and abilities are separate groups; abilities carry a cooldown ring. A disabled tile stays visible and says why in one line, so nothing needs a tooltip. The active action is framed in gold. Tiles wrap to a second row before anything scrolls.</p>
+    </div>
+    <div class="mock"><div class="screen">
+      <div class="board dim"></div>
+      <div class="dock">
+        <div class="unit">
+          <span class="coin"><img class="ico" src="../../apps/web/public/assets/icons/clean/battle-axe.svg" alt=""></span>
+          <div><div class="name">Berserker 1</div><div class="stats">8 ⚔ · 3/3 ♥ · N8</div></div>
+        </div>
+        <div class="tiles">
+          <div class="group">
+            <button class="tile on"><span class="kbd key">M</span><span class="cost">1 AP</span><img class="ico" src="../../apps/web/public/assets/icons/clean/walking-boot.svg" alt=""><span class="lbl">Move</span></button>
+            <button class="tile"><span class="kbd key">A</span><span class="cost">1 AP</span><img class="ico" src="../../apps/web/public/assets/icons/clean/crossed-swords.svg" alt=""><span class="lbl">Attack</span></button>
+            <button class="tile"><span class="kbd key">D</span><span class="cost">1 AP</span><img class="ico" src="../../apps/web/public/assets/icons/clean/checked-shield.svg" alt=""><span class="lbl">Defend</span></button>
+            <button class="tile off"><span class="kbd key">C</span><span class="cost">1 AP <span class="sur">+1</span></span><img class="ico" src="../../apps/web/public/assets/icons/clean/pointy-sword.svg" alt=""><span class="lbl">Charge</span><span class="why">needs Movement 2</span></button>
+            <button class="tile"><span class="kbd key">G</span><span class="cost">2 AP</span><img class="ico" src="../../apps/web/public/assets/icons/clean/knight-banner.svg" alt=""><span class="lbl">March</span></button>
+          </div>
+          <div class="sep"></div>
+          <div class="group">
+            <button class="tile ability off"><span class="kbd key">S</span><span class="cost">2 AP</span><img class="ico" src="../../apps/web/public/assets/icons/clean/enrage.svg" alt=""><span class="lbl">Savagery</span><span class="why">after this unit attacks</span><span class="cd" title="cooldown"></span></button>
+          </div>
+        </div>
+        <div class="right">
+          <span class="btn btn-ghost">Next <span class="kbd">Tab</span> <span class="tag">8</span></span>
+          <div class="ap"><div class="pips"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i></div>19 / 20</div>
+          <span class="btn btn-end">End turn <span class="kbd">Ctrl ⏎</span></span>
+        </div>
+      </div>
+    </div></div>
+    <div class="verdict">
+      <div><h3>For</h3><ul><li>Each action is a target you can read from the board: icon, name, cost and key at a glance.</li><li>Disabled actions explain themselves in place.</li><li>Basic actions, abilities and turn controls are visually separate groups.</li><li>Keeps everything in one place, under the board, where the eye already goes for End turn.</li></ul></div>
+      <div><h3>Against</h3><ul><li>Takes about 20 px more height than the current bar.</li><li>Units with many abilities (Artificer: 3, Royal wizard: 2) need the second row or a narrower tile.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="option">
+    <div>
+      <h3>Option B</h3>
+      <h2>Side command panel</h2>
+      <p class="lede">Actions move into the left panel, under the unit card, as a vertical list with a one-line description each. The bottom bar keeps only turn controls. Nothing ever scrolls or wraps, and the full ability text sits right next to its button.</p>
+    </div>
+    <div class="mock"><div class="screen">
+      <div class="split">
+        <div class="side">
+          <div class="card"><span class="coin"><img class="ico" src="../../apps/web/public/assets/icons/clean/battle-axe.svg" alt=""></span><div><div class="unit"><span class="name">Berserker 1</span></div><div class="stats" style="font-family:var(--font-num);color:var(--muted);font-weight:700">8 ⚔ · 3/3 ♥ · LOV 2 · Move 1</div></div></div>
+          <h3>Actions · 1 of 1 left</h3>
+          <div class="rows">
+            <div class="row on"><img class="ico" src="../../apps/web/public/assets/icons/clean/walking-boot.svg" alt=""><div><div class="t">Move</div><div class="d">Up to 1 square, orthogonal</div></div><span class="cost">1 AP</span><span class="kbd">M</span></div>
+            <div class="row"><img class="ico" src="../../apps/web/public/assets/icons/clean/crossed-swords.svg" alt=""><div><div class="t">Attack</div><div class="d">8 damage to an adjacent enemy</div></div><span class="cost">1 AP</span><span class="kbd">A</span></div>
+            <div class="row"><img class="ico" src="../../apps/web/public/assets/icons/clean/checked-shield.svg" alt=""><div><div class="t">Defend</div><div class="d">Halve damage until your next turn</div></div><span class="cost">1 AP</span><span class="kbd">D</span></div>
+            <div class="row off"><img class="ico" src="../../apps/web/public/assets/icons/clean/pointy-sword.svg" alt=""><div><div class="t">Charge</div><div class="d">Needs Movement 2</div></div><span class="cost">1 +1</span><span class="kbd">C</span></div>
+            <div class="row"><img class="ico" src="../../apps/web/public/assets/icons/clean/knight-banner.svg" alt=""><div><div class="t">March</div><div class="d">Up to 6 connected units step together</div></div><span class="cost">2 AP</span><span class="kbd">G</span></div>
+          </div>
+          <h3>Abilities</h3>
+          <div class="rows">
+            <div class="row off"><img class="ico" src="../../apps/web/public/assets/icons/clean/enrage.svg" alt=""><div><div class="t">Savagery</div><div class="d">After attacking, attack again once per turn</div></div><span class="cost">2 AP</span><span class="kbd">S</span></div>
+          </div>
+        </div>
+        <div class="board dim"></div>
+      </div>
+      <div class="bar">
+        <span class="btn btn-ghost">Next ready unit <span class="kbd">Tab</span> <span class="tag">8</span></span>
+        <span class="btn btn-ghost"><img class="ico" src="../../apps/web/public/assets/icons/clean/anticlockwise-rotation.svg" alt="">Take back</span>
+        <span style="flex:1"></span>
+        <span class="ap">19 / 20</span>
+        <span class="btn btn-end">End turn <span class="kbd">Ctrl ⏎</span></span>
+      </div>
+    </div></div>
+    <div class="verdict">
+      <div><h3>For</h3><ul><li>Room for a description on every action, which helps new players most.</li><li>Never wraps or scrolls, whatever the unit.</li><li>Abilities get their own labelled group with cooldown state.</li></ul></div>
+      <div><h3>Against</h3><ul><li>The eye travels from the board to the side and back for every action.</li><li>Costs about 120 px of the left panel; the unit card and forecast panel get less room.</li><li>Weaker sense of a single "command row" during fast play.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="option">
+    <div>
+      <h3>Option C</h3>
+      <h2>Radial menu on the board</h2>
+      <p class="lede">Selecting a unit opens a ring of icon buttons around its coin; hotkey letters sit on the ring and costs appear above each node. The sidebar shows the description of whatever is hovered. The bottom bar keeps turn controls only.</p>
+    </div>
+    <div class="mock"><div class="screen">
+      <div class="radial-stage">
+        <div class="board"></div>
+        <div class="token"><span class="coin" style="width:46px;height:46px"><img class="ico" src="../../apps/web/public/assets/icons/clean/battle-axe.svg" alt=""></span></div>
+        <div class="ring">
+          <div class="node on" style="left:0;top:-82px"><span class="ct">1</span><img class="ico" src="../../apps/web/public/assets/icons/clean/walking-boot.svg" alt=""><span class="kbd key">M</span></div>
+          <div class="node" style="left:78px;top:-26px"><span class="ct">1</span><img class="ico" src="../../apps/web/public/assets/icons/clean/crossed-swords.svg" alt=""><span class="kbd key">A</span></div>
+          <div class="node" style="left:48px;top:66px"><span class="ct">1</span><img class="ico" src="../../apps/web/public/assets/icons/clean/checked-shield.svg" alt=""><span class="kbd key">D</span></div>
+          <div class="node off" style="left:-48px;top:66px"><span class="ct">1+1</span><img class="ico" src="../../apps/web/public/assets/icons/clean/pointy-sword.svg" alt=""><span class="kbd key">C</span></div>
+          <div class="node" style="left:-78px;top:-26px"><span class="ct">2</span><img class="ico" src="../../apps/web/public/assets/icons/clean/knight-banner.svg" alt=""><span class="kbd key">G</span></div>
+          <div class="node off" style="left:0;top:112px"><span class="ct">2</span><img class="ico" src="../../apps/web/public/assets/icons/clean/enrage.svg" alt=""><span class="kbd key">S</span></div>
+        </div>
+      </div>
+      <div class="bar">
+        <span class="btn btn-ghost">Next ready unit <span class="kbd">Tab</span> <span class="tag">8</span></span>
+        <span class="btn btn-ghost"><img class="ico" src="../../apps/web/public/assets/icons/clean/anticlockwise-rotation.svg" alt="">Take back</span>
+        <span style="flex:1"></span>
+        <span class="ap">19 / 20</span>
+        <span class="btn btn-end">End turn <span class="kbd">Ctrl ⏎</span></span>
+      </div>
+    </div></div>
+    <div class="verdict">
+      <div><h3>For</h3><ul><li>Fastest with a mouse: the choice is one short move from the unit.</li><li>Spatial: the action sits on the piece it affects.</li><li>Frees the bottom bar entirely.</li></ul></div>
+      <div><h3>Against</h3><ul><li>Covers the squares around the unit, exactly where the targets are, so it fights move and attack previews.</li><li>Icons alone, no names: harder to learn, and hostile to colour-blind and touch players.</li><li>Needs a second surface for descriptions and disabled reasons anyway.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="rec">
+    <span class="badge">Recommended</span>
+    <h2>Option A, the command dock, plus Option B's descriptions in the side panel</h2>
+    <p>The dock keeps commands where the eye already goes, gives every action a readable target with its cost, key and reason, and separates abilities from basic actions. The left panel keeps the unit card and, under it, shows the full text of whatever action is hovered or armed (today's hover hint line, promoted to a proper card), so the dock never needs tooltips. Option C stays a good idea for a later touch-first mode, where it can replace the dock on phones.</p>
+    <p class="lede">If you prefer B or C, say so and I'll build that instead; the engine side is identical for all three.</p>
+  </section>
+</div>
+</body>
+</html>

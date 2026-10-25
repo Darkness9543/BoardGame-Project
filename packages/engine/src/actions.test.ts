@@ -104,7 +104,7 @@ describe('Group march (R27)', () => {
   })
 
   it(`lets the commander march, front to back, and takes at most ${GROUP_MARCH_MAX} units`, () => {
-    const b = buildBattle({ south: ['commander@E3:C', 'footman@E4:F'] })
+    const b = buildBattle({ south: ['commander@E3:C', 'soldier@E4:F'] })
     const r = act(b.state, b.south, { kind: 'groupMarch', unitIds: [b.id('C'), b.id('F')], direction: 'north' })
     expect([b.id('C'), b.id('F')].map((id) => unitIn(r.state, id)?.anchor)).toEqual(sqs('E4', 'E5'))
     const row = buildBattle({ south: ['E', 'F', 'G', 'H', 'I', 'J', 'K'].map((c) => `footman@${c}5:${c}`) })

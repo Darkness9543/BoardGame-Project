@@ -251,12 +251,12 @@ describe('R26 Charge and R27 Group march', () => {
     expect(r.state.t === 'confirming' && r.state.intent).toEqual({ kind: 'groupMarch', unitIds: [b.id('F2'), b.id('F3')], direction: 'north' })
   })
 
-  it('group march refuses a unit that is not connected to the group', () => {
+  it('group march refuses a unit of another type (R46)', () => {
     const b = basic()
     const ctx = ctxFor(b.state, b.south)
     const r = run({ t: 'selected', unitId: b.id('F2'), trail: [] }, ctx, { t: 'action', action: { kind: 'march' } }, { t: 'clickUnit', unitId: b.id('P'), button: 'primary' })
     expect(r.state.t === 'targeting' && r.state.group).toEqual([b.id('F2')])
-    expect(r.effects).toEqual([{ t: 'hint', text: 'Marching units must form one connected group' }])
+    expect(r.effects).toEqual([{ t: 'hint', text: 'Units march only with units of their own type; Soldiers can join any group' }])
   })
 })
 

@@ -14,4 +14,10 @@ export const soldierAbilities: readonly AbilityDefinition[] = [
     // Soldier killed by an enemy Pajazon tick never regenerates (T9, T10).
     endOfOwnTurn: (_q, holder) => ({ heal: [{ target: holder.id, amount: HEAL }] }),
   },
+  {
+    // R46 Lockstep: a marker passive with no hooks; checkGroupMarch reads it through hasAbility to let a Soldier
+    // join a march of any other type (MARCH_ANY_TYPE_ABILITY).
+    id: 'soldier.lockstep',
+    status: 'implemented',
+  },
 ]

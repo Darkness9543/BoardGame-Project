@@ -108,6 +108,12 @@ export const ABILITY_DATA: readonly AbilityData[] = [
     text: 'Regenerate {heal} toughness at the end of your turn.',
     assumptions: ['A8-03'],
   }),
+  passive('soldier.lockstep', {
+    name: 'Lockstep',
+    params: {},
+    text: 'Can march with units of any type. (Other units march only with units of their own type.)',
+    assumptions: ['R46'],
+  }),
   // ---- Ranger (8.4)
   passive('ranger.rangedAttack', {
     name: 'Ranged Attack',

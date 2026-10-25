@@ -80,6 +80,31 @@ export function Deployment() {
     }
   }, [dragging])
 
+  // Drag-to-deploy (owner request): with a type armed, holding the primary button and sweeping the board places a
+  // unit on every valid square passed over. The board does not pan while a type is armed (paintDrag below).
+  const painting = useRef(false)
+  const stateRef = useRef(state)
+  stateRef.current = state
+  const targetsRef = useRef<readonly Square[]>([])
+  useEffect(() => {
+    const onDown = (e: PointerEvent) => {
+      if (e.button !== 0 || e.pointerType === 'touch') return
+      if (!(e.target instanceof Element) || e.target.closest('.board-stage') === null) return
+      painting.current = stateRef.current.t === 'brush'
+    }
+    const stop = () => {
+      painting.current = false
+    }
+    window.addEventListener('pointerdown', onDown, true)
+    window.addEventListener('pointerup', stop, true)
+    window.addEventListener('pointercancel', stop, true)
+    return () => {
+      window.removeEventListener('pointerdown', onDown, true)
+      window.removeEventListener('pointerup', stop, true)
+      window.removeEventListener('pointercancel', stop, true)
+    }
+  }, [])
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
@@ -100,6 +125,7 @@ export function Deployment() {
   const armedType = state.t === 'brush' ? state.type : state.t === 'lifted' ? (view.units.find((u) => u.id === state.unitId)?.type ?? null) : drag?.type ?? null
   const armedUnit = state.t === 'lifted' ? state.unitId : undefined
   const targets = armedType === null || confirmed ? [] : validSquares(view, armedType, armedUnit)
+  targetsRef.current = targets
   const vanguard = armedType !== null && tray.find((g) => g.type === armedType)?.vanguard === true
   const army = view.myArmy
   const key = army === null ? null : formationKey(army, view.settings.scenarioId)
@@ -232,7 +258,13 @@ export function Deployment() {
               },
               cameraMode,
               showExtendedZone: vanguard,
-              onSquareHover: setHover,
+              paintDrag: state.t === 'brush',
+              onSquareHover: (square) => {
+                setHover(square)
+                if (square !== null && painting.current && stateRef.current.t === 'brush' && targetsRef.current.some((s) => s.x === square.x && s.y === square.y)) {
+                  handleRef.current({ t: 'clickSquare', square, button: 'primary' })
+                }
+              },
               onSquareClick: (square, button) => handle({ t: 'clickSquare', square, button }),
               onUnitHover: () => undefined,
               onUnitClick: (unitId, button) => handle({ t: 'clickUnit', unitId, button }),

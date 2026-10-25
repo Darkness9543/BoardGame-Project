@@ -45,6 +45,8 @@ interface CameraRigProps {
   readonly apiRef: MutableRef<RigApi | null>
   /** The pose the rig is heading to (after a mode switch or an iso turn). */
   readonly onGoalPose: (pose: CameraPose) => void
+  /** BoardRendererProps.paintDrag: a primary-button drag paints squares instead of panning. */
+  readonly paintDrag: boolean
 }
 
 interface Anim<T> {
@@ -103,6 +105,9 @@ const vu = new Vector3()
 const vd = new Vector3()
 
 export function CameraRig(props: CameraRigProps) {
+  // Read inside the pointer handlers (bound once) without re-binding them.
+  const paintRef = useRef(props.paintDrag)
+  paintRef.current = props.paintDrag
   const { mode, isoStyle, reducedMotion, fitPoints, boardYaw, faceYaw, apiRef } = props
   const camera = useThree((s) => s.camera)
   const gl = useThree((s) => s.gl)
@@ -222,7 +227,8 @@ export function CameraRig(props: CameraRigProps) {
       const p = local(e)
       pointers.set(e.pointerId, p)
       if (pointers.size === 1) {
-        downAt = p
+        // Paint mode (deployment with a unit type armed): the primary button paints squares, so no pan starts.
+        downAt = paintRef.current && e.button === 0 && e.pointerType !== 'touch' ? null : p
         dragging = false
       }
       pinch = pointers.size === 2 ? pinchState() : null

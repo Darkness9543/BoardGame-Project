@@ -66,8 +66,16 @@ export const CHARGE_SURCHARGE = 1
 export const CHARGE_MIN_MOVEMENT = 2
 /** R27 Group march: 2 AP, up to 6 connected own units that haven't acted each step 1 square the same way. */
 export const GROUP_MARCH_ENABLED = true
+/** The price of a march of 1 to 3 units; larger groups pay more (groupMarchCost). */
 export const GROUP_MARCH_COST = 2
 export const GROUP_MARCH_MAX = 6
+/** R46 (owner's table): 1-3 units 2 AP, 4-5 units 3 AP, 6 units 4 AP. */
+export function groupMarchCost(unitCount: number): number {
+  return Math.max(GROUP_MARCH_COST, 1 + Math.floor(unitCount / 2))
+}
+/** R46: units march only with units of their own type, except holders of MARCH_ANY_TYPE_ABILITY (the Soldier). */
+export const MARCH_SAME_TYPE = true
+export const MARCH_ANY_TYPE_ABILITY = 'soldier.lockstep'
 /** A2-15: a Move may stop after 1..N steps (true = exactly N, Q84). */
 export const MOVE_EXACT_DISTANCE = false
 /** A2-22: CD N = after use on own turn T, usable again on own turn T + N + 1. */

@@ -15,9 +15,11 @@ import {
   CHARGE_SURCHARGE,
   FORCEFIELD_SHAPE,
   FRIENDLY_SINGLE_TARGET,
-  GROUP_MARCH_COST,
   GROUP_MARCH_ENABLED,
   GROUP_MARCH_MAX,
+  groupMarchCost,
+  MARCH_ANY_TYPE_ABILITY,
+  MARCH_SAME_TYPE,
   type PreferenceValue,
 } from './constants'
 import { abilityData, hasAbilityData } from './content/abilities'
@@ -376,6 +378,11 @@ function checkGroupMarch(q: RulesQuery, view: PlayerView, unitIds: readonly Unit
     }
   }
   if (reached.size !== units.length) return reject('INVALID_TARGET', 'Marching units must form one connected group')
+  // R46: one unit type per group; a holder of the Soldier's Lockstep passive may join any group.
+  if (MARCH_SAME_TYPE) {
+    const strict = new Set(units.filter((u) => !q.hasAbility(u, MARCH_ANY_TYPE_ABILITY)).map((u) => u.type))
+    if (strict.size > 1) return reject('INVALID_TARGET', 'Units march only with units of their own type; Soldiers can join any group')
+  }
   const marching = new Set(unitIds)
   const offset = MARCH_OFFSETS[direction]
   for (const unit of units) {
@@ -389,7 +396,7 @@ function checkGroupMarch(q: RulesQuery, view: PlayerView, unitIds: readonly Unit
       }
     }
   }
-  return checkAp(q, view.seat, GROUP_MARCH_COST)
+  return checkAp(q, view.seat, groupMarchCost(unitIds.length))
 }
 
 /** What a seat may still send while a reaction prompt is pending. */
@@ -482,7 +489,7 @@ function resolveAction(r: Resolver, seat: Seat, intent: ActionIntent): void {
 
 /** R27: one payment; marchers step front-to-back, each through the normal per-step rules (interruptions stop only it). */
 function resolveGroupMarch(r: Resolver, seat: Seat, unitIds: readonly UnitId[], direction: MarchDirection): void {
-  r.spendAp(seat, GROUP_MARCH_COST)
+  r.spendAp(seat, groupMarchCost(unitIds.length))
   const offset = MARCH_OFFSETS[direction]
   const lead = (u: UnitState): number => (u.anchor === null ? 0 : u.anchor.x * offset.x + u.anchor.y * offset.y)
   const marchers = unitIds.flatMap((id) => r.stateUnit(id) ?? []).sort((a, b) => lead(b) - lead(a) || a.seq - b.seq)

@@ -116,6 +116,12 @@ export interface BoardRendererProps {
   readonly cameraMode: 'top' | 'iso'
   /** Draw the extended deployment rows (Vanguard units being placed). */
   readonly showExtendedZone: boolean
+  /**
+   * While true, a drag with the primary button paints squares (onSquareHover keeps reporting them) instead of
+   * panning the camera; other buttons, the wheel and pinch still pan and zoom. Deployment sets it while a unit
+   * type is armed, so a drag places many units at once.
+   */
+  readonly paintDrag?: boolean
   /** Pointer over a square (null when it leaves the board). */
   onSquareHover(square: Square | null): void
   onSquareClick(square: Square, button: PointerButton): void

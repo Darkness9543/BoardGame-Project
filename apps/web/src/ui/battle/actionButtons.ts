@@ -84,7 +84,7 @@ export function actionButtons(view: PlayerView, unit: UnitView): ActionButton[] 
     reason: march.reason,
     followUp: false,
     group: 'basic',
-    description: 'Up to 6 of your connected units that have not acted each step 1 square in the same direction, for 2 AP. Each uses its action and its move.',
+    description: 'Up to 6 connected units of one type (Soldiers may join any group) that have not acted each step 1 square the same way. 1 to 3 units cost 2 AP, 4 to 5 cost 3, 6 cost 4. Each uses its action and its move.',
     status: null,
   })
   let n = 1

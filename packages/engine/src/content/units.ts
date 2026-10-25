@@ -65,7 +65,7 @@ function roster(
 export const ROSTER: readonly UnitDef[] = [
   roster('footman',     'Footman',             'empire', 1,   { power: 1,  toughness: 2,  size: 1, lov: 1, movement: 1, ap: 1 }, ['footman.lineFormation']),
   roster('mercenary',   'Mercenary',           'lojrar', 1,   { power: 2,  toughness: 1,  size: 1, lov: 1, movement: 1, ap: 1 }, ['mercenary.fierceAttacker']),
-  roster('soldier',     'Soldier',             'empire', 2,   { power: 2,  toughness: 7,  size: 1, lov: 2, movement: 1, ap: 1 }, ['soldier.perseverance']),
+  roster('soldier',     'Soldier',             'empire', 2,   { power: 2,  toughness: 7,  size: 1, lov: 2, movement: 1, ap: 1 }, ['soldier.perseverance', 'soldier.lockstep']), // R46: Lockstep
   roster('ranger',      'Ranger',              'lojrar', 2,   { power: 3,  toughness: 1,  size: 1, lov: 3, movement: 1, ap: 1 }, ['ranger.rangedAttack']),
   roster('berserker',   'Berserker',           'empire', 5,   { power: 8,  toughness: 2,  size: 1, lov: 2, movement: 1, ap: 1 }, ['berserker.savagery']), // R20: was 12/2
   roster('rogue',       'Rogue',               'lojrar', 5,   { power: 7,  toughness: 4,  size: 1, lov: 3, movement: 2, ap: 2 }, ['rogue.stealth', 'rogue.assault']),

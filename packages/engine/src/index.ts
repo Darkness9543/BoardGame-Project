@@ -69,6 +69,7 @@ export {
 export { StateQuery, type AreaCore, type BuildingCore, type MineCore, type RulesQuery, type StatsQuery, type UnitStats, type UnitTurnView } from './query'
 export { computeHit, collectHit, PIPELINE_RULES, runPipeline, type Contribution, type PipelineInput, type PipelineResult, type PipelineRules } from './damage'
 export { lovContains, visionMask } from './vision'
+export { marchesWithAnyType, marchTypesCompatible } from './march'
 export { matchSummary, type MatchSummary } from './summary'
 
 // History: log, replay, take-back frames, snapshots

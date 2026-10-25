@@ -2,7 +2,7 @@
 // effective cost and key, and says why it is disabled in words the player can see.
 
 import { useEffect, useState } from 'react'
-import type { PlayerView } from '@coinduel/engine'
+import { groupMarchCost, type PlayerView } from '@coinduel/engine'
 import { activeAction, commandUnitId, type CommandState, type Gate } from '../../store/command'
 import { useCommandStore } from '../../store/commandStore'
 import type { MatchController, MatchSnapshot } from '../../store/matchController'
@@ -20,6 +20,8 @@ import { actionButtons, costParts, hoveredButton, sameAction, type ActionButton 
 function pendingCost(view: PlayerView, state: CommandState): number | null {
   const action = activeAction(state)
   if (action === null || state.t === 'idle' || state.t === 'inspect') return null
+  // R46: a march's price grows with its group, so the pool previews the current group's cost.
+  if (action.kind === 'march' && 'group' in state) return groupMarchCost(state.group.length)
   const unit = ownUnit(view, state.unitId)
   return unit === undefined ? null : (actionButtons(view, unit).find((b) => sameAction(b.action, action))?.cost ?? null)
 }

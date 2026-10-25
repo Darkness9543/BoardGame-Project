@@ -317,6 +317,7 @@ export function Scene(props: SceneProps) {
           faceYaw={faceYaw}
           apiRef={rigApi}
           onGoalPose={setGoalPose}
+          paintDrag={props.paintDrag === true}
         />
         <DirectorTicker version={renderTick} />
         <group rotation-y={yaw}>

@@ -21,6 +21,7 @@ import {
   type UnitId,
   type UnitView,
 } from '@coinduel/engine'
+import { groupMarchCost, marchTypesCompatible } from '@coinduel/engine'
 import type { PointerButton } from '../contracts'
 import {
   abilitySpecs,
@@ -673,7 +674,7 @@ function marchPairPossible(view: PlayerView, a: UnitId, b: UnitId): boolean {
   const ua = ownUnit(view, a)
   const ub = ownUnit(view, b)
   if (ua === undefined || ub === undefined) return false
-  return marchOption(view, ua).enabled && marchOption(view, ub).enabled && groupConnected(view, [a, b])
+  return marchOption(view, ua).enabled && marchOption(view, ub).enabled && marchTypesCompatible([ua.type, ub.type]) && groupConnected(view, [a, b])
 }
 
 function toggleMarcher(state: Targeting, clicked: UnitView, ctx: CommandContext): CommandResult {
@@ -690,6 +691,11 @@ function toggleMarcher(state: Targeting, clicked: UnitView, ctx: CommandContext)
   const option = marchOption(view, clicked)
   if (!option.enabled) return done(state, hint(option.reason ?? 'This unit cannot march'))
   const group = [...state.group, clicked.id]
+  // R46: one unit type per group, Soldiers (Lockstep) excepted; the price grows with the group.
+  const types = group.map((id) => ownUnit(view, id)?.type).filter((t): t is UnitView['type'] => t !== undefined)
+  if (!marchTypesCompatible(types)) return done(state, hint('Units march only with units of their own type; Soldiers can join any group'))
+  const cost = groupMarchCost(group.length)
+  if (view.myAp < cost) return done(state, hint(`Not enough AP: a march of ${group.length} costs ${cost}, you have ${view.myAp}`))
   return groupConnected(view, group) ? done({ ...state, group }) : done(state, hint('Marching units must form one connected group'))
 }
 
@@ -927,7 +933,7 @@ function targetingHint(state: Targeting): string {
         ? `Charge ${step}: choose where to stop (the arrow follows the pointer), or click the enemy · Esc to go back`
         : `Charge ${step}: choose the unit to attack · Esc to go back`
     case 'march':
-      return `Group march (${state.group.length}/${GROUP_MARCH_MAX}): click units to add or remove them, then an arrow key or a square beside the group · Esc to go back`
+      return `Group march (${state.group.length}/${GROUP_MARCH_MAX}, ${groupMarchCost(state.group.length)} AP): click units of the same type (Soldiers join any group) to add or remove them, then an arrow key or a square beside the group · Esc to go back`
     case 'ability': {
       const spec = abilitySpecs(state.action.abilityId)[state.picks.length]
       if (spec === undefined) return ''
